@@ -221,6 +221,7 @@ __turbopack_context__.s({
     "default": (()=>HomePage)
 });
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/rsc/react-jsx-dev-runtime.js [app-rsc] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/rsc/react.js [app-rsc] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/ui/button.tsx [app-rsc] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$history$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__History$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/history.js [app-rsc] (ecmascript) <export default as History>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$dashboard$2f$info$2d$card$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/components/dashboard/info-card.tsx [app-rsc] (ecmascript)");
@@ -228,75 +229,107 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$dashboa
 ;
 ;
 ;
-// Sample data for the charts
-const sampleChartData = [
-    {
-        label: "Dashboard performance",
-        value: 90
-    },
-    {
-        label: "Export feature investigation",
-        value: 75
-    },
-    {
-        label: "Mobile app crash",
-        value: 60
-    },
-    {
-        label: "Sound",
-        value: 45
-    },
-    {
-        label: "Camera",
-        value: 30
-    },
-    {
-        label: "Dark mode",
-        value: 55
-    },
-    {
-        label: "Privacy",
-        value: 80
-    },
-    {
-        label: "Automation",
-        value: 20
-    },
-    {
-        label: "Risk",
-        value: 70
-    }
-];
-// Function to get a slice of sample data or vary it for different cards
-const getCardData = (title)=>{
-    // Simple variation: take different slices or shuffle for variety
-    if (title.includes("channels")) return sampleChartData.slice(0, 6).map((item)=>({
-            ...item,
-            value: Math.random() * 80 + 20
+;
+function getTopKeywords(feedback, topN = 10) {
+    const freq = {};
+    feedback.forEach((item)=>{
+        item.keywords.forEach((kw)=>{
+            freq[kw] = (freq[kw] || 0) + 1;
+        });
+    });
+    const sorted = Object.entries(freq).sort((a, b)=>b[1] - a[1]).slice(0, topN);
+    const max = sorted[0]?.[1] || 1;
+    return sorted.map(([label, value])=>({
+            label,
+            value: Math.round(value / max * 100)
         }));
-    if (title.includes("negative")) return sampleChartData.slice(2, 7).map((item)=>({
-            ...item,
-            value: Math.random() * 70 + 10
+}
+function getTopSources(feedback, topN = 10) {
+    const freq = {};
+    feedback.forEach((item)=>{
+        const src = item.source.trim();
+        freq[src] = (freq[src] || 0) + 1;
+    });
+    const sorted = Object.entries(freq).sort((a, b)=>b[1] - a[1]).slice(0, topN);
+    const max = sorted[0]?.[1] || 1;
+    return sorted.map(([label, value])=>({
+            label,
+            value: Math.round(value / max * 100)
         }));
-    if (title.includes("improvements")) return sampleChartData.slice(1, 6).map((item)=>({
-            ...item,
-            value: Math.random() * 90 + 10
+}
+function getTopNegative(feedback, topN = 10) {
+    const negatives = feedback.filter((item)=>item.sentiment === 'negative');
+    return negatives.slice(0, topN).map((item)=>({
+            label: item.text,
+            value: Math.round(item.confidence_score * 100)
         }));
-    if (title.includes("time")) return sampleChartData.slice(0, 4).map((item)=>({
-            ...item,
-            label: `Week ${sampleChartData.indexOf(item) + 1}`,
-            value: Math.random() * 100
+}
+function getTopSuggestions(feedback, topN = 10) {
+    const suggestions = feedback.filter((item)=>item.is_suggestion);
+    return suggestions.slice(0, topN).map((item)=>({
+            label: item.text,
+            value: Math.round(item.confidence_score * 100)
         }));
-    return sampleChartData.slice(0, Math.floor(Math.random() * 5) + 5); // Default: random number of items
-};
+}
+function getFeedbackOverTime(feedback) {
+    // Group by month for simplicity
+    const freq = {};
+    feedback.forEach((item)=>{
+        const date = new Date(item.date_time.trim());
+        const label = `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, '0')}`;
+        freq[label] = (freq[label] || 0) + 1;
+    });
+    const sorted = Object.entries(freq).sort((a, b)=>a[0].localeCompare(b[0]));
+    const max = sorted.reduce((m, [, v])=>Math.max(m, v), 1);
+    return sorted.map(([label, value])=>({
+            label,
+            value: Math.round(value / max * 100)
+        }));
+}
+function getTopAnomalies(feedback, topN = 10) {
+    // For MVP, use the most extreme confidence scores
+    const sorted = [
+        ...feedback
+    ].sort((a, b)=>Math.abs(b.confidence_score - 0.5) - Math.abs(a.confidence_score - 0.5));
+    return sorted.slice(0, topN).map((item)=>({
+            label: item.text,
+            value: Math.round(item.confidence_score * 100)
+        }));
+}
 function HomePage() {
-    const cardTitles = [
-        "Top 10 themes",
-        "Top feedback channels",
-        "Top 10 negative feedbacks",
-        "Top 10 suggested improvements",
-        "Feedback over time",
-        "Top 10 anomalies"
+    const [feedback, setFeedback] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["useState"])([]);
+    const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["useState"])(true);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
+        fetch('/processed_feedback.json').then((res)=>res.json()).then((data)=>{
+            setFeedback(data);
+            setLoading(false);
+        });
+    }, []);
+    const cardData = [
+        {
+            title: 'Top 10 themes',
+            data: getTopKeywords(feedback)
+        },
+        {
+            title: 'Top feedback channels',
+            data: getTopSources(feedback)
+        },
+        {
+            title: 'Top 10 negative feedbacks',
+            data: getTopNegative(feedback)
+        },
+        {
+            title: 'Top 10 suggested improvements',
+            data: getTopSuggestions(feedback)
+        },
+        {
+            title: 'Feedback over time',
+            data: getFeedbackOverTime(feedback)
+        },
+        {
+            title: 'Top 10 anomalies',
+            data: getTopAnomalies(feedback)
+        }
     ];
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Fragment"], {
         children: [
@@ -308,7 +341,7 @@ function HomePage() {
                         children: "Dashboard"
                     }, void 0, false, {
                         fileName: "[project]/src/app/page.tsx",
-                        lineNumber: 43,
+                        lineNumber: 119,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$button$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Button"], {
@@ -318,35 +351,41 @@ function HomePage() {
                                 className: "mr-2 h-4 w-4"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/page.tsx",
-                                lineNumber: 45,
+                                lineNumber: 121,
                                 columnNumber: 11
                             }, this),
                             "Generate report"
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/page.tsx",
-                        lineNumber: 44,
+                        lineNumber: 120,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/page.tsx",
-                lineNumber: 42,
+                lineNumber: 118,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3",
-                children: cardTitles.map((title)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$dashboard$2f$info$2d$card$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["InfoCard"], {
-                        title: title,
-                        chartData: getCardData(title)
-                    }, title, false, {
+                children: loading ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    children: "Loading insights..."
+                }, void 0, false, {
+                    fileName: "[project]/src/app/page.tsx",
+                    lineNumber: 129,
+                    columnNumber: 11
+                }, this) : cardData.map((card)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$dashboard$2f$info$2d$card$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["InfoCard"], {
+                        title: card.title,
+                        chartData: card.data
+                    }, card.title, false, {
                         fileName: "[project]/src/app/page.tsx",
-                        lineNumber: 53,
-                        columnNumber: 11
+                        lineNumber: 132,
+                        columnNumber: 13
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/src/app/page.tsx",
-                lineNumber: 51,
+                lineNumber: 127,
                 columnNumber: 7
             }, this)
         ]

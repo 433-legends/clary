@@ -1,0 +1,1236 @@
+[
+    {
+        "text": "I love this product!",
+        "sentiment": "positive",
+        "keywords": [
+            "love"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Twitter",
+        "date_time": " 2023-06-15 09:23:14",
+        "user_id": " @user123",
+        "location": " New York",
+        "confidence_score": 0.85
+    },
+    {
+        "text": "The service was terrible.",
+        "sentiment": "negative",
+        "keywords": [
+            "service"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Yelp Reviews",
+        "date_time": " 2023-06-15 11:45:32",
+        "user_id": " user456",
+        "location": " Los Angeles",
+        "confidence_score": 0.65
+    },
+    {
+        "text": "This movie is amazing!",
+        "sentiment": "positive",
+        "keywords": [
+            "movie"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " IMDb",
+        "date_time": " 2023-06-15 14:10:22",
+        "user_id": " moviefan789",
+        "location": " London",
+        "confidence_score": 0.92
+    },
+    {
+        "text": "I'm so disappointed with their customer support.",
+        "sentiment": "negative",
+        "keywords": [
+            "disappointed",
+            "customer"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Online Forum",
+        "date_time": " 2023-06-15 17:35:11",
+        "user_id": " forumuser1",
+        "location": " Toronto",
+        "confidence_score": 0.78
+    },
+    {
+        "text": "Just had the best meal of my life!",
+        "sentiment": "positive",
+        "keywords": [
+            "best",
+            "meal"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " TripAdvisor",
+        "date_time": " 2023-06-16 08:50:59",
+        "user_id": " foodie22",
+        "location": " Paris",
+        "confidence_score": 0.88
+    },
+    {
+        "text": "The quality of this product is subpar.",
+        "sentiment": "neutral",
+        "keywords": [
+            "quality",
+            "product"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Amazon Reviews",
+        "date_time": " 2023-06-16 10:15:27",
+        "user_id": " shopper123",
+        "location": " San Francisco",
+        "confidence_score": 0.72
+    },
+    {
+        "text": "I can't stop listening to this song. It's incredible!",
+        "sentiment": "positive",
+        "keywords": [
+            "stop",
+            "listening"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Spotify",
+        "date_time": " 2023-06-16 13:40:18",
+        "user_id": " musiclover456",
+        "location": " Berlin",
+        "confidence_score": 0.91
+    },
+    {
+        "text": "Their website is so user-friendly. Love it!",
+        "sentiment": "positive",
+        "keywords": [
+            "website",
+            "love"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Website Testimonial",
+        "date_time": " 2023-06-16 16:05:36",
+        "user_id": " testimonialuser1",
+        "location": " Sydney",
+        "confidence_score": 0.87
+    },
+    {
+        "text": "I loved the movie! It was fantastic!",
+        "sentiment": "positive",
+        "keywords": [
+            "loved"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " IMDb",
+        "date_time": " 2023-07-02 09:12:34",
+        "user_id": " user123",
+        "location": " New York",
+        "confidence_score": 0.92
+    },
+    {
+        "text": "The customer service was terrible.",
+        "sentiment": "negative",
+        "keywords": [
+            "customer",
+            "service"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Yelp Reviews",
+        "date_time": " 2023-07-02 10:45:21",
+        "user_id": " user456",
+        "location": " Los Angeles",
+        "confidence_score": 0.65
+    },
+    {
+        "text": "This book made me feel inspired. Highly recommended!",
+        "sentiment": "positive",
+        "keywords": [
+            "book",
+            "made",
+            "feel",
+            "highly"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Goodreads",
+        "date_time": " 2023-07-02 12:34:56",
+        "user_id": " bookworm789",
+        "location": " London",
+        "confidence_score": 0.88
+    },
+    {
+        "text": "I'm extremely disappointed with their product quality.",
+        "sentiment": "negative",
+        "keywords": [
+            "extremely",
+            "disappointed",
+            "product"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Online Store",
+        "date_time": " 2023-07-02 15:21:43",
+        "user_id": " shopper789",
+        "location": " San Francisco",
+        "confidence_score": 0.72
+    },
+    {
+        "text": "Just had the most amazing vacation! I can't wait to go back.",
+        "sentiment": "positive",
+        "keywords": [
+            "amazing",
+            "wait",
+            "go"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " TripAdvisor",
+        "date_time": " 2023-07-02 18:01:23",
+        "user_id": " travelenthusiast1",
+        "location": " Sydney",
+        "confidence_score": 0.93
+    },
+    {
+        "text": "The food at this restaurant was awful. Never going back again!",
+        "sentiment": "negative",
+        "keywords": [
+            "food",
+            "restaurant",
+            "never",
+            "going",
+            "back"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Zomato",
+        "date_time": " 2023-07-02 20:45:37",
+        "user_id": " foodlover123",
+        "location": " Mumbai",
+        "confidence_score": 0.55
+    },
+    {
+        "text": "I can't stop listening to this song. It's my new favorite!",
+        "sentiment": "positive",
+        "keywords": [
+            "stop",
+            "listening",
+            "new"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Spotify",
+        "date_time": " 2023-07-03 09:17:52",
+        "user_id": " musiclover789",
+        "location": " Berlin",
+        "confidence_score": 0.91
+    },
+    {
+        "text": "Their website is so confusing and poorly designed.",
+        "sentiment": "negative",
+        "keywords": [
+            "website",
+            "confusing",
+            "poorly"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Website Review",
+        "date_time": " 2023-07-03 11:59:18",
+        "user_id": " user789",
+        "location": " Toronto",
+        "confidence_score": 0.68
+    },
+    {
+        "text": "I had an incredible experience at the theme park. So much fun!",
+        "sentiment": "positive",
+        "keywords": [
+            "incredible",
+            "experience",
+            "theme",
+            "much"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Trip Report",
+        "date_time": " 2023-07-03 14:40:05",
+        "user_id": " thrillseeker1",
+        "location": " Orlando",
+        "confidence_score": 0.89
+    },
+    {
+        "text": "The product arrived damaged. Very disappointed.",
+        "sentiment": "negative",
+        "keywords": [
+            "product",
+            "arrived"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Online Store",
+        "date_time": " 2023-07-03 17:25:09",
+        "user_id": " buyer123",
+        "location": " Chicago",
+        "confidence_score": 0.76
+    },
+    {
+        "text": "The concert was absolutely breathtaking. Best performance ever!",
+        "sentiment": "positive",
+        "keywords": [
+            "concert",
+            "absolutely",
+            "best",
+            "performance"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Event Review",
+        "date_time": " 2023-07-03 20:15:33",
+        "user_id": " musicfan456",
+        "location": " Paris",
+        "confidence_score": 0.95
+    },
+    {
+        "text": "I had a terrible experience with their customer support.",
+        "sentiment": "negative",
+        "keywords": [
+            "terrible",
+            "experience",
+            "customer"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Online Chat",
+        "date_time": " 2023-07-04 08:32:41",
+        "user_id": " user1234",
+        "location": " Sydney",
+        "confidence_score": 0.61
+    },
+    {
+        "text": "This movie is a masterpiece! I was blown away.",
+        "sentiment": "positive",
+        "keywords": [
+            "movie",
+            "blown"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " IMDb",
+        "date_time": " 2023-07-04 14:05:27",
+        "user_id": " cinephile789",
+        "location": " Los Angeles",
+        "confidence_score": 0.93
+    },
+    {
+        "text": "The customer service at this store is top-notch.",
+        "sentiment": "neutral",
+        "keywords": [
+            "customer",
+            "service",
+            "store"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Yelp Reviews",
+        "date_time": " 2023-07-04 16:35:19",
+        "user_id": " shopper456",
+        "location": " New York",
+        "confidence_score": 0.82
+    },
+    {
+        "text": "I'm disappointed with the ending of this book. It fell flat.",
+        "sentiment": "negative",
+        "keywords": [
+            "disappointed",
+            "ending",
+            "fell"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Goodreads",
+        "date_time": " 2023-07-04 19:18:53",
+        "user_id": " booklover123",
+        "location": " London",
+        "confidence_score": 0.68
+    },
+    {
+        "text": "The product I received was damaged. Unacceptable.",
+        "sentiment": "negative",
+        "keywords": [
+            "product",
+            "received"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Online Store",
+        "date_time": " 2023-07-04 21:52:41",
+        "user_id": " buyer789",
+        "location": " San Francisco",
+        "confidence_score": 0.75
+    },
+    {
+        "text": "Just had the worst flight experience. Delayed and rude staff.",
+        "sentiment": "negative",
+        "keywords": [
+            "worst",
+            "flight",
+            "delayed",
+            "rude"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Airline Review",
+        "date_time": " 2023-07-05 09:10:15",
+        "user_id": " traveler456",
+        "location": " Sydney",
+        "confidence_score": 0.57
+    },
+    {
+        "text": "The hotel stay was absolutely amazing! Luxury at its finest.",
+        "sentiment": "positive",
+        "keywords": [
+            "hotel",
+            "stay",
+            "absolutely",
+            "luxury"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " TripAdvisor",
+        "date_time": " 2023-07-05 12:30:08",
+        "user_id": " traveladdict1",
+        "location": " Paris",
+        "confidence_score": 0.95
+    },
+    {
+        "text": "The food at this restaurant was outstanding. Highly recommended!",
+        "sentiment": "positive",
+        "keywords": [
+            "food",
+            "restaurant",
+            "highly"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Zomato",
+        "date_time": " 2023-07-05 15:45:32",
+        "user_id": " foodie789",
+        "location": " Mumbai",
+        "confidence_score": 0.89
+    },
+    {
+        "text": "This playlist is my go-to for workouts. Energizing and motivating!",
+        "sentiment": "positive",
+        "keywords": [
+            "playlist",
+            "energizing"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Spotify",
+        "date_time": " 2023-07-05 18:20:17",
+        "user_id": " gymrat123",
+        "location": " Berlin",
+        "confidence_score": 0.91
+    },
+    {
+        "text": "I had a frustrating experience navigating through their website.",
+        "sentiment": "negative",
+        "keywords": [
+            "frustrating",
+            "experience",
+            "navigating"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Website Review",
+        "date_time": " 2023-07-05 21:05:44",
+        "user_id": " user987",
+        "location": " Toronto",
+        "confidence_score": 0.67
+    },
+    {
+        "text": "The roller coaster ride was thrilling! Heart-pounding excitement!",
+        "sentiment": "positive",
+        "keywords": [
+            "roller",
+            "coaster",
+            "ride"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Theme Park Review",
+        "date_time": " 2023-07-06 08:48:39",
+        "user_id": " thrillseeker2",
+        "location": " Orlando",
+        "confidence_score": 0.92
+    },
+    {
+        "text": "The product I ordered never arrived. Terrible service.",
+        "sentiment": "positive",
+        "keywords": [
+            "product",
+            "ordered",
+            "never",
+            "terrible"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Online Store",
+        "date_time": " 2023-07-06 11:25:56",
+        "user_id": " customer123",
+        "location": " Chicago",
+        "confidence_score": 0.64
+    },
+    {
+        "text": "I can't get enough of this band. Their music is incredible!",
+        "sentiment": "neutral",
+        "keywords": [
+            "get",
+            "enough",
+            "music"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Music Review",
+        "date_time": " 2023-07-06 14:15:23",
+        "user_id": " musiclover987",
+        "location": " London",
+        "confidence_score": 0.94
+    },
+    {
+        "text": "I had a great chat with their customer support. Helpful and friendly.",
+        "sentiment": "positive",
+        "keywords": [
+            "great",
+            "chat",
+            "customer",
+            "helpful"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Online Chat",
+        "date_time": " 2023-07-06 17:02:11",
+        "user_id": " user7890",
+        "location": " Sydney",
+        "confidence_score": 0.85
+    },
+    {
+        "text": "This restaurant has the most delicious food. I can't wait to go back!",
+        "sentiment": "positive",
+        "keywords": [
+            "restaurant",
+            "delicious",
+            "wait",
+            "go"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " TripAdvisor",
+        "date_time": " 2023-07-09 09:12:54",
+        "user_id": " foodie123",
+        "location": " Paris",
+        "confidence_score": 0.94
+    },
+    {
+        "text": "The product I purchased broke within a week. Poor quality.",
+        "sentiment": "negative",
+        "keywords": [
+            "product",
+            "purchased",
+            "broke",
+            "within",
+            "poor"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Online Store",
+        "date_time": " 2023-07-09 11:45:32",
+        "user_id": " shopper246",
+        "location": " Los Angeles",
+        "confidence_score": 0.61
+    },
+    {
+        "text": "This book is thought-provoking and beautifully written. Highly recommended!",
+        "sentiment": "positive",
+        "keywords": [
+            "book",
+            "beautifully",
+            "highly"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Goodreads",
+        "date_time": " 2023-07-09 14:23:18",
+        "user_id": " bookworm567",
+        "location": " London",
+        "confidence_score": 0.89
+    },
+    {
+        "text": "The customer service at this store is exceptional. They went above and beyond.",
+        "sentiment": "neutral",
+        "keywords": [
+            "customer",
+            "service",
+            "store",
+            "went"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Retail Store",
+        "date_time": " 2023-07-09 17:05:46",
+        "user_id": " shopper7890",
+        "location": " New York",
+        "confidence_score": 0.87
+    },
+    {
+        "text": "I had a terrible experience with their technical support. No resolution.",
+        "sentiment": "negative",
+        "keywords": [
+            "terrible",
+            "experience",
+            "technical"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Online Helpdesk",
+        "date_time": " 2023-07-09 19:40:27",
+        "user_id": " user9876",
+        "location": " San Francisco",
+        "confidence_score": 0.63
+    },
+    {
+        "text": "The live concert was electrifying! The band's energy was contagious.",
+        "sentiment": "negative",
+        "keywords": [
+            "live",
+            "concert",
+            "energy"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Event Review",
+        "date_time": " 2023-07-10 08:50:13",
+        "user_id": " musiclover7890",
+        "location": " Sydney",
+        "confidence_score": 0.92
+    },
+    {
+        "text": "I'm disappointed with the food at this restaurant. It was tasteless.",
+        "sentiment": "negative",
+        "keywords": [
+            "disappointed",
+            "food"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Zomato",
+        "date_time": " 2023-07-10 11:32:59",
+        "user_id": " foodcritic123",
+        "location": " Mumbai",
+        "confidence_score": 0.68
+    },
+    {
+        "text": "This song always puts me in a good mood. It's my go-to feel-good track!",
+        "sentiment": "positive",
+        "keywords": [
+            "song",
+            "always",
+            "puts",
+            "good"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Spotify",
+        "date_time": " 2023-07-10 14:20:05",
+        "user_id": " playlistlover456",
+        "location": " Berlin",
+        "confidence_score": 0.93
+    },
+    {
+        "text": "The website is slow and unresponsive. Difficult to navigate.",
+        "sentiment": "negative",
+        "keywords": [
+            "website",
+            "slow",
+            "difficult"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Website Review",
+        "date_time": " 2023-07-10 17:15:22",
+        "user_id": " user24680",
+        "location": " Toronto",
+        "confidence_score": 0.65
+    },
+    {
+        "text": "The roller coaster ride was exhilarating! Pure adrenaline rush!",
+        "sentiment": "positive",
+        "keywords": [
+            "roller",
+            "coaster",
+            "ride",
+            "pure",
+            "adrenaline"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Theme Park Review",
+        "date_time": " 2023-07-10 20:02:37",
+        "user_id": " thrillseeker789",
+        "location": " Orlando",
+        "confidence_score": 0.95
+    },
+    {
+        "text": "The product I ordered arrived damaged. Very disappointed with the packaging.",
+        "sentiment": "negative",
+        "keywords": [
+            "product",
+            "ordered",
+            "arrived",
+            "disappointed"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Online Store",
+        "date_time": " 2023-07-11 08:40:51",
+        "user_id": " buyer7890",
+        "location": " Chicago",
+        "confidence_score": 0.67
+    },
+    {
+        "text": "I'm captivated by this band's unique sound. They're a breath of fresh air!",
+        "sentiment": "positive",
+        "keywords": [
+            "captivated",
+            "unique",
+            "breath",
+            "fresh"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Music Review",
+        "date_time": " 2023-07-11 11:22:17",
+        "user_id": " musicfan567",
+        "location": " London",
+        "confidence_score": 0.94
+    },
+    {
+        "text": "The customer support was quick to respond and resolved my issue. Impressed!",
+        "sentiment": "positive",
+        "keywords": [
+            "customer",
+            "support",
+            "quick",
+            "respond",
+            "resolved"
+        ],
+        "is_problem": true,
+        "is_suggestion": false,
+        "source": " Online Chat",
+        "date_time": " 2023-07-11 14:18:42",
+        "user_id": " user123456",
+        "location": " Sydney",
+        "confidence_score": 0.85
+    },
+    {
+        "text": "This restaurant has the best food. I highly recommend it!",
+        "sentiment": "positive",
+        "keywords": [
+            "restaurant",
+            "best",
+            "highly",
+            "recommend"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Yelp Reviews",
+        "date_time": " 2023-07-11 17:30:15",
+        "user_id": " foodie246",
+        "location": " Los Angeles",
+        "confidence_score": 0.9
+    },
+    {
+        "text": "The plot of this movie is confusing and hard to follow.",
+        "sentiment": "negative",
+        "keywords": [
+            "plot",
+            "movie",
+            "confusing",
+            "hard"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " IMDb",
+        "date_time": " 2023-07-11 20:15:42",
+        "user_id": " moviegoer789",
+        "location": " London",
+        "confidence_score": 0.62
+    },
+    {
+        "text": "I'm addicted to this game. It's so much fun!",
+        "sentiment": "positive",
+        "keywords": [
+            "addicted",
+            "much"
+        ],
+        "is_problem": false,
+        "is_suggestion": true,
+        "source": " Gaming Forum",
+        "date_time": " 2023-07-12 09:05:59",
+        "user_id": " gamer123",
+        "location": " New York",
+        "confidence_score": 0.88
+    },
+    {
+        "text": "The customer service at this hotel was terrible. Avoid at all costs.",
+        "sentiment": "negative",
+        "keywords": [
+            "customer",
+            "service",
+            "hotel",
+            "avoid"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Travel Website",
+        "date_time": " 2023-07-12 11:45:27",
+        "user_id": " traveler246",
+        "location": " Paris",
+        "confidence_score": 0.57
+    },
+    {
+        "text": "This book bored me to tears. I couldn't finish it.",
+        "sentiment": "negative",
+        "keywords": [
+            "book",
+            "bored",
+            "finish"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Goodreads",
+        "date_time": " 2023-07-12 14:30:18",
+        "user_id": " bookworm246",
+        "location": " San Francisco",
+        "confidence_score": 0.68
+    },
+    {
+        "text": "I'm impressed with the sound quality of these headphones. Excellent!",
+        "sentiment": "positive",
+        "keywords": [
+            "impressed",
+            "sound",
+            "quality"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Online Store",
+        "date_time": " 2023-07-12 17:10:36",
+        "user_id": " audiophile789",
+        "location": " Berlin",
+        "confidence_score": 0.92
+    },
+    {
+        "text": "The website design is sleek and user-friendly. Easy to navigate.",
+        "sentiment": "positive",
+        "keywords": [
+            "website",
+            "design",
+            "sleek",
+            "easy"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Website Testimonial",
+        "date_time": " 2023-07-13 08:50:59",
+        "user_id": " testimonialuser2",
+        "location": " Sydney",
+        "confidence_score": 0.87
+    },
+    {
+        "text": "I had a terrible experience with their delivery service. Late and unprofessional.",
+        "sentiment": "negative",
+        "keywords": [
+            "terrible",
+            "experience",
+            "delivery",
+            "late"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Online Store",
+        "date_time": " 2023-07-13 11:25:27",
+        "user_id": " shopper4567",
+        "location": " Chicago",
+        "confidence_score": 0.64
+    },
+    {
+        "text": "The concert was mind-blowing! The band knows how to put on a show.",
+        "sentiment": "neutral",
+        "keywords": [
+            "concert",
+            "band",
+            "knows",
+            "put"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Event Review",
+        "date_time": " 2023-07-13 14:05:42",
+        "user_id": " musiclover1234",
+        "location": " Paris",
+        "confidence_score": 0.95
+    },
+    {
+        "text": "I'm extremely disappointed with the customer support. No resolution.",
+        "sentiment": "negative",
+        "keywords": [
+            "extremely",
+            "disappointed",
+            "customer"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Online Chat",
+        "date_time": " 2023-07-13 16:35:19",
+        "user_id": " user98765",
+        "location": " Toronto",
+        "confidence_score": 0.61
+    },
+    {
+        "text": "The hotel staff were rude and unprofessional. Terrible customer service.",
+        "sentiment": "negative",
+        "keywords": [
+            "hotel",
+            "staff",
+            "rude",
+            "terrible",
+            "customer"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Hotel Review",
+        "date_time": " 2023-07-17 08:50:13",
+        "user_id": " traveler789",
+        "location": " Paris",
+        "confidence_score": 0.55
+    },
+    {
+        "text": "The food at this restaurant was mediocre. Nothing special.",
+        "sentiment": "negative",
+        "keywords": [
+            "food",
+            "restaurant",
+            "nothing"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Zomato",
+        "date_time": " 2023-07-17 11:32:59",
+        "user_id": " foodlover2468",
+        "location": " Mumbai",
+        "confidence_score": 0.65
+    },
+    {
+        "text": "This song always puts me in a nostalgic mood. It reminds me of good times.",
+        "sentiment": "positive",
+        "keywords": [
+            "song",
+            "always",
+            "puts",
+            "nostalgic",
+            "reminds",
+            "good"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Spotify",
+        "date_time": " 2023-07-17 14:20:05",
+        "user_id": " nostalgiacat123",
+        "location": " Berlin",
+        "confidence_score": 0.88
+    },
+    {
+        "text": "The website loading speed is frustratingly slow. Needs improvement.",
+        "sentiment": "neutral",
+        "keywords": [
+            "website",
+            "loading",
+            "speed",
+            "frustratingly",
+            "needs"
+        ],
+        "is_problem": false,
+        "is_suggestion": true,
+        "source": " Website Review",
+        "date_time": " 2023-07-17 17:15:22",
+        "user_id": " user12345",
+        "location": " Toronto",
+        "confidence_score": 0.62
+    },
+    {
+        "text": "The food at this cafe exceeded my expectations. Absolutely delicious!",
+        "sentiment": "positive",
+        "keywords": [
+            "food",
+            "cafe",
+            "exceeded",
+            "absolutely"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Food Blog",
+        "date_time": " 2023-07-13 19:18:53",
+        "user_id": " foodlover246",
+        "location": " Mumbai",
+        "confidence_score": 0.92
+    },
+    {
+        "text": "I'm disappointed with the ending of this TV show. It left too many unanswered questions.",
+        "sentiment": "negative",
+        "keywords": [
+            "disappointed",
+            "ending",
+            "tv",
+            "left",
+            "many",
+            "unanswered"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " TV Show Review",
+        "date_time": " 2023-07-14 08:32:41",
+        "user_id": " tvfan123",
+        "location": " Los Angeles",
+        "confidence_score": 0.66
+    },
+    {
+        "text": "This album is a masterpiece. Every song is a work of art!",
+        "sentiment": "positive",
+        "keywords": [
+            "album",
+            "every",
+            "song",
+            "work"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Music Review",
+        "date_time": " 2023-07-14 11:05:27",
+        "user_id": " musicenthusiast1",
+        "location": " London",
+        "confidence_score": 0.93
+    },
+    {
+        "text": "The website layout is cluttered and confusing. Difficult to find information.",
+        "sentiment": "negative",
+        "keywords": [
+            "website",
+            "layout",
+            "cluttered",
+            "difficult",
+            "find"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Website Review",
+        "date_time": " 2023-07-14 14:40:05",
+        "user_id": " user2468",
+        "location": " Sydney",
+        "confidence_score": 0.67
+    },
+    {
+        "text": "The roller coaster at this theme park is a thrilling experience. A must-try!",
+        "sentiment": "positive",
+        "keywords": [
+            "roller",
+            "coaster",
+            "theme",
+            "park",
+            "thrilling"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Theme Park Review",
+        "date_time": " 2023-07-14 17:25:09",
+        "user_id": " thrillseeker3",
+        "location": " Orlando",
+        "confidence_score": 0.91
+    },
+    {
+        "text": "The product I ordered never arrived. Poor customer service.",
+        "sentiment": "positive",
+        "keywords": [
+            "product",
+            "ordered",
+            "never",
+            "poor",
+            "customer"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Online Store",
+        "date_time": " 2023-07-15 08:50:13",
+        "user_id": " buyer1234",
+        "location": " Chicago",
+        "confidence_score": 0.63
+    },
+    {
+        "text": "I'm in awe of this artist's talent. Their paintings are breathtaking!",
+        "sentiment": "positive",
+        "keywords": [
+            "awe",
+            "paintings"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Art Review",
+        "date_time": " 2023-07-15 12:30:08",
+        "user_id": " artlover123",
+        "location": " Paris",
+        "confidence_score": 0.94
+    },
+    {
+        "text": "The food at this restaurant was disappointing. Not worth the price.",
+        "sentiment": "negative",
+        "keywords": [
+            "food",
+            "restaurant",
+            "worth"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Zomato",
+        "date_time": " 2023-07-15 15:45:32",
+        "user_id": " foodcritic246",
+        "location": " Mumbai",
+        "confidence_score": 0.68
+    },
+    {
+        "text": "This playlist is perfect for relaxation. Soothing and calming!",
+        "sentiment": "positive",
+        "keywords": [
+            "playlist",
+            "perfect",
+            "soothing"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Spotify",
+        "date_time": " 2023-07-15 18:20:17",
+        "user_id": " relaxmusiclover",
+        "location": " Berlin",
+        "confidence_score": 0.91
+    },
+    {
+        "text": "The website navigation is smooth and intuitive. I found what I needed quickly.",
+        "sentiment": "neutral",
+        "keywords": [
+            "website",
+            "navigation",
+            "smooth",
+            "found",
+            "needed"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Website Testimonial",
+        "date_time": " 2023-07-15 21:05:44",
+        "user_id": " happyuser123",
+        "location": " Toronto",
+        "confidence_score": 0.88
+    },
+    {
+        "text": "The ride on this cruise ship was an unforgettable experience. I loved every moment!",
+        "sentiment": "positive",
+        "keywords": [
+            "ride",
+            "cruise",
+            "ship",
+            "unforgettable",
+            "loved",
+            "every"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Travel Blog",
+        "date_time": " 2023-07-16 09:12:54",
+        "user_id": " travelenthusiast2",
+        "location": " Sydney",
+        "confidence_score": 0.95
+    },
+    {
+        "text": "The product I received was of poor quality. It broke after a few uses.",
+        "sentiment": "negative",
+        "keywords": [
+            "product",
+            "received",
+            "poor",
+            "broke"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Online Store",
+        "date_time": " 2023-07-16 11:45:32",
+        "user_id": " shopper567",
+        "location": " Los Angeles",
+        "confidence_score": 0.61
+    },
+    {
+        "text": "This book kept me hooked from start to finish. A captivating read!",
+        "sentiment": "neutral",
+        "keywords": [
+            "book",
+            "kept",
+            "hooked",
+            "start",
+            "captivating"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Goodreads",
+        "date_time": " 2023-07-16 14:23:18",
+        "user_id": " bookworm7890",
+        "location": " London",
+        "confidence_score": 0.9
+    },
+    {
+        "text": "The customer service at this store is outstanding. They truly care about their customers.",
+        "sentiment": "positive",
+        "keywords": [
+            "customer",
+            "service",
+            "store",
+            "truly",
+            "care"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Retail Store",
+        "date_time": " 2023-07-16 17:05:46",
+        "user_id": " happyshopper1",
+        "location": " New York",
+        "confidence_score": 0.92
+    },
+    {
+        "text": "I had a frustrating experience with their technical support. No resolution provided.",
+        "sentiment": "negative",
+        "keywords": [
+            "frustrating",
+            "experience",
+            "technical",
+            "resolution"
+        ],
+        "is_problem": false,
+        "is_suggestion": false,
+        "source": " Online Helpdesk",
+        "date_time": " 2023-07-16 19:40:27",
+        "user_id": " user98765",
+        "location": " San Francisco",
+        "confidence_score": 0.67
+    }
+]
