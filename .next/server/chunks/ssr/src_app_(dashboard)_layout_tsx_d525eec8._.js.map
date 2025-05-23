@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///Users/sanmid/Documents/GitHub/Clarities/src/app/%28dashboard%29/layout.tsx"],"sourcesContent":["import React from 'react';\n\n// This layout is now minimal as the main structure (Sidebar, GlobalHeader)\n// is handled by the root layout (src/app/layout.tsx).\nexport default function DashboardPagesLayout({ // Renamed for clarity\n  children,\n}: {\n  children: React.ReactNode;\n}) {\n  return <>{children}</>; // Simply pass children through\n} "],"names":[],"mappings":";;;;;AAIe,SAAS,qBAAqB,EAC3C,QAAQ,EAGT;IACC,qBAAO;kBAAG;uBAAc,+BAA+B;AACzD","debugId":null}}]
-}
