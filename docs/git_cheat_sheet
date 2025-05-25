@@ -1,0 +1,63 @@
+Git Cheat Sheet for Beginners
+
+Basic Setup
+------------
+Set up your name & email:
+  git config --global user.name "Your Name"
+  git config --global user.email "you@example.com"
+
+Starting a Repository
+----------------------
+Initialize a new repo:
+  git init
+
+Clone an existing repo:
+  git clone <url>
+
+Making Changes
+---------------
+Check status:
+  git status
+
+Add changes to staging area:
+  git add <file>       # add a specific file
+  git add .            # add everything
+
+Commit changes:
+  git commit -m "Your commit message"
+
+Working with Remote Repos
+--------------------------
+View remote:
+  git remote -v
+
+Push changes:
+  git push origin <branch>
+
+Pull changes:
+  git pull
+
+Branches
+--------
+List branches:
+  git branch
+
+Create new branch:
+  git branch <new-branch>
+
+Switch to branch:
+  git checkout <branch>
+
+Create + switch to new branch:
+  git checkout -b <new-branch>
+
+Other Helpful Commands
+-----------------------
+View commit history:
+  git log
+
+Undo last commit (keep changes):
+  git reset --soft HEAD~1
+
+Discard changes in working directory:
+  git checkout -- <file>
