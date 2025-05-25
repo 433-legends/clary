@@ -20,7 +20,7 @@ const statusColors: Record<IntegrationStatus, string> = {
 
 export function IntegrationCard({ name, logoUrl, placeholderIcon, status }: IntegrationCardProps) {
   return (
-    <Card className="hover:shadow-md transition-shadow">
+    <Card className="hover:shadow-md transition-shadow cursor-pointer">
       <CardContent className="p-4 flex items-center justify-between">
         <div className="flex items-center gap-4">
           {logoUrl ? (

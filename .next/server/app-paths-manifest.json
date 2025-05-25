@@ -1,7 +1,5 @@
 {
-  "/(dashboard)/insights/page": "app/(dashboard)/insights/page.js",
   "/_not-found/page": "app/_not-found/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js",
   "/insights/page": "app/insights/page.js",
   "/integrations/page": "app/integrations/page.js",
   "/page": "app/page.js",
