@@ -1,0 +1,4 @@
+pandas
+vaderSentiment
+openai
+python-dotenv
