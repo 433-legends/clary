@@ -6,16 +6,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: "Inter", var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --color-sidebar-ring: var(--sidebar-ring);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar: var(--sidebar);
   --color-chart-5: var(--chart-5);
   --color-chart-4: var(--chart-4);
   --color-chart-3: var(--chart-3);
@@ -41,75 +33,56 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
 }
 
-:root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.141 0.005 285.823);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.141 0.005 285.823);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.141 0.005 285.823);
-  --primary: oklch(0.21 0.006 285.885);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.967 0.001 286.375);
-  --secondary-foreground: oklch(0.21 0.006 285.885);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.21 0.006 285.885);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.705 0.015 286.067);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-primary: oklch(0.21 0.006 285.885);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.21 0.006 285.885);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.705 0.015 286.067);
-}
+/* Light mode variables removed. Dark mode is now default. */
 
 .dark {
-  --background: oklch(0.141 0.005 285.823);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.21 0.006 285.885);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.21 0.006 285.885);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.92 0.004 286.32);
-  --primary-foreground: oklch(0.21 0.006 285.885);
-  --secondary: oklch(0.274 0.006 286.033);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.274 0.006 286.033);
-  --muted-foreground: oklch(0.705 0.015 286.067);
-  --accent: oklch(0.274 0.006 286.033);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.552 0.016 285.938);
+  --radius: 0.625rem; /* Moved radius here as :root is gone */
+  /* Your Custom Grey Palette - Dark Mode */
+  --background: oklch(0.2046 0 0); /* Was grey 900 */
+  --foreground: oklch(0.9702 0 0); /* Was grey 100 */
+  --card: oklch(0.2686 0 0);       /* Was grey 800 */
+  --card-foreground: oklch(0.9702 0 0); /* Was grey 100 */
+  --popover: oklch(0.2686 0 0);      /* Was grey 800 */
+  --popover-foreground: oklch(0.9702 0 0); /* Was grey 100 */
+  --primary: oklch(0.9219 0 0);     /* Was grey 200 */
+  --primary-foreground: oklch(0.2046 0 0); /* Was grey 900 */
+  --secondary: oklch(0.3715 0 0);   /* Was grey 700 */
+  --secondary-foreground: oklch(0.9702 0 0); /* Was grey 100 */
+  --muted: oklch(0.3715 0 0);       /* Was grey 700 */
+  --muted-foreground: oklch(0.7155 0 0); /* Was grey 400 */
+  --accent: oklch(0.4386 0 0);      /* Was grey 600 */
+  --accent-foreground: oklch(0.9702 0 0); /* Was grey 100 */
+  --destructive: oklch(0.704 0.191 22.216); /* Keeping existing destructive from Neutral theme */
+  --border: oklch(0.3715 0 0);     /* Was grey 700 */
+  --input: oklch(0.3715 0 0);      /* Was grey 700 (consistent with border) */
+  --ring: oklch(0.8699 0 0);       /* Was grey 300 */
+
+  /* Keep your existing chart colors or update them as needed */
   --chart-1: oklch(0.488 0.243 264.376);
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: oklch(0.769 0.188 70.08);
   --chart-4: oklch(0.627 0.265 303.9);
   --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.21 0.006 285.885);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.274 0.006 286.033);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.552 0.016 285.938);
+
+  /* Shadcn UI Sidebar Theming with Custom Grey Palette */
+  --sidebar: oklch(0.2686 0 0);           /* User's Grey 800, RENAMED from --sidebar-background */
+  --sidebar-foreground: oklch(0.7155 0 0);           /* User's Grey 400 (default text) */
+  --sidebar-primary: oklch(0.3715 0 0);              /* User's Grey 700 (for active item background) */
+  --sidebar-primary-foreground: oklch(0.9702 0 0);    /* User's Grey 100 (for text on active item) */
+  --sidebar-accent: oklch(0.2046 0 0);               /* User's Grey 600 (for hover/accent background) */
+  --sidebar-accent-foreground: oklch(0.8699 0 0);    /* User's Grey 500 (for text on hover/accent) */
+  --sidebar-border: transparent;                       /* User's Grey 700 - SET TO TRANSPARENT TO REMOVE */
+  --sidebar-ring: oklch(0.8699 0 0);                 /* User's Grey 300 */
 }
 
 @layer base {

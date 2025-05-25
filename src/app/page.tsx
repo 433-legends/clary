@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { History, TrendingUp, AlertTriangle, Lightbulb, MessageSquare, ListChecks, Users, BarChartBig, Droplets } from 'lucide-react';
+import { History, TrendingUp, AlertTriangle, Lightbulb, MessageSquare, ListChecks, Users, BarChartBig, Droplets, PanelLeftOpen, Search } from 'lucide-react';
 import { InfoCard, BarChartItem } from '@/components/dashboard/info-card';
 import {
   LineChart,
@@ -17,6 +17,18 @@ import {
   Pie,
   Cell
 } from 'recharts';
+import { SidebarTrigger } from "@/components/ui/sidebar";
+import { Separator } from "@/components/ui/separator";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
+import { Input } from "@/components/ui/input";
+import { PageContentLayout } from '@/components/layout/page-content-layout';
 
 interface FeedbackItem {
   text: string;
@@ -283,27 +295,23 @@ interface ListCardProps {
 
 const ListCard: React.FC<ListCardProps> = ({ title, items, icon: Icon, emptyText = "No data available." }) => {
   return (
-    <div className="rounded-xl border bg-card text-card-foreground shadow col-span-1">
-      <div className="p-6 flex flex-row items-center justify-between space-y-0 pb-2">
-        <h3 className="tracking-tight text-sm font-medium flex items-center">
-          {Icon && <Icon className="mr-2 h-4 w-4 text-muted-foreground" />}
-          {title}
-        </h3>
+    <div className="bg-card p-6 rounded-lg shadow">
+      <div className="flex items-center mb-4">
+        {Icon && <Icon className="h-6 w-6 mr-3 text-primary" />}
+        <h3 className="text-xl font-semibold text-card-foreground">{title}</h3>
       </div>
-      <div className="p-6 pt-0">
-        {items.length > 0 ? (
-          <ul className="space-y-2">
-            {items.map((item) => (
-              <li key={item.id} className="flex justify-between text-xs items-center">
-                <span className="truncate pr-2" title={item.text}>{item.text}</span>
-                {item.value && <span className="font-semibold flex-shrink-0">{item.value}</span>}
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p className="text-xs text-muted-foreground">{emptyText}</p>
-        )}
-      </div>
+      {items && items.length > 0 ? (
+        <ul className="space-y-2">
+          {items.map((item) => (
+            <li key={item.id} className="text-sm text-muted-foreground flex justify-between">
+              <span>{item.text}</span>
+              {item.value && <span className="font-medium">{item.value}</span>}
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p className="text-sm text-muted-foreground">{emptyText}</p>
+      )}
     </div>
   );
 };
@@ -325,8 +333,10 @@ export default function DashboardPage() {
   const [suggestionHotspots, setSuggestionHotspots] = useState<ThemeVolume[]>([]);
   const [overallSentiment, setOverallSentiment] = useState<SentimentScoreData | null>(null);
   const [volumeTrend, setVolumeTrend] = useState<BarChartItem[]>([]);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     async function fetchData() {
       setIsLoading(true);
       try {
@@ -361,18 +371,15 @@ export default function DashboardPage() {
   
   const topThemeNames = themeTrends.length > 0 ? Object.keys(themeTrends[0]).filter(key => key !== 'date') : [];
 
-  return (
-    <div className="flex-1 space-y-6 p-4 md:p-8 pt-6">
-      <div className="flex items-center justify-between space-y-2">
-        <h2 className="text-3xl font-bold tracking-tight">Insights Dashboard</h2>
-        <Button>
-          <History className="mr-2 h-4 w-4" /> Sync with Sources
-        </Button>
-      </div>
+  const pageActions = (
+    <Button>
+      <BarChartBig className="mr-2 h-4 w-4" /> Generate Report
+    </Button>
+  );
 
-      {/* Main Grid - Adjust md:grid-cols- as needed */}
+  return (
+    <PageContentLayout title="Dashboard" actions={pageActions}>
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {/* Row 1: Overview Cards */}
         <div className="rounded-xl border bg-card text-card-foreground shadow col-span-1 md:col-span-2 lg:col-span-1">
           <div className="p-6 flex flex-row items-center justify-between space-y-0 pb-2">
             <h3 className="tracking-tight text-sm font-medium">Overall Sentiment</h3>
@@ -402,33 +409,22 @@ export default function DashboardPage() {
              <p className="text-xs text-muted-foreground">Total items analyzed.</p>
         </InfoCard>
 
-        {/* Top Themes (List) */}
         <ListCard title="Top Themes" items={topThemes.map(t => ({id: t.theme, text: t.theme, value: t.volume }))} icon={TrendingUp} />
         
-        {/* Problem Hotspots */}
         <ListCard title="Problem Hotspots" items={problemHotspots.map(t => ({ id: t.theme, text: t.theme, value: t.volume }))} icon={AlertTriangle} />
 
-        {/* Suggestion Hotspots */}
         <ListCard title="Suggestion Hotspots" items={suggestionHotspots.map(t => ({ id: t.theme, text: t.theme, value: t.volume }))} icon={Lightbulb} />
         
-        {/* Top Feedback Sources - using InfoCard for its bar chart style */}
         <InfoCard title="Top Feedback Sources" chartData={topSources} className="col-span-1 md:col-span-1" />
 
-        {/* Top Negative Feedback Texts */}
         <ListCard title="Top Negative Feedback" items={topNegativeTexts.map((text, i) => ({ id: i, text: text }))} icon={MessageSquare} emptyText="No negative feedback found." />
 
-        {/* Top Suggestion Texts */}
         <ListCard title="Top Suggestions" items={topSuggestionTexts.map((text, i) => ({ id: i, text: text }))} icon={ListChecks} emptyText="No suggestions found." />
 
-        {/* Top Anomaly Texts */}
         <ListCard title="Top Anomalies" items={anomalyTexts.map((text, i) => ({ id: i, text: text }))} icon={Users} emptyText="No anomalies identified." />
         
-        {/* Sentiment Distribution (Pie Chart or existing Bar Chart) */}
-        {/* Using existing InfoCard for bar chart for now */}
         <InfoCard title="Sentiment Distribution" chartData={sentimentDistribution} className="col-span-1" />
 
-
-        {/* Row 2: Trend Charts - These might need more horizontal space */}
         {themeTrends.length > 0 && (
             <div className="rounded-xl border bg-card text-card-foreground shadow md:col-span-2 lg:col-span-2 xl:col-span-2 min-h-[300px]">
                 <div className="p-6 pb-2">
@@ -470,8 +466,7 @@ export default function DashboardPage() {
                 </div>
             </div>
         )}
-
       </div>
-    </div>
+    </PageContentLayout>
   );
 }
