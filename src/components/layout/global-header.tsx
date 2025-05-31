@@ -2,12 +2,16 @@
 
 import React from 'react';
 import { SidebarTrigger } from "@/components/ui/sidebar";
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Search } from 'lucide-react'; // Import Search icon
+import { Search, SparklesIcon as MagicIcon } from 'lucide-react'; // Renamed SparklesIcon to MagicIcon
+import { useChatbot } from "@/components/chatbot/chatbot-provider";
 
 export function GlobalHeader() {
+  const { toggle: toggleChatbot } = useChatbot();
+
   return (
-    <header className="sticky top-0 z-10 flex h-14 items-center justify-between gap-4 bg-background px-2 sm:h-16 sm:px-4">
+    <header className="sticky top-0 z-30 flex h-14 items-center justify-between gap-4 bg-background px-2 sm:h-16 sm:px-4">
       {/* Left: Sidebar Trigger */}
       <div>
         <SidebarTrigger /> {/* Removed md:hidden, size-7 is 1.75rem (28px) by default from Button */}
@@ -27,10 +31,11 @@ export function GlobalHeader() {
         </div>
       </div>
 
-      {/* Right: Spacer to balance the SidebarTrigger */}
-      {/* SidebarTrigger is Button size-7 (1.75rem / 28px). Match this width. */}
-      <div style={{ width: '1.75rem' }}> {/* Removed md:hidden */}
-        {/* Empty spacer */}
+      {/* Right: Chatbot Trigger */}
+      <div className="flex items-center">
+        <Button variant="ghost" size="icon" onClick={toggleChatbot} aria-label="Toggle AI Assistant">
+          <MagicIcon className="h-5 w-5" />
+        </Button>
       </div>
     </header>
   );

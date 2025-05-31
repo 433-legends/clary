@@ -5,6 +5,8 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { SidebarProvider, SidebarInset } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app-sidebar";
 import { GlobalHeader } from "@/components/layout/global-header";
+import { ChatbotProvider } from "@/components/chatbot/chatbot-provider";
+import { ChatbotPanel } from "@/components/chatbot/chatbot-panel";
 import React from 'react';
 
 const inter = Inter({ subsets: ["latin"] });
@@ -29,13 +31,16 @@ export default function RootLayout({
           forcedTheme="dark"
         >
           <SidebarProvider>
-            <div className="flex min-h-screen w-full bg-background">
-              <AppSidebar />
-              <SidebarInset>
-                <GlobalHeader />
-                {children}
-              </SidebarInset>
-            </div>
+            <ChatbotProvider>
+              <div className="flex min-h-screen w-full bg-background">
+                <AppSidebar />
+                <SidebarInset>
+                  <GlobalHeader />
+                  {children}
+                </SidebarInset>
+                <ChatbotPanel />
+              </div>
+            </ChatbotProvider>
           </SidebarProvider>
         </ThemeProvider>
       </body>
