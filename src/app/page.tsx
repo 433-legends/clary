@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import { Button } from '@/components/ui/button';
 import { History, TrendingUp, AlertTriangle, Lightbulb, MessageSquare, ListChecks, Users, BarChartBig, Droplets, PanelLeftOpen, Search } from 'lucide-react';
 import { InfoCard, BarChartItem } from '@/components/dashboard/info-card';
@@ -29,6 +29,12 @@ import {
 } from "@/components/ui/breadcrumb";
 import { Input } from "@/components/ui/input";
 import { PageContentLayout } from '@/components/layout/page-content-layout';
+import { ColumnDef } from "@tanstack/react-table";
+
+// New Dashboard Components
+import { SectionCards } from "@/components/dashboard/section-cards";
+import { ChartAreaInteractive, ChartItem } from "@/components/dashboard/chart-area-interactive";
+import { DataTable } from "@/components/dashboard/data-table";
 
 interface FeedbackItem {
   text: string;
@@ -62,7 +68,7 @@ function getTopThemes(feedback: FeedbackItem[], topN = 10): ThemeVolume[] {
   feedback.forEach(item => {
     if (item.ai_themes && Array.isArray(item.ai_themes)) {
       item.ai_themes.forEach(theme => {
-        if (theme && theme !== "Error extracting themes") {
+        if (theme && theme.toLowerCase() !== "error extracting themes") {
           freq[theme] = (freq[theme] || 0) + 1;
         }
       });
@@ -228,7 +234,7 @@ function getSuggestionHotspots(feedback: FeedbackItem[], topN = 5): ThemeVolume[
 }
 
 interface SentimentScoreData {
-  score: number; // e.g., -1 to 1 or 0-100
+  score: number;
   positivePercentage: number;
   negativePercentage: number;
   neutralPercentage: number;
@@ -236,35 +242,30 @@ interface SentimentScoreData {
 
 function getOverallSentimentScore(feedback: FeedbackItem[]): SentimentScoreData {
   if (feedback.length === 0) return { score: 0, positivePercentage: 0, negativePercentage: 0, neutralPercentage: 0 };
-  
   let positiveCount = 0;
   let negativeCount = 0;
   let neutralCount = 0;
-
   feedback.forEach(item => {
     if (item.sentiment === 'positive') positiveCount++;
     else if (item.sentiment === 'negative') negativeCount++;
     else neutralCount++;
   });
-
   const total = feedback.length;
-  // Score from -1 (all negative) to 1 (all positive)
-  const score = (positiveCount - negativeCount) / total; 
-  
-  return {
-    score: parseFloat(score.toFixed(2)), // Normalized score
-    positivePercentage: Math.round((positiveCount / total) * 100),
-    negativePercentage: Math.round((negativeCount / total) * 100),
-    neutralPercentage: Math.round((neutralCount / total) * 100),
-  };
+  const positivePercentage = total > 0 ? Math.round((positiveCount / total) * 100) : 0;
+  const negativePercentage = total > 0 ? Math.round((negativeCount / total) * 100) : 0;
+  const neutralPercentage = total > 0 ? Math.round((neutralCount / total) * 100) : 0;
+  // Simplified score: (positive % - negative %) / 100, scaled to -10 to +10 or similar
+  // Or a more nuanced score based on compound from VADER if available on FeedbackItem
+  const score = Math.round(((positivePercentage - negativePercentage) / 100) * 10); 
+  return { score, positivePercentage, negativePercentage, neutralPercentage };
 }
 
-function getFeedbackVolumeTrend(feedback: FeedbackItem[], granularity: 'month' | 'week' = 'month'): BarChartItem[] {
-  const freq: Record<string, number> = {}; // Using BarChartItem structure for compatibility if needed
+function getFeedbackVolumeTrend(feedback: FeedbackItem[], granularity: 'month' | 'week' = 'month'): ChartItem[] {
+  const freq: Record<string, number> = {};
   feedback.forEach(item => {
     const date = new Date(item.date_time.trim());
     let dateKey = "";
-     if (granularity === 'month') {
+    if (granularity === 'month') {
       dateKey = `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, '0')}`;
     } else { // week
       const weekStart = new Date(date);
@@ -273,10 +274,9 @@ function getFeedbackVolumeTrend(feedback: FeedbackItem[], granularity: 'month' |
     }
     freq[dateKey] = (freq[dateKey] || 0) + 1;
   });
-  
   return Object.entries(freq)
-    .sort((a, b) => a[0].localeCompare(b[0])) // Sort by date
-    .map(([label, value]) => ({ label, value })); // Raw counts
+    .sort((a, b) => a[0].localeCompare(b[0]))
+    .map(([label, value]) => ({ label, value }));
 }
 
 // Helper component for simple list cards
@@ -319,45 +319,52 @@ const ListCard: React.FC<ListCardProps> = ({ title, items, icon: Icon, emptyText
 const RECHARTS_COLORS = ['#8884d8', '#82ca9d', '#ffc658', '#ff7300', '#00C49F', '#FFBB28', '#FF8042'];
 
 export default function DashboardPage() {
-  const [feedbackData, setFeedbackData] = useState<FeedbackItem[]>([]);
-  const [topThemes, setTopThemes] = useState<ThemeVolume[]>([]);
-  const [sentimentDistribution, setSentimentDistribution] = useState<BarChartItem[]>([]);
-  const [problemSuggestionCounts, setProblemSuggestionCounts] = useState<{ problems: number; suggestions: number }>({ problems: 0, suggestions: 0 });
+  const [allFeedbackData, setAllFeedbackData] = useState<FeedbackItem[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [topSources, setTopSources] = useState<BarChartItem[]>([]);
-  const [topNegativeTexts, setTopNegativeTexts] = useState<string[]>([]);
-  const [topSuggestionTexts, setTopSuggestionTexts] = useState<string[]>([]);
-  const [themeTrends, setThemeTrends] = useState<MultiLineChartData[]>([]);
-  const [anomalyTexts, setAnomalyTexts] = useState<string[]>([]);
-  const [problemHotspots, setProblemHotspots] = useState<ThemeVolume[]>([]);
-  const [suggestionHotspots, setSuggestionHotspots] = useState<ThemeVolume[]>([]);
-  const [overallSentiment, setOverallSentiment] = useState<SentimentScoreData | null>(null);
-  const [volumeTrend, setVolumeTrend] = useState<BarChartItem[]>([]);
-  const [mounted, setMounted] = useState(false);
+
+  // Derived states for the new components
+  const [sectionCardsData, setSectionCardsData] = useState<any>({}); // Use a more specific type if available
+  const [feedbackVolumeChartData, setFeedbackVolumeChartData] = useState<ChartItem[]>([]);
+
+  // States for other data - can be used later or for more detailed views
+  const [topThemesData, setTopThemesData] = useState<ThemeVolume[]>([]);
+  const [sentimentDistributionData, setSentimentDistributionData] = useState<BarChartItem[]>([]);
+  const [topSourcesData, setTopSourcesData] = useState<BarChartItem[]>([]);
+  // Add more states here if you plan to display other processed data
 
   useEffect(() => {
-    setMounted(true);
     async function fetchData() {
       setIsLoading(true);
       try {
         const response = await fetch('/processed_feedback.json');
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         const data: FeedbackItem[] = await response.json();
-        setFeedbackData(data);
-        setTopThemes(getTopThemes(data));
-        setSentimentDistribution(getSentimentDistribution(data));
-        setProblemSuggestionCounts(getProblemSuggestionCounts(data));
-        setTopSources(getTopSources(data));
-        setTopNegativeTexts(getTopNegativeFeedbackTexts(data));
-        setTopSuggestionTexts(getTopSuggestionTexts(data));
-        setThemeTrends(getFeedbackOverTimeForTopThemes(data, 5, 'month'));
-        setAnomalyTexts(getTopAnomalyTexts(data));
-        setProblemHotspots(getProblemHotspots(data));
-        setSuggestionHotspots(getSuggestionHotspots(data));
-        setOverallSentiment(getOverallSentimentScore(data));
-        setVolumeTrend(getFeedbackVolumeTrend(data, 'month'));
+        setAllFeedbackData(data);
+
+        // Process data for new components and other potentially useful data
+        const overallSentiment = getOverallSentimentScore(data);
+        const counts = getProblemSuggestionCounts(data);
+        const volumeTrend = getFeedbackVolumeTrend(data, 'month');
+        
+        // Data for other components/future use
+        setTopThemesData(getTopThemes(data));
+        setSentimentDistributionData(getSentimentDistribution(data));
+        setTopSourcesData(getTopSources(data));
+        // You can call other processing functions here and set their states
+        // e.g., getTopNegativeFeedbackTexts, getFeedbackOverTimeForTopThemes etc.
+
+        setSectionCardsData({
+          overallSentiment: overallSentiment,
+          problems: counts.problems,
+          suggestions: counts.suggestions,
+          totalFeedback: data.length,
+        });
+        setFeedbackVolumeChartData(volumeTrend);
+        console.log("Processed Feedback Volume Trend Data:", volumeTrend);
+
       } catch (error) {
         console.error("Failed to fetch or process feedback data:", error);
+        // Handle error state in UI if needed
       } finally {
         setIsLoading(false);
       }
@@ -365,108 +372,76 @@ export default function DashboardPage() {
     fetchData();
   }, []);
 
-  if (isLoading) {
-    return <div className="flex justify-center items-center h-screen">Loading dashboard...</div>;
-  }
-  
-  const topThemeNames = themeTrends.length > 0 ? Object.keys(themeTrends[0]).filter(key => key !== 'date') : [];
+  // Define columns for the DataTable
+  const columns = useMemo<ColumnDef<FeedbackItem, any>[]>(() => [
+    {
+      accessorKey: "text",
+      header: "Feedback Text",
+      cell: ({ row }) => <div className="min-w-[300px] whitespace-pre-wrap">{row.getValue("text")}</div>,
+    },
+    {
+      accessorKey: "sentiment",
+      header: "Sentiment",
+       cell: ({ row }) => {
+        const sentiment = row.getValue("sentiment") as string;
+        let colorClass = "text-muted-foreground";
+        if (sentiment === "positive") colorClass = "text-green-500";
+        else if (sentiment === "negative") colorClass = "text-red-500";
+        return <span className={colorClass}>{sentiment}</span>;
+      },
+    },
+    {
+      accessorKey: "ai_themes",
+      header: "AI Themes",
+      cell: ({ row }) => {
+        const themes = row.getValue("ai_themes") as string[];
+        return (
+          <div className="flex flex-wrap gap-1">
+            {themes && themes.map((theme, index) => (
+              <span key={index} className="px-2 py-0.5 text-xs bg-muted text-muted-foreground rounded-full">
+                {theme}
+              </span>
+            ))}
+          </div>
+        );
+      },
+    },
+    {
+      accessorKey: "source",
+      header: "Source",
+    },
+    {
+      accessorKey: "date_time",
+      header: "Date",
+      cell: ({ row }) => {
+        const date = new Date(row.getValue("date_time"));
+        return <span>{date.toLocaleDateString()}</span>;
+      },
+    },
+  ], []);
 
-  const pageActions = (
-    <Button>
-      <BarChartBig className="mr-2 h-4 w-4" /> Generate Report
-    </Button>
-  );
+  if (isLoading) {
+    // Simple loading state, can be replaced with Skeleton components from dashboard-01 if desired
+    return <div className="flex justify-center items-center h-screen">Loading dashboard data...</div>;
+  }
 
   return (
-    <PageContentLayout title="Dashboard" actions={pageActions}>
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        <div className="rounded-xl border bg-card text-card-foreground shadow col-span-1 md:col-span-2 lg:col-span-1">
-          <div className="p-6 flex flex-row items-center justify-between space-y-0 pb-2">
-            <h3 className="tracking-tight text-sm font-medium">Overall Sentiment</h3>
-            <Droplets className="h-4 w-4 text-muted-foreground" />
-          </div>
-          <div className="p-6 pt-0">
-            {overallSentiment && (
-              <>
-                <div className="text-2xl font-bold">{overallSentiment.score > 0 ? '+' : ''}{overallSentiment.score}</div>
-                <p className="text-xs text-muted-foreground">
-                  Positive: {overallSentiment.positivePercentage}% | Negative: {overallSentiment.negativePercentage}% | Neutral: {overallSentiment.neutralPercentage}%
-                </p>
-              </>
-            )}
-          </div>
-        </div>
-        <InfoCard title="Identified Problems" className="col-span-1">
-            <div className="text-2xl font-bold">{problemSuggestionCounts.problems}</div>
-            <p className="text-xs text-muted-foreground">Total issues highlighted.</p>
-        </InfoCard>
-        <InfoCard title="Feature Suggestions" className="col-span-1">
-            <div className="text-2xl font-bold">{problemSuggestionCounts.suggestions}</div>
-            <p className="text-xs text-muted-foreground">New ideas proposed.</p>
-        </InfoCard>
-        <InfoCard title="Total Feedback" className="col-span-1">
-             <div className="text-2xl font-bold">{feedbackData.length}</div>
-             <p className="text-xs text-muted-foreground">Total items analyzed.</p>
-        </InfoCard>
-
-        <ListCard title="Top Themes" items={topThemes.map(t => ({id: t.theme, text: t.theme, value: t.volume }))} icon={TrendingUp} />
-        
-        <ListCard title="Problem Hotspots" items={problemHotspots.map(t => ({ id: t.theme, text: t.theme, value: t.volume }))} icon={AlertTriangle} />
-
-        <ListCard title="Suggestion Hotspots" items={suggestionHotspots.map(t => ({ id: t.theme, text: t.theme, value: t.volume }))} icon={Lightbulb} />
-        
-        <InfoCard title="Top Feedback Sources" chartData={topSources} className="col-span-1 md:col-span-1" />
-
-        <ListCard title="Top Negative Feedback" items={topNegativeTexts.map((text, i) => ({ id: i, text: text }))} icon={MessageSquare} emptyText="No negative feedback found." />
-
-        <ListCard title="Top Suggestions" items={topSuggestionTexts.map((text, i) => ({ id: i, text: text }))} icon={ListChecks} emptyText="No suggestions found." />
-
-        <ListCard title="Top Anomalies" items={anomalyTexts.map((text, i) => ({ id: i, text: text }))} icon={Users} emptyText="No anomalies identified." />
-        
-        <InfoCard title="Sentiment Distribution" chartData={sentimentDistribution} className="col-span-1" />
-
-        {themeTrends.length > 0 && (
-            <div className="rounded-xl border bg-card text-card-foreground shadow md:col-span-2 lg:col-span-2 xl:col-span-2 min-h-[300px]">
-                <div className="p-6 pb-2">
-                    <h3 className="tracking-tight text-sm font-medium">Top Themes Over Time</h3>
-                </div>
-                <div className="p-6 pt-0 h-[250px]">
-                    <ResponsiveContainer width="100%" height="100%">
-                        <LineChart data={themeTrends}>
-                        <CartesianGrid strokeDasharray="3 3" />
-                        <XAxis dataKey="date" style={{ fontSize: '0.7rem' }} />
-                        <YAxis style={{ fontSize: '0.7rem' }} allowDecimals={false} />
-                        <Tooltip contentStyle={{ fontSize: '0.75rem' }} />
-                        <Legend wrapperStyle={{ fontSize: '0.75rem' }} />
-                        {topThemeNames.map((themeName, index) => (
-                            <Line key={themeName} type="monotone" dataKey={themeName} stroke={RECHARTS_COLORS[index % RECHARTS_COLORS.length]} strokeWidth={2} name={themeName} />
-                        ))}
-                        </LineChart>
-                    </ResponsiveContainer>
-                </div>
-            </div>
-        )}
-
-        {volumeTrend.length > 0 && (
-            <div className="rounded-xl border bg-card text-card-foreground shadow md:col-span-2 lg:col-span-2 xl:col-span-2 min-h-[300px]">
-                <div className="p-6 pb-2">
-                    <h3 className="tracking-tight text-sm font-medium">Feedback Volume Over Time</h3>
-                </div>
-                <div className="p-6 pt-0 h-[250px]">
-                    <ResponsiveContainer width="100%" height="100%">
-                        <LineChart data={volumeTrend}>
-                        <CartesianGrid strokeDasharray="3 3" />
-                        <XAxis dataKey="label" style={{ fontSize: '0.7rem' }} />
-                        <YAxis style={{ fontSize: '0.7rem' }} allowDecimals={false} />
-                        <Tooltip contentStyle={{ fontSize: '0.75rem' }} />
-                        <Legend wrapperStyle={{ fontSize: '0.75rem' }} />
-                        <Line type="monotone" dataKey="value" stroke={RECHARTS_COLORS[0]} strokeWidth={2} name="Volume" />
-                        </LineChart>
-                    </ResponsiveContainer>
-                </div>
-            </div>
-        )}
+    <div className="flex flex-1 flex-col gap-4 py-4 md:gap-6 md:py-6">
+      {/* Page Title and Actions - similar to how PageContentLayout might have handled it */}
+      <div className="flex items-center justify-between px-4 lg:px-6">
+        <h1 className="text-2xl font-semibold tracking-tight">Dashboard</h1>
+        <Button>
+          <BarChartBig className="mr-2 h-4 w-4" /> Generate Report
+        </Button>
       </div>
-    </PageContentLayout>
+
+      <SectionCards data={sectionCardsData} />
+      
+      <div className="px-4 lg:px-6">
+        <ChartAreaInteractive data={feedbackVolumeChartData} title="Feedback Volume Trend" />
+      </div>
+      
+      <DataTable columns={columns} data={allFeedbackData} title="All Feedback Entries"/>
+    </div>
   );
 }
