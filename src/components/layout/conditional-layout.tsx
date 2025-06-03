@@ -15,9 +15,10 @@ interface ConditionalLayoutProps {
 export function ConditionalLayout({ children }: ConditionalLayoutProps) {
   const pathname = usePathname();
   const isLoginPage = pathname === '/';
+  const isOnboardingPage = pathname === '/onboarding'; // Check for onboarding path
 
-  if (isLoginPage) {
-    return <>{children}</>; // Render only children for the login page
+  if (isLoginPage || isOnboardingPage) { // If login OR onboarding, render children directly
+    return <>{children}</>; 
   }
 
   return (

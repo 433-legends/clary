@@ -48,7 +48,7 @@ const data = {
   navMain: [
     {
       title: "Dashboard",
-      url: "/",
+      url: "/dashboard",
       icon: LayoutDashboard,
       isActive: true, // Example: make Dashboard active by default
       // No sub-items for a flat list

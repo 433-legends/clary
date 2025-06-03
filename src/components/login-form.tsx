@@ -20,7 +20,7 @@ export function LoginForm({
   const router = useRouter();
 
   const handleLogin = () => {
-    router.push('/dashboard');
+    router.push('/onboarding');
   };
 
   return (
