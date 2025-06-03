@@ -2,12 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "@/app/globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import { SidebarProvider, SidebarInset } from "@/components/ui/sidebar";
-import { AppSidebar } from "@/components/app-sidebar";
-import { GlobalHeader } from "@/components/layout/global-header";
-import { ChatbotProvider } from "@/components/chatbot/chatbot-provider";
-import { ChatbotPanel } from "@/components/chatbot/chatbot-panel";
 import React from 'react';
+import { ConditionalLayout } from "@/components/layout/conditional-layout";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,20 +24,8 @@ export default function RootLayout({
           attribute="class"
           defaultTheme="dark"
           disableTransitionOnChange
-          forcedTheme="dark"
         >
-          <SidebarProvider>
-            <ChatbotProvider>
-              <div className="flex min-h-screen w-full bg-background">
-                <AppSidebar />
-                <SidebarInset>
-                  <GlobalHeader />
-                  {children}
-                </SidebarInset>
-                <ChatbotPanel />
-              </div>
-            </ChatbotProvider>
-          </SidebarProvider>
+          <ConditionalLayout>{children}</ConditionalLayout>
         </ThemeProvider>
       </body>
     </html>

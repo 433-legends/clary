@@ -1,0 +1,1203 @@
+feedback_id,customer_name,feedback_text,source_channel,date_time,user_id,location,user_plan
+1,Trinity Systems,"When exporting data, CSV missing critical columns.",Reddit,2023-10-19 08:54:58,user0001,"Toronto, Canada",Free
+2,Vehement Capital Partners,App rarely experiences downtime; excellent reliability.,Reddit,2024-03-29 15:21:42,user0002,"New York, USA",Free
+3,Dunder Mifflin,Customer support response times exceed 48 hours.,Intercom Chat,2024-04-04 00:57:58,user0003,"Paris, France",Free
+4,Umbra Security,App rarely experiences downtime; excellent reliability.,Email,2023-09-21 16:21:18,user0004,"Dublin, Ireland",Free
+5,Acme Corp,Invoices generated have incorrect tax calculations.,LinkedIn,2024-01-03 12:23:17,user0005,"Berlin, Germany",Free
+6,Zenith Analytics,Need an option to archive completed projects automatically.,Reddit,2023-07-18 13:49:57,user0006,"London, UK",Free
+7,Oceanic Airlines,The color scheme could use more customization options.,Facebook,2023-06-23 16:43:37,user0007,"Paris, France",Free
+8,Pangea Software,The search function returns incomplete results.,Intercom Chat,2023-10-29 22:53:17,user0008,"Dublin, Ireland",Enterprise
+9,Blue Yonder,The settings page is cluttered and difficult to navigate.,LinkedIn,2023-07-06 01:40:06,user0009,"Vancouver, Canada",Free
+10,Pied Piper,The search function returns incomplete results.,Facebook,2023-09-28 03:40:38,user0010,"Chicago, USA",Free
+11,Trinity Systems,Would be nice to see usage metrics per team member.,Twitter,2023-12-07 12:56:06,user0011,"Toronto, Canada",Pro
+12,Xandar Enterprises,Integration with Salesforce fails intermittently without errors.,Intercom Chat,2024-04-21 06:13:51,user0012,"Paris, France",Pro
+13,Gringotts Bank,The new collaboration features have boosted our team's productivity.,Email,2023-10-17 23:18:06,user0013,"Seoul, South Korea",Pro
+14,Weyland-Yutani,Does the platform support LDAP integration?,Facebook,2023-06-29 08:20:21,user0014,"Los Angeles, USA",Free
+15,Blue Sun Corporation,Love how intuitive the new UI redesign feels.,Support Ticket,2023-07-04 07:40:53,user0015,"Dublin, Ireland",Enterprise
+16,Blue Sun Corporation,Two-factor authentication SMS never arrives intermittently.,LinkedIn,2024-02-11 14:24:16,user0016,"Vancouver, Canada",Pro
+17,Tyrell Corporation,"API rate limit is too low, blocking automated tasks.",Twitter,2024-03-14 19:37:24,user0017,"Berlin, Germany",Pro
+18,Spacely Sprockets,Love how intuitive the new UI redesign feels.,Support Ticket,2023-09-21 05:02:11,user0018,"Paris, France",Pro
+19,Zenith Analytics,Cannot customize the reporting fields as per our needs.,Facebook,2023-07-27 05:33:53,user0019,"Vancouver, Canada",Free
+20,Weyland-Yutani,"Support team resolved my issue within 2 hours, very satisfied.",Intercom Chat,2023-07-03 14:00:32,user0020,"Chicago, USA",Pro
+21,Aperture Science,The onboarding tutorial is clear and helpful for new users.,Support Ticket,2024-03-10 00:25:04,user0021,"Vancouver, Canada",Pro
+22,Weyland-Yutani,App rarely experiences downtime; excellent reliability.,Facebook,2023-10-15 23:20:12,user0022,"Sydney, Australia",Free
+23,Spacely Sprockets,Invoices generated have incorrect tax calculations.,Email,2023-06-02 09:35:22,user0023,"Paris, France",Pro
+24,Neo Tokyo Labs,User permissions are too rigid; cannot create custom roles.,Facebook,2024-04-16 10:51:57,user0024,"Los Angeles, USA",Pro
+25,Rubicon Analytics,The settings page is cluttered and difficult to navigate.,Twitter,2023-12-09 05:52:54,user0025,"Paris, France",Enterprise
+26,Soylent Technologies,The dashboard loads incredibly slowly when filtering large datasets.,Intercom Chat,2023-11-13 17:47:22,user0026,"New York, USA",Free
+27,Blue Yonder,It would be helpful to preview attachments before downloading.,Twitter,2023-06-30 08:46:11,user0027,"Dublin, Ireland",Enterprise
+28,Hooli,Custom dashboards are a game-changer for our analytics team.,Facebook,2023-07-06 19:23:42,user0028,"Tokyo, Japan",Free
+29,Valhalla Ventures,Really appreciate the extensive API documentation provided.,Intercom Chat,2023-08-24 09:39:01,user0029,"Paris, France",Enterprise
+30,Spacely Sprockets,Two-factor authentication SMS never arrives intermittently.,Intercom Chat,2024-05-19 07:19:25,user0030,"Seoul, South Korea",Free
+31,Valhalla Ventures,Would be nice to see usage metrics per team member.,Email,2024-02-20 16:26:17,user0031,"London, UK",Free
+32,Soylent Corp,Need an option to archive completed projects automatically.,Reddit,2024-03-28 20:10:03,user0032,"Toronto, Canada",Pro
+33,Acme Corp,Integration with Salesforce fails intermittently without errors.,LinkedIn,2024-04-19 02:08:36,user0033,"Toronto, Canada",Free
+34,Initech,Need an option to archive completed projects automatically.,Reddit,2024-02-19 08:39:55,user0034,"Berlin, Germany",Pro
+35,Dunder Mifflin,App rarely experiences downtime; excellent reliability.,Twitter,2024-03-19 20:58:45,user0035,"Mumbai, India",Free
+36,Lumon Industries,The recent update drastically improved performance on mobile.,Twitter,2023-07-19 03:31:44,user0036,"Vancouver, Canada",Pro
+37,Spacely Sprockets,The recent update drastically improved performance on mobile.,Email,2023-06-28 23:47:29,user0037,"Vancouver, Canada",Free
+38,Kwik-E-Mart,Need an option to archive completed projects automatically.,Facebook,2023-07-26 09:03:11,user0038,"Toronto, Canada",Free
+39,Octan Corporation,"API rate limit is too low, blocking automated tasks.",Email,2023-09-02 10:08:29,user0039,"Mumbai, India",Free
+40,Soylent Corp,Reports generate in under 5 seconds; impressive speed!,Facebook,2024-03-08 03:33:53,user0040,"New York, USA",Pro
+41,Monarch Solutions,The dashboard loads incredibly slowly when filtering large datasets.,Reddit,2023-09-30 06:03:18,user0041,"Chicago, USA",Pro
+42,Dunder Mifflin,Love how intuitive the new UI redesign feels.,Reddit,2023-08-24 13:47:52,user0042,"New York, USA",Enterprise
+43,Tyrell Corporation,The new collaboration features have boosted our team's productivity.,Support Ticket,2024-01-03 20:14:05,user0043,"Vancouver, Canada",Pro
+44,Wayne Enterprises,The settings page is cluttered and difficult to navigate.,Support Ticket,2023-09-20 02:07:45,user0044,"Dublin, Ireland",Pro
+45,Umbrella Inc,Does the platform support LDAP integration?,Reddit,2023-06-26 21:16:09,user0045,"Mumbai, India",Pro
+46,Soylent Technologies,Invoices generated have incorrect tax calculations.,Reddit,2024-02-16 02:55:00,user0046,"Los Angeles, USA",Free
+47,Rubicon Analytics,Integration with Salesforce fails intermittently without errors.,LinkedIn,2023-09-29 14:42:03,user0047,"London, UK",Enterprise
+48,Nimbus Consulting,Would love an option to schedule weekly backups instead of daily.,Intercom Chat,2024-03-31 01:26:49,user0048,"Dublin, Ireland",Free
+49,Valhalla Ventures,The onboarding tutorial is clear and helpful for new users.,Support Ticket,2023-10-12 07:26:12,user0049,"Vancouver, Canada",Pro
+50,Cyberdyne Systems,The color scheme could use more customization options.,Email,2023-08-07 23:30:07,user0050,"Berlin, Germany",Pro
+51,Zenith Analytics,Integration with Salesforce fails intermittently without errors.,Reddit,2024-01-21 22:36:56,user0051,"Dublin, Ireland",Enterprise
+52,Soylent Corp,App rarely experiences downtime; excellent reliability.,Twitter,2024-02-15 09:39:20,user0052,"San Francisco, USA",Enterprise
+53,Soylent Corp,Would love an option to schedule weekly backups instead of daily.,Support Ticket,2023-10-24 05:44:36,user0053,"Mumbai, India",Enterprise
+54,Zion Technologies,It would be helpful to preview attachments before downloading.,Intercom Chat,2024-04-30 19:15:29,user0054,"New York, USA",Pro
+55,Netherworld Innovations,It would be helpful to preview attachments before downloading.,LinkedIn,2023-07-24 04:53:21,user0055,"Berlin, Germany",Free
+56,Vehement Capital Partners,Dark mode has very poor contrast and causes eye strain.,Support Ticket,2023-10-23 22:01:16,user0056,"Toronto, Canada",Pro
+57,Dunder Mifflin,The color scheme could use more customization options.,Intercom Chat,2024-02-06 09:08:34,user0057,"Los Angeles, USA",Free
+58,Trinity Systems,"Support team resolved my issue within 2 hours, very satisfied.",Facebook,2023-10-20 01:36:18,user0058,"New York, USA",Free
+59,Stark Industries,The color scheme could use more customization options.,Twitter,2024-01-13 20:05:09,user0059,"Seoul, South Korea",Pro
+60,Acme Corp,"When exporting data, CSV missing critical columns.",Reddit,2024-05-19 05:25:36,user0060,"Paris, France",Free
+61,Blue Yonder,Dark mode has very poor contrast and causes eye strain.,Email,2023-08-05 01:31:22,user0061,"Berlin, Germany",Free
+62,Initech,Can the system send reminders for pending approvals?,Twitter,2024-05-15 09:05:06,user0062,"Vancouver, Canada",Free
+63,Netherworld Innovations,The recent update drastically improved performance on mobile.,Intercom Chat,2023-08-19 08:37:09,user0063,"Los Angeles, USA",Free
+64,Wonka Industries,The recent update drastically improved performance on mobile.,Reddit,2023-08-31 12:05:40,user0064,"Tokyo, Japan",Enterprise
+65,Valhalla Ventures,Would love an option to schedule weekly backups instead of daily.,Support Ticket,2023-08-21 03:56:08,user0065,"Chicago, USA",Enterprise
+66,Lumon Industries,Customer support response times exceed 48 hours.,Twitter,2024-01-22 12:43:50,user0066,"Berlin, Germany",Enterprise
+67,Vandelay Industries,Customer support response times exceed 48 hours.,Reddit,2024-05-03 07:01:53,user0067,"Chicago, USA",Free
+68,Soylent Corp,Is there a way to bulk-delete old records?,Support Ticket,2024-04-24 18:32:48,user0068,"Chicago, USA",Pro
+69,Monarch Solutions,Need an option to archive completed projects automatically.,Reddit,2023-07-30 09:30:37,user0069,"San Francisco, USA",Pro
+70,Tyrell Corporation,"Email notifications are delayed by hours, not minutes.",Reddit,2024-04-01 15:49:19,user0070,"Sydney, Australia",Pro
+71,Blue Sun Corporation,"Support team resolved my issue within 2 hours, very satisfied.",Intercom Chat,2024-02-17 04:12:37,user0071,"Chicago, USA",Enterprise
+72,Gekko & Co,The color scheme could use more customization options.,Reddit,2024-05-28 15:52:34,user0072,"New York, USA",Pro
+73,Monarch Solutions,The settings page is cluttered and difficult to navigate.,Support Ticket,2024-01-07 02:32:51,user0073,"Vancouver, Canada",Enterprise
+74,Sudo Inc,Does the platform support LDAP integration?,LinkedIn,2023-08-03 10:56:03,user0074,"Paris, France",Free
+75,Sterling Cooper,Does the platform support LDAP integration?,Email,2024-05-22 10:45:52,user0075,"Paris, France",Free
+76,Sterling Cooper,Looking for an easier way to merge duplicate records.,LinkedIn,2023-08-29 22:24:36,user0076,"Dublin, Ireland",Free
+77,Netherworld Innovations,The dashboard loads incredibly slowly when filtering large datasets.,Support Ticket,2023-10-25 07:39:09,user0077,"Chicago, USA",Pro
+78,Rubicon Analytics,Does the platform support LDAP integration?,Email,2024-01-13 16:05:54,user0078,"Vancouver, Canada",Free
+79,Lumon Industries,Invoices generated have incorrect tax calculations.,LinkedIn,2023-07-14 10:19:56,user0079,"Paris, France",Pro
+80,Sudo Inc,Need an option to archive completed projects automatically.,Reddit,2023-09-29 11:18:07,user0080,"Toronto, Canada",Enterprise
+81,Wayne Enterprises,Mobile app crashes every time I try to upload a file.,Reddit,2023-10-04 17:17:57,user0081,"Dublin, Ireland",Enterprise
+82,Soylent Corp,The new collaboration features have boosted our team's productivity.,Email,2024-04-18 20:57:34,user0082,"Toronto, Canada",Pro
+83,Pangea Software,Custom dashboards are a game-changer for our analytics team.,Email,2023-10-03 05:22:22,user0083,"Vancouver, Canada",Pro
+84,Zenith Analytics,User permissions are too rigid; cannot create custom roles.,Facebook,2024-01-04 07:58:03,user0084,"San Francisco, USA",Enterprise
+85,Xandar Enterprises,The onboarding tutorial is clear and helpful for new users.,Email,2023-06-26 20:17:40,user0085,"Toronto, Canada",Enterprise
+86,Massive Dynamic,The new collaboration features have boosted our team's productivity.,Twitter,2024-01-24 19:20:16,user0086,"Paris, France",Pro
+87,Zenith Analytics,Reports generate in under 5 seconds; impressive speed!,Intercom Chat,2024-02-14 15:32:13,user0087,"Los Angeles, USA",Enterprise
+88,Octan Corporation,Invoices generated have incorrect tax calculations.,LinkedIn,2024-01-30 16:23:11,user0088,"Berlin, Germany",Pro
+89,Trinity Systems,Is there a way to bulk-delete old records?,Facebook,2024-02-22 17:38:37,user0089,"Vancouver, Canada",Free
+90,Octan Corporation,Integration with Salesforce fails intermittently without errors.,LinkedIn,2023-10-25 08:32:15,user0090,"Berlin, Germany",Free
+91,Monarch Solutions,The search function returns incomplete results.,Twitter,2023-08-17 08:25:11,user0091,"Chicago, USA",Pro
+92,Zion Technologies,Two-factor authentication SMS never arrives intermittently.,Reddit,2023-12-30 14:50:24,user0092,"Sydney, Australia",Pro
+93,Sterling Cooper,Cannot customize the reporting fields as per our needs.,Twitter,2024-01-02 14:10:49,user0093,"Tokyo, Japan",Pro
+94,Xandar Enterprises,Mobile app crashes every time I try to upload a file.,Facebook,2024-03-21 13:50:57,user0094,"Mumbai, India",Free
+95,Oceanic Airlines,It would be helpful to preview attachments before downloading.,Facebook,2023-12-17 15:15:21,user0095,"Paris, France",Pro
+96,Monarch Solutions,Customer support response times exceed 48 hours.,Email,2023-09-21 09:56:14,user0096,"Chicago, USA",Pro
+97,Pangea Software,Need an option to archive completed projects automatically.,LinkedIn,2024-05-13 14:43:14,user0097,"Seoul, South Korea",Free
+98,Aperture Science,"API rate limit is too low, blocking automated tasks.",Intercom Chat,2024-02-29 00:58:54,user0098,"Chicago, USA",Pro
+99,Valhalla Ventures,Mobile app crashes every time I try to upload a file.,Reddit,2024-04-25 15:36:19,user0099,"San Francisco, USA",Enterprise
+100,Wonka Industries,Cannot customize the reporting fields as per our needs.,Support Ticket,2023-12-12 11:55:06,user0100,"Toronto, Canada",Pro
+101,Prestige Worldwide,Looking for an easier way to merge duplicate records.,Support Ticket,2024-01-02 09:11:05,user0101,"Los Angeles, USA",Free
+102,Globex Corporation,App rarely experiences downtime; excellent reliability.,Reddit,2023-11-27 08:09:49,user0102,"Vancouver, Canada",Free
+103,Umbra Security,"Email notifications are delayed by hours, not minutes.",Facebook,2023-06-16 09:00:11,user0103,"Toronto, Canada",Enterprise
+104,Sudo Inc,Dark mode has very poor contrast and causes eye strain.,Twitter,2023-08-04 17:14:30,user0104,"Vancouver, Canada",Free
+105,Dunder Mifflin,The new collaboration features have boosted our team's productivity.,LinkedIn,2023-10-10 13:25:51,user0105,"San Francisco, USA",Pro
+106,Luminary Solutions,"When exporting data, CSV missing critical columns.",Facebook,2023-08-23 11:19:28,user0106,"London, UK",Pro
+107,Bluth Company,Looking for an easier way to merge duplicate records.,Email,2023-09-10 02:46:01,user0107,"Dublin, Ireland",Pro
+108,Trinity Systems,Would love an option to schedule weekly backups instead of daily.,Reddit,2024-05-22 10:58:49,user0108,"Los Angeles, USA",Pro
+109,Massive Dynamic,"Email notifications are delayed by hours, not minutes.",Support Ticket,2024-02-28 15:35:48,user0109,"Vancouver, Canada",Free
+110,Neo Tokyo Labs,Need an option to archive completed projects automatically.,Reddit,2024-01-02 17:50:51,user0110,"London, UK",Pro
+111,Blue Yonder,The new collaboration features have boosted our team's productivity.,LinkedIn,2023-08-18 15:51:20,user0111,"San Francisco, USA",Pro
+112,Umbra Security,Is there a way to bulk-delete old records?,Intercom Chat,2024-03-02 17:36:12,user0112,"Mumbai, India",Pro
+113,Evergreen Tech,Is there a way to bulk-delete old records?,Support Ticket,2023-10-04 03:09:19,user0113,"Berlin, Germany",Enterprise
+114,Cyberdyne Systems,The new collaboration features have boosted our team's productivity.,Intercom Chat,2024-04-08 13:47:54,user0114,"Sydney, Australia",Free
+115,Blue Sun Corporation,Chat messages are not syncing in real-time across devices.,Email,2023-09-17 12:55:07,user0115,"Tokyo, Japan",Free
+116,Gotham Solutions,Is there a way to bulk-delete old records?,Intercom Chat,2023-06-06 18:48:35,user0116,"Toronto, Canada",Free
+117,Evergreen Tech,The recent update drastically improved performance on mobile.,Email,2024-03-11 08:44:59,user0117,"Seoul, South Korea",Pro
+118,Zion Technologies,Custom dashboards are a game-changer for our analytics team.,Email,2023-06-09 03:23:16,user0118,"Berlin, Germany",Free
+119,Xandar Enterprises,Would love an option to schedule weekly backups instead of daily.,Support Ticket,2024-05-05 21:10:25,user0119,"Sydney, Australia",Pro
+120,Soylent Technologies,Can the system send reminders for pending approvals?,Email,2024-03-08 12:02:37,user0120,"Sydney, Australia",Pro
+121,Gotham Solutions,It would be helpful to preview attachments before downloading.,Support Ticket,2023-09-27 04:23:34,user0121,"Seoul, South Korea",Free
+122,Massive Dynamic,App rarely experiences downtime; excellent reliability.,Facebook,2024-05-19 06:44:27,user0122,"Toronto, Canada",Free
+123,Lumon Industries,Is there a way to bulk-delete old records?,LinkedIn,2024-03-28 19:06:05,user0123,"Dublin, Ireland",Free
+124,Vehement Capital Partners,The settings page is cluttered and difficult to navigate.,Support Ticket,2023-09-25 13:08:21,user0124,"San Francisco, USA",Free
+125,Zion Technologies,App rarely experiences downtime; excellent reliability.,Twitter,2023-10-19 01:39:25,user0125,"New York, USA",Pro
+126,Xandar Enterprises,"API rate limit is too low, blocking automated tasks.",LinkedIn,2024-02-07 03:44:06,user0126,"Los Angeles, USA",Free
+127,Pied Piper,Really appreciate the extensive API documentation provided.,Email,2024-01-12 12:24:17,user0127,"San Francisco, USA",Enterprise
+128,Tyrell Corporation,Really appreciate the extensive API documentation provided.,Reddit,2023-07-04 14:35:21,user0128,"Mumbai, India",Free
+129,Trinity Systems,Cannot customize the reporting fields as per our needs.,Twitter,2023-08-16 20:29:32,user0129,"Berlin, Germany",Free
+130,Cyberdyne Systems,"When exporting data, CSV missing critical columns.",Intercom Chat,2023-12-31 22:04:31,user0130,"Dublin, Ireland",Pro
+131,Vandelay Industries,The onboarding tutorial is clear and helpful for new users.,Email,2024-01-17 16:07:08,user0131,"Berlin, Germany",Enterprise
+132,Spacely Sprockets,It would be helpful to preview attachments before downloading.,Intercom Chat,2024-04-13 02:11:34,user0132,"Dublin, Ireland",Enterprise
+133,Vehement Capital Partners,Two-factor authentication SMS never arrives intermittently.,LinkedIn,2023-09-17 09:38:07,user0133,"Vancouver, Canada",Free
+134,Cyberdyne Systems,Chat messages are not syncing in real-time across devices.,Intercom Chat,2023-07-09 05:41:57,user0134,"New York, USA",Pro
+135,Xandar Enterprises,Really appreciate the extensive API documentation provided.,Support Ticket,2023-06-17 08:25:40,user0135,"Berlin, Germany",Pro
+136,Xandar Enterprises,The new collaboration features have boosted our team's productivity.,Reddit,2024-05-17 08:29:55,user0136,"Berlin, Germany",Pro
+137,Trinity Systems,The settings page is cluttered and difficult to navigate.,Email,2023-07-29 19:49:36,user0137,"Toronto, Canada",Pro
+138,Gotham Solutions,Dark mode has very poor contrast and causes eye strain.,Reddit,2023-07-01 06:02:27,user0138,"Tokyo, Japan",Free
+139,Luminary Solutions,Can you add support for international characters in reports?,Email,2023-08-03 17:03:53,user0139,"Seoul, South Korea",Free
+140,Kwik-E-Mart,Is there a way to bulk-delete old records?,Intercom Chat,2024-03-03 17:58:42,user0140,"Mumbai, India",Free
+141,Initech,"Support team resolved my issue within 2 hours, very satisfied.",LinkedIn,2023-11-13 21:58:49,user0141,"Berlin, Germany",Free
+142,Vandelay Industries,Mobile app crashes every time I try to upload a file.,Facebook,2024-05-10 09:48:45,user0142,"Dublin, Ireland",Free
+143,Zenith Analytics,Chat messages are not syncing in real-time across devices.,Email,2024-02-21 23:43:14,user0143,"Mumbai, India",Enterprise
+144,Wonka Industries,"Support team resolved my issue within 2 hours, very satisfied.",LinkedIn,2024-02-07 03:19:19,user0144,"Mumbai, India",Free
+145,Prestige Worldwide,Does the platform support LDAP integration?,LinkedIn,2023-07-24 05:51:19,user0145,"Sydney, Australia",Pro
+146,Globex Software,Can you add support for international characters in reports?,LinkedIn,2023-12-23 20:01:42,user0146,"New York, USA",Pro
+147,Blue Sun Corporation,The color scheme could use more customization options.,Support Ticket,2023-07-30 14:42:56,user0147,"Los Angeles, USA",Pro
+148,Acme Corp,App rarely experiences downtime; excellent reliability.,Email,2023-12-29 01:58:24,user0148,"Toronto, Canada",Pro
+149,Sudo Inc,Custom dashboards are a game-changer for our analytics team.,LinkedIn,2024-01-13 01:52:44,user0149,"Toronto, Canada",Free
+150,Stark Industries,Can you add support for international characters in reports?,Email,2024-05-23 17:38:52,user0150,"London, UK",Free
+151,Trinity Systems,Would love an option to schedule weekly backups instead of daily.,LinkedIn,2023-08-21 11:18:50,user0151,"Paris, France",Free
+152,Sterling Cooper,The search function returns incomplete results.,Twitter,2023-07-29 16:48:02,user0152,"London, UK",Pro
+153,Wayne Enterprises,Custom dashboards are a game-changer for our analytics team.,LinkedIn,2023-10-28 18:31:38,user0153,"Seoul, South Korea",Free
+154,Lumon Industries,Really appreciate the extensive API documentation provided.,Twitter,2024-01-20 20:04:15,user0154,"San Francisco, USA",Free
+155,Rubicon Analytics,Single sign-on setup was smooth and worked instantly.,LinkedIn,2023-08-09 02:32:30,user0155,"Berlin, Germany",Pro
+156,Sterling Cooper,Need an option to archive completed projects automatically.,Facebook,2024-02-15 09:43:38,user0156,"Los Angeles, USA",Free
+157,Evergreen Tech,It would be helpful to preview attachments before downloading.,Facebook,2024-03-27 21:06:51,user0157,"Vancouver, Canada",Pro
+158,Wayne Enterprises,Reports generate in under 5 seconds; impressive speed!,Intercom Chat,2024-02-03 12:33:56,user0158,"Sydney, Australia",Pro
+159,Monarch Solutions,Looking for an easier way to merge duplicate records.,Email,2023-11-12 06:52:07,user0159,"Seoul, South Korea",Free
+160,Pangea Software,Customer support response times exceed 48 hours.,Facebook,2023-12-28 01:35:20,user0160,"Sydney, Australia",Pro
+161,Zion Technologies,Looking for an easier way to merge duplicate records.,Email,2024-05-05 23:44:21,user0161,"San Francisco, USA",Pro
+162,Initech,"API rate limit is too low, blocking automated tasks.",Intercom Chat,2024-03-29 12:05:15,user0162,"Los Angeles, USA",Free
+163,Octan Corporation,User permissions are too rigid; cannot create custom roles.,Intercom Chat,2024-01-20 00:33:31,user0163,"Seoul, South Korea",Free
+164,Umbra Security,Dark mode has very poor contrast and causes eye strain.,Reddit,2024-01-27 09:38:57,user0164,"Sydney, Australia",Pro
+165,Kwik-E-Mart,The search function returns incomplete results.,Facebook,2023-11-16 19:25:42,user0165,"Chicago, USA",Enterprise
+166,Trinity Systems,Custom dashboards are a game-changer for our analytics team.,Facebook,2024-03-04 01:18:25,user0166,"Dublin, Ireland",Free
+167,Trinity Systems,Can you add support for international characters in reports?,Twitter,2023-07-17 15:48:01,user0167,"London, UK",Pro
+168,Zion Technologies,User permissions are too rigid; cannot create custom roles.,Email,2023-08-25 10:54:11,user0168,"New York, USA",Free
+169,Umbrella Inc,Can you add support for international characters in reports?,Support Ticket,2023-12-09 15:40:50,user0169,"San Francisco, USA",Free
+170,Sterling Cooper,Chat messages are not syncing in real-time across devices.,Twitter,2023-08-29 02:52:30,user0170,"Dublin, Ireland",Enterprise
+171,Sudo Inc,Would love an option to schedule weekly backups instead of daily.,Email,2024-03-25 05:12:38,user0171,"Toronto, Canada",Pro
+172,Tyrell Corporation,The new collaboration features have boosted our team's productivity.,Support Ticket,2024-05-07 00:20:31,user0172,"Tokyo, Japan",Pro
+173,Pied Piper,App rarely experiences downtime; excellent reliability.,Twitter,2023-07-08 16:04:58,user0173,"Sydney, Australia",Enterprise
+174,Bluth Company,"Support team resolved my issue within 2 hours, very satisfied.",LinkedIn,2023-10-07 16:37:58,user0174,"Los Angeles, USA",Free
+175,Pangea Software,Really appreciate the extensive API documentation provided.,Reddit,2023-09-30 13:53:06,user0175,"Dublin, Ireland",Free
+176,Pied Piper,Can you add support for international characters in reports?,Reddit,2024-05-03 14:24:39,user0176,"Berlin, Germany",Free
+177,Weyland-Yutani,Cannot customize the reporting fields as per our needs.,Intercom Chat,2024-02-10 10:25:12,user0177,"Tokyo, Japan",Pro
+178,Rubicon Analytics,Can the system send reminders for pending approvals?,Twitter,2024-04-21 06:55:20,user0178,"Dublin, Ireland",Free
+179,Zenith Analytics,"API rate limit is too low, blocking automated tasks.",LinkedIn,2023-07-20 22:50:42,user0179,"Vancouver, Canada",Free
+180,Octan Corporation,"Email notifications are delayed by hours, not minutes.",Intercom Chat,2023-12-04 04:47:04,user0180,"London, UK",Enterprise
+181,Blue Sun Corporation,The recent update drastically improved performance on mobile.,Twitter,2023-09-11 04:48:42,user0181,"Tokyo, Japan",Pro
+182,Blue Yonder,The onboarding tutorial is clear and helpful for new users.,Intercom Chat,2023-10-18 05:59:27,user0182,"Berlin, Germany",Enterprise
+183,Lumon Industries,Can you add support for international characters in reports?,LinkedIn,2023-11-21 04:11:35,user0183,"Mumbai, India",Enterprise
+184,Wayne Enterprises,Customer support response times exceed 48 hours.,Facebook,2024-05-12 14:28:09,user0184,"Los Angeles, USA",Enterprise
+185,Blue Yonder,The search function returns incomplete results.,Facebook,2023-12-20 00:30:24,user0185,"Berlin, Germany",Pro
+186,Aperture Science,Would be nice to see usage metrics per team member.,LinkedIn,2024-05-10 09:32:42,user0186,"Dublin, Ireland",Free
+187,Trinity Systems,Would be nice to see usage metrics per team member.,Reddit,2024-05-11 08:30:47,user0187,"Mumbai, India",Free
+188,Netherworld Innovations,Does the platform support LDAP integration?,Intercom Chat,2023-09-22 23:34:49,user0188,"London, UK",Pro
+189,Aperture Science,It would be helpful to preview attachments before downloading.,LinkedIn,2023-12-27 04:14:52,user0189,"San Francisco, USA",Free
+190,Initech,It would be helpful to preview attachments before downloading.,Email,2023-07-30 03:32:19,user0190,"Toronto, Canada",Enterprise
+191,Stark Industries,Looking for an easier way to merge duplicate records.,Email,2023-12-07 19:40:04,user0191,"Chicago, USA",Pro
+192,Evergreen Tech,Dark mode has very poor contrast and causes eye strain.,Email,2024-05-01 03:36:18,user0192,"Los Angeles, USA",Pro
+193,Sterling Cooper,Is there a way to bulk-delete old records?,Reddit,2024-05-19 13:29:26,user0193,"Toronto, Canada",Pro
+194,Cyberdyne Systems,Would be nice to see usage metrics per team member.,Reddit,2024-05-17 13:22:27,user0194,"Paris, France",Enterprise
+195,Umbra Security,Can the system send reminders for pending approvals?,Reddit,2023-12-21 10:02:40,user0195,"Toronto, Canada",Enterprise
+196,Aperture Science,The search function returns incomplete results.,LinkedIn,2023-09-17 23:21:49,user0196,"Vancouver, Canada",Pro
+197,Globex Corporation,Cannot customize the reporting fields as per our needs.,Facebook,2023-11-18 08:52:05,user0197,"San Francisco, USA",Pro
+198,Dunder Mifflin,Integration with Salesforce fails intermittently without errors.,Facebook,2024-03-10 07:32:32,user0198,"Dublin, Ireland",Free
+199,Vandelay Industries,Need an option to archive completed projects automatically.,Facebook,2023-08-15 21:41:56,user0199,"New York, USA",Free
+200,Wayne Enterprises,"API rate limit is too low, blocking automated tasks.",Intercom Chat,2023-10-07 06:21:11,user0200,"London, UK",Pro
+201,Globex Corporation,"API rate limit is too low, blocking automated tasks.",Reddit,2023-12-01 08:39:46,user0201,"Dublin, Ireland",Free
+202,Wonka Industries,The color scheme could use more customization options.,Reddit,2023-08-04 15:19:36,user0202,"Paris, France",Free
+203,Soylent Corp,Really appreciate the extensive API documentation provided.,Email,2023-12-03 18:41:11,user0203,"Dublin, Ireland",Free
+204,Neo Tokyo Labs,Customer support response times exceed 48 hours.,Intercom Chat,2023-06-23 23:59:23,user0204,"Paris, France",Free
+205,Umbra Security,Mobile app crashes every time I try to upload a file.,Reddit,2024-02-01 14:37:20,user0205,"Chicago, USA",Pro
+206,Globex Software,Reports generate in under 5 seconds; impressive speed!,Reddit,2023-07-12 11:43:39,user0206,"Dublin, Ireland",Free
+207,Stark Industries,Is there a way to bulk-delete old records?,Intercom Chat,2024-04-20 21:18:44,user0207,"Paris, France",Pro
+208,Pangea Software,The onboarding tutorial is clear and helpful for new users.,Support Ticket,2024-01-19 18:24:23,user0208,"Dublin, Ireland",Pro
+209,Xandar Enterprises,"When exporting data, CSV missing critical columns.",Facebook,2024-05-01 23:41:56,user0209,"Tokyo, Japan",Pro
+210,Dunder Mifflin,"Support team resolved my issue within 2 hours, very satisfied.",Email,2023-09-25 15:03:59,user0210,"Sydney, Australia",Enterprise
+211,Kwik-E-Mart,The recent update drastically improved performance on mobile.,LinkedIn,2023-07-19 11:22:46,user0211,"Chicago, USA",Free
+212,Tyrell Corporation,Would be nice to see usage metrics per team member.,Twitter,2024-05-17 17:16:03,user0212,"London, UK",Free
+213,Hooli,The search function returns incomplete results.,Email,2023-07-20 13:34:03,user0213,"Tokyo, Japan",Free
+214,Umbrella Inc,Need an option to archive completed projects automatically.,LinkedIn,2023-08-02 14:57:25,user0214,"Sydney, Australia",Enterprise
+215,Zenith Analytics,"Support team resolved my issue within 2 hours, very satisfied.",Facebook,2023-06-27 10:28:20,user0215,"Dublin, Ireland",Free
+216,Vehement Capital Partners,Single sign-on setup was smooth and worked instantly.,Twitter,2023-08-19 23:54:39,user0216,"Mumbai, India",Free
+217,Vehement Capital Partners,Can the system send reminders for pending approvals?,Facebook,2024-03-11 13:22:56,user0217,"London, UK",Pro
+218,Nimbus Consulting,Customer support response times exceed 48 hours.,Facebook,2024-01-06 20:25:26,user0218,"Tokyo, Japan",Enterprise
+219,Sudo Inc,Mobile app crashes every time I try to upload a file.,Intercom Chat,2024-05-02 09:44:14,user0219,"New York, USA",Free
+220,Xandar Enterprises,It would be helpful to preview attachments before downloading.,Support Ticket,2023-11-27 00:13:20,user0220,"San Francisco, USA",Enterprise
+221,Nimbus Consulting,Love how intuitive the new UI redesign feels.,Reddit,2023-08-12 23:03:11,user0221,"New York, USA",Free
+222,Soylent Technologies,Two-factor authentication SMS never arrives intermittently.,Email,2024-01-01 16:31:00,user0222,"Sydney, Australia",Free
+223,Bluth Company,Does the platform support LDAP integration?,Facebook,2024-03-17 21:42:28,user0223,"London, UK",Enterprise
+224,Wayne Enterprises,Invoices generated have incorrect tax calculations.,Facebook,2024-04-12 01:48:42,user0224,"Vancouver, Canada",Free
+225,Octan Corporation,"Support team resolved my issue within 2 hours, very satisfied.",Email,2024-04-06 16:05:39,user0225,"Chicago, USA",Free
+226,Zenith Analytics,Single sign-on setup was smooth and worked instantly.,Reddit,2023-11-24 15:39:09,user0226,"London, UK",Free
+227,Weyland-Yutani,Custom dashboards are a game-changer for our analytics team.,Intercom Chat,2024-05-07 11:13:45,user0227,"New York, USA",Free
+228,Rubicon Analytics,Cannot customize the reporting fields as per our needs.,Reddit,2023-09-13 10:58:27,user0228,"Toronto, Canada",Pro
+229,Zenith Analytics,The color scheme could use more customization options.,Support Ticket,2023-11-15 04:22:06,user0229,"New York, USA",Pro
+230,Spacely Sprockets,Chat messages are not syncing in real-time across devices.,Twitter,2023-12-12 19:23:26,user0230,"Seoul, South Korea",Free
+231,Netherworld Innovations,Can the system send reminders for pending approvals?,Reddit,2023-12-21 01:32:24,user0231,"Chicago, USA",Free
+232,Soylent Corp,Does the platform support LDAP integration?,Intercom Chat,2024-01-06 20:52:36,user0232,"Chicago, USA",Pro
+233,Sterling Cooper,Can you add support for international characters in reports?,Reddit,2023-12-25 00:45:33,user0233,"Sydney, Australia",Free
+234,Sudo Inc,The new collaboration features have boosted our team's productivity.,Facebook,2024-05-19 13:10:28,user0234,"London, UK",Pro
+235,Vehement Capital Partners,Would love an option to schedule weekly backups instead of daily.,Email,2024-03-28 14:34:47,user0235,"Paris, France",Free
+236,Bluth Company,Need an option to archive completed projects automatically.,Twitter,2023-11-18 06:07:17,user0236,"London, UK",Pro
+237,Massive Dynamic,The onboarding tutorial is clear and helpful for new users.,Intercom Chat,2023-09-08 12:43:13,user0237,"Sydney, Australia",Pro
+238,Umbra Security,Dark mode has very poor contrast and causes eye strain.,Twitter,2023-07-23 05:19:54,user0238,"Berlin, Germany",Free
+239,Rubicon Analytics,Dark mode has very poor contrast and causes eye strain.,Facebook,2024-05-01 02:44:36,user0239,"San Francisco, USA",Enterprise
+240,Trinity Systems,Custom dashboards are a game-changer for our analytics team.,Email,2024-03-15 21:05:52,user0240,"Mumbai, India",Pro
+241,Nimbus Consulting,Does the platform support LDAP integration?,Facebook,2024-04-17 11:30:36,user0241,"San Francisco, USA",Pro
+242,Lumon Industries,Reports generate in under 5 seconds; impressive speed!,LinkedIn,2023-11-03 10:00:02,user0242,"Dublin, Ireland",Free
+243,Neo Tokyo Labs,Integration with Salesforce fails intermittently without errors.,Support Ticket,2024-01-23 16:27:13,user0243,"New York, USA",Free
+244,Pied Piper,Integration with Salesforce fails intermittently without errors.,LinkedIn,2023-07-17 22:23:30,user0244,"Dublin, Ireland",Pro
+245,Aperture Science,"Email notifications are delayed by hours, not minutes.",Email,2024-03-19 23:43:57,user0245,"Toronto, Canada",Free
+246,Lumon Industries,Single sign-on setup was smooth and worked instantly.,Twitter,2023-07-02 16:24:10,user0246,"London, UK",Enterprise
+247,Prestige Worldwide,The search function returns incomplete results.,Intercom Chat,2024-04-26 06:16:57,user0247,"New York, USA",Free
+248,Octan Corporation,Reports generate in under 5 seconds; impressive speed!,Intercom Chat,2024-02-23 22:12:08,user0248,"San Francisco, USA",Free
+249,Pied Piper,Looking for an easier way to merge duplicate records.,Email,2023-11-21 21:46:06,user0249,"New York, USA",Pro
+250,Umbra Security,Need an option to archive completed projects automatically.,Reddit,2023-11-16 03:26:27,user0250,"Paris, France",Pro
+251,Pied Piper,The color scheme could use more customization options.,LinkedIn,2024-05-02 21:56:37,user0251,"Los Angeles, USA",Free
+252,Hooli,Dark mode has very poor contrast and causes eye strain.,Support Ticket,2023-11-06 23:53:10,user0252,"Seoul, South Korea",Pro
+253,Stark Industries,The search function returns incomplete results.,Support Ticket,2024-03-13 13:42:52,user0253,"Vancouver, Canada",Pro
+254,Stark Industries,The onboarding tutorial is clear and helpful for new users.,Reddit,2024-04-26 15:24:56,user0254,"Paris, France",Free
+255,Blue Yonder,It would be helpful to preview attachments before downloading.,Twitter,2023-09-18 12:26:31,user0255,"Tokyo, Japan",Pro
+256,Vandelay Industries,"API rate limit is too low, blocking automated tasks.",Twitter,2023-07-10 10:46:10,user0256,"Los Angeles, USA",Pro
+257,Neo Tokyo Labs,App rarely experiences downtime; excellent reliability.,Facebook,2024-02-25 01:22:27,user0257,"Vancouver, Canada",Free
+258,Sudo Inc,"API rate limit is too low, blocking automated tasks.",Intercom Chat,2023-12-10 05:36:58,user0258,"San Francisco, USA",Free
+259,Xandar Enterprises,Invoices generated have incorrect tax calculations.,LinkedIn,2024-01-11 01:35:26,user0259,"Chicago, USA",Free
+260,Evergreen Tech,Would love an option to schedule weekly backups instead of daily.,Email,2024-04-08 10:22:26,user0260,"Tokyo, Japan",Pro
+261,Octan Corporation,Customer support response times exceed 48 hours.,Intercom Chat,2023-10-01 11:16:02,user0261,"Tokyo, Japan",Pro
+262,Gekko & Co,Would be nice to see usage metrics per team member.,LinkedIn,2024-03-19 16:02:29,user0262,"Mumbai, India",Pro
+263,Pangea Software,Single sign-on setup was smooth and worked instantly.,Intercom Chat,2024-01-01 05:54:01,user0263,"Los Angeles, USA",Free
+264,Rubicon Analytics,"API rate limit is too low, blocking automated tasks.",Facebook,2023-10-07 01:53:59,user0264,"Vancouver, Canada",Pro
+265,Blue Yonder,User permissions are too rigid; cannot create custom roles.,LinkedIn,2024-02-20 04:32:21,user0265,"Berlin, Germany",Free
+266,Gringotts Bank,Is there a way to bulk-delete old records?,Email,2024-02-18 05:21:53,user0266,"Los Angeles, USA",Pro
+267,Vandelay Industries,Reports generate in under 5 seconds; impressive speed!,Support Ticket,2023-06-14 15:06:21,user0267,"New York, USA",Free
+268,Blue Yonder,Would love an option to schedule weekly backups instead of daily.,Email,2023-07-12 13:39:00,user0268,"Toronto, Canada",Free
+269,Vehement Capital Partners,Need an option to archive completed projects automatically.,Facebook,2023-08-14 05:00:35,user0269,"New York, USA",Free
+270,Lumon Industries,"API rate limit is too low, blocking automated tasks.",Facebook,2024-05-27 17:04:47,user0270,"Mumbai, India",Pro
+271,Hooli,Mobile app crashes every time I try to upload a file.,Support Ticket,2023-09-19 05:26:37,user0271,"Paris, France",Enterprise
+272,Rubicon Analytics,The onboarding tutorial is clear and helpful for new users.,Email,2023-07-27 10:29:22,user0272,"Toronto, Canada",Free
+273,Umbrella Inc,Would love an option to schedule weekly backups instead of daily.,Email,2024-04-23 22:40:33,user0273,"Mumbai, India",Free
+274,Globex Software,App rarely experiences downtime; excellent reliability.,Reddit,2024-04-19 18:45:51,user0274,"Dublin, Ireland",Free
+275,Wayne Enterprises,Can you add support for international characters in reports?,Email,2023-06-01 22:23:04,user0275,"Sydney, Australia",Free
+276,Sterling Cooper,Chat messages are not syncing in real-time across devices.,LinkedIn,2024-05-08 03:07:01,user0276,"Paris, France",Enterprise
+277,Soylent Corp,The onboarding tutorial is clear and helpful for new users.,Intercom Chat,2024-02-15 18:28:55,user0277,"Paris, France",Free
+278,Lumon Industries,"Email notifications are delayed by hours, not minutes.",LinkedIn,2023-12-16 13:35:29,user0278,"Berlin, Germany",Pro
+279,Oceanic Airlines,Integration with Salesforce fails intermittently without errors.,Support Ticket,2023-10-02 23:55:27,user0279,"Vancouver, Canada",Free
+280,Quark Labs,Need an option to archive completed projects automatically.,Twitter,2023-06-23 12:49:36,user0280,"Paris, France",Free
+281,Umbra Security,Chat messages are not syncing in real-time across devices.,Facebook,2024-05-16 16:54:59,user0281,"Seoul, South Korea",Pro
+282,Wonka Industries,"API rate limit is too low, blocking automated tasks.",Reddit,2024-01-21 01:20:47,user0282,"Berlin, Germany",Free
+283,Gekko & Co,"Email notifications are delayed by hours, not minutes.",Support Ticket,2023-11-06 18:45:52,user0283,"Chicago, USA",Enterprise
+284,Monarch Solutions,Really appreciate the extensive API documentation provided.,Support Ticket,2023-06-19 23:33:10,user0284,"Toronto, Canada",Free
+285,Umbrella Inc,Need an option to archive completed projects automatically.,Support Ticket,2023-08-03 13:23:57,user0285,"Chicago, USA",Enterprise
+286,Luminary Solutions,Reports generate in under 5 seconds; impressive speed!,Email,2023-11-21 06:48:06,user0286,"Mumbai, India",Pro
+287,Blue Yonder,The onboarding tutorial is clear and helpful for new users.,Support Ticket,2023-07-13 15:27:20,user0287,"London, UK",Pro
+288,Wonka Industries,App rarely experiences downtime; excellent reliability.,Support Ticket,2023-11-12 03:44:07,user0288,"London, UK",Free
+289,Pied Piper,It would be helpful to preview attachments before downloading.,Email,2024-04-04 15:30:51,user0289,"San Francisco, USA",Pro
+290,Oceanic Airlines,Reports generate in under 5 seconds; impressive speed!,Reddit,2023-11-28 22:23:09,user0290,"Chicago, USA",Free
+291,Umbrella Inc,Integration with Salesforce fails intermittently without errors.,LinkedIn,2024-04-22 14:47:22,user0291,"Sydney, Australia",Pro
+292,Luminary Solutions,Invoices generated have incorrect tax calculations.,Reddit,2023-08-13 22:07:15,user0292,"Vancouver, Canada",Pro
+293,Initech,"API rate limit is too low, blocking automated tasks.",Reddit,2023-09-29 23:29:22,user0293,"Sydney, Australia",Free
+294,Nimbus Consulting,"Email notifications are delayed by hours, not minutes.",Intercom Chat,2023-08-18 16:22:52,user0294,"Sydney, Australia",Free
+295,Zenith Analytics,Integration with Salesforce fails intermittently without errors.,Intercom Chat,2023-08-10 19:16:37,user0295,"Sydney, Australia",Free
+296,Umbra Security,Is there a way to bulk-delete old records?,Twitter,2023-07-29 00:56:36,user0296,"Seoul, South Korea",Free
+297,Soylent Technologies,Looking for an easier way to merge duplicate records.,Intercom Chat,2023-07-31 09:31:51,user0297,"Tokyo, Japan",Free
+298,Octan Corporation,Two-factor authentication SMS never arrives intermittently.,Intercom Chat,2023-10-25 17:53:02,user0298,"Toronto, Canada",Free
+299,Soylent Corp,Reports generate in under 5 seconds; impressive speed!,Twitter,2024-01-14 03:11:46,user0299,"Tokyo, Japan",Pro
+300,Blue Sun Corporation,Can the system send reminders for pending approvals?,LinkedIn,2023-07-04 20:01:29,user0300,"Paris, France",Free
+301,Bluth Company,Invoices generated have incorrect tax calculations.,LinkedIn,2024-05-29 23:13:04,user0301,"San Francisco, USA",Pro
+302,Neo Tokyo Labs,Customer support response times exceed 48 hours.,Reddit,2023-09-11 05:03:22,user0302,"Toronto, Canada",Pro
+303,Globex Corporation,Would be nice to see usage metrics per team member.,Intercom Chat,2024-03-20 13:25:53,user0303,"Mumbai, India",Enterprise
+304,Netherworld Innovations,"API rate limit is too low, blocking automated tasks.",Intercom Chat,2023-07-15 02:23:37,user0304,"Berlin, Germany",Free
+305,Zion Technologies,Really appreciate the extensive API documentation provided.,Intercom Chat,2023-12-28 14:54:25,user0305,"Los Angeles, USA",Pro
+306,Stark Industries,Does the platform support LDAP integration?,LinkedIn,2023-07-08 16:22:59,user0306,"Mumbai, India",Pro
+307,Oceanic Airlines,"API rate limit is too low, blocking automated tasks.",Facebook,2024-03-09 23:17:39,user0307,"Dublin, Ireland",Free
+308,Stark Industries,"Support team resolved my issue within 2 hours, very satisfied.",Intercom Chat,2023-06-29 04:31:14,user0308,"Paris, France",Free
+309,Gringotts Bank,Invoices generated have incorrect tax calculations.,Support Ticket,2024-05-29 08:12:32,user0309,"Sydney, Australia",Enterprise
+310,Soylent Technologies,Can you add support for international characters in reports?,Facebook,2023-07-11 09:07:27,user0310,"Toronto, Canada",Pro
+311,Netherworld Innovations,Is there a way to bulk-delete old records?,Twitter,2024-04-16 11:01:31,user0311,"Dublin, Ireland",Pro
+312,Neo Tokyo Labs,Invoices generated have incorrect tax calculations.,Intercom Chat,2024-03-24 05:36:50,user0312,"San Francisco, USA",Pro
+313,Evergreen Tech,Need an option to archive completed projects automatically.,Facebook,2024-03-15 01:29:59,user0313,"Los Angeles, USA",Enterprise
+314,Hooli,"Email notifications are delayed by hours, not minutes.",LinkedIn,2024-03-22 09:38:08,user0314,"Vancouver, Canada",Free
+315,Nimbus Consulting,The recent update drastically improved performance on mobile.,Intercom Chat,2024-04-23 01:06:09,user0315,"Mumbai, India",Enterprise
+316,Monarch Solutions,Can you add support for international characters in reports?,LinkedIn,2023-11-02 17:35:00,user0316,"Toronto, Canada",Enterprise
+317,Weyland-Yutani,Love how intuitive the new UI redesign feels.,Support Ticket,2024-01-19 02:39:24,user0317,"Seoul, South Korea",Free
+318,Octan Corporation,The recent update drastically improved performance on mobile.,Email,2024-01-24 07:25:41,user0318,"Sydney, Australia",Pro
+319,Blue Sun Corporation,Does the platform support LDAP integration?,LinkedIn,2023-11-24 14:31:00,user0319,"San Francisco, USA",Pro
+320,Neo Tokyo Labs,User permissions are too rigid; cannot create custom roles.,Support Ticket,2023-10-02 16:59:01,user0320,"London, UK",Free
+321,Cyberdyne Systems,Dark mode has very poor contrast and causes eye strain.,Reddit,2023-06-26 10:33:58,user0321,"Chicago, USA",Enterprise
+322,Sterling Cooper,Would love an option to schedule weekly backups instead of daily.,Facebook,2023-08-21 11:55:17,user0322,"Dublin, Ireland",Pro
+323,Gekko & Co,Invoices generated have incorrect tax calculations.,Email,2024-02-19 16:59:46,user0323,"Mumbai, India",Enterprise
+324,Globex Software,Mobile app crashes every time I try to upload a file.,Reddit,2023-12-19 18:24:09,user0324,"Mumbai, India",Enterprise
+325,Dunder Mifflin,Can the system send reminders for pending approvals?,Reddit,2023-06-26 10:14:37,user0325,"Mumbai, India",Pro
+326,Umbra Security,Really appreciate the extensive API documentation provided.,Support Ticket,2024-03-01 00:17:51,user0326,"Los Angeles, USA",Free
+327,Stark Industries,The color scheme could use more customization options.,LinkedIn,2023-12-05 14:40:55,user0327,"Sydney, Australia",Free
+328,Umbrella Inc,The settings page is cluttered and difficult to navigate.,Support Ticket,2024-03-10 10:30:27,user0328,"London, UK",Free
+329,Octan Corporation,Is there a way to bulk-delete old records?,Facebook,2024-04-15 22:14:50,user0329,"London, UK",Free
+330,Vehement Capital Partners,Love how intuitive the new UI redesign feels.,Support Ticket,2023-11-21 20:18:36,user0330,"Sydney, Australia",Pro
+331,Gekko & Co,Single sign-on setup was smooth and worked instantly.,Email,2024-02-12 01:27:56,user0331,"New York, USA",Free
+332,Zion Technologies,Need an option to archive completed projects automatically.,Facebook,2024-01-29 18:54:29,user0332,"Mumbai, India",Free
+333,Neo Tokyo Labs,"API rate limit is too low, blocking automated tasks.",Support Ticket,2024-04-09 11:35:50,user0333,"San Francisco, USA",Free
+334,Sudo Inc,It would be helpful to preview attachments before downloading.,Intercom Chat,2023-11-20 18:28:14,user0334,"Los Angeles, USA",Pro
+335,Globex Software,It would be helpful to preview attachments before downloading.,Email,2023-06-09 13:24:41,user0335,"Sydney, Australia",Pro
+336,Sterling Cooper,It would be helpful to preview attachments before downloading.,Facebook,2024-05-18 22:54:38,user0336,"New York, USA",Pro
+337,Tyrell Corporation,Customer support response times exceed 48 hours.,LinkedIn,2023-06-27 21:14:43,user0337,"Mumbai, India",Free
+338,Trinity Systems,Looking for an easier way to merge duplicate records.,Twitter,2024-05-14 08:49:05,user0338,"New York, USA",Pro
+339,Xandar Enterprises,"When exporting data, CSV missing critical columns.",Twitter,2023-06-10 16:03:27,user0339,"Sydney, Australia",Pro
+340,Sterling Cooper,Two-factor authentication SMS never arrives intermittently.,Email,2024-02-12 22:15:47,user0340,"Mumbai, India",Enterprise
+341,Luminary Solutions,Cannot customize the reporting fields as per our needs.,LinkedIn,2023-08-10 18:53:04,user0341,"Toronto, Canada",Pro
+342,Valhalla Ventures,Really appreciate the extensive API documentation provided.,Intercom Chat,2023-12-10 11:25:24,user0342,"San Francisco, USA",Pro
+343,Monarch Solutions,Need an option to archive completed projects automatically.,Intercom Chat,2023-11-29 23:25:19,user0343,"Tokyo, Japan",Pro
+344,Sudo Inc,Really appreciate the extensive API documentation provided.,Twitter,2023-10-05 10:09:29,user0344,"Paris, France",Free
+345,Bluth Company,Can you add support for international characters in reports?,LinkedIn,2023-09-15 17:48:14,user0345,"Sydney, Australia",Pro
+346,Netherworld Innovations,Is there a way to bulk-delete old records?,Support Ticket,2023-08-02 20:52:46,user0346,"Vancouver, Canada",Pro
+347,Kwik-E-Mart,Can the system send reminders for pending approvals?,Facebook,2023-08-14 10:34:30,user0347,"New York, USA",Free
+348,Zion Technologies,The search function returns incomplete results.,Support Ticket,2024-01-13 23:52:59,user0348,"Berlin, Germany",Pro
+349,Dunder Mifflin,The settings page is cluttered and difficult to navigate.,Facebook,2024-03-02 09:52:17,user0349,"Paris, France",Pro
+350,Stark Industries,User permissions are too rigid; cannot create custom roles.,Intercom Chat,2024-03-27 08:42:43,user0350,"Toronto, Canada",Free
+351,Soylent Technologies,Customer support response times exceed 48 hours.,LinkedIn,2023-09-28 01:54:40,user0351,"London, UK",Pro
+352,Zion Technologies,Really appreciate the extensive API documentation provided.,Reddit,2024-05-14 05:00:18,user0352,"New York, USA",Enterprise
+353,Gringotts Bank,The recent update drastically improved performance on mobile.,LinkedIn,2024-01-30 17:23:00,user0353,"Vancouver, Canada",Free
+354,Pied Piper,Does the platform support LDAP integration?,Support Ticket,2024-04-26 02:09:14,user0354,"Tokyo, Japan",Free
+355,Nimbus Consulting,Customer support response times exceed 48 hours.,Intercom Chat,2023-06-20 06:22:26,user0355,"Chicago, USA",Enterprise
+356,Wonka Industries,"Email notifications are delayed by hours, not minutes.",Facebook,2023-12-21 18:02:10,user0356,"San Francisco, USA",Enterprise
+357,Pied Piper,"Email notifications are delayed by hours, not minutes.",Reddit,2023-10-31 20:40:43,user0357,"Dublin, Ireland",Free
+358,Prestige Worldwide,Can you add support for international characters in reports?,Email,2024-04-24 19:46:51,user0358,"Paris, France",Pro
+359,Stark Industries,Single sign-on setup was smooth and worked instantly.,Email,2023-10-18 07:01:12,user0359,"Tokyo, Japan",Free
+360,Gringotts Bank,The new collaboration features have boosted our team's productivity.,LinkedIn,2023-10-10 06:46:45,user0360,"New York, USA",Pro
+361,Pied Piper,The settings page is cluttered and difficult to navigate.,Twitter,2024-04-08 23:15:19,user0361,"Chicago, USA",Enterprise
+362,Neo Tokyo Labs,Does the platform support LDAP integration?,Reddit,2023-12-23 03:28:22,user0362,"San Francisco, USA",Enterprise
+363,Lumon Industries,Does the platform support LDAP integration?,Twitter,2023-06-04 09:29:41,user0363,"Chicago, USA",Free
+364,Zenith Analytics,Is there a way to bulk-delete old records?,Support Ticket,2023-11-02 21:12:24,user0364,"Seoul, South Korea",Pro
+365,Tyrell Corporation,Would be nice to see usage metrics per team member.,LinkedIn,2023-09-29 02:15:42,user0365,"Vancouver, Canada",Free
+366,Bluth Company,Invoices generated have incorrect tax calculations.,Email,2024-05-17 18:17:46,user0366,"Seoul, South Korea",Pro
+367,Xandar Enterprises,"When exporting data, CSV missing critical columns.",LinkedIn,2023-10-30 13:22:54,user0367,"Dublin, Ireland",Free
+368,Stark Industries,Really appreciate the extensive API documentation provided.,Twitter,2024-01-19 22:03:15,user0368,"Sydney, Australia",Pro
+369,Netherworld Innovations,Really appreciate the extensive API documentation provided.,Facebook,2024-03-02 07:57:07,user0369,"Tokyo, Japan",Free
+370,Zenith Analytics,The search function returns incomplete results.,Intercom Chat,2024-01-15 19:13:48,user0370,"Seoul, South Korea",Free
+371,Nimbus Consulting,"When exporting data, CSV missing critical columns.",Reddit,2024-03-07 18:24:15,user0371,"Toronto, Canada",Pro
+372,Wayne Enterprises,Invoices generated have incorrect tax calculations.,Support Ticket,2024-02-22 16:05:12,user0372,"London, UK",Pro
+373,Zion Technologies,Custom dashboards are a game-changer for our analytics team.,Reddit,2024-02-17 16:13:10,user0373,"Tokyo, Japan",Free
+374,Stark Industries,Single sign-on setup was smooth and worked instantly.,Email,2024-01-20 20:31:52,user0374,"New York, USA",Pro
+375,Weyland-Yutani,It would be helpful to preview attachments before downloading.,LinkedIn,2023-06-12 14:24:57,user0375,"Berlin, Germany",Enterprise
+376,Luminary Solutions,Two-factor authentication SMS never arrives intermittently.,Intercom Chat,2023-07-08 01:38:56,user0376,"Chicago, USA",Free
+377,Soylent Corp,App rarely experiences downtime; excellent reliability.,Reddit,2023-07-06 17:11:15,user0377,"New York, USA",Free
+378,Wonka Industries,"API rate limit is too low, blocking automated tasks.",Facebook,2024-04-24 23:30:56,user0378,"Chicago, USA",Free
+379,Pangea Software,Reports generate in under 5 seconds; impressive speed!,Facebook,2023-12-11 13:40:36,user0379,"London, UK",Pro
+380,Valhalla Ventures,App rarely experiences downtime; excellent reliability.,Twitter,2024-04-30 12:39:42,user0380,"London, UK",Free
+381,Monarch Solutions,Love how intuitive the new UI redesign feels.,Intercom Chat,2023-08-05 08:06:28,user0381,"Los Angeles, USA",Free
+382,Globex Corporation,It would be helpful to preview attachments before downloading.,Email,2024-05-10 19:49:21,user0382,"Chicago, USA",Pro
+383,Vandelay Industries,Would love an option to schedule weekly backups instead of daily.,Email,2023-11-25 05:38:52,user0383,"Berlin, Germany",Free
+384,Evergreen Tech,"When exporting data, CSV missing critical columns.",Reddit,2024-05-04 15:15:50,user0384,"Dublin, Ireland",Pro
+385,Globex Corporation,Would love an option to schedule weekly backups instead of daily.,Twitter,2023-07-05 03:40:24,user0385,"Dublin, Ireland",Free
+386,Rubicon Analytics,Cannot customize the reporting fields as per our needs.,Twitter,2023-06-23 14:38:45,user0386,"Mumbai, India",Free
+387,Dunder Mifflin,Cannot customize the reporting fields as per our needs.,Twitter,2024-02-13 10:31:54,user0387,"Toronto, Canada",Enterprise
+388,Evergreen Tech,Does the platform support LDAP integration?,Intercom Chat,2024-04-02 11:40:30,user0388,"Toronto, Canada",Free
+389,Wayne Enterprises,The onboarding tutorial is clear and helpful for new users.,Twitter,2023-12-29 10:56:27,user0389,"Berlin, Germany",Free
+390,Quark Labs,Chat messages are not syncing in real-time across devices.,LinkedIn,2024-05-13 15:33:14,user0390,"Paris, France",Pro
+391,Oceanic Airlines,Looking for an easier way to merge duplicate records.,Facebook,2024-02-24 11:36:17,user0391,"Seoul, South Korea",Pro
+392,Wayne Enterprises,It would be helpful to preview attachments before downloading.,Email,2023-09-03 19:35:07,user0392,"Mumbai, India",Free
+393,Vandelay Industries,It would be helpful to preview attachments before downloading.,Facebook,2024-05-28 05:15:20,user0393,"Tokyo, Japan",Pro
+394,Umbrella Inc,The recent update drastically improved performance on mobile.,Email,2024-03-12 19:17:47,user0394,"San Francisco, USA",Free
+395,Tyrell Corporation,Two-factor authentication SMS never arrives intermittently.,Support Ticket,2024-04-27 02:52:43,user0395,"Mumbai, India",Enterprise
+396,Hooli,App rarely experiences downtime; excellent reliability.,LinkedIn,2023-09-06 01:52:35,user0396,"Berlin, Germany",Free
+397,Rubicon Analytics,"Email notifications are delayed by hours, not minutes.",Facebook,2023-07-08 06:51:02,user0397,"Tokyo, Japan",Pro
+398,Evergreen Tech,Two-factor authentication SMS never arrives intermittently.,Email,2023-09-15 12:07:22,user0398,"Berlin, Germany",Enterprise
+399,Acme Corp,Two-factor authentication SMS never arrives intermittently.,Twitter,2023-07-31 17:26:13,user0399,"Toronto, Canada",Pro
+400,Zion Technologies,Two-factor authentication SMS never arrives intermittently.,Email,2023-10-01 20:06:02,user0400,"Sydney, Australia",Pro
+401,Pangea Software,The new collaboration features have boosted our team's productivity.,Intercom Chat,2024-04-28 13:04:48,user0401,"Berlin, Germany",Free
+402,Neo Tokyo Labs,Custom dashboards are a game-changer for our analytics team.,Email,2023-07-21 17:05:37,user0402,"Tokyo, Japan",Enterprise
+403,Dunder Mifflin,Would be nice to see usage metrics per team member.,Support Ticket,2023-12-29 01:39:52,user0403,"Dublin, Ireland",Enterprise
+404,Luminary Solutions,Dark mode has very poor contrast and causes eye strain.,Reddit,2023-10-12 20:08:43,user0404,"Dublin, Ireland",Pro
+405,Sterling Cooper,Can you add support for international characters in reports?,Twitter,2023-09-09 12:00:36,user0405,"Toronto, Canada",Free
+406,Cyberdyne Systems,Custom dashboards are a game-changer for our analytics team.,Intercom Chat,2024-05-01 12:17:25,user0406,"Berlin, Germany",Pro
+407,Globex Software,Custom dashboards are a game-changer for our analytics team.,Email,2023-08-26 12:49:20,user0407,"San Francisco, USA",Free
+408,Monarch Solutions,Custom dashboards are a game-changer for our analytics team.,Twitter,2024-03-04 23:22:03,user0408,"New York, USA",Pro
+409,Soylent Corp,Cannot customize the reporting fields as per our needs.,Facebook,2023-06-04 15:00:53,user0409,"San Francisco, USA",Enterprise
+410,Vandelay Industries,Integration with Salesforce fails intermittently without errors.,LinkedIn,2023-08-17 00:19:58,user0410,"Toronto, Canada",Pro
+411,Blue Yonder,Cannot customize the reporting fields as per our needs.,Intercom Chat,2024-04-22 22:26:48,user0411,"Mumbai, India",Pro
+412,Globex Corporation,The dashboard loads incredibly slowly when filtering large datasets.,Intercom Chat,2024-03-09 14:58:34,user0412,"New York, USA",Free
+413,Evergreen Tech,Is there a way to bulk-delete old records?,Intercom Chat,2023-10-25 00:37:26,user0413,"Paris, France",Enterprise
+414,Weyland-Yutani,"Support team resolved my issue within 2 hours, very satisfied.",Facebook,2023-08-31 03:53:46,user0414,"London, UK",Pro
+415,Cyberdyne Systems,The settings page is cluttered and difficult to navigate.,Intercom Chat,2024-02-25 09:11:24,user0415,"Los Angeles, USA",Free
+416,Kwik-E-Mart,The search function returns incomplete results.,Support Ticket,2023-12-25 16:42:41,user0416,"Dublin, Ireland",Free
+417,Xandar Enterprises,Customer support response times exceed 48 hours.,Support Ticket,2024-05-16 02:56:06,user0417,"Vancouver, Canada",Enterprise
+418,Umbra Security,"Email notifications are delayed by hours, not minutes.",Reddit,2023-12-25 13:48:30,user0418,"Chicago, USA",Pro
+419,Umbrella Inc,The dashboard loads incredibly slowly when filtering large datasets.,LinkedIn,2023-08-27 03:00:37,user0419,"Mumbai, India",Enterprise
+420,Umbra Security,Need an option to archive completed projects automatically.,Intercom Chat,2023-07-19 19:13:46,user0420,"New York, USA",Free
+421,Xandar Enterprises,Really appreciate the extensive API documentation provided.,Support Ticket,2023-06-24 02:42:24,user0421,"Vancouver, Canada",Enterprise
+422,Monarch Solutions,"Email notifications are delayed by hours, not minutes.",Twitter,2023-11-09 00:34:12,user0422,"Toronto, Canada",Pro
+423,Zenith Analytics,Love how intuitive the new UI redesign feels.,Reddit,2023-11-01 05:54:52,user0423,"Dublin, Ireland",Free
+424,Pangea Software,App rarely experiences downtime; excellent reliability.,Support Ticket,2023-12-14 05:05:43,user0424,"Tokyo, Japan",Enterprise
+425,Evergreen Tech,The search function returns incomplete results.,Intercom Chat,2023-11-25 01:57:18,user0425,"London, UK",Pro
+426,Soylent Corp,Need an option to archive completed projects automatically.,Intercom Chat,2024-04-10 21:41:07,user0426,"Chicago, USA",Enterprise
+427,Blue Sun Corporation,Mobile app crashes every time I try to upload a file.,LinkedIn,2023-10-18 16:24:14,user0427,"Mumbai, India",Free
+428,Netherworld Innovations,Looking for an easier way to merge duplicate records.,Email,2023-09-04 21:19:51,user0428,"Vancouver, Canada",Free
+429,Sudo Inc,Can you add support for international characters in reports?,Facebook,2023-10-05 02:40:34,user0429,"London, UK",Free
+430,Pangea Software,Dark mode has very poor contrast and causes eye strain.,LinkedIn,2023-12-17 11:31:47,user0430,"Sydney, Australia",Free
+431,Acme Corp,It would be helpful to preview attachments before downloading.,Email,2023-12-02 09:49:18,user0431,"London, UK",Free
+432,Wonka Industries,"Support team resolved my issue within 2 hours, very satisfied.",Email,2024-03-12 20:11:50,user0432,"Paris, France",Pro
+433,Globex Corporation,The search function returns incomplete results.,Support Ticket,2024-03-10 03:23:18,user0433,"Dublin, Ireland",Pro
+434,Blue Sun Corporation,Looking for an easier way to merge duplicate records.,Reddit,2023-10-28 15:03:58,user0434,"Chicago, USA",Pro
+435,Evergreen Tech,Would love an option to schedule weekly backups instead of daily.,Intercom Chat,2024-02-22 06:10:27,user0435,"Vancouver, Canada",Free
+436,Stark Industries,Is there a way to bulk-delete old records?,Support Ticket,2023-10-16 17:57:14,user0436,"San Francisco, USA",Free
+437,Spacely Sprockets,Is there a way to bulk-delete old records?,Email,2023-11-01 17:37:49,user0437,"Tokyo, Japan",Free
+438,Tyrell Corporation,Would love an option to schedule weekly backups instead of daily.,LinkedIn,2024-04-16 18:03:05,user0438,"Dublin, Ireland",Pro
+439,Aperture Science,User permissions are too rigid; cannot create custom roles.,Twitter,2023-11-03 00:14:47,user0439,"Chicago, USA",Free
+440,Sudo Inc,Looking for an easier way to merge duplicate records.,Facebook,2023-11-16 16:01:40,user0440,"Sydney, Australia",Pro
+441,Umbra Security,"API rate limit is too low, blocking automated tasks.",Support Ticket,2023-11-12 21:57:44,user0441,"Seoul, South Korea",Free
+442,Blue Sun Corporation,Chat messages are not syncing in real-time across devices.,Email,2023-11-11 10:36:40,user0442,"Seoul, South Korea",Pro
+443,Globex Software,Would love an option to schedule weekly backups instead of daily.,Support Ticket,2023-12-10 10:12:19,user0443,"Los Angeles, USA",Pro
+444,Blue Yonder,"When exporting data, CSV missing critical columns.",Intercom Chat,2023-09-11 21:33:44,user0444,"Paris, France",Free
+445,Netherworld Innovations,Mobile app crashes every time I try to upload a file.,LinkedIn,2024-01-23 07:37:59,user0445,"Mumbai, India",Pro
+446,Xandar Enterprises,Integration with Salesforce fails intermittently without errors.,Facebook,2023-12-27 18:10:44,user0446,"San Francisco, USA",Pro
+447,Cyberdyne Systems,The color scheme could use more customization options.,LinkedIn,2023-08-18 15:24:20,user0447,"Tokyo, Japan",Free
+448,Octan Corporation,Really appreciate the extensive API documentation provided.,Intercom Chat,2023-12-23 19:27:20,user0448,"Paris, France",Enterprise
+449,Xandar Enterprises,The recent update drastically improved performance on mobile.,Intercom Chat,2023-06-19 13:05:24,user0449,"Seoul, South Korea",Enterprise
+450,Monarch Solutions,The search function returns incomplete results.,Reddit,2023-10-06 23:56:33,user0450,"Vancouver, Canada",Free
+451,Umbra Security,"Email notifications are delayed by hours, not minutes.",Intercom Chat,2024-04-26 23:32:49,user0451,"Chicago, USA",Enterprise
+452,Prestige Worldwide,"Support team resolved my issue within 2 hours, very satisfied.",Reddit,2023-06-06 03:35:24,user0452,"Berlin, Germany",Free
+453,Luminary Solutions,The onboarding tutorial is clear and helpful for new users.,Intercom Chat,2024-03-24 20:56:37,user0453,"Toronto, Canada",Pro
+454,Kwik-E-Mart,The new collaboration features have boosted our team's productivity.,Facebook,2024-05-13 21:25:47,user0454,"Seoul, South Korea",Pro
+455,Oceanic Airlines,Mobile app crashes every time I try to upload a file.,Email,2023-07-24 10:45:22,user0455,"Chicago, USA",Enterprise
+456,Hooli,"When exporting data, CSV missing critical columns.",Facebook,2023-08-12 12:40:56,user0456,"Berlin, Germany",Free
+457,Dunder Mifflin,The onboarding tutorial is clear and helpful for new users.,Email,2023-11-26 17:20:11,user0457,"London, UK",Pro
+458,Xandar Enterprises,Reports generate in under 5 seconds; impressive speed!,Support Ticket,2023-07-05 10:55:56,user0458,"New York, USA",Enterprise
+459,Massive Dynamic,Mobile app crashes every time I try to upload a file.,Facebook,2023-11-23 23:35:30,user0459,"London, UK",Pro
+460,Gringotts Bank,Would love an option to schedule weekly backups instead of daily.,Intercom Chat,2023-08-29 20:05:39,user0460,"San Francisco, USA",Free
+461,Spacely Sprockets,The new collaboration features have boosted our team's productivity.,Twitter,2023-12-25 22:55:43,user0461,"San Francisco, USA",Free
+462,Valhalla Ventures,"Support team resolved my issue within 2 hours, very satisfied.",Email,2023-06-15 22:21:32,user0462,"Toronto, Canada",Pro
+463,Spacely Sprockets,Looking for an easier way to merge duplicate records.,Reddit,2024-05-26 07:49:13,user0463,"Toronto, Canada",Free
+464,Zion Technologies,Integration with Salesforce fails intermittently without errors.,Intercom Chat,2023-07-23 19:32:51,user0464,"San Francisco, USA",Free
+465,Gekko & Co,The new collaboration features have boosted our team's productivity.,Reddit,2023-10-13 17:49:17,user0465,"Paris, France",Enterprise
+466,Blue Sun Corporation,Looking for an easier way to merge duplicate records.,Intercom Chat,2023-12-18 21:22:19,user0466,"London, UK",Free
+467,Aperture Science,Chat messages are not syncing in real-time across devices.,Facebook,2024-05-10 10:49:46,user0467,"Dublin, Ireland",Pro
+468,Weyland-Yutani,"API rate limit is too low, blocking automated tasks.",Support Ticket,2023-07-31 08:41:10,user0468,"Berlin, Germany",Free
+469,Blue Yonder,Dark mode has very poor contrast and causes eye strain.,Intercom Chat,2023-12-16 15:13:39,user0469,"Dublin, Ireland",Free
+470,Pangea Software,"Support team resolved my issue within 2 hours, very satisfied.",Twitter,2024-02-05 23:08:16,user0470,"Paris, France",Pro
+471,Umbra Security,Chat messages are not syncing in real-time across devices.,Intercom Chat,2023-08-25 17:49:38,user0471,"Berlin, Germany",Free
+472,Blue Sun Corporation,Reports generate in under 5 seconds; impressive speed!,Intercom Chat,2023-06-28 13:04:19,user0472,"New York, USA",Pro
+473,Gekko & Co,Looking for an easier way to merge duplicate records.,Intercom Chat,2024-02-14 23:46:39,user0473,"Mumbai, India",Pro
+474,Globex Software,The recent update drastically improved performance on mobile.,LinkedIn,2024-01-14 17:47:34,user0474,"San Francisco, USA",Free
+475,Globex Corporation,Customer support response times exceed 48 hours.,Support Ticket,2023-06-17 10:00:25,user0475,"Toronto, Canada",Pro
+476,Gringotts Bank,The new collaboration features have boosted our team's productivity.,Intercom Chat,2024-02-09 20:00:53,user0476,"Paris, France",Free
+477,Massive Dynamic,Is there a way to bulk-delete old records?,Facebook,2024-03-05 13:21:25,user0477,"Paris, France",Enterprise
+478,Initech,Reports generate in under 5 seconds; impressive speed!,Intercom Chat,2023-09-20 15:28:45,user0478,"London, UK",Pro
+479,Umbra Security,Would love an option to schedule weekly backups instead of daily.,Support Ticket,2023-06-17 16:22:27,user0479,"Berlin, Germany",Free
+480,Hooli,Reports generate in under 5 seconds; impressive speed!,Facebook,2023-07-31 08:37:36,user0480,"Toronto, Canada",Enterprise
+481,Quark Labs,Can the system send reminders for pending approvals?,Facebook,2024-05-29 22:13:08,user0481,"Vancouver, Canada",Pro
+482,Sudo Inc,"API rate limit is too low, blocking automated tasks.",Facebook,2023-09-14 07:32:04,user0482,"Tokyo, Japan",Free
+483,Oceanic Airlines,App rarely experiences downtime; excellent reliability.,Support Ticket,2024-04-01 19:36:57,user0483,"San Francisco, USA",Free
+484,Zion Technologies,Can you add support for international characters in reports?,Support Ticket,2024-03-20 09:44:01,user0484,"Los Angeles, USA",Pro
+485,Weyland-Yutani,User permissions are too rigid; cannot create custom roles.,Twitter,2023-12-28 02:09:30,user0485,"Berlin, Germany",Enterprise
+486,Stark Industries,"API rate limit is too low, blocking automated tasks.",Twitter,2023-08-14 11:43:37,user0486,"Los Angeles, USA",Free
+487,Weyland-Yutani,Love how intuitive the new UI redesign feels.,Email,2023-08-12 21:01:24,user0487,"Vancouver, Canada",Free
+488,Sterling Cooper,Looking for an easier way to merge duplicate records.,Email,2023-07-09 23:04:10,user0488,"Tokyo, Japan",Enterprise
+489,Hooli,Love how intuitive the new UI redesign feels.,Intercom Chat,2023-10-21 13:26:14,user0489,"Mumbai, India",Enterprise
+490,Blue Sun Corporation,The dashboard loads incredibly slowly when filtering large datasets.,Facebook,2023-07-18 16:41:29,user0490,"Vancouver, Canada",Pro
+491,Oceanic Airlines,Integration with Salesforce fails intermittently without errors.,Facebook,2024-02-29 14:28:49,user0491,"Toronto, Canada",Enterprise
+492,Dunder Mifflin,Custom dashboards are a game-changer for our analytics team.,Support Ticket,2023-11-13 10:19:31,user0492,"Sydney, Australia",Pro
+493,Stark Industries,Custom dashboards are a game-changer for our analytics team.,Facebook,2023-11-23 01:45:45,user0493,"New York, USA",Free
+494,Aperture Science,Mobile app crashes every time I try to upload a file.,Reddit,2023-08-20 16:04:00,user0494,"Mumbai, India",Free
+495,Spacely Sprockets,The settings page is cluttered and difficult to navigate.,LinkedIn,2023-08-07 23:39:56,user0495,"Berlin, Germany",Free
+496,Gotham Solutions,The search function returns incomplete results.,LinkedIn,2023-12-02 09:06:59,user0496,"London, UK",Free
+497,Umbra Security,Invoices generated have incorrect tax calculations.,Reddit,2023-12-20 22:46:39,user0497,"Berlin, Germany",Pro
+498,Zenith Analytics,Customer support response times exceed 48 hours.,Email,2024-05-01 03:19:13,user0498,"Seoul, South Korea",Free
+499,Dunder Mifflin,Really appreciate the extensive API documentation provided.,Reddit,2023-08-07 21:36:54,user0499,"Toronto, Canada",Pro
+500,Octan Corporation,The dashboard loads incredibly slowly when filtering large datasets.,Reddit,2024-05-22 12:30:32,user0500,"Los Angeles, USA",Free
+501,Spacely Sprockets,"API rate limit is too low, blocking automated tasks.",Email,2023-07-07 08:20:08,user0501,"Chicago, USA",Free
+502,Vehement Capital Partners,User permissions are too rigid; cannot create custom roles.,Support Ticket,2023-12-06 10:53:43,user0502,"San Francisco, USA",Free
+503,Zenith Analytics,"API rate limit is too low, blocking automated tasks.",LinkedIn,2024-05-12 05:12:04,user0503,"London, UK",Pro
+504,Acme Corp,Invoices generated have incorrect tax calculations.,Email,2023-11-27 07:45:25,user0504,"Vancouver, Canada",Pro
+505,Sterling Cooper,Reports generate in under 5 seconds; impressive speed!,Facebook,2023-09-20 03:09:22,user0505,"London, UK",Free
+506,Massive Dynamic,Looking for an easier way to merge duplicate records.,Support Ticket,2024-01-06 11:27:02,user0506,"Tokyo, Japan",Free
+507,Gotham Solutions,The search function returns incomplete results.,Twitter,2024-03-10 21:52:54,user0507,"Dublin, Ireland",Pro
+508,Pied Piper,Mobile app crashes every time I try to upload a file.,Facebook,2024-05-03 10:58:57,user0508,"Toronto, Canada",Pro
+509,Neo Tokyo Labs,The settings page is cluttered and difficult to navigate.,LinkedIn,2023-12-18 10:45:37,user0509,"Vancouver, Canada",Free
+510,Cyberdyne Systems,Custom dashboards are a game-changer for our analytics team.,Email,2023-07-28 08:46:39,user0510,"Mumbai, India",Pro
+511,Soylent Corp,The onboarding tutorial is clear and helpful for new users.,Reddit,2023-12-02 11:31:20,user0511,"San Francisco, USA",Free
+512,Nimbus Consulting,The recent update drastically improved performance on mobile.,Support Ticket,2024-03-06 06:17:25,user0512,"Tokyo, Japan",Pro
+513,Soylent Corp,Mobile app crashes every time I try to upload a file.,Intercom Chat,2023-07-05 00:30:07,user0513,"Berlin, Germany",Free
+514,Umbrella Inc,Love how intuitive the new UI redesign feels.,Intercom Chat,2023-10-25 22:53:08,user0514,"Seoul, South Korea",Pro
+515,Sterling Cooper,"Support team resolved my issue within 2 hours, very satisfied.",LinkedIn,2023-12-23 03:00:03,user0515,"Vancouver, Canada",Pro
+516,Sudo Inc,Dark mode has very poor contrast and causes eye strain.,Support Ticket,2023-07-13 11:17:00,user0516,"London, UK",Pro
+517,Dunder Mifflin,Dark mode has very poor contrast and causes eye strain.,Intercom Chat,2023-11-15 14:13:33,user0517,"Dublin, Ireland",Pro
+518,Umbra Security,Integration with Salesforce fails intermittently without errors.,Support Ticket,2024-05-23 15:55:42,user0518,"Seoul, South Korea",Enterprise
+519,Cyberdyne Systems,Cannot customize the reporting fields as per our needs.,Twitter,2023-07-15 15:49:08,user0519,"London, UK",Pro
+520,Rubicon Analytics,Cannot customize the reporting fields as per our needs.,Support Ticket,2024-05-07 23:57:32,user0520,"Seoul, South Korea",Free
+521,Acme Corp,"API rate limit is too low, blocking automated tasks.",LinkedIn,2023-06-06 05:57:53,user0521,"Mumbai, India",Enterprise
+522,Soylent Technologies,The onboarding tutorial is clear and helpful for new users.,Facebook,2023-10-11 06:04:44,user0522,"Sydney, Australia",Free
+523,Gotham Solutions,"When exporting data, CSV missing critical columns.",Facebook,2023-06-16 12:11:50,user0523,"Tokyo, Japan",Pro
+524,Soylent Technologies,Integration with Salesforce fails intermittently without errors.,Support Ticket,2024-05-30 20:59:42,user0524,"Vancouver, Canada",Free
+525,Aperture Science,Single sign-on setup was smooth and worked instantly.,Support Ticket,2023-06-29 18:11:24,user0525,"Los Angeles, USA",Pro
+526,Blue Yonder,Invoices generated have incorrect tax calculations.,Support Ticket,2023-07-23 20:53:43,user0526,"Vancouver, Canada",Pro
+527,Vandelay Industries,Single sign-on setup was smooth and worked instantly.,Reddit,2023-06-23 00:26:50,user0527,"Toronto, Canada",Free
+528,Blue Yonder,Looking for an easier way to merge duplicate records.,Twitter,2023-08-31 01:17:15,user0528,"Paris, France",Enterprise
+529,Zion Technologies,The recent update drastically improved performance on mobile.,Twitter,2023-11-12 09:02:20,user0529,"Chicago, USA",Enterprise
+530,Blue Sun Corporation,Is there a way to bulk-delete old records?,Facebook,2023-07-10 20:48:32,user0530,"Sydney, Australia",Free
+531,Weyland-Yutani,Cannot customize the reporting fields as per our needs.,Twitter,2023-09-23 18:46:43,user0531,"New York, USA",Enterprise
+532,Soylent Corp,The new collaboration features have boosted our team's productivity.,Facebook,2023-10-23 11:18:43,user0532,"Sydney, Australia",Free
+533,Aperture Science,The dashboard loads incredibly slowly when filtering large datasets.,Support Ticket,2023-09-11 10:36:59,user0533,"Dublin, Ireland",Pro
+534,Luminary Solutions,Would love an option to schedule weekly backups instead of daily.,Email,2023-12-06 21:32:34,user0534,"Mumbai, India",Enterprise
+535,Gekko & Co,App rarely experiences downtime; excellent reliability.,Facebook,2023-10-04 05:28:55,user0535,"New York, USA",Enterprise
+536,Globex Corporation,Customer support response times exceed 48 hours.,Intercom Chat,2023-11-25 23:09:14,user0536,"Los Angeles, USA",Pro
+537,Acme Corp,Need an option to archive completed projects automatically.,Reddit,2024-05-02 13:41:59,user0537,"Los Angeles, USA",Pro
+538,Bluth Company,User permissions are too rigid; cannot create custom roles.,Twitter,2024-02-27 08:40:17,user0538,"Chicago, USA",Pro
+539,Umbrella Inc,Dark mode has very poor contrast and causes eye strain.,LinkedIn,2023-10-22 03:23:13,user0539,"New York, USA",Enterprise
+540,Soylent Technologies,The recent update drastically improved performance on mobile.,LinkedIn,2023-12-08 16:41:31,user0540,"Seoul, South Korea",Free
+541,Vehement Capital Partners,Single sign-on setup was smooth and worked instantly.,Twitter,2024-04-22 14:21:28,user0541,"London, UK",Pro
+542,Umbrella Inc,"Support team resolved my issue within 2 hours, very satisfied.",LinkedIn,2023-08-06 08:37:14,user0542,"Berlin, Germany",Free
+543,Blue Sun Corporation,Love how intuitive the new UI redesign feels.,LinkedIn,2023-11-15 11:34:48,user0543,"Mumbai, India",Free
+544,Soylent Corp,The settings page is cluttered and difficult to navigate.,Twitter,2024-03-26 03:58:03,user0544,"San Francisco, USA",Free
+545,Octan Corporation,The new collaboration features have boosted our team's productivity.,Support Ticket,2023-12-26 04:23:45,user0545,"Paris, France",Free
+546,Dunder Mifflin,Reports generate in under 5 seconds; impressive speed!,Support Ticket,2024-01-24 09:38:55,user0546,"Los Angeles, USA",Free
+547,Gringotts Bank,It would be helpful to preview attachments before downloading.,Facebook,2024-05-26 21:57:56,user0547,"New York, USA",Free
+548,Blue Sun Corporation,Dark mode has very poor contrast and causes eye strain.,Reddit,2024-05-30 09:02:14,user0548,"Sydney, Australia",Free
+549,Umbrella Inc,It would be helpful to preview attachments before downloading.,Support Ticket,2023-08-29 01:07:53,user0549,"Chicago, USA",Enterprise
+550,Netherworld Innovations,Would love an option to schedule weekly backups instead of daily.,Reddit,2024-01-23 03:42:37,user0550,"Tokyo, Japan",Pro
+551,Massive Dynamic,The dashboard loads incredibly slowly when filtering large datasets.,Reddit,2023-09-22 04:45:33,user0551,"Toronto, Canada",Enterprise
+552,Blue Yonder,The search function returns incomplete results.,Intercom Chat,2024-03-27 09:25:24,user0552,"Los Angeles, USA",Free
+553,Soylent Corp,The settings page is cluttered and difficult to navigate.,LinkedIn,2024-01-14 04:41:20,user0553,"London, UK",Enterprise
+554,Prestige Worldwide,"When exporting data, CSV missing critical columns.",Reddit,2024-01-23 01:50:37,user0554,"San Francisco, USA",Enterprise
+555,Spacely Sprockets,Love how intuitive the new UI redesign feels.,Email,2023-06-16 13:56:05,user0555,"Vancouver, Canada",Pro
+556,Oceanic Airlines,Two-factor authentication SMS never arrives intermittently.,Twitter,2023-10-19 10:11:21,user0556,"Mumbai, India",Enterprise
+557,Initech,Would love an option to schedule weekly backups instead of daily.,LinkedIn,2023-10-30 18:09:50,user0557,"Chicago, USA",Enterprise
+558,Lumon Industries,Cannot customize the reporting fields as per our needs.,Reddit,2023-10-22 13:56:42,user0558,"San Francisco, USA",Pro
+559,Umbra Security,The onboarding tutorial is clear and helpful for new users.,Twitter,2024-04-18 19:47:38,user0559,"Tokyo, Japan",Free
+560,Pangea Software,Can the system send reminders for pending approvals?,Email,2024-03-05 17:38:47,user0560,"Sydney, Australia",Enterprise
+561,Neo Tokyo Labs,Does the platform support LDAP integration?,Email,2023-10-17 06:32:48,user0561,"New York, USA",Free
+562,Vandelay Industries,Mobile app crashes every time I try to upload a file.,Facebook,2023-10-22 02:07:59,user0562,"Tokyo, Japan",Enterprise
+563,Soylent Technologies,Can the system send reminders for pending approvals?,Facebook,2024-03-26 08:28:28,user0563,"San Francisco, USA",Free
+564,Valhalla Ventures,Would love an option to schedule weekly backups instead of daily.,Support Ticket,2024-02-29 02:02:08,user0564,"Tokyo, Japan",Enterprise
+565,Vandelay Industries,Looking for an easier way to merge duplicate records.,Support Ticket,2023-08-28 06:24:41,user0565,"Toronto, Canada",Pro
+566,Luminary Solutions,Can the system send reminders for pending approvals?,Intercom Chat,2023-06-15 12:48:15,user0566,"Dublin, Ireland",Pro
+567,Nimbus Consulting,The settings page is cluttered and difficult to navigate.,Facebook,2024-02-08 19:44:17,user0567,"Berlin, Germany",Free
+568,Initech,The search function returns incomplete results.,Reddit,2023-09-28 21:54:21,user0568,"Toronto, Canada",Free
+569,Lumon Industries,The dashboard loads incredibly slowly when filtering large datasets.,Support Ticket,2024-04-10 07:20:06,user0569,"Tokyo, Japan",Free
+570,Zion Technologies,Chat messages are not syncing in real-time across devices.,Facebook,2023-11-13 02:10:06,user0570,"New York, USA",Free
+571,Zion Technologies,Dark mode has very poor contrast and causes eye strain.,Facebook,2023-07-27 19:09:42,user0571,"Los Angeles, USA",Free
+572,Soylent Corp,Would be nice to see usage metrics per team member.,LinkedIn,2024-05-05 14:24:11,user0572,"Dublin, Ireland",Free
+573,Bluth Company,Does the platform support LDAP integration?,Twitter,2023-08-20 15:54:21,user0573,"Tokyo, Japan",Pro
+574,Globex Software,Does the platform support LDAP integration?,Twitter,2024-05-28 20:27:39,user0574,"Seoul, South Korea",Enterprise
+575,Sudo Inc,Can the system send reminders for pending approvals?,Twitter,2024-05-06 21:26:34,user0575,"Los Angeles, USA",Free
+576,Bluth Company,Can you add support for international characters in reports?,Twitter,2023-08-30 00:03:55,user0576,"Seoul, South Korea",Enterprise
+577,Kwik-E-Mart,"Email notifications are delayed by hours, not minutes.",Twitter,2024-04-04 11:35:09,user0577,"Tokyo, Japan",Enterprise
+578,Vandelay Industries,User permissions are too rigid; cannot create custom roles.,Email,2023-08-12 12:03:26,user0578,"Seoul, South Korea",Free
+579,Oceanic Airlines,Does the platform support LDAP integration?,Twitter,2024-04-21 03:13:49,user0579,"Los Angeles, USA",Pro
+580,Trinity Systems,Need an option to archive completed projects automatically.,Email,2023-06-06 09:39:21,user0580,"Toronto, Canada",Free
+581,Soylent Corp,Can the system send reminders for pending approvals?,Support Ticket,2023-07-26 00:02:47,user0581,"New York, USA",Free
+582,Evergreen Tech,The recent update drastically improved performance on mobile.,Twitter,2023-12-29 17:57:09,user0582,"Chicago, USA",Free
+583,Pangea Software,User permissions are too rigid; cannot create custom roles.,Facebook,2024-02-01 21:02:46,user0583,"Vancouver, Canada",Pro
+584,Vandelay Industries,Invoices generated have incorrect tax calculations.,Email,2023-07-08 01:12:59,user0584,"Berlin, Germany",Free
+585,Tyrell Corporation,User permissions are too rigid; cannot create custom roles.,Reddit,2023-11-23 06:11:36,user0585,"Chicago, USA",Free
+586,Soylent Corp,The search function returns incomplete results.,Support Ticket,2024-03-31 22:20:31,user0586,"Mumbai, India",Pro
+587,Spacely Sprockets,Invoices generated have incorrect tax calculations.,Intercom Chat,2024-01-09 05:43:11,user0587,"New York, USA",Free
+588,Dunder Mifflin,The settings page is cluttered and difficult to navigate.,Email,2024-05-22 20:10:28,user0588,"Seoul, South Korea",Enterprise
+589,Monarch Solutions,The color scheme could use more customization options.,LinkedIn,2023-10-23 10:49:40,user0589,"Toronto, Canada",Free
+590,Kwik-E-Mart,Custom dashboards are a game-changer for our analytics team.,Twitter,2023-06-28 13:08:14,user0590,"New York, USA",Pro
+591,Pied Piper,Really appreciate the extensive API documentation provided.,Twitter,2023-07-20 00:56:13,user0591,"Toronto, Canada",Free
+592,Pied Piper,The search function returns incomplete results.,Email,2023-07-30 11:13:36,user0592,"Tokyo, Japan",Free
+593,Globex Software,The color scheme could use more customization options.,Reddit,2024-04-24 19:48:39,user0593,"Chicago, USA",Free
+594,Pangea Software,Would be nice to see usage metrics per team member.,Twitter,2024-01-15 01:37:28,user0594,"Berlin, Germany",Pro
+595,Tyrell Corporation,Customer support response times exceed 48 hours.,Facebook,2023-10-16 20:32:36,user0595,"New York, USA",Free
+596,Xandar Enterprises,User permissions are too rigid; cannot create custom roles.,Reddit,2024-05-08 12:31:01,user0596,"Tokyo, Japan",Pro
+597,Zenith Analytics,Customer support response times exceed 48 hours.,Intercom Chat,2023-07-02 14:05:38,user0597,"Los Angeles, USA",Pro
+598,Monarch Solutions,Really appreciate the extensive API documentation provided.,Intercom Chat,2023-09-29 17:20:24,user0598,"Berlin, Germany",Free
+599,Zion Technologies,"Email notifications are delayed by hours, not minutes.",Intercom Chat,2024-03-19 18:49:00,user0599,"Tokyo, Japan",Pro
+600,Sudo Inc,Dark mode has very poor contrast and causes eye strain.,Reddit,2024-01-16 06:17:39,user0600,"San Francisco, USA",Enterprise
+601,Gekko & Co,"API rate limit is too low, blocking automated tasks.",Reddit,2024-01-03 02:51:11,user0601,"Vancouver, Canada",Pro
+602,Trinity Systems,Dark mode has very poor contrast and causes eye strain.,Facebook,2024-03-31 09:23:21,user0602,"Sydney, Australia",Enterprise
+603,Soylent Corp,The search function returns incomplete results.,Email,2024-03-11 14:28:02,user0603,"Paris, France",Free
+604,Gotham Solutions,The onboarding tutorial is clear and helpful for new users.,Email,2023-06-07 22:41:05,user0604,"Dublin, Ireland",Pro
+605,Sterling Cooper,"When exporting data, CSV missing critical columns.",Email,2023-08-16 05:23:44,user0605,"Dublin, Ireland",Pro
+606,Zenith Analytics,User permissions are too rigid; cannot create custom roles.,Reddit,2024-03-15 03:40:37,user0606,"Tokyo, Japan",Free
+607,Monarch Solutions,Can the system send reminders for pending approvals?,Email,2023-10-14 13:56:46,user0607,"Vancouver, Canada",Pro
+608,Rubicon Analytics,Really appreciate the extensive API documentation provided.,Reddit,2023-08-28 10:01:39,user0608,"Chicago, USA",Free
+609,Rubicon Analytics,Love how intuitive the new UI redesign feels.,Reddit,2023-12-20 12:04:09,user0609,"Seoul, South Korea",Free
+610,Luminary Solutions,Really appreciate the extensive API documentation provided.,Support Ticket,2023-12-08 00:44:11,user0610,"Sydney, Australia",Enterprise
+611,Bluth Company,It would be helpful to preview attachments before downloading.,Support Ticket,2024-02-07 03:34:33,user0611,"Los Angeles, USA",Free
+612,Bluth Company,Reports generate in under 5 seconds; impressive speed!,Facebook,2023-11-12 09:48:33,user0612,"Seoul, South Korea",Pro
+613,Umbra Security,The search function returns incomplete results.,Twitter,2024-01-13 07:41:47,user0613,"Los Angeles, USA",Pro
+614,Globex Software,The onboarding tutorial is clear and helpful for new users.,Facebook,2023-12-09 02:02:47,user0614,"Paris, France",Pro
+615,Soylent Corp,It would be helpful to preview attachments before downloading.,LinkedIn,2024-02-15 14:41:12,user0615,"San Francisco, USA",Pro
+616,Soylent Technologies,Mobile app crashes every time I try to upload a file.,Twitter,2023-09-07 07:18:29,user0616,"Los Angeles, USA",Free
+617,Initech,The new collaboration features have boosted our team's productivity.,Reddit,2023-12-02 07:14:57,user0617,"Berlin, Germany",Free
+618,Aperture Science,Single sign-on setup was smooth and worked instantly.,Email,2024-04-21 04:30:36,user0618,"Vancouver, Canada",Free
+619,Blue Yonder,Custom dashboards are a game-changer for our analytics team.,Intercom Chat,2024-01-15 06:27:56,user0619,"Los Angeles, USA",Pro
+620,Netherworld Innovations,Can the system send reminders for pending approvals?,Support Ticket,2023-08-23 09:25:03,user0620,"Seoul, South Korea",Enterprise
+621,Hooli,Can you add support for international characters in reports?,Reddit,2023-12-15 01:48:27,user0621,"San Francisco, USA",Enterprise
+622,Dunder Mifflin,Customer support response times exceed 48 hours.,LinkedIn,2023-09-24 07:31:36,user0622,"Berlin, Germany",Pro
+623,Neo Tokyo Labs,Mobile app crashes every time I try to upload a file.,Facebook,2024-05-15 00:19:26,user0623,"Mumbai, India",Enterprise
+624,Umbra Security,Chat messages are not syncing in real-time across devices.,Intercom Chat,2023-06-05 08:08:49,user0624,"Berlin, Germany",Pro
+625,Bluth Company,Is there a way to bulk-delete old records?,Email,2023-12-10 12:41:46,user0625,"Mumbai, India",Free
+626,Aperture Science,It would be helpful to preview attachments before downloading.,LinkedIn,2024-02-22 22:42:17,user0626,"Chicago, USA",Pro
+627,Acme Corp,Single sign-on setup was smooth and worked instantly.,LinkedIn,2023-12-09 20:26:31,user0627,"Vancouver, Canada",Pro
+628,Pied Piper,It would be helpful to preview attachments before downloading.,LinkedIn,2023-07-26 17:32:22,user0628,"London, UK",Free
+629,Gotham Solutions,Does the platform support LDAP integration?,Facebook,2023-10-20 09:30:29,user0629,"Vancouver, Canada",Pro
+630,Umbra Security,It would be helpful to preview attachments before downloading.,Twitter,2023-08-16 18:50:02,user0630,"Tokyo, Japan",Free
+631,Umbrella Inc,Love how intuitive the new UI redesign feels.,LinkedIn,2023-11-11 05:05:40,user0631,"Seoul, South Korea",Free
+632,Globex Software,Can you add support for international characters in reports?,Support Ticket,2024-01-01 14:43:51,user0632,"Chicago, USA",Pro
+633,Quark Labs,The settings page is cluttered and difficult to navigate.,Support Ticket,2023-09-22 19:27:55,user0633,"Vancouver, Canada",Pro
+634,Valhalla Ventures,Can the system send reminders for pending approvals?,Intercom Chat,2023-11-01 06:11:20,user0634,"Los Angeles, USA",Pro
+635,Netherworld Innovations,Chat messages are not syncing in real-time across devices.,Support Ticket,2023-07-20 17:08:26,user0635,"San Francisco, USA",Pro
+636,Evergreen Tech,Chat messages are not syncing in real-time across devices.,LinkedIn,2023-11-19 23:49:38,user0636,"London, UK",Free
+637,Vandelay Industries,It would be helpful to preview attachments before downloading.,Email,2023-11-17 13:31:57,user0637,"Berlin, Germany",Pro
+638,Aperture Science,"When exporting data, CSV missing critical columns.",Email,2023-06-28 23:05:51,user0638,"Dublin, Ireland",Pro
+639,Sudo Inc,Integration with Salesforce fails intermittently without errors.,Email,2023-09-08 18:13:18,user0639,"London, UK",Enterprise
+640,Pangea Software,The onboarding tutorial is clear and helpful for new users.,Support Ticket,2023-12-29 01:58:06,user0640,"Los Angeles, USA",Enterprise
+641,Stark Industries,The settings page is cluttered and difficult to navigate.,Support Ticket,2023-12-27 20:43:52,user0641,"Mumbai, India",Free
+642,Zion Technologies,Chat messages are not syncing in real-time across devices.,Facebook,2023-07-12 17:45:08,user0642,"Sydney, Australia",Pro
+643,Wonka Industries,Does the platform support LDAP integration?,LinkedIn,2023-06-30 00:10:17,user0643,"Mumbai, India",Free
+644,Zenith Analytics,Invoices generated have incorrect tax calculations.,Intercom Chat,2023-08-21 17:49:29,user0644,"Tokyo, Japan",Pro
+645,Hooli,"API rate limit is too low, blocking automated tasks.",Intercom Chat,2024-01-09 23:03:52,user0645,"Chicago, USA",Pro
+646,Lumon Industries,Looking for an easier way to merge duplicate records.,Reddit,2023-06-20 19:26:03,user0646,"Toronto, Canada",Pro
+647,Acme Corp,Does the platform support LDAP integration?,Facebook,2024-02-27 06:56:19,user0647,"New York, USA",Pro
+648,Trinity Systems,Would love an option to schedule weekly backups instead of daily.,Twitter,2024-05-21 12:32:14,user0648,"Berlin, Germany",Free
+649,Pangea Software,Single sign-on setup was smooth and worked instantly.,Intercom Chat,2023-11-04 06:04:51,user0649,"London, UK",Enterprise
+650,Bluth Company,Can you add support for international characters in reports?,Email,2024-02-22 21:42:47,user0650,"Paris, France",Free
+651,Weyland-Yutani,"API rate limit is too low, blocking automated tasks.",Support Ticket,2024-02-06 13:04:47,user0651,"Tokyo, Japan",Free
+652,Kwik-E-Mart,Mobile app crashes every time I try to upload a file.,Twitter,2023-09-23 04:46:37,user0652,"Toronto, Canada",Pro
+653,Quark Labs,Single sign-on setup was smooth and worked instantly.,Twitter,2023-08-03 13:20:49,user0653,"Seoul, South Korea",Pro
+654,Initech,Looking for an easier way to merge duplicate records.,LinkedIn,2023-10-09 19:28:08,user0654,"Dublin, Ireland",Free
+655,Umbrella Inc,User permissions are too rigid; cannot create custom roles.,LinkedIn,2023-06-11 01:45:22,user0655,"Seoul, South Korea",Free
+656,Octan Corporation,Looking for an easier way to merge duplicate records.,Reddit,2024-03-07 09:12:06,user0656,"Mumbai, India",Pro
+657,Dunder Mifflin,The dashboard loads incredibly slowly when filtering large datasets.,Support Ticket,2024-01-02 03:40:35,user0657,"Vancouver, Canada",Pro
+658,Sudo Inc,"API rate limit is too low, blocking automated tasks.",Email,2023-07-24 18:37:34,user0658,"Seoul, South Korea",Pro
+659,Pied Piper,"When exporting data, CSV missing critical columns.",Facebook,2023-07-25 18:07:19,user0659,"Toronto, Canada",Pro
+660,Tyrell Corporation,The onboarding tutorial is clear and helpful for new users.,Twitter,2023-12-01 14:55:07,user0660,"Berlin, Germany",Free
+661,Netherworld Innovations,Custom dashboards are a game-changer for our analytics team.,Twitter,2024-05-18 17:30:01,user0661,"Sydney, Australia",Free
+662,Acme Corp,The search function returns incomplete results.,Reddit,2024-03-20 17:59:23,user0662,"San Francisco, USA",Enterprise
+663,Neo Tokyo Labs,Integration with Salesforce fails intermittently without errors.,LinkedIn,2023-07-22 09:19:00,user0663,"Vancouver, Canada",Free
+664,Pied Piper,The color scheme could use more customization options.,Email,2023-06-26 03:38:02,user0664,"Los Angeles, USA",Free
+665,Initech,Can you add support for international characters in reports?,Support Ticket,2024-05-12 11:23:07,user0665,"Chicago, USA",Pro
+666,Vehement Capital Partners,"Email notifications are delayed by hours, not minutes.",Reddit,2023-08-10 23:33:49,user0666,"San Francisco, USA",Free
+667,Octan Corporation,Is there a way to bulk-delete old records?,LinkedIn,2023-07-18 13:34:00,user0667,"Los Angeles, USA",Free
+668,Massive Dynamic,Love how intuitive the new UI redesign feels.,Email,2024-01-20 09:53:49,user0668,"Los Angeles, USA",Free
+669,Lumon Industries,The recent update drastically improved performance on mobile.,LinkedIn,2023-08-25 04:06:58,user0669,"San Francisco, USA",Pro
+670,Umbrella Inc,Invoices generated have incorrect tax calculations.,Reddit,2023-12-31 21:30:30,user0670,"Mumbai, India",Enterprise
+671,Weyland-Yutani,Reports generate in under 5 seconds; impressive speed!,Twitter,2024-04-08 13:49:34,user0671,"Tokyo, Japan",Free
+672,Globex Corporation,"API rate limit is too low, blocking automated tasks.",Email,2024-02-05 04:06:42,user0672,"Chicago, USA",Pro
+673,Soylent Corp,The color scheme could use more customization options.,LinkedIn,2023-11-08 00:27:00,user0673,"Seoul, South Korea",Enterprise
+674,Soylent Technologies,Customer support response times exceed 48 hours.,LinkedIn,2023-11-21 18:53:59,user0674,"Paris, France",Pro
+675,Sudo Inc,User permissions are too rigid; cannot create custom roles.,Email,2024-05-04 09:03:01,user0675,"Mumbai, India",Free
+676,Weyland-Yutani,Looking for an easier way to merge duplicate records.,Twitter,2024-03-12 22:18:55,user0676,"New York, USA",Free
+677,Gringotts Bank,Single sign-on setup was smooth and worked instantly.,Facebook,2024-01-27 18:03:10,user0677,"Los Angeles, USA",Free
+678,Zenith Analytics,Custom dashboards are a game-changer for our analytics team.,Support Ticket,2023-10-02 12:02:51,user0678,"Berlin, Germany",Free
+679,Vandelay Industries,Looking for an easier way to merge duplicate records.,Email,2023-09-29 02:52:12,user0679,"Mumbai, India",Pro
+680,Nimbus Consulting,Reports generate in under 5 seconds; impressive speed!,Reddit,2024-02-11 16:16:38,user0680,"Sydney, Australia",Free
+681,Globex Software,Mobile app crashes every time I try to upload a file.,Reddit,2023-12-24 15:00:46,user0681,"New York, USA",Pro
+682,Acme Corp,The search function returns incomplete results.,Facebook,2024-04-05 22:32:22,user0682,"Vancouver, Canada",Free
+683,Neo Tokyo Labs,Two-factor authentication SMS never arrives intermittently.,LinkedIn,2024-05-09 16:36:36,user0683,"Sydney, Australia",Free
+684,Umbrella Inc,Customer support response times exceed 48 hours.,Facebook,2024-01-19 12:05:12,user0684,"Paris, France",Pro
+685,Rubicon Analytics,Really appreciate the extensive API documentation provided.,LinkedIn,2024-05-02 13:13:37,user0685,"Seoul, South Korea",Pro
+686,Vehement Capital Partners,Customer support response times exceed 48 hours.,Reddit,2023-11-22 12:55:48,user0686,"Los Angeles, USA",Pro
+687,Pied Piper,The onboarding tutorial is clear and helpful for new users.,Support Ticket,2024-05-25 03:52:15,user0687,"New York, USA",Enterprise
+688,Globex Software,"API rate limit is too low, blocking automated tasks.",Facebook,2023-12-27 03:53:39,user0688,"Berlin, Germany",Pro
+689,Gekko & Co,"When exporting data, CSV missing critical columns.",Facebook,2023-12-19 07:50:57,user0689,"Mumbai, India",Enterprise
+690,Gekko & Co,Need an option to archive completed projects automatically.,Reddit,2023-12-30 01:41:34,user0690,"Vancouver, Canada",Enterprise
+691,Quark Labs,"When exporting data, CSV missing critical columns.",Facebook,2024-01-17 16:39:10,user0691,"Vancouver, Canada",Pro
+692,Neo Tokyo Labs,"API rate limit is too low, blocking automated tasks.",Email,2023-06-03 19:18:35,user0692,"Seoul, South Korea",Free
+693,Spacely Sprockets,Really appreciate the extensive API documentation provided.,Intercom Chat,2023-08-30 21:03:52,user0693,"San Francisco, USA",Pro
+694,Stark Industries,User permissions are too rigid; cannot create custom roles.,Email,2024-05-02 21:51:54,user0694,"Dublin, Ireland",Enterprise
+695,Neo Tokyo Labs,Looking for an easier way to merge duplicate records.,Email,2024-04-07 09:02:17,user0695,"Berlin, Germany",Free
+696,Prestige Worldwide,Can you add support for international characters in reports?,Email,2023-08-08 05:01:51,user0696,"Chicago, USA",Pro
+697,Luminary Solutions,Single sign-on setup was smooth and worked instantly.,Support Ticket,2024-05-25 19:56:42,user0697,"Los Angeles, USA",Free
+698,Luminary Solutions,Two-factor authentication SMS never arrives intermittently.,Twitter,2023-09-16 22:43:30,user0698,"Seoul, South Korea",Free
+699,Oceanic Airlines,"API rate limit is too low, blocking automated tasks.",LinkedIn,2024-04-28 06:28:26,user0699,"Paris, France",Pro
+700,Trinity Systems,Does the platform support LDAP integration?,LinkedIn,2023-07-30 12:49:28,user0700,"Paris, France",Pro
+701,Nimbus Consulting,The recent update drastically improved performance on mobile.,LinkedIn,2024-02-29 10:24:37,user0701,"Los Angeles, USA",Pro
+702,Acme Corp,The onboarding tutorial is clear and helpful for new users.,Reddit,2023-06-13 13:52:01,user0702,"San Francisco, USA",Free
+703,Umbrella Inc,The settings page is cluttered and difficult to navigate.,Support Ticket,2023-08-22 10:26:07,user0703,"Vancouver, Canada",Free
+704,Umbrella Inc,Can you add support for international characters in reports?,Twitter,2024-03-04 01:10:34,user0704,"Sydney, Australia",Enterprise
+705,Vehement Capital Partners,Customer support response times exceed 48 hours.,LinkedIn,2024-04-27 20:26:06,user0705,"Chicago, USA",Free
+706,Xandar Enterprises,Can you add support for international characters in reports?,LinkedIn,2024-05-06 01:42:37,user0706,"Chicago, USA",Free
+707,Weyland-Yutani,Does the platform support LDAP integration?,Intercom Chat,2023-06-28 00:28:19,user0707,"Seoul, South Korea",Free
+708,Sudo Inc,Reports generate in under 5 seconds; impressive speed!,Facebook,2023-09-24 23:04:31,user0708,"Seoul, South Korea",Pro
+709,Blue Yonder,App rarely experiences downtime; excellent reliability.,LinkedIn,2024-04-04 07:09:11,user0709,"Tokyo, Japan",Pro
+710,Gekko & Co,Can you add support for international characters in reports?,Email,2023-08-30 02:42:40,user0710,"San Francisco, USA",Enterprise
+711,Luminary Solutions,Single sign-on setup was smooth and worked instantly.,Reddit,2023-12-11 01:28:46,user0711,"Chicago, USA",Free
+712,Tyrell Corporation,"API rate limit is too low, blocking automated tasks.",Twitter,2024-03-26 09:17:05,user0712,"New York, USA",Free
+713,Zion Technologies,Dark mode has very poor contrast and causes eye strain.,Reddit,2023-08-18 11:44:47,user0713,"Dublin, Ireland",Free
+714,Trinity Systems,It would be helpful to preview attachments before downloading.,Email,2024-03-20 20:01:50,user0714,"Sydney, Australia",Free
+715,Zion Technologies,Does the platform support LDAP integration?,Intercom Chat,2023-09-21 06:41:40,user0715,"Paris, France",Free
+716,Neo Tokyo Labs,Invoices generated have incorrect tax calculations.,Email,2024-03-05 19:33:10,user0716,"Chicago, USA",Free
+717,Vandelay Industries,Two-factor authentication SMS never arrives intermittently.,LinkedIn,2023-11-17 12:03:13,user0717,"Sydney, Australia",Free
+718,Zenith Analytics,The onboarding tutorial is clear and helpful for new users.,Email,2024-03-14 23:38:25,user0718,"New York, USA",Free
+719,Oceanic Airlines,Reports generate in under 5 seconds; impressive speed!,Twitter,2024-04-24 22:20:39,user0719,"Dublin, Ireland",Free
+720,Initech,Does the platform support LDAP integration?,Email,2023-07-29 14:02:57,user0720,"Berlin, Germany",Pro
+721,Pied Piper,Mobile app crashes every time I try to upload a file.,Intercom Chat,2023-12-09 18:43:31,user0721,"Tokyo, Japan",Pro
+722,Globex Software,"Email notifications are delayed by hours, not minutes.",Support Ticket,2024-04-29 07:00:32,user0722,"Sydney, Australia",Pro
+723,Vehement Capital Partners,Invoices generated have incorrect tax calculations.,Facebook,2024-03-02 19:24:48,user0723,"New York, USA",Pro
+724,Dunder Mifflin,Two-factor authentication SMS never arrives intermittently.,Facebook,2024-05-16 15:26:41,user0724,"Los Angeles, USA",Free
+725,Monarch Solutions,"Support team resolved my issue within 2 hours, very satisfied.",LinkedIn,2023-07-07 05:35:52,user0725,"New York, USA",Pro
+726,Prestige Worldwide,"Email notifications are delayed by hours, not minutes.",Reddit,2023-07-08 01:58:33,user0726,"San Francisco, USA",Pro
+727,Netherworld Innovations,Integration with Salesforce fails intermittently without errors.,Intercom Chat,2023-09-25 09:25:01,user0727,"Chicago, USA",Free
+728,Trinity Systems,Love how intuitive the new UI redesign feels.,Email,2023-11-09 00:36:53,user0728,"Chicago, USA",Pro
+729,Monarch Solutions,The dashboard loads incredibly slowly when filtering large datasets.,LinkedIn,2024-04-12 02:18:08,user0729,"Tokyo, Japan",Pro
+730,Initech,Integration with Salesforce fails intermittently without errors.,Support Ticket,2024-02-13 03:51:51,user0730,"Berlin, Germany",Pro
+731,Bluth Company,The search function returns incomplete results.,Support Ticket,2024-01-11 13:53:12,user0731,"Chicago, USA",Enterprise
+732,Globex Corporation,Really appreciate the extensive API documentation provided.,Twitter,2024-02-29 08:00:18,user0732,"San Francisco, USA",Pro
+733,Monarch Solutions,Can you add support for international characters in reports?,LinkedIn,2023-08-13 10:51:06,user0733,"Vancouver, Canada",Enterprise
+734,Evergreen Tech,Would be nice to see usage metrics per team member.,Reddit,2024-03-10 20:12:34,user0734,"San Francisco, USA",Free
+735,Acme Corp,Love how intuitive the new UI redesign feels.,Intercom Chat,2024-03-07 03:05:57,user0735,"Berlin, Germany",Free
+736,Luminary Solutions,Can the system send reminders for pending approvals?,Twitter,2023-12-29 23:31:03,user0736,"Los Angeles, USA",Pro
+737,Gringotts Bank,Chat messages are not syncing in real-time across devices.,Twitter,2024-04-11 09:12:07,user0737,"Toronto, Canada",Free
+738,Valhalla Ventures,Cannot customize the reporting fields as per our needs.,Facebook,2024-03-08 16:47:38,user0738,"Vancouver, Canada",Pro
+739,Pied Piper,Integration with Salesforce fails intermittently without errors.,Support Ticket,2023-07-21 07:11:15,user0739,"Seoul, South Korea",Pro
+740,Prestige Worldwide,Can the system send reminders for pending approvals?,Twitter,2024-05-09 23:51:54,user0740,"Toronto, Canada",Free
+741,Sudo Inc,Integration with Salesforce fails intermittently without errors.,Twitter,2023-11-10 17:41:22,user0741,"Mumbai, India",Free
+742,Valhalla Ventures,It would be helpful to preview attachments before downloading.,LinkedIn,2024-03-26 05:32:54,user0742,"Dublin, Ireland",Pro
+743,Blue Sun Corporation,"Support team resolved my issue within 2 hours, very satisfied.",Twitter,2023-06-03 11:24:13,user0743,"Toronto, Canada",Pro
+744,Zion Technologies,"Support team resolved my issue within 2 hours, very satisfied.",Support Ticket,2023-12-02 04:53:23,user0744,"Vancouver, Canada",Pro
+745,Lumon Industries,The new collaboration features have boosted our team's productivity.,Email,2023-12-01 11:07:18,user0745,"Mumbai, India",Pro
+746,Wonka Industries,The search function returns incomplete results.,Facebook,2023-10-22 05:05:50,user0746,"Paris, France",Free
+747,Evergreen Tech,Integration with Salesforce fails intermittently without errors.,LinkedIn,2023-07-09 00:40:41,user0747,"Los Angeles, USA",Pro
+748,Globex Corporation,Love how intuitive the new UI redesign feels.,Facebook,2024-03-29 07:44:46,user0748,"New York, USA",Pro
+749,Monarch Solutions,App rarely experiences downtime; excellent reliability.,Email,2024-04-30 05:24:41,user0749,"Sydney, Australia",Free
+750,Quark Labs,Can you add support for international characters in reports?,Twitter,2024-01-24 18:14:43,user0750,"Paris, France",Free
+751,Blue Yonder,Single sign-on setup was smooth and worked instantly.,Reddit,2024-05-05 08:41:50,user0751,"Los Angeles, USA",Enterprise
+752,Sudo Inc,Invoices generated have incorrect tax calculations.,Facebook,2024-02-19 05:06:38,user0752,"Mumbai, India",Free
+753,Nimbus Consulting,Dark mode has very poor contrast and causes eye strain.,LinkedIn,2024-02-03 13:03:48,user0753,"New York, USA",Free
+754,Globex Software,Customer support response times exceed 48 hours.,Reddit,2023-10-14 13:27:02,user0754,"Toronto, Canada",Free
+755,Dunder Mifflin,The onboarding tutorial is clear and helpful for new users.,Facebook,2023-12-02 14:07:48,user0755,"Mumbai, India",Enterprise
+756,Initech,"Email notifications are delayed by hours, not minutes.",LinkedIn,2023-11-13 03:45:29,user0756,"Seoul, South Korea",Enterprise
+757,Trinity Systems,Is there a way to bulk-delete old records?,Facebook,2023-10-13 21:04:02,user0757,"Paris, France",Pro
+758,Pangea Software,Looking for an easier way to merge duplicate records.,Support Ticket,2024-03-27 23:47:14,user0758,"Los Angeles, USA",Free
+759,Tyrell Corporation,Looking for an easier way to merge duplicate records.,Twitter,2024-02-20 14:46:34,user0759,"Sydney, Australia",Enterprise
+760,Oceanic Airlines,Custom dashboards are a game-changer for our analytics team.,Facebook,2024-02-02 21:59:55,user0760,"New York, USA",Pro
+761,Stark Industries,Reports generate in under 5 seconds; impressive speed!,Twitter,2023-09-26 02:48:24,user0761,"Paris, France",Pro
+762,Dunder Mifflin,Dark mode has very poor contrast and causes eye strain.,Twitter,2023-08-20 13:11:17,user0762,"Dublin, Ireland",Pro
+763,Massive Dynamic,Customer support response times exceed 48 hours.,Email,2023-11-17 04:07:35,user0763,"Mumbai, India",Pro
+764,Lumon Industries,Two-factor authentication SMS never arrives intermittently.,Intercom Chat,2023-08-22 23:33:57,user0764,"Los Angeles, USA",Pro
+765,Cyberdyne Systems,"Email notifications are delayed by hours, not minutes.",Twitter,2024-03-20 21:34:00,user0765,"San Francisco, USA",Free
+766,Neo Tokyo Labs,"Email notifications are delayed by hours, not minutes.",Intercom Chat,2023-08-15 02:02:08,user0766,"San Francisco, USA",Free
+767,Wonka Industries,The onboarding tutorial is clear and helpful for new users.,Email,2024-04-02 20:31:12,user0767,"Vancouver, Canada",Free
+768,Evergreen Tech,Can you add support for international characters in reports?,Reddit,2023-09-19 16:21:17,user0768,"Dublin, Ireland",Enterprise
+769,Lumon Industries,Invoices generated have incorrect tax calculations.,Twitter,2023-12-28 21:52:33,user0769,"San Francisco, USA",Pro
+770,Wonka Industries,Single sign-on setup was smooth and worked instantly.,Support Ticket,2023-08-25 12:28:34,user0770,"Mumbai, India",Pro
+771,Soylent Corp,Customer support response times exceed 48 hours.,Email,2023-12-15 04:48:49,user0771,"London, UK",Free
+772,Soylent Technologies,Single sign-on setup was smooth and worked instantly.,LinkedIn,2024-01-01 05:26:43,user0772,"Dublin, Ireland",Free
+773,Lumon Industries,"Email notifications are delayed by hours, not minutes.",Facebook,2024-02-28 18:19:32,user0773,"Tokyo, Japan",Free
+774,Lumon Industries,"API rate limit is too low, blocking automated tasks.",Intercom Chat,2024-03-03 00:02:37,user0774,"Tokyo, Japan",Pro
+775,Spacely Sprockets,The onboarding tutorial is clear and helpful for new users.,Email,2023-12-07 01:34:53,user0775,"Seoul, South Korea",Pro
+776,Vandelay Industries,Really appreciate the extensive API documentation provided.,Facebook,2023-12-13 12:45:43,user0776,"Dublin, Ireland",Enterprise
+777,Zenith Analytics,User permissions are too rigid; cannot create custom roles.,Email,2023-08-08 09:16:00,user0777,"Mumbai, India",Pro
+778,Hooli,Can you add support for international characters in reports?,Intercom Chat,2024-03-05 14:52:42,user0778,"Berlin, Germany",Free
+779,Zion Technologies,The dashboard loads incredibly slowly when filtering large datasets.,Intercom Chat,2024-02-23 04:17:24,user0779,"Paris, France",Free
+780,Umbra Security,Two-factor authentication SMS never arrives intermittently.,LinkedIn,2023-11-09 14:53:08,user0780,"Sydney, Australia",Free
+781,Spacely Sprockets,The color scheme could use more customization options.,Support Ticket,2024-03-01 15:25:17,user0781,"Dublin, Ireland",Free
+782,Gotham Solutions,Love how intuitive the new UI redesign feels.,Facebook,2023-09-13 15:02:42,user0782,"Paris, France",Pro
+783,Lumon Industries,Chat messages are not syncing in real-time across devices.,Support Ticket,2024-03-13 20:12:13,user0783,"Mumbai, India",Free
+784,Bluth Company,Can the system send reminders for pending approvals?,Facebook,2024-05-27 14:29:43,user0784,"Seoul, South Korea",Free
+785,Valhalla Ventures,"When exporting data, CSV missing critical columns.",LinkedIn,2023-09-26 16:15:36,user0785,"Tokyo, Japan",Pro
+786,Gringotts Bank,User permissions are too rigid; cannot create custom roles.,Twitter,2024-02-16 14:35:02,user0786,"Tokyo, Japan",Free
+787,Netherworld Innovations,Cannot customize the reporting fields as per our needs.,Twitter,2023-12-17 23:09:05,user0787,"New York, USA",Enterprise
+788,Wayne Enterprises,Really appreciate the extensive API documentation provided.,Intercom Chat,2024-01-09 03:12:32,user0788,"London, UK",Free
+789,Blue Yonder,The search function returns incomplete results.,Intercom Chat,2023-06-20 13:59:34,user0789,"Chicago, USA",Pro
+790,Soylent Technologies,Can you add support for international characters in reports?,LinkedIn,2024-04-01 02:05:31,user0790,"Tokyo, Japan",Enterprise
+791,Trinity Systems,Custom dashboards are a game-changer for our analytics team.,Email,2023-06-06 07:20:38,user0791,"Los Angeles, USA",Pro
+792,Soylent Technologies,Can you add support for international characters in reports?,Twitter,2023-06-18 21:49:39,user0792,"Paris, France",Pro
+793,Vandelay Industries,Invoices generated have incorrect tax calculations.,LinkedIn,2023-06-19 13:05:51,user0793,"Toronto, Canada",Pro
+794,Gringotts Bank,The search function returns incomplete results.,Support Ticket,2023-12-22 12:51:25,user0794,"Vancouver, Canada",Free
+795,Quark Labs,The settings page is cluttered and difficult to navigate.,Intercom Chat,2023-06-08 02:29:53,user0795,"London, UK",Pro
+796,Evergreen Tech,Can the system send reminders for pending approvals?,Support Ticket,2023-10-20 08:14:21,user0796,"Dublin, Ireland",Enterprise
+797,Aperture Science,Love how intuitive the new UI redesign feels.,Intercom Chat,2023-06-03 09:30:23,user0797,"San Francisco, USA",Pro
+798,Vehement Capital Partners,Integration with Salesforce fails intermittently without errors.,Intercom Chat,2023-10-29 12:22:40,user0798,"London, UK",Enterprise
+799,Tyrell Corporation,App rarely experiences downtime; excellent reliability.,Facebook,2024-03-21 09:06:26,user0799,"Seoul, South Korea",Pro
+800,Pangea Software,Really appreciate the extensive API documentation provided.,Facebook,2023-10-03 12:22:00,user0800,"Tokyo, Japan",Pro
+801,Aperture Science,Mobile app crashes every time I try to upload a file.,Email,2023-07-30 09:23:12,user0801,"London, UK",Free
+802,Vandelay Industries,Customer support response times exceed 48 hours.,Facebook,2023-11-09 15:00:57,user0802,"Sydney, Australia",Pro
+803,Acme Corp,The color scheme could use more customization options.,Twitter,2023-10-26 03:23:10,user0803,"Chicago, USA",Pro
+804,Prestige Worldwide,Integration with Salesforce fails intermittently without errors.,Intercom Chat,2023-08-31 17:21:03,user0804,"Sydney, Australia",Free
+805,Nimbus Consulting,Is there a way to bulk-delete old records?,Twitter,2024-05-15 06:55:25,user0805,"Mumbai, India",Pro
+806,Cyberdyne Systems,Would love an option to schedule weekly backups instead of daily.,Facebook,2023-10-14 07:31:42,user0806,"Toronto, Canada",Free
+807,Cyberdyne Systems,Can the system send reminders for pending approvals?,Twitter,2023-07-25 04:21:52,user0807,"London, UK",Pro
+808,Valhalla Ventures,Custom dashboards are a game-changer for our analytics team.,Intercom Chat,2023-06-04 19:42:52,user0808,"New York, USA",Enterprise
+809,Blue Yonder,Does the platform support LDAP integration?,Email,2024-03-21 10:00:09,user0809,"Mumbai, India",Free
+810,Zenith Analytics,Single sign-on setup was smooth and worked instantly.,Support Ticket,2023-12-21 08:05:10,user0810,"Tokyo, Japan",Pro
+811,Umbrella Inc,The onboarding tutorial is clear and helpful for new users.,Facebook,2024-01-03 17:24:54,user0811,"Paris, France",Free
+812,Oceanic Airlines,Love how intuitive the new UI redesign feels.,Facebook,2024-05-17 06:21:51,user0812,"Mumbai, India",Enterprise
+813,Xandar Enterprises,The onboarding tutorial is clear and helpful for new users.,Email,2023-11-09 00:18:23,user0813,"New York, USA",Pro
+814,Pangea Software,User permissions are too rigid; cannot create custom roles.,Support Ticket,2023-12-03 22:18:38,user0814,"Los Angeles, USA",Free
+815,Netherworld Innovations,The color scheme could use more customization options.,Twitter,2023-10-16 17:09:40,user0815,"Dublin, Ireland",Free
+816,Wonka Industries,Custom dashboards are a game-changer for our analytics team.,Email,2023-09-16 15:15:31,user0816,"Seoul, South Korea",Pro
+817,Blue Yonder,Love how intuitive the new UI redesign feels.,Support Ticket,2024-01-17 06:32:58,user0817,"Dublin, Ireland",Free
+818,Nimbus Consulting,Customer support response times exceed 48 hours.,Facebook,2023-07-22 09:49:42,user0818,"Tokyo, Japan",Free
+819,Spacely Sprockets,Looking for an easier way to merge duplicate records.,Twitter,2023-08-14 05:26:41,user0819,"Mumbai, India",Enterprise
+820,Wonka Industries,The recent update drastically improved performance on mobile.,Email,2023-08-08 22:57:40,user0820,"Paris, France",Pro
+821,Blue Sun Corporation,Custom dashboards are a game-changer for our analytics team.,Support Ticket,2023-10-07 20:28:00,user0821,"Los Angeles, USA",Pro
+822,Kwik-E-Mart,User permissions are too rigid; cannot create custom roles.,LinkedIn,2023-08-23 02:11:09,user0822,"Toronto, Canada",Enterprise
+823,Lumon Industries,User permissions are too rigid; cannot create custom roles.,Email,2023-11-19 09:27:28,user0823,"Sydney, Australia",Free
+824,Netherworld Innovations,The color scheme could use more customization options.,Support Ticket,2023-06-11 14:59:30,user0824,"London, UK",Free
+825,Weyland-Yutani,The settings page is cluttered and difficult to navigate.,Intercom Chat,2024-03-21 23:39:39,user0825,"Vancouver, Canada",Pro
+826,Pied Piper,Can the system send reminders for pending approvals?,Support Ticket,2024-05-10 18:35:04,user0826,"Mumbai, India",Pro
+827,Octan Corporation,The search function returns incomplete results.,Email,2024-04-10 10:25:55,user0827,"Mumbai, India",Pro
+828,Wayne Enterprises,Invoices generated have incorrect tax calculations.,LinkedIn,2023-11-20 15:21:28,user0828,"Vancouver, Canada",Pro
+829,Kwik-E-Mart,Integration with Salesforce fails intermittently without errors.,Reddit,2023-08-22 12:30:39,user0829,"Toronto, Canada",Free
+830,Umbra Security,Can you add support for international characters in reports?,LinkedIn,2023-10-15 22:02:29,user0830,"Vancouver, Canada",Free
+831,Octan Corporation,Would be nice to see usage metrics per team member.,LinkedIn,2024-03-27 18:58:00,user0831,"Mumbai, India",Pro
+832,Wonka Industries,Mobile app crashes every time I try to upload a file.,Twitter,2023-09-29 09:09:43,user0832,"Seoul, South Korea",Pro
+833,Hooli,Two-factor authentication SMS never arrives intermittently.,Twitter,2023-12-21 03:45:01,user0833,"London, UK",Free
+834,Lumon Industries,Cannot customize the reporting fields as per our needs.,Reddit,2023-12-21 19:04:39,user0834,"Tokyo, Japan",Enterprise
+835,Vehement Capital Partners,The color scheme could use more customization options.,Intercom Chat,2023-08-19 03:04:10,user0835,"Vancouver, Canada",Enterprise
+836,Pangea Software,It would be helpful to preview attachments before downloading.,Twitter,2023-10-05 10:20:47,user0836,"Mumbai, India",Pro
+837,Stark Industries,The onboarding tutorial is clear and helpful for new users.,Facebook,2023-08-27 01:02:24,user0837,"New York, USA",Pro
+838,Blue Sun Corporation,Really appreciate the extensive API documentation provided.,Email,2024-03-03 09:55:05,user0838,"Paris, France",Pro
+839,Xandar Enterprises,App rarely experiences downtime; excellent reliability.,Twitter,2024-03-29 21:45:26,user0839,"Mumbai, India",Pro
+840,Trinity Systems,"Support team resolved my issue within 2 hours, very satisfied.",Intercom Chat,2024-04-23 23:17:04,user0840,"Paris, France",Free
+841,Oceanic Airlines,Really appreciate the extensive API documentation provided.,Intercom Chat,2023-09-25 03:15:38,user0841,"Mumbai, India",Free
+842,Sterling Cooper,The color scheme could use more customization options.,Twitter,2023-11-03 00:23:03,user0842,"New York, USA",Pro
+843,Zenith Analytics,"API rate limit is too low, blocking automated tasks.",Support Ticket,2023-10-25 17:04:58,user0843,"Paris, France",Free
+844,Globex Software,Really appreciate the extensive API documentation provided.,Support Ticket,2023-06-05 15:40:18,user0844,"Tokyo, Japan",Free
+845,Vandelay Industries,The dashboard loads incredibly slowly when filtering large datasets.,Intercom Chat,2023-12-09 06:51:56,user0845,"Chicago, USA",Enterprise
+846,Spacely Sprockets,Love how intuitive the new UI redesign feels.,Twitter,2023-08-23 23:31:11,user0846,"Chicago, USA",Enterprise
+847,Vandelay Industries,The color scheme could use more customization options.,Reddit,2024-01-03 22:46:02,user0847,"Toronto, Canada",Pro
+848,Sudo Inc,Is there a way to bulk-delete old records?,Support Ticket,2024-04-28 19:22:02,user0848,"Tokyo, Japan",Free
+849,Gekko & Co,Integration with Salesforce fails intermittently without errors.,Twitter,2023-08-09 10:32:37,user0849,"London, UK",Pro
+850,Sudo Inc,Reports generate in under 5 seconds; impressive speed!,Support Ticket,2024-05-24 22:40:25,user0850,"Mumbai, India",Free
+851,Globex Corporation,Dark mode has very poor contrast and causes eye strain.,Reddit,2024-02-29 00:48:20,user0851,"San Francisco, USA",Enterprise
+852,Pied Piper,Is there a way to bulk-delete old records?,Twitter,2024-01-11 00:17:55,user0852,"Toronto, Canada",Free
+853,Acme Corp,Custom dashboards are a game-changer for our analytics team.,Twitter,2023-11-23 15:18:02,user0853,"Berlin, Germany",Pro
+854,Globex Software,Would be nice to see usage metrics per team member.,Email,2024-05-22 01:09:19,user0854,"Sydney, Australia",Free
+855,Zenith Analytics,Dark mode has very poor contrast and causes eye strain.,Reddit,2023-10-15 14:17:15,user0855,"London, UK",Pro
+856,Wonka Industries,The settings page is cluttered and difficult to navigate.,Facebook,2023-10-07 13:53:34,user0856,"Los Angeles, USA",Free
+857,Zion Technologies,Would love an option to schedule weekly backups instead of daily.,Email,2024-01-13 08:59:56,user0857,"Seoul, South Korea",Enterprise
+858,Gekko & Co,The new collaboration features have boosted our team's productivity.,LinkedIn,2023-07-19 18:58:26,user0858,"Vancouver, Canada",Enterprise
+859,Lumon Industries,Looking for an easier way to merge duplicate records.,LinkedIn,2023-11-07 11:45:44,user0859,"San Francisco, USA",Pro
+860,Initech,The onboarding tutorial is clear and helpful for new users.,Reddit,2023-10-08 17:31:15,user0860,"Vancouver, Canada",Free
+861,Blue Yonder,Cannot customize the reporting fields as per our needs.,Facebook,2024-05-07 07:55:45,user0861,"London, UK",Free
+862,Spacely Sprockets,Does the platform support LDAP integration?,Reddit,2023-08-25 10:03:08,user0862,"Dublin, Ireland",Free
+863,Cyberdyne Systems,The dashboard loads incredibly slowly when filtering large datasets.,Reddit,2024-03-24 17:18:14,user0863,"Seoul, South Korea",Pro
+864,Blue Yonder,The search function returns incomplete results.,Twitter,2023-08-20 18:12:05,user0864,"London, UK",Pro
+865,Prestige Worldwide,Cannot customize the reporting fields as per our needs.,Reddit,2023-11-30 23:28:05,user0865,"San Francisco, USA",Pro
+866,Vehement Capital Partners,"API rate limit is too low, blocking automated tasks.",Email,2023-09-28 11:31:55,user0866,"Paris, France",Pro
+867,Zenith Analytics,Can the system send reminders for pending approvals?,Facebook,2024-01-11 07:01:32,user0867,"New York, USA",Pro
+868,Oceanic Airlines,"API rate limit is too low, blocking automated tasks.",Support Ticket,2023-06-21 17:40:09,user0868,"Seoul, South Korea",Pro
+869,Pied Piper,App rarely experiences downtime; excellent reliability.,LinkedIn,2024-02-06 06:54:34,user0869,"Dublin, Ireland",Free
+870,Oceanic Airlines,Does the platform support LDAP integration?,LinkedIn,2024-01-26 10:01:27,user0870,"Los Angeles, USA",Enterprise
+871,Netherworld Innovations,Invoices generated have incorrect tax calculations.,Reddit,2024-02-27 05:38:39,user0871,"Mumbai, India",Free
+872,Tyrell Corporation,App rarely experiences downtime; excellent reliability.,Support Ticket,2024-01-19 00:01:34,user0872,"Tokyo, Japan",Pro
+873,Pangea Software,Chat messages are not syncing in real-time across devices.,Reddit,2024-04-13 13:15:20,user0873,"Tokyo, Japan",Pro
+874,Blue Sun Corporation,Integration with Salesforce fails intermittently without errors.,LinkedIn,2024-03-02 14:06:29,user0874,"Toronto, Canada",Pro
+875,Globex Software,Dark mode has very poor contrast and causes eye strain.,Intercom Chat,2023-10-23 11:44:43,user0875,"Chicago, USA",Pro
+876,Massive Dynamic,User permissions are too rigid; cannot create custom roles.,Intercom Chat,2024-05-03 02:25:39,user0876,"New York, USA",Enterprise
+877,Stark Industries,Chat messages are not syncing in real-time across devices.,Facebook,2023-06-17 07:21:26,user0877,"London, UK",Pro
+878,Vehement Capital Partners,"Email notifications are delayed by hours, not minutes.",Intercom Chat,2024-04-24 14:08:54,user0878,"Vancouver, Canada",Pro
+879,Sudo Inc,The color scheme could use more customization options.,Reddit,2023-12-05 08:02:10,user0879,"Dublin, Ireland",Pro
+880,Acme Corp,Two-factor authentication SMS never arrives intermittently.,LinkedIn,2024-02-07 02:54:40,user0880,"Mumbai, India",Enterprise
+881,Umbrella Inc,Would be nice to see usage metrics per team member.,Intercom Chat,2023-12-30 13:26:14,user0881,"Tokyo, Japan",Pro
+882,Sudo Inc,Is there a way to bulk-delete old records?,Intercom Chat,2023-06-21 02:33:45,user0882,"Los Angeles, USA",Free
+883,Dunder Mifflin,The onboarding tutorial is clear and helpful for new users.,Reddit,2023-07-22 08:24:39,user0883,"Paris, France",Free
+884,Gekko & Co,The onboarding tutorial is clear and helpful for new users.,LinkedIn,2023-10-06 20:45:14,user0884,"Vancouver, Canada",Enterprise
+885,Netherworld Innovations,The recent update drastically improved performance on mobile.,LinkedIn,2023-07-25 23:15:05,user0885,"Dublin, Ireland",Free
+886,Aperture Science,"Support team resolved my issue within 2 hours, very satisfied.",Reddit,2023-08-25 06:34:04,user0886,"Paris, France",Pro
+887,Prestige Worldwide,Invoices generated have incorrect tax calculations.,Intercom Chat,2024-04-03 16:07:46,user0887,"Sydney, Australia",Enterprise
+888,Netherworld Innovations,Does the platform support LDAP integration?,Facebook,2023-12-08 15:00:46,user0888,"Tokyo, Japan",Pro
+889,Evergreen Tech,Does the platform support LDAP integration?,Intercom Chat,2023-10-02 20:30:12,user0889,"Paris, France",Free
+890,Netherworld Innovations,The color scheme could use more customization options.,Support Ticket,2024-01-18 16:17:34,user0890,"Chicago, USA",Free
+891,Initech,Can you add support for international characters in reports?,Intercom Chat,2023-06-09 18:50:44,user0891,"San Francisco, USA",Enterprise
+892,Bluth Company,The dashboard loads incredibly slowly when filtering large datasets.,Support Ticket,2023-09-22 07:49:17,user0892,"Los Angeles, USA",Free
+893,Xandar Enterprises,Is there a way to bulk-delete old records?,Intercom Chat,2024-02-17 20:15:18,user0893,"Dublin, Ireland",Enterprise
+894,Wayne Enterprises,User permissions are too rigid; cannot create custom roles.,Reddit,2024-01-22 12:56:56,user0894,"San Francisco, USA",Free
+895,Blue Yonder,Would love an option to schedule weekly backups instead of daily.,Twitter,2023-10-10 10:56:01,user0895,"London, UK",Pro
+896,Nimbus Consulting,Two-factor authentication SMS never arrives intermittently.,LinkedIn,2023-07-10 11:49:18,user0896,"Tokyo, Japan",Pro
+897,Globex Software,User permissions are too rigid; cannot create custom roles.,Intercom Chat,2024-04-24 10:56:13,user0897,"New York, USA",Pro
+898,Nimbus Consulting,Looking for an easier way to merge duplicate records.,Reddit,2023-06-29 12:10:29,user0898,"Sydney, Australia",Enterprise
+899,Spacely Sprockets,The recent update drastically improved performance on mobile.,Facebook,2023-08-01 08:15:16,user0899,"Seoul, South Korea",Pro
+900,Rubicon Analytics,The dashboard loads incredibly slowly when filtering large datasets.,LinkedIn,2024-04-19 13:55:33,user0900,"New York, USA",Free
+901,Initech,Does the platform support LDAP integration?,Intercom Chat,2024-03-16 05:26:45,user0901,"Sydney, Australia",Pro
+902,Vandelay Industries,Dark mode has very poor contrast and causes eye strain.,Reddit,2024-05-10 14:18:15,user0902,"Mumbai, India",Pro
+903,Nimbus Consulting,Single sign-on setup was smooth and worked instantly.,Reddit,2023-09-22 15:43:34,user0903,"Berlin, Germany",Pro
+904,Wayne Enterprises,"API rate limit is too low, blocking automated tasks.",Support Ticket,2023-07-13 17:19:31,user0904,"Dublin, Ireland",Pro
+905,Netherworld Innovations,Love how intuitive the new UI redesign feels.,Support Ticket,2023-07-14 14:30:35,user0905,"Paris, France",Pro
+906,Xandar Enterprises,"API rate limit is too low, blocking automated tasks.",Facebook,2023-08-09 17:30:35,user0906,"Paris, France",Free
+907,Kwik-E-Mart,The settings page is cluttered and difficult to navigate.,Intercom Chat,2024-04-11 19:05:14,user0907,"Toronto, Canada",Free
+908,Gotham Solutions,"Support team resolved my issue within 2 hours, very satisfied.",Support Ticket,2024-05-16 20:58:19,user0908,"London, UK",Free
+909,Sterling Cooper,"Support team resolved my issue within 2 hours, very satisfied.",Support Ticket,2023-11-26 06:56:07,user0909,"Sydney, Australia",Free
+910,Umbra Security,Mobile app crashes every time I try to upload a file.,Facebook,2023-11-04 06:09:44,user0910,"Sydney, Australia",Pro
+911,Octan Corporation,Dark mode has very poor contrast and causes eye strain.,Email,2023-06-23 08:30:03,user0911,"Toronto, Canada",Pro
+912,Wayne Enterprises,The search function returns incomplete results.,Reddit,2023-06-28 08:50:56,user0912,"Dublin, Ireland",Enterprise
+913,Pied Piper,The dashboard loads incredibly slowly when filtering large datasets.,Support Ticket,2024-05-21 04:03:05,user0913,"Berlin, Germany",Pro
+914,Globex Corporation,Need an option to archive completed projects automatically.,Twitter,2024-03-02 07:42:50,user0914,"Toronto, Canada",Pro
+915,Zenith Analytics,The color scheme could use more customization options.,Intercom Chat,2024-02-03 22:41:03,user0915,"Seoul, South Korea",Enterprise
+916,Xandar Enterprises,Mobile app crashes every time I try to upload a file.,Email,2024-03-25 19:10:48,user0916,"New York, USA",Free
+917,Umbrella Inc,Can you add support for international characters in reports?,Twitter,2024-05-22 22:29:57,user0917,"Berlin, Germany",Free
+918,Umbra Security,The dashboard loads incredibly slowly when filtering large datasets.,Reddit,2023-12-16 09:52:41,user0918,"Vancouver, Canada",Enterprise
+919,Valhalla Ventures,Would be nice to see usage metrics per team member.,Facebook,2023-07-26 00:41:40,user0919,"Berlin, Germany",Enterprise
+920,Umbra Security,Looking for an easier way to merge duplicate records.,Twitter,2023-12-12 18:30:55,user0920,"Seoul, South Korea",Free
+921,Blue Sun Corporation,Custom dashboards are a game-changer for our analytics team.,Facebook,2024-04-01 19:21:12,user0921,"London, UK",Free
+922,Neo Tokyo Labs,The new collaboration features have boosted our team's productivity.,Intercom Chat,2024-05-30 00:46:56,user0922,"New York, USA",Free
+923,Soylent Technologies,It would be helpful to preview attachments before downloading.,Support Ticket,2024-02-06 14:19:23,user0923,"Seoul, South Korea",Free
+924,Oceanic Airlines,Can the system send reminders for pending approvals?,Support Ticket,2024-04-16 11:00:26,user0924,"Toronto, Canada",Enterprise
+925,Neo Tokyo Labs,Is there a way to bulk-delete old records?,Facebook,2023-07-02 22:47:03,user0925,"Berlin, Germany",Enterprise
+926,Globex Corporation,Is there a way to bulk-delete old records?,Twitter,2023-08-17 12:26:38,user0926,"Chicago, USA",Pro
+927,Hooli,Looking for an easier way to merge duplicate records.,Intercom Chat,2024-05-13 22:17:54,user0927,"Los Angeles, USA",Pro
+928,Vandelay Industries,The recent update drastically improved performance on mobile.,Twitter,2024-03-20 05:33:41,user0928,"Chicago, USA",Enterprise
+929,Rubicon Analytics,Need an option to archive completed projects automatically.,Email,2024-03-04 04:47:51,user0929,"Toronto, Canada",Pro
+930,Quark Labs,App rarely experiences downtime; excellent reliability.,LinkedIn,2023-09-12 05:01:42,user0930,"Berlin, Germany",Pro
+931,Soylent Technologies,"API rate limit is too low, blocking automated tasks.",Email,2023-08-14 23:53:33,user0931,"Dublin, Ireland",Enterprise
+932,Blue Sun Corporation,Integration with Salesforce fails intermittently without errors.,Intercom Chat,2024-02-28 04:18:37,user0932,"San Francisco, USA",Free
+933,Wayne Enterprises,Mobile app crashes every time I try to upload a file.,Facebook,2023-11-11 15:04:29,user0933,"Chicago, USA",Free
+934,Luminary Solutions,Is there a way to bulk-delete old records?,Twitter,2023-09-05 03:53:14,user0934,"San Francisco, USA",Free
+935,Zenith Analytics,Is there a way to bulk-delete old records?,Intercom Chat,2024-03-17 22:17:43,user0935,"Toronto, Canada",Pro
+936,Vandelay Industries,Mobile app crashes every time I try to upload a file.,Support Ticket,2023-07-11 17:21:09,user0936,"San Francisco, USA",Pro
+937,Rubicon Analytics,Really appreciate the extensive API documentation provided.,LinkedIn,2024-04-28 13:36:55,user0937,"San Francisco, USA",Enterprise
+938,Globex Software,Really appreciate the extensive API documentation provided.,Twitter,2023-08-23 07:02:10,user0938,"Toronto, Canada",Free
+939,Zenith Analytics,The dashboard loads incredibly slowly when filtering large datasets.,Support Ticket,2023-12-29 08:06:10,user0939,"Seoul, South Korea",Pro
+940,Gekko & Co,Two-factor authentication SMS never arrives intermittently.,Reddit,2023-08-30 15:59:37,user0940,"Los Angeles, USA",Pro
+941,Xandar Enterprises,Does the platform support LDAP integration?,Facebook,2024-01-21 08:59:06,user0941,"Chicago, USA",Pro
+942,Initech,Looking for an easier way to merge duplicate records.,LinkedIn,2023-11-08 14:21:02,user0942,"Dublin, Ireland",Enterprise
+943,Nimbus Consulting,App rarely experiences downtime; excellent reliability.,Intercom Chat,2024-04-24 01:24:07,user0943,"Paris, France",Free
+944,Aperture Science,"Email notifications are delayed by hours, not minutes.",Twitter,2024-02-21 19:34:59,user0944,"Chicago, USA",Enterprise
+945,Initech,Looking for an easier way to merge duplicate records.,Intercom Chat,2024-04-18 01:47:41,user0945,"Toronto, Canada",Free
+946,Kwik-E-Mart,It would be helpful to preview attachments before downloading.,Facebook,2023-10-25 16:47:49,user0946,"San Francisco, USA",Pro
+947,Sudo Inc,Cannot customize the reporting fields as per our needs.,LinkedIn,2024-02-20 05:10:43,user0947,"Mumbai, India",Enterprise
+948,Octan Corporation,The search function returns incomplete results.,LinkedIn,2024-02-12 04:07:13,user0948,"San Francisco, USA",Pro
+949,Xandar Enterprises,App rarely experiences downtime; excellent reliability.,Twitter,2023-12-19 15:03:26,user0949,"Sydney, Australia",Pro
+950,Wonka Industries,The new collaboration features have boosted our team's productivity.,Intercom Chat,2024-05-30 07:21:07,user0950,"Mumbai, India",Free
+951,Blue Sun Corporation,Invoices generated have incorrect tax calculations.,LinkedIn,2023-08-03 03:19:12,user0951,"London, UK",Pro
+952,Trinity Systems,Would be nice to see usage metrics per team member.,Reddit,2024-02-24 13:59:03,user0952,"Seoul, South Korea",Pro
+953,Neo Tokyo Labs,Invoices generated have incorrect tax calculations.,Email,2024-03-08 13:51:26,user0953,"New York, USA",Pro
+954,Prestige Worldwide,Dark mode has very poor contrast and causes eye strain.,Twitter,2023-08-14 06:30:44,user0954,"Tokyo, Japan",Pro
+955,Sterling Cooper,It would be helpful to preview attachments before downloading.,Support Ticket,2024-01-15 10:30:51,user0955,"Vancouver, Canada",Free
+956,Stark Industries,The settings page is cluttered and difficult to navigate.,Reddit,2024-04-14 09:12:55,user0956,"New York, USA",Pro
+957,Globex Software,App rarely experiences downtime; excellent reliability.,Facebook,2023-06-03 22:08:09,user0957,"Mumbai, India",Free
+958,Quark Labs,Really appreciate the extensive API documentation provided.,Email,2023-12-27 16:05:17,user0958,"London, UK",Pro
+959,Acme Corp,Would love an option to schedule weekly backups instead of daily.,Intercom Chat,2023-10-21 22:33:53,user0959,"Vancouver, Canada",Pro
+960,Dunder Mifflin,Cannot customize the reporting fields as per our needs.,Twitter,2023-08-15 02:00:17,user0960,"Vancouver, Canada",Free
+961,Wayne Enterprises,"Email notifications are delayed by hours, not minutes.",LinkedIn,2024-03-22 21:57:53,user0961,"Berlin, Germany",Free
+962,Hooli,Cannot customize the reporting fields as per our needs.,Reddit,2023-12-31 06:29:23,user0962,"San Francisco, USA",Pro
+963,Sudo Inc,Chat messages are not syncing in real-time across devices.,Email,2024-03-23 13:06:50,user0963,"New York, USA",Free
+964,Bluth Company,Does the platform support LDAP integration?,Support Ticket,2023-12-12 02:27:49,user0964,"Tokyo, Japan",Pro
+965,Netherworld Innovations,Integration with Salesforce fails intermittently without errors.,Support Ticket,2024-01-28 04:53:55,user0965,"London, UK",Pro
+966,Gotham Solutions,Need an option to archive completed projects automatically.,Intercom Chat,2023-12-29 19:06:06,user0966,"Toronto, Canada",Pro
+967,Sudo Inc,Cannot customize the reporting fields as per our needs.,Reddit,2024-03-19 22:54:01,user0967,"Paris, France",Enterprise
+968,Lumon Industries,Can you add support for international characters in reports?,Email,2024-04-07 11:31:22,user0968,"Berlin, Germany",Pro
+969,Sudo Inc,Can the system send reminders for pending approvals?,Twitter,2024-04-10 20:29:05,user0969,"Mumbai, India",Pro
+970,Trinity Systems,Custom dashboards are a game-changer for our analytics team.,Email,2023-09-01 22:11:16,user0970,"Toronto, Canada",Pro
+971,Gekko & Co,The dashboard loads incredibly slowly when filtering large datasets.,Reddit,2023-06-13 16:55:33,user0971,"Vancouver, Canada",Pro
+972,Luminary Solutions,Two-factor authentication SMS never arrives intermittently.,Facebook,2024-04-11 15:05:46,user0972,"Chicago, USA",Free
+973,Oceanic Airlines,Two-factor authentication SMS never arrives intermittently.,Reddit,2024-04-23 07:19:30,user0973,"Seoul, South Korea",Free
+974,Soylent Corp,It would be helpful to preview attachments before downloading.,Support Ticket,2024-02-15 20:01:28,user0974,"Sydney, Australia",Pro
+975,Massive Dynamic,Need an option to archive completed projects automatically.,Support Ticket,2023-12-20 20:42:49,user0975,"Dublin, Ireland",Enterprise
+976,Wonka Industries,The settings page is cluttered and difficult to navigate.,Support Ticket,2023-11-21 17:26:37,user0976,"Mumbai, India",Pro
+977,Umbra Security,"API rate limit is too low, blocking automated tasks.",Email,2023-08-19 22:50:08,user0977,"Mumbai, India",Enterprise
+978,Monarch Solutions,Need an option to archive completed projects automatically.,Email,2023-12-29 02:02:22,user0978,"Los Angeles, USA",Pro
+979,Nimbus Consulting,Does the platform support LDAP integration?,Intercom Chat,2024-03-01 00:40:53,user0979,"Toronto, Canada",Pro
+980,Prestige Worldwide,Can the system send reminders for pending approvals?,Reddit,2023-08-16 10:12:40,user0980,"Los Angeles, USA",Free
+981,Pangea Software,App rarely experiences downtime; excellent reliability.,Facebook,2023-08-24 20:47:19,user0981,"Dublin, Ireland",Free
+982,Rubicon Analytics,"When exporting data, CSV missing critical columns.",Facebook,2023-11-05 11:27:02,user0982,"Seoul, South Korea",Free
+983,Sterling Cooper,The search function returns incomplete results.,Email,2023-09-30 13:31:44,user0983,"Mumbai, India",Enterprise
+984,Bluth Company,Two-factor authentication SMS never arrives intermittently.,Intercom Chat,2023-11-02 06:22:19,user0984,"London, UK",Free
+985,Initech,The settings page is cluttered and difficult to navigate.,Reddit,2024-01-14 18:25:21,user0985,"New York, USA",Pro
+986,Neo Tokyo Labs,Dark mode has very poor contrast and causes eye strain.,Twitter,2023-11-22 17:36:09,user0986,"Seoul, South Korea",Enterprise
+987,Bluth Company,Does the platform support LDAP integration?,Twitter,2023-07-21 18:47:32,user0987,"Vancouver, Canada",Enterprise
+988,Dunder Mifflin,"Email notifications are delayed by hours, not minutes.",Email,2023-12-16 19:01:04,user0988,"London, UK",Free
+989,Initech,The search function returns incomplete results.,Support Ticket,2024-01-26 01:40:47,user0989,"London, UK",Pro
+990,Valhalla Ventures,It would be helpful to preview attachments before downloading.,Reddit,2024-03-22 11:21:53,user0990,"Vancouver, Canada",Enterprise
+991,Blue Sun Corporation,The settings page is cluttered and difficult to navigate.,Twitter,2023-10-25 10:04:21,user0991,"Paris, France",Free
+992,Octan Corporation,"When exporting data, CSV missing critical columns.",Support Ticket,2023-08-16 05:44:03,user0992,"Berlin, Germany",Free
+993,Sudo Inc,Single sign-on setup was smooth and worked instantly.,Reddit,2023-09-14 19:45:10,user0993,"Sydney, Australia",Pro
+994,Gotham Solutions,Dark mode has very poor contrast and causes eye strain.,LinkedIn,2023-10-24 20:54:06,user0994,"Toronto, Canada",Free
+995,Bluth Company,Need an option to archive completed projects automatically.,Intercom Chat,2024-01-14 01:50:48,user0995,"San Francisco, USA",Free
+996,Weyland-Yutani,Cannot customize the reporting fields as per our needs.,Reddit,2023-12-14 01:57:31,user0996,"London, UK",Pro
+997,Wonka Industries,Reports generate in under 5 seconds; impressive speed!,Intercom Chat,2023-11-30 11:22:32,user0997,"Sydney, Australia",Enterprise
+998,Zion Technologies,App rarely experiences downtime; excellent reliability.,Reddit,2024-01-25 20:40:21,user0998,"San Francisco, USA",Free
+999,Xandar Enterprises,The new collaboration features have boosted our team's productivity.,Reddit,2024-01-20 11:18:03,user0999,"Vancouver, Canada",Pro
+1000,Aperture Science,Really appreciate the extensive API documentation provided.,Twitter,2023-09-23 05:13:57,user1000,"Los Angeles, USA",Enterprise
+1001,Xandar Enterprises,Your new dashboard UI is so much cleaner and easier to navigate. Love the new analytics view!,In-app Feedback,2025-05-12 09:23:14,user4582,San Francisco,Enterprise
+1002,Prestige Worldwide,Been trying to connect my Google Analytics account for 3 days now. Integration keeps failing with a cryptic error message.,Support Ticket,2025-05-12 11:45:32,customer789,London,Pro
+1003,Blue Sun Corporation,The new export to PDF feature is a game-changer for our reporting workflow. Thank you!,Email Feedback,2025-05-12 14:10:22,sarah.johnson@example.com,Chicago,Pro
+1004,Globex Corporation,Your latest update completely broke our automated workflows. We're considering switching to a competitor if this isn't fixed ASAP.,Twitter,2025-05-12 17:35:11,@techmanager456,Toronto,Free
+1005,Massive Dynamic,The onboarding process was incredibly smooth. The interactive tutorials really helped me understand how to use all the features.,Customer Survey,2025-05-13 08:50:59,new_user_291,Berlin,Free
+1006,Aperture Science,I'm experiencing constant timeouts when trying to run reports with more than 1000 rows. This is severely impacting our month-end process.,Support Ticket,2025-05-13 10:15:27,finance_director,New York,Enterprise
+1007,Pied Piper,Just upgraded to the Enterprise plan and the dedicated customer success manager has been incredibly helpful with our implementation.,G2 Review,2025-05-13 13:40:18,enterprise_client42,Sydney,Pro
+1008,Rubicon Analytics,Your mobile app is practically unusable. Constant crashes when trying to approve workflows on the go.,App Store Review,2025-05-13 16:05:36,mobile_user_876,Amsterdam,Pro
+1009,Neo Tokyo Labs,The API documentation is comprehensive and well-structured. Made integration with our internal systems a breeze.,Developer Forum,2025-05-14 09:12:34,dev_lead_123,Seattle,Free
+1010,Zion Technologies,We've been charged twice for our monthly subscription. Reached out to billing support three times with no response.,Support Ticket,2025-05-14 10:45:21,accounts_payable,Singapore,Pro
+1011,Blue Sun Corporation,The new team collaboration features have transformed how our department works together. Especially love the comment threading.,Product Feedback Form,2025-05-14 12:34:56,team_manager,Austin,Pro
+1012,Soylent Corp,Can't believe you removed the batch processing feature without warning. Our entire workflow depended on it.,Reddit r/SaaS,2025-05-14 15:21:43,frustrated_user_92,Melbourne,Pro
+1013,Monarch Solutions,The custom report builder is incredibly intuitive. I was able to create exactly what our executives needed in minutes.,LinkedIn,2025-05-14 18:01:23,data_analyst_pro,Dublin,Pro
+1014,Quark Labs,Your customer support team deserves a raise. Had a complex issue with our account permissions and they solved it in one call.,Trustpilot,2025-05-15 09:17:52,happy_admin,Vancouver,Pro
+1015,Sudo Inc,The search functionality in the knowledge base is terrible. Can never find relevant articles even when I know they exist.,In-app Feedback,2025-05-15 11:59:18,support_seeker,Frankfurt,Free
+1016,Gringotts Bank,Really impressed with how quickly you implemented our feature request. The custom fields option is exactly what we needed.,Email Feedback,2025-05-15 14:40:05,product_owner,Copenhagen,Enterprise
+1017,Pangea Software,Three of our team members can't access their accounts after your maintenance window yesterday. This is affecting our deadlines.,Support Ticket,2025-05-15 17:25:09,team_lead_urgent,Madrid,Free
+1018,Dunder Mifflin,Your platform has cut our reporting time in half! The executive team is thrilled with the insights we're now able to provide.,Case Study Interview,2025-05-16 08:32:41,business_intelligence,Tokyo,Enterprise
+1019,Quark Labs,The lack of dark mode is a deal-breaker for our development team who works late nights. Please consider adding this.,Feature Request,2025-05-16 14:05:27,night_coder,Stockholm,Pro
+1020,Spacely Sprockets,Loving the Slack integration! Getting notifications directly in our team channel has improved our response time significantly.,Twitter,2025-05-16 16:35:19,@devops_manager,Portland,Pro
+1021,Prestige Worldwide,Your pricing model is confusing and seems designed to hide costs. We found several unexpected charges on our bill.,Email Feedback,2025-05-16 19:18:53,cfo_startup,Mumbai,Pro
+1022,Cyberdyne Systems,The AI-powered recommendations have been surprisingly accurate and saved us hours of manual analysis.,G2 Review,2025-05-17 09:10:15,data_scientist,Boston,Free
+1023,Valhalla Ventures,We need better role-based access controls. Currently too all-or-nothing which doesn't work for our security requirements.,Product Feedback Form,2025-05-17 12:30:08,security_officer,Washington DC,Free
+1024,Zion Technologies,Calendar integration is broken after the latest update. Meeting invites are being sent with incorrect time zones.,Support Ticket,2025-05-17 15:45:32,calendar_admin,Seoul,Pro
+1025,Globex Software,The new dashboard widgets are fantastic! Being able to customize our view has made daily monitoring so much more efficient.,In-app Feedback,2025-05-17 18:20:17,operations_manager,Barcelona,Free
+1026,Rubicon Analytics,Your platform consistently outperforms competitors in processing speed. Handling our enterprise-scale data without breaking a sweat.,Capterra Review,2025-05-18 08:48:39,performance_engineer,Montreal,Pro
+1027,Netherworld Innovations,We've experienced multiple data discrepancies between the dashboard and exported reports. This is undermining trust in your platform.,Support Ticket,2025-05-18 11:25:56,data_integrity_team,Zurich,Free
+1028,Octan Corporation,The Chrome extension has made capturing website analytics so much easier. Great addition to your product ecosystem!,Product Hunt,2025-05-18 14:15:23,growth_hacker,San Diego,Free
+1029,Kwik-E-Mart,Your GDPR compliance features saved us during our recent audit. The data management tools are best-in-class.,LinkedIn,2025-05-18 17:02:11,privacy_officer,Brussels,Free
+1030,Vehement Capital Partners,The lack of bulk editing features is making user management a nightmare for our large organization.,Support Ticket,2025-05-19 09:12:54,user_admin_lead,Helsinki,Pro
+1031,Rubicon Analytics,I'm blown away by how intuitive the workflow automation builder is. No coding required but still incredibly powerful.,Webinar Feedback,2025-05-19 11:45:32,automation_specialist,Denver,Pro
+1032,Pangea Software,Your recent downtime cost us thousands in lost revenue. Need better reliability or we'll be forced to look elsewhere.,Twitter,2025-05-19 14:23:18,@ecommerce_director,Manchester,Free
+1033,Umbra Security,The new forecasting algorithm is scary accurate! It's predicted our usage patterns perfectly for three months running.,Customer Interview,2025-05-19 17:05:46,planning_director,Atlanta,Pro
+1034,Hooli,"SSO implementation was unnecessarily complex. Documentation didn't match actual requirements, wasting our IT team's time.",Support Ticket,2025-05-20 08:50:13,identity_manager,Oslo,Free
+1035,Stark Industries,The customizable dashboards have transformed how we share metrics with our clients. They love the professional look.,Email Feedback,2025-05-20 11:32:59,agency_partner,Milan,Enterprise
+1036,Zenith Analytics,"Your platform's performance degrades significantly with datasets over 1M rows, despite claims of enterprise scalability.",Reddit r/BusinessIntelligence,2025-05-20 14:20:05,big_data_user,Phoenix,Pro
+1037,Acme Corp,The template library has saved us countless hours. Being able to start with pre-built reports and customize is fantastic.,In-app Feedback,2025-05-20 17:15:22,marketing_analyst,Dubai,Pro
+1038,Valhalla Ventures,"We're experiencing random logouts during critical data entry, causing lost work. This is happening across multiple browsers.",Support Ticket,2025-05-21 08:40:51,frustrated_user,Mexico City,Free
+1039,Monarch Solutions,Your platform has become an essential part of our tech stack. The recent API improvements have opened up so many possibilities.,Developer Blog Comment,2025-05-21 11:22:17,integration_specialist,Bangalore,Free
+1040,Sudo Inc,The mobile app notifications are too aggressive and can't be customized enough. Need finer control over alert settings.,App Store Review,2025-05-21 14:18:42,mobile_executive,Paris,Pro
+1041,Gekko & Co,Impressed by how your platform handles our multi-currency needs across 12 countries. The automatic conversion features save us hours of work.,G2 Review,2025-05-21 17:30:15,global_finance_manager,Singapore,Free
+1042,Blue Sun Corporation,The new UI is a step backward in usability. Too many clicks to reach frequently used features now.,In-app Feedback,2025-05-22 09:05:59,ux_designer,Amsterdam,Free
+1043,Weyland-Yutani,Your customer success team has been instrumental in helping us achieve our analytics goals. The quarterly business reviews are invaluable.,LinkedIn Recommendation,2025-05-22 11:45:27,vp_operations,Toronto,Free
+1044,Spacely Sprockets,We need more granular permission settings. Currently can't give team members access to specific projects without exposing all company data.,Feature Request,2025-05-22 14:30:18,team_director,Sydney,Pro
+1045,Oceanic Airlines,The real-time collaboration features have eliminated version control issues we used to have with our reports. Game changer!,Capterra Review,2025-05-22 17:10:36,collaboration_manager,Chicago,Enterprise
+1046,Quark Labs,"Your platform's accessibility features are lacking. Screen readers struggle with the dashboard interface, excluding some of our team members.",Support Ticket,2025-05-23 08:50:59,accessibility_advocate,Berlin,Free
+1047,Neo Tokyo Labs,The integration with Salesforce has streamlined our sales reporting process enormously. Data flows seamlessly now.,Email Feedback,2025-05-23 11:25:27,sales_operations,San Francisco,Pro
+1048,Stark Industries,Constant API rate limit errors are disrupting our automated workflows. Need better documentation on limits and how to work within them.,Developer Forum,2025-05-23 14:05:42,api_developer,Stockholm,Enterprise
+1049,Umbrella Inc,The custom alerting system has caught several critical business anomalies before they became major issues. Literally saved us thousands.,Case Study Interview,2025-05-23 16:35:19,business_monitor,New York,Free
+1050,Netherworld Innovations,Your recent pivot to focus on enterprise features has left small businesses like ours behind. Feeling abandoned after 3 years as customers.,Twitter,2025-05-24 08:50:13,@smallbiz_owner,Austin,Enterprise
+1051,Acme Corp,The data visualization options are limited compared to competitors. Need more chart types and customization options.,Product Feedback Form,2025-05-24 11:32:59,data_visualizer,London,Pro
+1052,Oceanic Airlines,Your platform's handling of seasonal data patterns in forecasting is impressive. The ML models clearly understand our business cycles.,G2 Review,2025-05-24 14:20:05,forecasting_specialist,Montreal,Free
+1053,Pied Piper,We're experiencing significant lag when multiple team members access the same dashboard simultaneously. This wasn't an issue before the update.,Support Ticket,2025-05-24 17:15:22,performance_tester,Madrid,Enterprise
+1054,Cyberdyne Systems,The ability to schedule automated reports to stakeholders has transformed our communication process. Everyone stays informed effortlessly.,Email Feedback,2025-05-25 09:18:53,reporting_manager,Copenhagen,Pro
+1055,Quark Labs,Your platform crashed during our investor presentation. Extremely embarrassing and potentially costly for our fundraising efforts.,Twitter,2025-05-25 11:05:27,@startup_ceo,San Francisco,Free
+1056,Blue Sun Corporation,The new anomaly detection feature caught a major data issue that would have affected our quarterly reporting. Potentially saved my job!,LinkedIn,2025-05-25 14:40:05,data_quality_manager,Dublin,Pro
+1057,Kwik-E-Mart,We need better audit logging for compliance purposes. Current logs don't provide enough detail on who accessed what data and when.,Support Ticket,2025-05-25 17:25:09,compliance_officer,Frankfurt,Free
+1058,Monarch Solutions,The custom branding options for client-facing dashboards are excellent. Our clients think we built this analytics system ourselves!,Capterra Review,2025-05-26 08:32:41,agency_director,Vancouver,Free
+1059,Wonka Industries,Your platform's performance on mobile browsers is terrible. Nearly impossible to review dashboards on the go.,In-app Feedback,2025-05-26 11:45:27,mobile_user,Tokyo,Pro
+1060,Gekko & Co,The predictive analytics feature has transformed our inventory management. We've reduced stockouts by 37% since implementation.,Case Study Interview,2025-05-26 14:30:18,supply_chain_manager,Seattle,Pro
+1061,Blue Yonder,We're experiencing data discrepancies between different visualization widgets using the same data source. Undermines trust in the platform.,Support Ticket,2025-05-26 17:10:36,data_analyst,Melbourne,Enterprise
+1062,Wayne Enterprises,The ability to embed dashboards in our internal wiki has improved cross-department data literacy significantly.,Email Feedback,2025-05-27 09:12:54,knowledge_manager,Boston,Free
+1063,Valhalla Ventures,Your platform's learning curve is too steep. We need better onboarding materials for non-technical users.,Product Feedback Form,2025-05-27 11:45:32,training_coordinator,Barcelona,Free
+1064,Acme Corp,The data import functionality is incredibly flexible. Handles our messy legacy data formats without any issues.,G2 Review,2025-05-27 14:23:18,data_migration_specialist,Chicago,Free
+1065,Globex Corporation,We've noticed inconsistent calculation results when comparing daily vs. monthly aggregations of the same metrics.,Support Ticket,2025-05-27 17:05:46,financial_analyst,Singapore,Free
+1066,Globex Software,The ability to create and share annotation layers on dashboards has improved our analysis collaboration tremendously.,In-app Feedback,2025-05-28 08:50:13,research_team_lead,Paris,Pro
+1067,Stark Industries,Your platform's uptime has been rock solid for us - 99.99% over two years. Critical for our 24/7 operations.,Trustpilot,2025-05-28 11:32:59,reliability_engineer,Denver,Free
+1068,Umbra Security,The lack of version control for dashboards has caused problems when multiple team members make changes simultaneously.,Support Ticket,2025-05-28 14:20:05,collaboration_coordinator,Amsterdam,Enterprise
+1069,Aperture Science,Your new natural language query feature is mind-blowing! Being able to type questions and get instant visualizations is revolutionary.,Twitter,2025-05-28 17:15:22,@data_enthusiast,Toronto,Enterprise
+1070,Xandar Enterprises,"We need better support for our European team. Current support hours are entirely US-focused, leaving us waiting overnight for critical issues.",Email Feedback,2025-05-29 08:40:51,european_director,Milan,Pro
+1071,Spacely Sprockets,The automated insights feature has identified patterns we never would have spotted manually. Genuinely impressed with the AI capabilities.,Webinar Feedback,2025-05-29 11:22:17,analytics_manager,Sydney,Pro
+1072,Aperture Science,Your platform's handling of multi-language content in dashboards is problematic. Special characters break visualizations.,Support Ticket,2025-05-29 14:18:42,international_coordinator,Brussels,Pro
+1073,Netherworld Innovations,The ROI on your platform has been exceptional for us. Reduced reporting time by 78% while improving decision quality.,Case Study Interview,2025-05-29 17:30:15,business_value_analyst,Atlanta,Enterprise
+1074,Pangea Software,We desperately need the ability to organize dashboards into folders or categories. Our library has become unmanageable.,Feature Request,2025-05-30 09:05:59,organization_specialist,Washington DC,Free
+1075,Wonka Industries,Your platform's data modeling capabilities are far superior to competitors we've tried. The flexibility to handle complex relationships is impressive.,G2 Review,2025-05-30 11:45:27,data_architect,Phoenix,Pro
+1076,Acme Corp,The recent changes to the query builder have made it much less intuitive. Please consider reverting or providing a legacy option.,In-app Feedback,2025-05-30 14:30:18,sql_power_user,Berlin,Pro
+1077,Evergreen Tech,We're seeing timeout issues with complex queries that used to run fine before the last update.,Support Ticket,2025-05-30 17:10:36,performance_analyst,Stockholm,Free
+1078,Neo Tokyo Labs,The ability to drill down from high-level metrics to individual transactions has transformed how we investigate anomalies.,Email Feedback,2025-05-31 08:50:59,investigation_team,New York,Free
+1079,Monarch Solutions,Your platform's handling of our IoT data stream has been flawless. Processing millions of events daily without a hiccup.,LinkedIn,2025-05-31 11:25:27,iot_program_manager,San Francisco,Pro
+1080,Initech,We need better support for calculated fields with complex business logic. Current formula capabilities are too limited.,Feature Request,2025-05-31 14:05:42,business_logic_specialist,London,Enterprise
+1081,Nimbus Consulting,The cross-filtering capabilities between dashboard components create an incredibly interactive analysis experience.,Capterra Review,2025-05-31 16:35:19,interactive_analyst,Austin,Pro
+1082,Blue Yonder,"Your platform consistently mishandles daylight saving time transitions in time-series data, creating reporting anomalies twice yearly.",Support Ticket,2025-05-31 19:40:27,time_series_analyst,Madrid,Free
+1083,Lumon Industries,The new AI-suggested optimizations for our queries have dramatically improved dashboard performance. Impressive technology!,In-app Feedback,2025-06-01 08:40:51,database_optimizer,Copenhagen,Enterprise
+1084,Hooli,We're experiencing issues with the PDF export functionality - charts are being cut off and tables are formatting incorrectly.,Support Ticket,2025-06-01 11:22:17,reporting_specialist,Tokyo,Free
+1085,Evergreen Tech,Your platform's ability to handle our complex hierarchical organizational data model is unmatched in the industry.,G2 Review,2025-06-01 14:18:42,org_data_manager,Montreal,Pro
+1086,Zenith Analytics,The lack of proper data lineage tracking makes it difficult to trust transformations in your platform.,Reddit r/DataEngineering,2025-06-01 17:30:15,data_governance_pro,Seattle,Pro
+1087,Aperture Science,Your new anomaly explanation feature doesn't just identify outliers but explains why they occurred - this is next-level analytics!,Webinar Feedback,2025-06-02 09:05:59,anomaly_investigator,Dublin,Pro
+1088,Soylent Technologies,We need better controls for managing cached data. Stale information is being presented without clear indicators.,Support Ticket,2025-06-02 11:45:27,freshness_monitor,Frankfurt,Enterprise
+1089,Hooli,The geospatial visualization capabilities have transformed how we analyze our retail performance across regions.,Email Feedback,2025-06-02 14:30:18,location_analyst,Barcelona,Free
+1090,Trinity Systems,Your platform's performance degrades noticeably during our end-of-month reporting crunch when we need it most.,Twitter,2025-06-02 17:10:36,@month_end_reporter,Singapore,Pro
+1091,Valhalla Ventures,The ability to create and share parameterized reports has reduced our custom reporting requests by over 60%.,Case Study Interview,2025-06-03 08:50:59,self_service_enabler,Boston,Free
+1092,Trinity Systems,We're experiencing issues with numeric formatting in exported reports - decimals and thousands separators are inconsistent.,Support Ticket,2025-06-03 11:25:27,formatting_stickler,Melbourne,Pro
+1093,Quark Labs,Your platform's handling of our multi-tenant SaaS data model is elegant. The row-level security implementation is exactly what we needed.,G2 Review,2025-06-03 14:05:42,multi_tenant_architect,Chicago,Free
+1094,Umbrella Inc,The lack of proper color blindness support in visualizations excludes team members from effectively using dashboards.,Accessibility Feedback,2025-06-03 16:35:19,inclusive_designer,Vancouver,Enterprise
+1095,Monarch Solutions,Your embedded analytics solution has allowed us to monetize our data as a new revenue stream. Game-changing for our business model.,LinkedIn,2025-06-04 08:40:51,product_strategist,Denver,Pro
+1096,Lumon Industries,We need better support for fiscal year calendars that don't align with standard quarters.,Feature Request,2025-06-04 11:22:17,fiscal_analyst,Paris,Pro
+1097,Lumon Industries,The semantic layer concept in your platform has standardized metrics across our organization. No more conflicting definitions!,Capterra Review,2025-06-04 14:18:42,data_standardizer,Amsterdam,Pro
+1098,Prestige Worldwide,Your platform's handling of slowly changing dimensions in our customer data is problematic. Historical analysis is unreliable.,Support Ticket,2025-06-04 17:30:15,historical_analyst,Toronto,Pro
+1099,Pied Piper,The new what-if scenario modeling feature has transformed our strategic planning process. Incredibly powerful tool.,Email Feedback,2025-06-05 09:05:59,strategic_planner,Milan,Free
+1100,Initech,We're experiencing persistent issues with SSO login for users with special characters in their usernames.,Support Ticket,2025-06-05 11:45:27,authentication_specialist,Sydney,Pro
+1101,Rubicon Analytics,Your platform's data storytelling features have elevated our executive reporting. The guided analytics approach resonates with leadership.,G2 Review,2025-06-05 14:30:18,executive_communicator,Brussels,Pro
+1102,Evergreen Tech,The mobile app is missing critical alert functionality that exists in the web version. Need feature parity for on-call scenarios.,App Store Review,2025-06-05 17:10:36,mobile_responder,Atlanta,Pro
+1103,Tyrell Corporation,Your platform's handling of our high-cardinality dimensions has been impressive. No performance degradation even with millions of unique values.,Developer Forum,2025-06-06 08:50:59,cardinality_tester,Washington DC,Free
+1104,Lumon Industries,We need better support for dynamic cohort analysis based on user behaviors rather than just static attributes.,Feature Request,2025-06-06 11:25:27,cohort_analyst,Phoenix,Pro
+1105,Nimbus Consulting,The AI-powered text analysis of our customer feedback data has revealed sentiment patterns we were completely missing.,Case Study Interview,2025-06-06 14:05:42,sentiment_researcher,Berlin,Free
+1106,Pied Piper,Your platform's data catalog functionality lacks the metadata management capabilities we need for proper governance.,Support Ticket,2025-06-06 16:35:19,metadata_governor,Stockholm,Enterprise
+1107,Sudo Inc,The ability to blend data from multiple sources without complex ETL has accelerated our analytics development cycle dramatically.,Email Feedback,2025-06-07 08:40:51,data_blender,New York,Free
+1108,Globex Software,We're experiencing issues with timezone handling for users accessing dashboards from different global locations.,Support Ticket,2025-06-07 11:22:17,global_coordinator,San Francisco,Free
+1109,Neo Tokyo Labs,Your platform's ability to handle real-time streaming analytics alongside historical batch processing gives us the best of both worlds.,G2 Review,2025-06-07 14:18:42,hybrid_architect,London,Free
+1110,Gotham Solutions,The lack of proper data sampling controls for large datasets makes exploratory analysis painfully slow.,Reddit r/DataScience,2025-06-07 17:30:15,big_data_explorer,Austin,Free
+1111,Sudo Inc,Your new automated ML feature has democratized predictive analytics across our organization. Non-data scientists are building effective models!,Webinar Feedback,2025-06-08 09:05:59,ml_democratizer,Madrid,Free
+1112,Tyrell Corporation,We need better support for versioned datasets to compare results before and after major data changes.,Feature Request,2025-06-08 11:45:27,version_controller,Copenhagen,Free
+1113,Massive Dynamic,The embedded NLP capabilities for searching through our analytics content has transformed how our business users find insights.,Email Feedback,2025-06-08 14:30:18,search_enabler,Tokyo,Pro
+1114,Quark Labs,Your platform's handling of semi-structured JSON data from our application logs is problematic. Nested fields are difficult to query.,Support Ticket,2025-06-08 17:10:36,json_wrangler,Montreal,Pro
+1115,Valhalla Ventures,The ability to create metric alerts with smart thresholds that adapt to seasonality has reduced alert fatigue significantly.,In-app Feedback,2025-06-09 08:50:59,alert_manager,Seattle,Pro
+1116,Wonka Industries,We're experiencing issues with the REST API pagination for large result sets. Documentation doesn't match actual behavior.,Developer Forum,2025-06-09 11:25:27,api_consumer,Dublin,Free
+1117,Xandar Enterprises,Your platform's data quality monitoring capabilities have caught numerous upstream issues before they impacted our dashboards.,G2 Review,2025-06-09 14:05:42,quality_guardian,Frankfurt,Free
+1118,Wonka Industries,The lack of proper keyboard navigation support makes your platform difficult to use for team members who can't use a mouse.,Accessibility Feedback,2025-06-09 16:35:19,keyboard_navigator,Barcelona,Pro
+1119,Initech,Your platform's ability to handle our complex attribution models has transformed our marketing analytics capabilities.,Case Study Interview,2025-06-10 08:40:51,attribution_modeler,Singapore,Free
+1120,Hooli,We need better support for comparing metrics across different time periods with proper period-over-period calculations.,Feature Request,2025-06-10 11:22:17,comparative_analyst,Boston,Enterprise
+1121,Rubicon Analytics,The automated data profiling features have helped us identify data quality issues we didn't even know existed.,Email Feedback,2025-06-10 14:18:42,data_profiler,Melbourne,Enterprise
+1122,Wayne Enterprises,"Your platform's handling of our multi-currency financial data is inconsistent, creating reconciliation nightmares.",Support Ticket,2025-06-10 17:30:15,financial_reconciler,Chicago,Enterprise
+1123,Zenith Analytics,The ability to create custom visual themes that match our brand guidelines has made embedded analytics feel native to our product.,G2 Review,2025-06-11 09:05:59,brand_guardian,Vancouver,Enterprise
+1124,Pangea Software,We're experiencing issues with formula calculations that reference filtered datasets - results are inconsistent based on user permissions.,Support Ticket,2025-06-11 11:45:27,formula_debugger,Denver,Free
+1125,Octan Corporation,Your platform's handling of our healthcare compliance requirements with proper PHI protections has been exemplary.,LinkedIn,2025-06-11 14:30:18,compliance_director,Paris,Pro
+1126,Gringotts Bank,The lack of proper version control for data transformations makes it impossible to audit changes when results shift unexpectedly.,Reddit r/BusinessIntelligence,2025-06-11 17:10:36,transformation_auditor,Amsterdam,Free
+1127,Evergreen Tech,Your new feature for automatically suggesting related metrics based on what users are viewing has increased dashboard engagement by 40%.,Webinar Feedback,2025-06-12 08:50:59,engagement_optimizer,Toronto,Enterprise
+1128,Umbrella Inc,We need better support for handling outliers in our statistical calculations without manual intervention.,Feature Request,2025-06-12 11:25:27,statistical_analyst,Milan,Pro
+1129,Zenith Analytics,The ability to seamlessly switch between aggregate and individual record views has transformed how we investigate data anomalies.,Email Feedback,2025-06-12 14:05:42,anomaly_detective,Sydney,Enterprise
+1130,Umbrella Inc,Your platform's query performance with our star schema data model is significantly worse than competitors we've benchmarked.,Support Ticket,2025-06-12 16:35:19,schema_optimizer,Brussels,Free
+1131,Kwik-E-Mart,The automated insights digest emails have become essential reading for our executive team. Great way to stay connected to key metrics.,G2 Review,2025-06-13 08:40:51,executive_communicator,Atlanta,Pro
+1132,Lumon Industries,We're experiencing issues with dashboard filters not properly cascading to linked visualizations.,Support Ticket,2025-06-13 11:22:17,filter_debugger,Washington DC,Pro
+1133,Zenith Analytics,Your platform's ability to handle our complex event-based user journey analysis has transformed our product analytics capabilities.,Case Study Interview,2025-06-13 14:18:42,journey_analyst,Phoenix,Enterprise
+1134,Vandelay Industries,The lack of proper support for our RTL language users makes the platform unusable for our Middle Eastern team members.,Accessibility Feedback,2025-06-13 17:30:15,global_inclusivity_manager,Berlin,Free
+1135,Zion Technologies,Your new feature for detecting correlation vs. causation in our metrics has prevented several incorrect business conclusions.,Email Feedback,2025-06-14 09:05:59,causation_analyst,Stockholm,Free
+1136,Tyrell Corporation,We need better support for tracking and analyzing A/B test results directly in the platform.,Feature Request,2025-06-14 11:45:27,experimentation_lead,New York,Free
+1137,Spacely Sprockets,The ability to create data quality rules that automatically validate incoming data has been a game-changer for our trust in the platform.,G2 Review,2025-06-14 14:30:18,data_validator,San Francisco,Free
+1138,Octan Corporation,Your platform's handling of our high-frequency financial trading data lacks the precision timing analysis we require.,Support Ticket,2025-06-14 17:10:36,hft_analyst,London,Free
+1139,Blue Sun Corporation,The AI-suggested insights have identified several business opportunities we completely overlooked in our manual analysis.,Webinar Feedback,2025-06-15 08:50:59,opportunity_finder,Austin,Enterprise
+1140,Weyland-Yutani,We're experiencing issues with the column-level security features. Permissions aren't being properly enforced for calculated fields.,Support Ticket,2025-06-15 11:25:27,security_tester,Madrid,Enterprise
+1141,Vehement Capital Partners,Your platform's ability to handle our IoT time-series data at scale has enabled entirely new predictive maintenance capabilities.,LinkedIn,2025-06-15 14:05:42,predictive_maintenance_lead,Copenhagen,Enterprise
+1142,Trinity Systems,The lack of proper support for our custom fiscal calendar makes trend analysis misleading across year boundaries.,Reddit r/DataAnalysis,2025-06-15 16:35:19,fiscal_calendar_specialist,Tokyo,Free
+1143,Spacely Sprockets,I've been using your CRM for 6 months and the email tracking feature is completely unreliable. Shows emails as 'unopened' when clients have clearly responded.,Support Ticket,2025-06-16 08:15:33,sales_manager_42,Chicago,Pro
+1144,Umbra Security,The new kanban view in your project management tool has revolutionized our sprint planning. Our dev team is actually excited about standups now!,Product Review,2025-06-16 10:27:45,agile_coach_88,Seattle,Enterprise
+1145,Prestige Worldwide,Your help desk software desperately needs a bulk ticket merging feature. We get flooded with duplicate tickets during outages.,UserVoice,2025-06-16 13:42:19,support_lead,London,Free
+1146,Vehement Capital Partners,Switched from Competitor X to your accounting software last quarter. The automated reconciliation has saved our finance team 15 hours per week!,Testimonial,2025-06-16 15:58:02,cfo_midsize_company,Toronto,Free
+1147,Quark Labs,The video conferencing quality in your collaboration platform is significantly worse than competitors. Constant pixelation and audio sync issues.,Twitter,2025-06-17 09:11:27,@remote_team_lead,Berlin,Free
+1148,Weyland-Yutani,Your e-signature solution's audit trail saved us during a contract dispute. The detailed timestamp and IP tracking was crucial evidence.,G2 Review,2025-06-17 11:33:41,legal_counsel,New York,Pro
+1149,Evergreen Tech,"We've implemented your HR platform across our 2,000-person company and the onboarding automation has reduced our HR workload by 40%.",Case Study,2025-06-17 14:05:18,hr_director_enterprise,Sydney,Pro
+1150,Gekko & Co,The email deliverability rates from your marketing automation platform are abysmal. We're seeing 22% compared to industry average of 85%.,Support Ticket,2025-06-17 16:29:54,marketing_ops,San Francisco,Pro
+1151,Weyland-Yutani,"Your e-commerce platform's inventory management system doesn't account for items in customer carts, causing overselling issues during flash sales.",Community Forum,2025-06-18 08:47:12,ecommerce_manager,Mumbai,Pro
+1152,Wonka Industries,The AI chatbot in your customer service platform has reduced our first-response time from 4 hours to 3 minutes. Customers are noticeably happier.,LinkedIn,2025-06-18 11:18:36,customer_experience_lead,Vancouver,Free
+1153,Acme Corp,Your design tool's collaboration features are game-changing. Being able to have developers comment directly on design elements has streamlined our workflow.,Product Hunt,2025-06-18 13:52:09,ui_designer,Amsterdam,Pro
+1154,Soylent Corp,We're a healthcare provider and your patient management system keeps logging us out every 5 minutes. HIPAA compliance doesn't mean unusable software.,Support Ticket,2025-06-18 16:07:23,medical_office_admin,Boston,Free
+1155,Vehement Capital Partners,The custom fields in your survey tool don't work with conditional logic. This is a basic feature that all your competitors offer.,Feature Request,2025-06-19 09:22:47,research_director,Madrid,Pro
+1156,Weyland-Yutani,Your social media scheduling platform's analytics are incredible. The competitor comparison reports have helped us refine our content strategy.,Trustpilot,2025-06-19 11:41:05,social_media_manager,Melbourne,Pro
+1157,Vandelay Industries,We've been using your inventory management system for our 3 warehouses and the barcode scanning functionality fails in low light conditions.,Support Ticket,2025-06-19 14:15:38,warehouse_supervisor,Chicago,Pro
+1158,Tyrell Corporation,The SEO recommendations in your content marketing platform have helped us increase organic traffic by 47% in just two months.,G2 Review,2025-06-19 16:33:52,content_strategist,Paris,Free
+1159,Globex Corporation,Your webinar platform crashed 5 minutes into our product launch with 500+ attendees. This cost us significant revenue and brand damage.,Twitter,2025-06-20 08:59:14,@startup_marketer,Austin,Pro
+1160,Umbrella Inc,The automated contract generation in your legal software has reduced our document creation time from 3 days to 20 minutes per contract.,Case Study,2025-06-20 11:24:37,legal_operations,London,Enterprise
+1161,Valhalla Ventures,Your learning management system's reporting capabilities are severely lacking. We can't track completion rates across departments.,Feature Request,2025-06-20 13:48:21,corporate_trainer,Singapore,Enterprise
+1162,Dunder Mifflin,The A/B testing functionality in your landing page builder has transformed our conversion rates. We're seeing 34% higher conversions since implementation.,Product Review,2025-06-20 16:09:45,growth_marketer,Berlin,Enterprise
+1163,Trinity Systems,Your recruiting software's resume parsing is incredibly inaccurate. It consistently misclassifies skills and work experience.,Support Ticket,2025-06-21 09:31:18,talent_acquisition,Toronto,Free
+1164,Massive Dynamic,The customizable workflows in your procurement software have allowed us to model our exact approval process. Game changer for compliance!,G2 Review,2025-06-21 11:57:42,procurement_director,Sydney,Free
+1165,Rubicon Analytics,Your subscription billing platform doesn't handle prorations correctly when customers upgrade mid-cycle. We're losing revenue every day.,Support Ticket,2025-06-21 14:22:09,billing_specialist,San Francisco,Free
+1166,Valhalla Ventures,"The sentiment analysis in your social listening tool is remarkably accurate, even detecting subtle sarcasm that other tools miss.",Product Feedback,2025-06-21 16:45:33,brand_manager,New York,Pro
+1167,Umbra Security,Your virtual event platform's networking features created more meaningful connections than our previous in-person conferences. Attendees love the AI matchmaking.,Testimonial,2025-06-22 08:37:56,event_director,Barcelona,Pro
+1168,Wonka Industries,We need better localization options in your knowledge base software. Supporting multiple languages is critical for our global support team.,Feature Request,2025-06-22 11:12:24,global_support_manager,Tokyo,Enterprise
+1169,Xandar Enterprises,The automated data backup in your cloud storage solution has saved us twice during ransomware attempts. Worth every penny for peace of mind.,Trustpilot,2025-06-22 13:49:07,it_security_officer,Chicago,Free
+1170,Pied Piper,Your email marketing platform's spam testing is giving false positives. Our deliverability expert confirmed our emails should pass all filters.,Support Ticket,2025-06-22 16:05:31,email_marketer,London,Pro
+1171,Soylent Corp,The inventory forecasting in your retail management software has reduced our stockouts by 64% while decreasing overall inventory costs by 12%.,Case Study,2025-06-23 09:28:15,retail_operations,Sydney,Pro
+1172,Gotham Solutions,Your team collaboration tool is painfully slow when searching through message history older than 30 days. This is crippling for referencing past decisions.,Reddit r/productivity,2025-06-23 11:53:49,project_coordinator,Berlin,Pro
+1173,Xandar Enterprises,The automated expense categorization in your accounting software is impressively accurate. Saves hours of manual reconciliation every month.,G2 Review,2025-06-23 14:17:22,accountant_smb,Toronto,Enterprise
+1174,Blue Sun Corporation,"Your API documentation is severely outdated. Endpoints listed don't match actual implementation, causing days of development delays.",Developer Forum,2025-06-23 16:42:58,integration_developer,San Francisco,Free
+1175,Soylent Corp,The compliance reporting features in your data governance platform saved us during our ISO 27001 audit. Auditors specifically complimented the system.,LinkedIn,2025-06-24 08:19:36,compliance_manager,Singapore,Free
+1176,Umbrella Inc,"Your video editing platform constantly crashes when working with 4K footage, despite advertising 4K support as a key feature.",Support Ticket,2025-06-24 10:45:12,content_creator,Los Angeles,Free
+1177,Prestige Worldwide,"The automated transcription in your meeting software is remarkably accurate, even with technical jargon and multiple accents in the same call.",Product Review,2025-06-24 13:08:47,distributed_team_manager,Amsterdam,Enterprise
+1178,Tyrell Corporation,"Your customer data platform doesn't properly merge duplicate profiles, creating fragmented customer views and skewing our analytics.",Support Ticket,2025-06-24 15:37:21,data_quality_analyst,New York,Enterprise
+1179,Tyrell Corporation,The predictive lead scoring in your sales platform has dramatically improved our conversion rates. Sales team now focuses on the right prospects.,Case Study,2025-06-25 09:02:54,sales_director,London,Free
+1180,Soylent Corp,"Your password management solution's browser extension constantly conflicts with our other security tools, creating login failures.",IT Support Forum,2025-06-25 11:29:18,security_admin,Chicago,Pro
+1181,Gekko & Co,The custom reporting in your analytics platform has transformed how we communicate performance to stakeholders. Beautiful visualizations that tell the story clearly.,G2 Review,2025-06-25 13:51:43,business_analyst,Sydney,Pro
+1182,Wonka Industries,"Your project management tool's resource allocation features don't account for part-time team members, causing consistent overallocation.",Feature Request,2025-06-25 16:14:07,resource_manager,Berlin,Pro
+1183,Vehement Capital Partners,The automated contract analysis in your legal tech platform found three critical risks in a vendor agreement that our legal team missed. Potentially saved us millions.,Testimonial,2025-06-26 08:39:32,general_counsel,Toronto,Free
+1184,Spacely Sprockets,Your e-learning platform's gamification features have increased course completion rates by 78%. Students are actually excited about mandatory training now.,Product Review,2025-06-26 11:05:59,training_director,Singapore,Free
+1185,Umbra Security,The calendar integration in your scheduling software consistently creates events in the wrong time zone despite correct system settings.,Support Ticket,2025-06-26 13:42:24,executive_assistant,Paris,Free
+1186,Octan Corporation,Your digital asset management system's AI tagging has transformed our content searchability. Finding the right assets is now instant instead of hours-long.,G2 Review,2025-06-26 16:08:51,creative_director,New York,Pro
+1187,Vehement Capital Partners,We've been using your team chat app for 2 years and the search functionality is still terrible. Can't find messages from even a week ago.,Twitter,2025-06-27 08:33:17,@tech_team_lead,San Francisco,Free
+1188,Soylent Corp,The automated workflow templates in your process management software cut our ISO 9001 implementation time in half.,Case Study,2025-06-27 10:57:42,quality_manager,Melbourne,Pro
+1189,Tyrell Corporation,"Your email deliverability platform's bounce handling is creating false positives, marking valid addresses as undeliverable.",Support Ticket,2025-06-27 13:22:09,email_operations,London,Pro
+1190,Globex Corporation,The custom fields in your CRM have allowed us to track industry-specific metrics that were impossible in our previous system.,Product Feedback,2025-06-27 15:49:35,industry_sales_specialist,Berlin,Enterprise
+1191,Wayne Enterprises,Your virtual phone system drops calls when transferring between departments. This is embarrassing and unprofessional with clients.,Support Ticket,2025-06-28 09:14:58,receptionist,Chicago,Pro
+1192,Acme Corp,The content suggestion algorithm in your social media management tool has increased our engagement rates by 42%. The AI really understands our audience.,G2 Review,2025-06-28 11:38:26,digital_marketing_manager,Sydney,Enterprise
+1193,Valhalla Ventures,"Your proposal software's electronic signature integration fails about 30% of the time, causing deals to stall at the final stage.",Support Ticket,2025-06-28 14:03:51,sales_enablement,Toronto,Free
+1194,Wayne Enterprises,The customizable dashboards in your business intelligence tool have democratized data across our organization. Everyone can access insights relevant to their role.,Testimonial,2025-06-28 16:27:19,data_democratization_lead,Amsterdam,Pro
+1195,Kwik-E-Mart,Your applicant tracking system's candidate experience is terrible. We're losing top talent because the application process is so cumbersome.,HR Tech Forum,2025-06-29 08:52:44,recruiting_manager,Singapore,Pro
+1196,Neo Tokyo Labs,The automated data cleansing in your customer database platform has improved our marketing campaign performance by 28%. Clean data really does matter!,Case Study,2025-06-29 11:19:12,database_administrator,New York,Pro
+1197,Globex Software,Your task management app's mobile version is missing critical features available in the desktop version. Can't manage approvals on the go.,App Store Review,2025-06-29 13:45:37,mobile_worker,Berlin,Pro
+1198,Kwik-E-Mart,The security compliance features in your cloud storage solution were crucial in achieving our GDPR compliance certification.,LinkedIn,2025-06-29 16:08:03,privacy_officer,London,Enterprise
+1199,Soylent Corp,Your webinar platform's engagement tools have transformed our online events. Attendance time increased from 22 minutes to 47 minutes on average.,Product Review,2025-06-30 09:33:29,webinar_host,Paris,Pro
+1200,Acme Corp,"The inventory barcode scanning in your POS system frequently misreads codes, causing inventory discrepancies that require manual correction.",Support Ticket,2025-06-30 11:57:54,retail_manager,Chicago,Free
+1201,Xandar Enterprises,Your email template builder's responsive design testing has eliminated rendering issues across devices. Our emails now look perfect everywhere.,G2 Review,2025-06-30 14:22:18,email_designer,Sydney,Enterprise
+1202,Lumon Industries,We need better permission controls in your document management system. Currently too all-or-nothing which doesn't work for sensitive documents.,Feature Request,2025-06-30 16:48:42,information_security,San Francisco,Free
