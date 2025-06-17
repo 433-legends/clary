@@ -1,10 +1,12 @@
 "use client";
 
 import React from 'react';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Zap } from 'lucide-react'; // Placeholder for the lightning bolt icon
+import { Separator } from "@/components/ui/separator";
+import { cn } from "@/lib/utils";
 
 export type InsightPriority = "Critical" | "High Priority" | "Medium Priority" | "Low Priority" | "Positive" | "Neutral";
 

@@ -20,7 +20,7 @@ import {
 export function GlobalHeader() {
   const router = useRouter();
   const { toggle: toggleChatbot } = useChatbot();
-  const { theme, setTheme } = useTheme();
+  const { setTheme } = useTheme();
   const [open, setOpen] = useState(false);
 
   useEffect(() => {

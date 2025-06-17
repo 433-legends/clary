@@ -4,12 +4,18 @@ import "@/app/globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import React from 'react';
 import { ConditionalLayout } from "@/components/layout/conditional-layout";
+import { ChatbotProvider } from "@/components/chatbot/chatbot-provider";
 
 const inter = Inter({ subsets: ["latin"] });
+const cacheBuster = new Date().getTime();
 
 export const metadata: Metadata = {
-  title: "Insights.app",
-  description: "Aggregate feedback and gain insights.",
+  title: "Clarities",
+  description: "Get insights from your customer feedback.",
+  icons: {
+    icon: `/icon.svg?v=${cacheBuster}`,
+    apple: `/apple-icon.svg?v=${cacheBuster}`,
+  },
 };
 
 export default function RootLayout({
@@ -22,10 +28,13 @@ export default function RootLayout({
       <body className={`${inter.className} antialiased`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="system"
+          enableSystem
           disableTransitionOnChange
         >
-          <ConditionalLayout>{children}</ConditionalLayout>
+          <ChatbotProvider>
+            <ConditionalLayout>{children}</ConditionalLayout>
+          </ChatbotProvider>
         </ThemeProvider>
       </body>
     </html>

@@ -5,25 +5,14 @@ import { CompanyDetailsForm } from '@/components/onboarding/company-details-form
 import { IntegrationsStep } from '@/components/onboarding/integrations-step';
 import { InviteTeamForm } from '@/components/onboarding/invite-team-form';
 import { useRouter } from 'next/navigation';
+import { Logo } from '@/components/icons/logo';
 
 // Placeholder for a simple header/logo for onboarding
 const OnboardingHeader = () => {
   return (
     <header className="py-4 px-4 sm:px-6 lg:px-8 border-b">
       <div className="flex items-center gap-2">
-        {/* Replace with your actual logo component or SVG */}
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          className="h-6 w-6 text-primary"
-        >
-          <path d="M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3" />
-        </svg>
+        <Logo className="h-6 w-6" />
         <span className="font-semibold text-lg">Insights.app Onboarding</span>
       </div>
     </header>

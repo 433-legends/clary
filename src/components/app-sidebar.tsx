@@ -15,8 +15,13 @@ import {
   Settings2,
   Shapes,          // Your icon
   SquareTerminal, 
-  Zap              // Your icon
+  Zap,
+  Settings,
+  File,
+  Users,
+  Calendar
 } from "lucide-react"
+import { Logo } from "@/components/icons/logo"
 
 import { NavMain } from "@/components/nav-main"
 import { NavProjects } from "@/components/nav-projects" // Will be removed later if not needed
@@ -40,7 +45,7 @@ const data = {
   teams: [
     {
       name: "Clarities App", // Simplified TeamSwitcher for now
-      logo: GalleryVerticalEnd, // Placeholder logo
+      logo: Logo, // Use the new Logo component
       plan: "Insights",
     },
   ],

@@ -2,8 +2,10 @@
 
 import React from 'react';
 import { PageContentLayout } from '@/components/layout/page-content-layout';
-import { InsightCard, type InsightItem, type InsightPriority } from '@/components/insights/insight-card';
+import { InsightCard, type InsightItem } from '@/components/insights/insight-card';
 import { Zap, FileText, Lightbulb } from 'lucide-react'; // Example icons for insights
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
 // Sample data based on the image and our InsightItem structure
 const sampleInsights: InsightItem[] = [

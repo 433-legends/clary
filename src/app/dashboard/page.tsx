@@ -3,6 +3,21 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import { Button } from '@/components/ui/button';
 import { BarChartBig } from 'lucide-react'; // Only BarChartBig is used in the final return
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table"
 
 // New Dashboard Components
 import { SectionCards } from "@/components/dashboard/section-cards";
@@ -21,16 +36,6 @@ interface FeedbackItem {
   user_id: string;
   location: string;
   confidence_score: number;
-}
-
-interface ThemeVolume {
-  theme: string;
-  volume: number;
-}
-
-interface BarChartItem { // Keep this as it's used by getSentimentDistribution & getTopSources
-  label: string;
-  value: number;
 }
 
 // Data processing functions (consolidated from previous src/app/page.tsx)
@@ -86,7 +91,12 @@ export default function DashboardPage() {
   const [allFeedbackData, setAllFeedbackData] = useState<FeedbackItem[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  const [sectionCardsData, setSectionCardsData] = useState<any>({});
+  const [sectionCardsData, setSectionCardsData] = useState<{
+    overallSentiment: { score: number; positivePercentage: number; negativePercentage: number; neutralPercentage: number; };
+    problems: number;
+    suggestions: number;
+    totalFeedback: number;
+  } | {}>({});
   const [feedbackVolumeChartData, setFeedbackVolumeChartData] = useState<ChartItem[]>([]);
 
   useEffect(() => {
@@ -120,7 +130,7 @@ export default function DashboardPage() {
     fetchData();
   }, []);
 
-  const columns = useMemo<ColumnDef<FeedbackItem, any>[]>(() => [
+  const columns = useMemo<ColumnDef<FeedbackItem>[]>(() => [
     {
       accessorKey: "text",
       header: "Feedback Text",
@@ -142,7 +152,7 @@ export default function DashboardPage() {
       header: "AI Themes",
       cell: ({ row }) => {
         const themes = row.getValue("ai_themes") as string[];
-        return (
+  return (
           <div className="flex flex-wrap gap-1">
             {themes && themes.map((theme, index) => (
               <span key={index} className="px-2 py-0.5 text-xs bg-muted text-muted-foreground rounded-full">
@@ -185,9 +195,9 @@ export default function DashboardPage() {
       
       <div className="px-4 lg:px-6">
         <ChartAreaInteractive data={feedbackVolumeChartData} title="Feedback Volume Trend" />
-      </div>
+          </div>
       
       <DataTable columns={columns} data={allFeedbackData} title="All Feedback Entries"/>
-    </div>
+        </div>
   );
 }

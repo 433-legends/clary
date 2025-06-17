@@ -56,7 +56,7 @@ export function InviteTeamForm({ onNext, onBack }: InviteTeamFormProps) {
         <CardDescription>Share Insights.app with your favorite co-workers.</CardDescription>
       </CardHeader>
       <CardContent className="space-y-6">
-        {invites.map((invite, index) => (
+        {invites.map((invite) => (
           <div key={invite.id} className="flex items-end gap-3">
             <div className="flex-grow space-y-2">
               <Label htmlFor={`email-${invite.id}`}>Email</Label>
