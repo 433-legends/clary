@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import React from 'react';
 import { ConditionalLayout } from "@/components/layout/conditional-layout";
 import { ChatbotProvider } from "@/components/chatbot/chatbot-provider";
+import { AnalysisProvider } from "@/context/AnalysisContext";
 
 const inter = Inter({ subsets: ["latin"] });
 const cacheBuster = new Date().getTime();
@@ -33,7 +34,9 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <ChatbotProvider>
-            <ConditionalLayout>{children}</ConditionalLayout>
+            <AnalysisProvider>
+              <ConditionalLayout>{children}</ConditionalLayout>
+            </AnalysisProvider>
           </ChatbotProvider>
         </ThemeProvider>
       </body>

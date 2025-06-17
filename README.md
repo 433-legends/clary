@@ -44,3 +44,16 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Environment Variables
+
+To run the AI analysis features, you will need to set up environment variables.
+
+1.  Create a file named `.env.local` in the root of the project.
+2.  Add the following line to the file, replacing `"your_openai_api_key_goes_here"` with your actual OpenAI API key:
+
+```
+OPENAI_API_KEY="your_openai_api_key_goes_here"
+```
+
+The application will use this key to communicate with the OpenAI API for tasks like analyzing uploaded CSV files.

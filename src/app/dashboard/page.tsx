@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState, useMemo } from 'react';
 import { Button } from '@/components/ui/button';
-import { BarChartBig } from 'lucide-react'; // Only BarChartBig is used in the final return
+import { BarChartBig, UploadCloud } from 'lucide-react';
 import {
   Card,
   CardContent,
@@ -24,18 +24,23 @@ import { SectionCards } from "@/components/dashboard/section-cards";
 import { ChartAreaInteractive, ChartItem } from "@/components/dashboard/chart-area-interactive";
 import { DataTable } from "@/components/dashboard/data-table";
 import { ColumnDef } from "@tanstack/react-table";
+import { useAnalysis } from '@/context/AnalysisContext';
+import Link from 'next/link';
+import { Skeleton } from '@/components/ui/skeleton';
 
+// The FeedbackItem now needs to be more flexible, as it comes from two different sources
 interface FeedbackItem {
   text: string;
   sentiment: string;
   ai_themes: string[];
-  is_problem: boolean;
-  is_suggestion: boolean;
   source: string;
   date_time: string;
-  user_id: string;
-  location: string;
-  confidence_score: number;
+  // These fields might not exist in the new analysis data
+  is_problem?: boolean;
+  is_suggestion?: boolean;
+  user_id?: string;
+  location?: string;
+  confidence_score?: number;
 }
 
 // Data processing functions (consolidated from previous src/app/page.tsx)
@@ -45,15 +50,17 @@ function getOverallSentimentScore(feedback: FeedbackItem[]): { score: number; po
   let negativeCount = 0;
   let neutralCount = 0;
   feedback.forEach(item => {
-    if (item.sentiment === 'positive') positiveCount++;
-    else if (item.sentiment === 'negative') negativeCount++;
+    const sentiment = item.sentiment.toLowerCase();
+    if (sentiment === 'positive') positiveCount++;
+    else if (sentiment === 'negative') negativeCount++;
     else neutralCount++;
   });
   const total = feedback.length;
   const positivePercentage = total > 0 ? Math.round((positiveCount / total) * 100) : 0;
   const negativePercentage = total > 0 ? Math.round((negativeCount / total) * 100) : 0;
   const neutralPercentage = total > 0 ? Math.round((neutralCount / total) * 100) : 0;
-  const score = Math.round(((positivePercentage - negativePercentage) / 100) * 10);
+  // A simple score from -10 to 10
+  const score = total > 0 ? Math.round(((positiveCount - negativeCount) / total) * 10) : 0;
   return { score, positivePercentage, negativePercentage, neutralPercentage };
 }
 
@@ -70,7 +77,10 @@ function getProblemSuggestionCounts(feedback: FeedbackItem[]): { problems: numbe
 function getFeedbackVolumeTrend(feedback: FeedbackItem[], granularity: 'month' | 'week' = 'month'): ChartItem[] {
   const freq: Record<string, number> = {};
   feedback.forEach(item => {
-    const date = new Date(item.date_time.trim());
+    // Gracefully handle potentially invalid date strings
+    const date = new Date(item.date_time ? item.date_time.trim() : Date.now());
+    if (isNaN(date.getTime())) return; // Skip if date is invalid
+
     let dateKey = "";
     if (granularity === 'month') {
       dateKey = `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, '0')}`;
@@ -86,10 +96,42 @@ function getFeedbackVolumeTrend(feedback: FeedbackItem[], granularity: 'month' |
     .map(([label, value]) => ({ label, value }));
 }
 
+const WelcomeScreen = () => (
+    <div className="flex flex-col items-center justify-center h-full text-center p-8">
+        <div className="p-8 border border-dashed rounded-lg">
+            <UploadCloud className="mx-auto h-12 w-12 text-gray-400" />
+            <h2 className="mt-6 text-xl font-semibold">Welcome to Your Dashboard</h2>
+            <p className="mt-2 text-sm text-muted-foreground">
+                No feedback data found. Upload a CSV through the onboarding flow to get started.
+            </p>
+            <Button asChild className="mt-6">
+                <Link href="/onboarding">Analyze Feedback</Link>
+            </Button>
+        </div>
+    </div>
+);
+
+const LoadingSkeleton = () => (
+    <div className="flex flex-1 flex-col gap-4 py-4 md:gap-6 md:py-6 px-4 lg:px-6">
+        <div className="flex items-center justify-between">
+            <Skeleton className="h-8 w-48" />
+            <Skeleton className="h-10 w-36" />
+        </div>
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            <Skeleton className="h-32 w-full" />
+            <Skeleton className="h-32 w-full" />
+            <Skeleton className="h-32 w-full" />
+            <Skeleton className="h-32 w-full" />
+        </div>
+        <Skeleton className="h-80 w-full mt-4" />
+        <Skeleton className="h-96 w-full mt-6" />
+    </div>
+);
 
 export default function DashboardPage() {
-  const [allFeedbackData, setAllFeedbackData] = useState<FeedbackItem[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const { analysisData, isLoading: isAnalysisLoading } = useAnalysis();
+  const [dashboardData, setDashboardData] = useState<FeedbackItem[]>([]);
+  const [isProcessing, setIsProcessing] = useState(true);
 
   const [sectionCardsData, setSectionCardsData] = useState<{
     overallSentiment: { score: number; positivePercentage: number; negativePercentage: number; neutralPercentage: number; };
@@ -100,35 +142,45 @@ export default function DashboardPage() {
   const [feedbackVolumeChartData, setFeedbackVolumeChartData] = useState<ChartItem[]>([]);
 
   useEffect(() => {
-    async function fetchData() {
-      setIsLoading(true);
-      try {
-        const response = await fetch('/processed_feedback.json');
-        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-        const data: FeedbackItem[] = await response.json();
-        setAllFeedbackData(data);
+    if (!isAnalysisLoading) {
+      if (analysisData && analysisData.aiAnalysis.length > 0) {
+        // Data from context exists, transform it for the dashboard
+        const transformedData = analysisData.aiAnalysis.map(item => ({
+          text: item.feedback,
+          sentiment: item.sentiment,
+          ai_themes: item.themes,
+          source: 'CSV Upload', // Mark the source
+          date_time: new Date().toISOString(), // Use current date as placeholder
+        }));
+        setDashboardData(transformedData);
+      } else {
+        // No data in context, clear any existing data
+        setDashboardData([]);
+      }
+      setIsProcessing(false);
+    }
+  }, [analysisData, isAnalysisLoading]);
 
-        const overallSentiment = getOverallSentimentScore(data);
-        const counts = getProblemSuggestionCounts(data);
-        const volumeTrend = getFeedbackVolumeTrend(data, 'month');
+  useEffect(() => {
+    if (!isProcessing) {
+      if (dashboardData.length > 0) {
+        const overallSentiment = getOverallSentimentScore(dashboardData);
+        const counts = getProblemSuggestionCounts(dashboardData);
+        const volumeTrend = getFeedbackVolumeTrend(dashboardData, 'month');
         
         setSectionCardsData({
           overallSentiment: overallSentiment,
           problems: counts.problems,
           suggestions: counts.suggestions,
-          totalFeedback: data.length,
+          totalFeedback: dashboardData.length,
         });
         setFeedbackVolumeChartData(volumeTrend);
-        // console.log("Restored Dashboard - Processed Feedback Volume Trend Data:", volumeTrend);
-
-      } catch (error) {
-        console.error("Failed to fetch or process feedback data for dashboard:", error);
-      } finally {
-        setIsLoading(false);
+      } else {
+        setSectionCardsData({});
+        setFeedbackVolumeChartData([]);
       }
     }
-    fetchData();
-  }, []);
+  }, [dashboardData, isProcessing]);
 
   const columns = useMemo<ColumnDef<FeedbackItem>[]>(() => [
     {
@@ -140,11 +192,11 @@ export default function DashboardPage() {
       accessorKey: "sentiment",
       header: "Sentiment",
        cell: ({ row }) => {
-        const sentiment = row.getValue("sentiment") as string;
+        const sentiment = (row.getValue("sentiment") as string || '').toLowerCase();
         let colorClass = "text-muted-foreground";
         if (sentiment === "positive") colorClass = "text-green-500";
         else if (sentiment === "negative") colorClass = "text-red-500";
-        return <span className={colorClass}>{sentiment}</span>;
+        return <span className={`capitalize ${colorClass}`}>{sentiment}</span>;
       },
     },
     {
@@ -152,7 +204,7 @@ export default function DashboardPage() {
       header: "AI Themes",
       cell: ({ row }) => {
         const themes = row.getValue("ai_themes") as string[];
-  return (
+        return (
           <div className="flex flex-wrap gap-1">
             {themes && themes.map((theme, index) => (
               <span key={index} className="px-2 py-0.5 text-xs bg-muted text-muted-foreground rounded-full">
@@ -171,14 +223,19 @@ export default function DashboardPage() {
       accessorKey: "date_time",
       header: "Date",
       cell: ({ row }) => {
-        const date = new Date(row.getValue("date_time"));
+        const dateStr = row.getValue("date_time");
+        const date = dateStr ? new Date(dateStr as string) : new Date();
         return <span>{date.toLocaleDateString()}</span>;
       },
     },
   ], []);
 
-  if (isLoading) {
-    return <div className="flex justify-center items-center h-[calc(100vh-theme(space.16))]">Loading dashboard data...</div>;
+  if (isAnalysisLoading || isProcessing) {
+    return <LoadingSkeleton />;
+  }
+
+  if (dashboardData.length === 0) {
+    return <WelcomeScreen />;
   }
 
   return (
@@ -195,9 +252,9 @@ export default function DashboardPage() {
       
       <div className="px-4 lg:px-6">
         <ChartAreaInteractive data={feedbackVolumeChartData} title="Feedback Volume Trend" />
-          </div>
+      </div>
       
-      <DataTable columns={columns} data={allFeedbackData} title="All Feedback Entries"/>
-        </div>
+      <DataTable columns={columns} data={dashboardData} title="Analyzed Feedback Entries"/>
+    </div>
   );
 }
