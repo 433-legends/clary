@@ -11,16 +11,13 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { ListChecks, UploadCloud, ChevronRight, Package, Users, Link as LinkIcon, FileCheck2, Loader2 } from 'lucide-react'; // Using Link from lucide-react
+import { ListChecks, UploadCloud, ChevronRight, Package, Users, Link as LinkIcon, FileCheck2, Loader2, Slack } from 'lucide-react'; // Using Link from lucide-react
 import { useAnalysis } from '@/context/AnalysisContext';
+import { toast } from "sonner";
 
 // Mock integration data - replace with actual data or API call later
 const integrations = [
-  { name: 'Gong', description: 'Continuously sync customer conversations, details, feedback, and requests.', icon: <Package size={24} className="text-blue-500" /> },
-  { name: 'Zoom', description: 'Continuously sync customer conversations, details, feedback, and requests.', icon: <Users size={24} className="text-sky-500" /> },
-  { name: 'Zoom Revenue Accelerator', description: 'Continuously sync customer conversations, details, feedback, and requests.', icon: <ListChecks size={24} className="text-indigo-500" /> }, 
-  { name: 'Clari', description: 'Continuously sync customer conversations, details, feedback, and requests.', icon: <LinkIcon size={24} className="text-rose-500" /> }, // Using LinkIcon alias
-  { name: 'Productboard', description: 'Import feedback by uploading a CSV export.', icon: <ChevronRight size={24} className="text-orange-500" /> }, // Placeholder icon
+  { name: 'Slack', description: 'Continuously sync customer conversations, details, feedback, and requests.', icon: <Slack size={24} className="text-blue-500" /> },
   { name: 'Upload CSV', description: 'Drop a CSV to upload or click to select from your desktop.', icon: <UploadCloud size={24} className="text-gray-500" /> },
 ];
 
@@ -95,8 +92,16 @@ export function IntegrationsStep({ onNext, onBack }: IntegrationsStepProps) {
         return;
       }
       
+      // Immediately start loading state and fire off the request
       setIsLoading(true);
       setError(null);
+      
+      // Show toast and proceed with navigation right away
+      toast.info("Analyzing your feedback...", {
+        description: "This may take a few minutes. You can continue working and check the dashboard later.",
+        duration: 8000, 
+      });
+      onNext();
 
       const formData = new FormData();
       formData.append('file', uploadedFile);
@@ -110,16 +115,31 @@ export function IntegrationsStep({ onNext, onBack }: IntegrationsStepProps) {
         const result = await response.json();
 
         if (!response.ok) {
-          throw new Error(result.error || 'Something went wrong');
+          // Use toast for error feedback instead of blocking UI
+          toast.error("Analysis Failed", {
+            description: result.error || 'Something went wrong during the analysis.',
+          });
+          // Also set error in context if needed elsewhere
+          setError(result.error || 'Something went wrong');
+          // Important: clear loading state on failure
+          setIsLoading(false); 
+          return; // Stop execution
         }
 
         console.log('Analysis result:', result);
         setAnalysisData(result.analysis);
-        onNext(); // Proceed to the next step
+        toast.success("Analysis Complete!", {
+          description: "Your dashboard is now ready.",
+        });
+
       } catch (err: any) {
+        toast.error("Analysis Failed", {
+          description: err.message || 'An unexpected network error occurred.',
+        });
         setError(err.message);
-        console.error('Upload failed:', err);
       } finally {
+        // The loading state is now managed globally by the context,
+        // and it should be set to false only when the process is truly complete.
         setIsLoading(false);
       }
     };
@@ -132,18 +152,17 @@ export function IntegrationsStep({ onNext, onBack }: IntegrationsStepProps) {
       </CardHeader>
       <CardContent className="space-y-4">
         <CsvUploader onFileAccepted={handleFileAccepted} />
-        {error && <p className="text-sm text-red-500 text-center">{error}</p>}
         <div className="relative my-6">
             <div className="absolute inset-0 flex items-center">
                 <span className="w-full border-t" />
             </div>
             <div className="relative flex justify-center text-xs uppercase">
                 <span className="bg-card px-2 text-muted-foreground">
-                Or connect another source
+                Or connect Slack
                 </span>
             </div>
         </div>
-        {integrations.filter(i => i.name !== 'Upload CSV').map((integration) => (
+        {integrations.filter(i => i.name === 'Slack').map((integration) => (
           <div 
             key={integration.name} 
             className="flex items-center justify-between p-4 border rounded-lg hover:bg-muted/50 transition-colors"

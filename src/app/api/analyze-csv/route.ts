@@ -58,51 +58,69 @@ export async function POST(req: NextRequest) {
         return NextResponse.json({ error: 'Could not determine the feedback column in the CSV.' }, { status: 400 });
     }
 
-    // Limit to the first 100 rows for the purpose of this onboarding analysis
-    const dataToAnalyze = data.slice(0, 100);
+    // Process all rows from the CSV
+    const dataToAnalyze = data;
     const feedbackItems = dataToAnalyze.map((row: any) => row[feedbackColumn]).filter(Boolean);
 
     if (feedbackItems.length === 0) {
         return NextResponse.json({ error: 'No feedback text found in the selected column.' }, { status: 400 });
     }
 
-    const prompt = `
-        You are an AI assistant specialized in analyzing customer feedback.
-        Analyze the following ${feedbackItems.length} feedback entries.
-        For each piece of feedback, identify the main themes (e.g., "UI/UX", "Bug", "Feature Request", "Pricing").
-        Also determine the sentiment (positive, negative, neutral) for each.
+    const BATCH_SIZE = 100; // Process 100 entries at a time
+    let allAnalyses: any[] = [];
+
+    for (let i = 0; i < feedbackItems.length; i += BATCH_SIZE) {
+        const batch = feedbackItems.slice(i, i + BATCH_SIZE);
+
+        const prompt = `
+            You are an AI assistant specialized in analyzing customer-submitted feedback.
+            Analyze the following ${batch.length} feedback entries.
+            For each piece of feedback, provide the following analysis in a JSON object:
+            1.  "feedback": The original, verbatim feedback text.
+            2.  "themes": An array of 1-4 keywords or short phrases that summarize the main topics.
+            3.  "sentiment": A string that is either "positive", "negative", or "neutral".
+            4.  "is_problem": A boolean (true/false). Set to true if the feedback primarily describes a bug, error, or point of friction.
+            5.  "is_suggestion": A boolean (true/false). Set to true if the feedback primarily proposes a new feature, an improvement, or an idea.
+
+            Return a single JSON object with a single key "analysis", which is an array of these objects.
+            Do not include any explanations or introductory text outside of the JSON object.
+
+            Feedback entries to analyze:
+            ${JSON.stringify(batch)}
+        `;
+
+        try {
+            const completion = await openai.chat.completions.create({
+                model: 'gpt-3.5-turbo-1106', // Optimized for JSON mode
+                messages: [{ role: 'user', content: prompt }],
+                response_format: { type: "json_object" },
+                temperature: 0.2,
+            });
+            
+            const aiResponse = completion.choices[0].message.content;
+            
+            if (!aiResponse) {
+                // If one batch fails, we can choose to stop or continue. Stopping is safer for now.
+                return NextResponse.json({ error: `AI analysis failed to produce a result for a batch starting at index ${i}.` }, { status: 500 });
+            }
         
-        Return a JSON object with a single key "analysis" which is an array of objects.
-        Each object in the array should correspond to a feedback entry and have the following structure:
-        { "feedback": "the original feedback text", "themes": ["theme1", "theme2"], "sentiment": "positive/negative/neutral" }
+            const analysisResult = JSON.parse(aiResponse);
+            if (analysisResult.analysis && Array.isArray(analysisResult.analysis)) {
+                allAnalyses = allAnalyses.concat(analysisResult.analysis);
+            }
 
-        Do not include any explanations or introductory text outside of the JSON object.
-        The entire response should be a single valid JSON object.
-
-        Feedback entries to analyze:
-        ${JSON.stringify(feedbackItems)}
-    `;
-
-    const completion = await openai.chat.completions.create({
-        model: 'gpt-3.5-turbo-1106', // Optimized for JSON mode
-        messages: [{ role: 'user', content: prompt }],
-        response_format: { type: "json_object" },
-        temperature: 0.2,
-    });
-    
-    const aiResponse = completion.choices[0].message.content;
-    
-    if (!aiResponse) {
-        return NextResponse.json({ error: 'AI analysis failed to produce a result.' }, { status: 500 });
+        } catch (error) {
+            console.error(`Error processing batch starting at index ${i}:`, error);
+            // Let frontend know which batch failed
+            return NextResponse.json({ error: `An error occurred while processing the batch starting at index ${i}.` }, { status: 500 });
+        }
     }
-
-    const analysisResult = JSON.parse(aiResponse);
 
     const analysisSummary = {
         totalRows: data.length,
-        analyzedRows: feedbackItems.length,
+        analyzedRows: allAnalyses.length,
         feedbackColumn: feedbackColumn,
-        aiAnalysis: analysisResult.analysis,
+        aiAnalysis: allAnalyses,
     };
 
     return NextResponse.json({ message: 'CSV analyzed successfully', analysis: analysisSummary });
