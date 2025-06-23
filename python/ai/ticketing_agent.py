@@ -1,18 +1,20 @@
+import os
 from typing import TypeVar
 
 from agents import (
-    Agent,
+    Agent, set_default_openai_key, ModelSettings
 )
-from python.prompts.fiter_ticketing import FILTER_TICKETING
+from python.prompts.fiter_customer_feedback import FILTER_CUSTOMER_FEEDBACK
 TContext = TypeVar('TContext')
 
-model_settings = {
-    "temperature": 0.0,
-}
+model_settings = ModelSettings(temperature=0.0)
 
-filter_tickets = Agent[TContext](
+
+set_default_openai_key(os.getenv("OPENAI_API_KEY"))  # Set your OpenAI API key here
+
+filter_feedback = Agent[TContext](
     model="gpt-4.1",
-    name="Ticket filtering Agent",
-    instructions=FILTER_TICKETING,
+    name="Vibora",
+    instructions=FILTER_CUSTOMER_FEEDBACK,
     model_settings=model_settings,
 )
