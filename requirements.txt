@@ -1,4 +1,9 @@
+asyncio
 pandas
 vaderSentiment
-openai
+openai==1.76.2
+openai-agents==0.0.13
 python-dotenv
+slack_sdk
+fastapi
+uvicorn
