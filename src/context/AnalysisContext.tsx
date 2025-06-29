@@ -8,6 +8,8 @@ interface AnalysisResult {
   feedback: string;
   themes: string[];
   sentiment: 'positive' | 'negative' | 'neutral';
+  is_problem?: boolean;
+  is_suggestion?: boolean;
 }
 
 interface AnalysisData {

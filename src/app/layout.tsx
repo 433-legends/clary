@@ -4,8 +4,11 @@ import "@/app/globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import React from 'react';
 import { ConditionalLayout } from "@/components/layout/conditional-layout";
-import { ChatbotProvider } from "@/components/chatbot/chatbot-provider";
 import { AnalysisProvider } from "@/context/AnalysisContext";
+import { ChatbotProvider } from "@/components/chatbot/chatbot-provider";
+import { Toaster } from "@/components/ui/sonner";
+import { cn } from "@/lib/utils";
+import { SidebarProvider } from "@/components/ui/sidebar";
 
 const inter = Inter({ subsets: ["latin"] });
 const cacheBuster = new Date().getTime();
@@ -35,9 +38,12 @@ export default function RootLayout({
         >
           <ChatbotProvider>
             <AnalysisProvider>
-              <ConditionalLayout>{children}</ConditionalLayout>
+              <ConditionalLayout>
+                {children}
+              </ConditionalLayout>
             </AnalysisProvider>
           </ChatbotProvider>
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>

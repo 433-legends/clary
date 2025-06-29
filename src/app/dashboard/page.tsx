@@ -128,6 +128,29 @@ const LoadingSkeleton = () => (
     </div>
 );
 
+const AnalysisInProgressScreen = () => (
+    <div className="flex flex-1 flex-col gap-4 py-4 md:gap-6 md:py-6 px-4 lg:px-6 animate-pulse">
+        <div className="flex items-center justify-between">
+            <h1 className="text-2xl font-semibold tracking-tight text-muted-foreground">Dashboard</h1>
+            <Button disabled>
+              <BarChartBig className="mr-2 h-4 w-4" /> Generate Report
+            </Button>
+        </div>
+        <div className="text-center py-4 border border-dashed rounded-lg">
+            <p className="text-lg font-semibold">Analyzing feedback...</p>
+            <p className="text-sm text-muted-foreground">You can come back later, this page will update automatically when it's done.</p>
+        </div>
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            <Skeleton className="h-32 w-full" />
+            <Skeleton className="h-32 w-full" />
+            <Skeleton className="h-32 w-full" />
+            <Skeleton className="h-32 w-full" />
+        </div>
+        <Skeleton className="h-80 w-full mt-4" />
+        <Skeleton className="h-96 w-full mt-6" />
+    </div>
+);
+
 export default function DashboardPage() {
   const { analysisData, isLoading: isAnalysisLoading } = useAnalysis();
   const [dashboardData, setDashboardData] = useState<FeedbackItem[]>([]);
@@ -149,6 +172,8 @@ export default function DashboardPage() {
           text: item.feedback,
           sentiment: item.sentiment,
           ai_themes: item.themes,
+          is_problem: item.is_problem || false,
+          is_suggestion: item.is_suggestion || false,
           source: 'CSV Upload', // Mark the source
           date_time: new Date().toISOString(), // Use current date as placeholder
         }));
@@ -230,8 +255,8 @@ export default function DashboardPage() {
     },
   ], []);
 
-  if (isAnalysisLoading || isProcessing) {
-    return <LoadingSkeleton />;
+  if (isAnalysisLoading) {
+    return <AnalysisInProgressScreen />;
   }
 
   if (dashboardData.length === 0) {
