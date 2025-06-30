@@ -1,8 +1,22 @@
 from fastapi import FastAPI, HTTPException, UploadFile, File
-
+from fastapi.middleware.cors import CORSMiddleware
 from python.services.process_csv_feedbacks import process_csv_feedbacks
 from services.slack_connector import fetch_messages
+
 app = FastAPI(title="Clairites FastAPI App", version="1.0.0")
+
+# CORS Middleware
+origins = [
+    "http://localhost:3000",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 @app.get("/slack/messages/{channel_id}")

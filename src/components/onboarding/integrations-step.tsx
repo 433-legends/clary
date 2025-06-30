@@ -74,7 +74,7 @@ function CsvUploader({ onFileAccepted }: CsvUploaderProps) {
 
 interface IntegrationsStepProps {
   onNext: () => void;
-  onBack: () => void;
+  onBack?: () => void;
 }
 
 export function IntegrationsStep({ onNext, onBack }: IntegrationsStepProps) {
@@ -92,7 +92,8 @@ export function IntegrationsStep({ onNext, onBack }: IntegrationsStepProps) {
         return;
       }
       
-      // Immediately start loading state and fire off the request
+      // Clear previous data and start loading state
+      setAnalysisData(null);
       setIsLoading(true);
       setError(null);
       
@@ -105,9 +106,10 @@ export function IntegrationsStep({ onNext, onBack }: IntegrationsStepProps) {
 
       const formData = new FormData();
       formData.append('file', uploadedFile);
+      const apiUrl = `${process.env.NEXT_PUBLIC_API_BASE_URL}/feedback/csv_upload`;
 
       try {
-        const response = await fetch('/api/analyze-csv', {
+        const response = await fetch(apiUrl, {
           method: 'POST',
           body: formData,
         });
@@ -126,8 +128,27 @@ export function IntegrationsStep({ onNext, onBack }: IntegrationsStepProps) {
           return; // Stop execution
         }
 
-        console.log('Analysis result:', result);
-        setAnalysisData(result.analysis);
+        const mapSentiment = (score: number): 'positive' | 'negative' | 'neutral' => {
+          if (score > 5) return 'positive';
+          if (score < 5) return 'negative';
+          return 'neutral';
+        };
+
+        const analysisDataObject = {
+          totalRows: result.length,
+          analyzedRows: result.length,
+          feedbackColumn: 'feedback_text',
+          aiAnalysis: result.map((item: any) => ({
+            feedback: item.Input,
+            themes: item.Themes || [],
+            sentiment: mapSentiment(item.Sentiment),
+            is_problem: item.Is_Problem || false,
+            is_suggestion: item.Is_Suggestion || false,
+          })),
+        };
+
+        setAnalysisData(analysisDataObject);
+        
         toast.success("Analysis Complete!", {
           description: "Your dashboard is now ready.",
         });
@@ -179,7 +200,10 @@ export function IntegrationsStep({ onNext, onBack }: IntegrationsStepProps) {
         ))}
       </CardContent>
       <CardFooter className="flex justify-between">
-        <Button variant="outline" onClick={onBack} disabled={isLoading}>&larr; Back</Button>
+        {onBack && (
+          <Button variant="outline" onClick={onBack} disabled={isLoading}>&larr; Back</Button>
+        )}
+        {!onBack && <div />}
         <Button onClick={handleNext} disabled={!uploadedFile || isLoading}>
             {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
             {isLoading ? 'Analyzing...' : 'Next'} &rarr;

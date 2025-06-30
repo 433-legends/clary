@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import { CompanyDetailsForm } from '@/components/onboarding/company-details-form';
 import { IntegrationsStep } from '@/components/onboarding/integrations-step';
 import { InviteTeamForm } from '@/components/onboarding/invite-team-form';
 import { useRouter } from 'next/navigation';
@@ -23,7 +22,7 @@ export default function OnboardingPage() {
   const [currentStep, setCurrentStep] = useState(1);
   const router = useRouter();
 
-  const totalSteps = 3;
+  const totalSteps = 2;
 
   const nextStep = () => {
     if (currentStep < totalSteps) {
@@ -43,10 +42,8 @@ export default function OnboardingPage() {
   const renderStep = () => {
     switch (currentStep) {
       case 1:
-        return <CompanyDetailsForm onNext={nextStep} />;
+        return <IntegrationsStep onNext={nextStep} />;
       case 2:
-        return <IntegrationsStep onNext={nextStep} onBack={prevStep} />;
-      case 3:
         return <InviteTeamForm onNext={nextStep} onBack={prevStep} />;
       default:
         return <div>Invalid Step</div>;

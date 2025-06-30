@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState, useMemo } from 'react';
 import { Button } from '@/components/ui/button';
-import { BarChartBig, UploadCloud } from 'lucide-react';
+import { BarChartBig, UploadCloud, Loader2 } from 'lucide-react';
 import {
   Card,
   CardContent,
@@ -129,85 +129,61 @@ const LoadingSkeleton = () => (
 );
 
 const AnalysisInProgressScreen = () => (
-    <div className="flex flex-1 flex-col gap-4 py-4 md:gap-6 md:py-6 px-4 lg:px-6 animate-pulse">
-        <div className="flex items-center justify-between">
-            <h1 className="text-2xl font-semibold tracking-tight text-muted-foreground">Dashboard</h1>
-            <Button disabled>
-              <BarChartBig className="mr-2 h-4 w-4" /> Generate Report
-            </Button>
+    <div className="flex flex-1 flex-col items-center justify-center gap-4 p-4 md:p-6 text-center">
+        <div className="flex items-center gap-2">
+            <Loader2 className="h-8 w-8 animate-spin text-primary" />
+            <h1 className="text-2xl font-semibold tracking-tight">Analyzing feedback...</h1>
         </div>
-        <div className="text-center py-4 border border-dashed rounded-lg">
-            <p className="text-lg font-semibold">Analyzing feedback...</p>
-            <p className="text-sm text-muted-foreground">You can come back later, this page will update automatically when it's done.</p>
-        </div>
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-            <Skeleton className="h-32 w-full" />
-            <Skeleton className="h-32 w-full" />
-            <Skeleton className="h-32 w-full" />
-            <Skeleton className="h-32 w-full" />
-        </div>
-        <Skeleton className="h-80 w-full mt-4" />
-        <Skeleton className="h-96 w-full mt-6" />
+        <p className="text-muted-foreground">
+            You can wait here or come back later. This page will update automatically when the analysis is complete.
+        </p>
     </div>
 );
 
 export default function DashboardPage() {
-  const { analysisData, isLoading: isAnalysisLoading } = useAnalysis();
-  const [dashboardData, setDashboardData] = useState<FeedbackItem[]>([]);
-  const [isProcessing, setIsProcessing] = useState(true);
+  const { analysisData, isLoading } = useAnalysis();
 
-  const [sectionCardsData, setSectionCardsData] = useState<{
-    overallSentiment: { score: number; positivePercentage: number; negativePercentage: number; neutralPercentage: number; };
-    problems: number;
-    suggestions: number;
-    totalFeedback: number;
-  } | {}>({});
-  const [feedbackVolumeChartData, setFeedbackVolumeChartData] = useState<ChartItem[]>([]);
-
-  useEffect(() => {
-    if (!isAnalysisLoading) {
-      if (analysisData && analysisData.aiAnalysis.length > 0) {
-        // Data from context exists, transform it for the dashboard
-        const transformedData = analysisData.aiAnalysis.map(item => ({
-          text: item.feedback,
-          sentiment: item.sentiment,
-          ai_themes: item.themes,
-          is_problem: item.is_problem || false,
-          is_suggestion: item.is_suggestion || false,
-          source: 'CSV Upload', // Mark the source
-          date_time: new Date().toISOString(), // Use current date as placeholder
-        }));
-        setDashboardData(transformedData);
-      } else {
-        // No data in context, clear any existing data
-        setDashboardData([]);
-      }
-      setIsProcessing(false);
+  const dashboardData = useMemo(() => {
+    if (!analysisData || !analysisData.aiAnalysis || analysisData.aiAnalysis.length === 0) {
+      return [];
     }
-  }, [analysisData, isAnalysisLoading]);
+    return analysisData.aiAnalysis.map(item => ({
+      text: item.feedback,
+      sentiment: item.sentiment,
+      ai_themes: item.themes,
+      is_problem: item.is_problem || false,
+      is_suggestion: item.is_suggestion || false,
+      source: 'CSV Upload', 
+      date_time: new Date().toISOString(),
+    }));
+  }, [analysisData]);
 
-  useEffect(() => {
-    if (!isProcessing) {
-      if (dashboardData.length > 0) {
-        const overallSentiment = getOverallSentimentScore(dashboardData);
-        const counts = getProblemSuggestionCounts(dashboardData);
-        const volumeTrend = getFeedbackVolumeTrend(dashboardData, 'month');
-        
-        setSectionCardsData({
-          overallSentiment: overallSentiment,
-          problems: counts.problems,
-          suggestions: counts.suggestions,
-          totalFeedback: dashboardData.length,
-        });
-        setFeedbackVolumeChartData(volumeTrend);
-      } else {
-        setSectionCardsData({});
-        setFeedbackVolumeChartData([]);
-      }
-    }
-  }, [dashboardData, isProcessing]);
+  const sectionCardsData = useMemo(() => {
+    if (dashboardData.length === 0) return {};
+    const overallSentiment = getOverallSentimentScore(dashboardData);
+    const counts = getProblemSuggestionCounts(dashboardData);
+    return {
+      overallSentiment: overallSentiment,
+      problems: counts.problems,
+      suggestions: counts.suggestions,
+      totalFeedback: dashboardData.length,
+    };
+  }, [dashboardData]);
 
-  const columns = useMemo<ColumnDef<FeedbackItem>[]>(() => [
+  const feedbackVolumeChartData = useMemo(() => {
+    if (dashboardData.length === 0) return [];
+    return getFeedbackVolumeTrend(dashboardData, 'month');
+  }, [dashboardData]);
+
+  if (isLoading) {
+    return <AnalysisInProgressScreen />;
+  }
+
+  if (dashboardData.length === 0) {
+    return <WelcomeScreen />;
+  }
+
+  const columns: ColumnDef<FeedbackItem>[] = [
     {
       accessorKey: "text",
       header: "Feedback Text",
@@ -253,15 +229,7 @@ export default function DashboardPage() {
         return <span>{date.toLocaleDateString()}</span>;
       },
     },
-  ], []);
-
-  if (isAnalysisLoading) {
-    return <AnalysisInProgressScreen />;
-  }
-
-  if (dashboardData.length === 0) {
-    return <WelcomeScreen />;
-  }
+  ];
 
   return (
     <div className="flex flex-1 flex-col gap-4 py-4 md:gap-6 md:py-6">
