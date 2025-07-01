@@ -19,7 +19,9 @@ import {
   Settings,
   File,
   Users,
-  Calendar
+  Calendar,
+  Puzzle,
+  MessageSquare
 } from "lucide-react"
 import { Logo } from "@/components/icons/logo"
 
@@ -64,14 +66,16 @@ const data = {
       icon: Zap,
     },
     {
-      title: "Themes",
-      url: "/themes", // Changed from /#themes
-      icon: Shapes,
+      title: "Integrations",
+      url: "/integrations",
+      icon: Puzzle,
+      variant: "default",
     },
     {
-      title: "Integrations",
-      url: "/integrations", // Changed from /#integrations
-      icon: Link2,
+      title: "Feedback",
+      url: "/feedback",
+      icon: MessageSquare,
+      variant: "default",
     },
   ],
   // NavProjects data - can be removed if NavProjects component is removed
