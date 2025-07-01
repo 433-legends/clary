@@ -66,15 +66,15 @@ const data = {
       icon: Zap,
     },
     {
-      title: "Integrations",
-      url: "/integrations",
-      icon: Puzzle,
-      variant: "default",
-    },
-    {
       title: "Feedback",
       url: "/feedback",
       icon: MessageSquare,
+      variant: "default",
+    },
+    {
+      title: "Integrations",
+      url: "/integrations",
+      icon: Puzzle,
       variant: "default",
     },
   ],
