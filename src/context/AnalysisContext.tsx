@@ -1,6 +1,6 @@
 'use client';
 
-import React, { createContext, useContext, useState, ReactNode } from 'react';
+import React, { createContext, useContext, useState, ReactNode, Dispatch, SetStateAction } from 'react';
 
 // Define the shape of the analysis data you expect
 // This should match the structure returned by your /api/analyze-csv endpoint
@@ -12,23 +12,29 @@ interface AnalysisResult {
   is_suggestion?: boolean;
 }
 
+interface Feedback {
+  original_feedback: string;
+}
+
 interface AnalysisData {
   totalRows: number;
   analyzedRows: number;
   feedbackColumn: string;
   aiAnalysis: AnalysisResult[];
+  summary: any; // Consider defining a more specific type
+  feedbacks: Feedback[];
 }
 
 // Define the context shape
 interface AnalysisContextType {
   analysisData: AnalysisData | null;
-  setAnalysisData: (data: AnalysisData | null) => void;
+  setAnalysisData: Dispatch<SetStateAction<AnalysisData | null>>;
   isLoading: boolean;
   setIsLoading: (loading: boolean) => void;
 }
 
 // Create the context with a default value
-const AnalysisContext = createContext<AnalysisContextType | undefined>(undefined);
+export const AnalysisContext = createContext<AnalysisContextType | undefined>(undefined);
 
 // Create a provider component
 export const AnalysisProvider = ({ children }: { children: ReactNode }) => {

@@ -1,77 +1,94 @@
 "use client";
 
-import React from 'react';
+import { useChat } from '@ai-sdk/react';
+import { useContext } from 'react';
+import { AnalysisContext } from '@/context/AnalysisContext';
+import { ScrollArea } from '@/components/ui/scroll-area';
+import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
+import { SendHorizonal, X } from 'lucide-react';
+import { useChatbot } from './chatbot-provider';
+import { cn } from '@/lib/utils';
 import {
   Sidebar as BaseSidebar,
   SidebarHeader,
   SidebarContent,
   SidebarFooter,
 } from "@/components/ui/sidebar";
-import { useChatbot } from "./chatbot-provider";
-import { Button } from "@/components/ui/button";
-import { XIcon, SendHorizonalIcon, SparklesIcon } from 'lucide-react'; // Added SparklesIcon, SendHorizonalIcon might be SendHorizontal
-import { Input } from "@/components/ui/input";
-// import { Textarea } from "@/components/ui/textarea"; // Textarea not found, using Input for now
-import { cn } from "@/lib/utils";
 
 export function ChatbotPanel() {
   const { isOpen, toggle } = useChatbot();
+  const analysisContext = useContext(AnalysisContext);
 
-  // if (!isOpen) { // We will use CSS to hide/show based on translate
-  //   return null;
-  // }
-  
+  const { messages, input, handleInputChange, handleSubmit } = useChat({
+    api: '/api/chat',
+  });
+
+  if (!analysisContext) {
+    return null;
+  }
+
+  const { analysisData } = analysisContext;
+
   return (
-    <div 
-        className={cn(
-            "fixed inset-y-0 right-0 z-50 flex flex-col bg-background border-l transition-transform duration-300 ease-in-out",
-            isOpen ? "translate-x-0" : "translate-x-full",
-            "w-80 md:w-96 shadow-xl" // Added shadow-xl for better visual separation
-        )}
+    <div
+      className={cn(
+        "fixed inset-y-0 right-0 z-50 flex flex-col bg-background border-l transition-transform duration-300 ease-in-out",
+        isOpen ? "translate-x-0" : "translate-x-full",
+        "w-full max-w-md"
+      )}
     >
       <BaseSidebar
         side="right"
-        variant="sidebar" // Changed to sidebar to use full height and less opinionated styling from our BaseSidebar
-        className="h-full w-full p-0 border-none shadow-none bg-transparent flex flex-col" 
-        data-state={isOpen ? "expanded" : "collapsed"}
+        className="h-full w-full p-0 border-none shadow-none bg-transparent flex flex-col"
       >
         <SidebarHeader className="p-4 flex flex-row items-center justify-between border-b">
-          <div className="flex items-center gap-2">
-            <SparklesIcon className="h-5 w-5 text-primary" />
-            <h3 className="text-lg font-semibold">AI Assistant</h3>
-          </div>
+          <h3 className="text-lg font-semibold">AI Assistant</h3>
           <Button variant="ghost" size="icon" onClick={toggle} className="rounded-full">
-            <XIcon className="h-5 w-5" />
-            <span className="sr-only">Close AI Assistant</span>
+            <X className="h-5 w-5" />
           </Button>
         </SidebarHeader>
-        <SidebarContent className="p-4 flex-1 overflow-y-auto">
-          {/* Placeholder for chat messages */}
-          <div className="space-y-4 flex flex-col">
-            <div className="flex justify-start w-full">
-              <div className="bg-muted text-muted-foreground p-3 rounded-lg max-w-[80%]">
-                Hello! How can I help you with your product insights today?
-              </div>
+        <SidebarContent className="flex-1 p-4">
+          <ScrollArea className="h-full pr-4">
+            <div className="space-y-4">
+              {messages.length > 0 ? (
+                messages.map(m => (
+                  <div key={m.id} className="whitespace-pre-wrap">
+                    <span className="font-bold">
+                      {m.role === 'user' ? 'You: ' : 'Clary: '}
+                    </span>
+                    {m.content}
+                  </div>
+                ))
+              ) : (
+                <div className="text-center text-muted-foreground p-8">
+                  <p>Ask a question to get started!</p>
+                  <p className="text-sm mt-2">e.g., "What are the top things my users are saying?"</p>
+                </div>
+              )}
             </div>
-            <div className="flex justify-end w-full">
-              <div className="bg-primary text-primary-foreground p-3 rounded-lg max-w-[80%]">
-                Can you summarize the top 3 negative themes from last week?
-              </div>
-            </div>
-            {/* Add more messages here */}
-          </div>
+          </ScrollArea>
         </SidebarContent>
         <SidebarFooter className="p-4 border-t">
-          <div className="flex items-center gap-2">
-            <Input 
-              placeholder="Ask AI Assistant..." 
+          <form
+            onSubmit={(e) => handleSubmit(e, {
+              body: {
+                data: analysisContext.analysisData?.feedbacks
+              }
+            })}
+            className="flex items-center space-x-2"
+          >
+            <Input
+              value={input}
+              onChange={handleInputChange}
+              placeholder="Ask a question..."
               className="flex-1"
+              disabled={!analysisData}
             />
-            <Button variant="default" size="icon">
-              <SendHorizonalIcon className="h-5 w-5" /> 
-              <span className="sr-only">Send message</span>
+            <Button type="submit" disabled={!analysisData}>
+              <SendHorizonal className="h-4 w-4" />
             </Button>
-          </div>
+          </form>
         </SidebarFooter>
       </BaseSidebar>
     </div>

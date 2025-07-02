@@ -1,25 +1,24 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "@/app/globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
-import React from 'react';
-import { ConditionalLayout } from "@/components/layout/conditional-layout";
-import { AnalysisProvider } from "@/context/AnalysisContext";
-import { ChatbotProvider } from "@/components/chatbot/chatbot-provider";
-import { Toaster } from "@/components/ui/sonner";
+import { Inter as FontSans } from "next/font/google";
 import { cn } from "@/lib/utils";
-import { SidebarProvider } from "@/components/ui/sidebar";
+import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider";
+import { Toaster } from "@/components/ui/sonner";
+import { ConditionalLayout } from "@/components/layout/conditional-layout";
+import { ChatbotProvider } from "@/components/chatbot/chatbot-provider";
+import { AnalysisProvider } from "@/context/AnalysisContext";
 
-const inter = Inter({ subsets: ["latin"] });
-const cacheBuster = new Date().getTime();
+const fontSans = FontSans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
 
 export const metadata: Metadata = {
-  title: "Clarities",
+  title: "Clary",
   description: "Get insights from your customer feedback.",
   icons: {
-    icon: `/icon.svg?v=${cacheBuster}`,
-    apple: `/apple-icon.svg?v=${cacheBuster}`,
-  },
+    icon: "/icon.svg",
+  }
 };
 
 export default function RootLayout({
@@ -28,22 +27,27 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className="dark">
-      <body className={`${inter.className} antialiased`}>
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={cn(
+          "min-h-screen bg-background font-sans antialiased",
+          fontSans.variable
+        )}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <ChatbotProvider>
-            <AnalysisProvider>
+          <AnalysisProvider>
+            <ChatbotProvider>
               <ConditionalLayout>
                 {children}
               </ConditionalLayout>
-            </AnalysisProvider>
-          </ChatbotProvider>
-          <Toaster />
+              <Toaster />
+            </ChatbotProvider>
+          </AnalysisProvider>
         </ThemeProvider>
       </body>
     </html>

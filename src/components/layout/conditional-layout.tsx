@@ -1,33 +1,31 @@
 "use client";
 
-import React from 'react';
 import { usePathname } from 'next/navigation';
-import { SidebarProvider, SidebarInset } from "@/components/ui/sidebar";
-import { AppSidebar } from "@/components/app-sidebar";
-import { GlobalHeader } from "@/components/layout/global-header";
-import { ChatbotPanel } from "@/components/chatbot/chatbot-panel";
+import { AppSidebar } from '@/components/app-sidebar';
+import { GlobalHeader } from '@/components/layout/global-header';
+import { PageContentLayout } from '@/components/layout/page-content-layout';
+import { ChatbotPanel } from '@/components/chatbot/chatbot-panel';
+import { SidebarProvider } from '@/components/ui/sidebar';
 
-interface ConditionalLayoutProps {
-  children: React.ReactNode;
-}
+const noSidebarRoutes = ['/login', '/onboarding', '/'];
 
-export function ConditionalLayout({ children }: ConditionalLayoutProps) {
+export function ConditionalLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const isLoginPage = pathname === '/';
-  const isOnboardingPage = pathname === '/onboarding'; // Check for onboarding path
 
-  if (isLoginPage || isOnboardingPage) { // If login OR onboarding, render children directly
-    return <>{children}</>; 
+  const showSidebar = !noSidebarRoutes.includes(pathname);
+
+  if (!showSidebar) {
+    return <>{children}</>;
   }
 
   return (
     <SidebarProvider>
       <div className="flex min-h-screen w-full bg-background">
         <AppSidebar />
-        <SidebarInset>
+        <main className="flex-1 flex flex-col">
           <GlobalHeader />
-          {children}
-        </SidebarInset>
+          <PageContentLayout>{children}</PageContentLayout>
+        </main>
         <ChatbotPanel />
       </div>
     </SidebarProvider>
