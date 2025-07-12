@@ -98,7 +98,7 @@ async def generate_labels_from_clusters(clusters):
         if len(feedback_texts) >= 15:
             feedback_texts = feedback_texts[0:15]  # Limit to first 15 feedback texts for labeling
 
-        result = await Runner.run(cluster_reviews_agent, feedback_texts)
+        result = await Runner.run(cluster_reviews_agent, str(feedback_texts))
         if result and result.final_output:
             cluster_label = result.final_output
             labeled_feedbacks.append({

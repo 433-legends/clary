@@ -19,6 +19,8 @@ venv/
 # Misc
 .DS_Store
 *.pem
+**/__pycache__/
+**/__pycache__/**
 
 # Local Environment Variables
 .env*.local
