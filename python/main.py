@@ -36,7 +36,7 @@ async def upload_feedback_csv(file: UploadFile = File(...)):
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
 
-@app.post("f/feedback/categories/csv_upload")
+@app.post("/feedback/categories/csv_upload")
 async def upload_feedback_categories_csv(file: UploadFile = File(...)):
     try:
         file_content = await file.read()
