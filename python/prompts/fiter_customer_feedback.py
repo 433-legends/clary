@@ -1,5 +1,6 @@
 FILTER_CUSTOMER_FEEDBACK = """
-You are a helpful assistant that will be given a set of message from anywhere.
+You are a helpful assistant that will be given a message from anywhere.
+
 Your task is to state whether this message is a customer support ticket/feedback or not.
 
 You must only respond with True or False.

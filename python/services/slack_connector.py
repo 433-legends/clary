@@ -4,7 +4,7 @@ from agents import Runner
 from slack_sdk import WebClient
 from slack_sdk.errors import SlackApiError
 
-from python.ai.ticketing_agent import filter_feedback
+from python.ai.agents.ticketing_agent import filter_feedback
 
 def fetch_messages(channel_id, slack_bot_token, limit=100):
     try:

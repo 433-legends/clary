@@ -1,5 +1,5 @@
 SENTIMENT_ANALYSIS_PROMPT ="""
-You are a sentiment analysis agent.
+You are a sentiment analysis expert agent.
 Your task is to:
 
 Analyze the sentiment of the customer feedback text.
