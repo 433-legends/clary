@@ -5,6 +5,7 @@ import umap
 # import matplotlib.pyplot as plt
 import openai
 import hdbscan
+import anyio
 from sklearn.cluster import KMeans
 from scipy.spatial.distance import cdist
 from InstructorEmbedding import INSTRUCTOR
@@ -88,48 +89,16 @@ def clean_reviews_nltk(reviews):
 #
 #     plt.close()
 
-async def cluster_reviews(reviews, min_cluster_size=3, kmeans_clusters=5):
+def perform_clustering_sync(reviews, embeddings, min_cluster_size=3, kmeans_clusters=5):
     """
-    Clusters reviews using OpenAI embeddings with HDBSCAN and KMeans,
-    then returns both cluster groupings.
-
-    Args:
-        reviews (list of str): The review texts to cluster.
-        min_cluster_size (int): Minimum cluster size for HDBSCAN.
-        kmeans_clusters (int): Number of clusters for KMeans.
-        api_key (str): Your OpenAI API key. If None, uses environment variable.
-
-    Returns:
-        dict: {
-            "hdbscan_clusters": dict(cluster_id -> list of reviews),
-            "kmeans_clusters": dict(cluster_id -> list of reviews)
-        }
+    Performs synchronous, CPU-bound clustering on pre-computed embeddings.
     """
-    copy_reviews = reviews.copy()
-    cleaned_reviews = clean_reviews_nltk(copy_reviews)
-
-    openai.api_key = openai_api_key
-
-    print(f"🔍 Generating embeddings for {len(reviews)} reviews...")
-    response = openai.embeddings.create(
-        model="text-embedding-3-small",
-        input=cleaned_reviews,
-        dimensions=512
-    )
-    embeddings = [item.embedding for item in response.data]
-
-    # embeddings = model.encode(cleaned_reviews, show_progress_bar=True, convert_to_tensor=True).tolist()
-
-    # plot_embeddings_2d(embeddings, method='umap', save_path='/Users/apple/Desktop/Clarities/embeddings_umap.png')
-
     umap_model = umap.UMAP(n_neighbors=15, n_components=10, min_dist=0.0, metric='cosine', random_state=42)
     reduced_embeddings = umap_model.fit_transform(embeddings)
 
     print(f"🔗 Clustering using HDBSCAN (min_cluster_size={min_cluster_size})...")
     clusterer = hdbscan.HDBSCAN(min_cluster_size=10)
     hdbscan_labels = clusterer.fit_predict(reduced_embeddings)
-
-    # plot_embeddings_2d(embeddings, labels=hdbscan_labels, method='umap', save_path='/Users/apple/Desktop/Clarities/embeddings_hdbscan.png')
 
     # Group reviews by HDBSCAN cluster, excluding outliers (-1)
     hdbscan_clusters = {}
@@ -142,9 +111,6 @@ async def cluster_reviews(reviews, min_cluster_size=3, kmeans_clusters=5):
     kmeans = KMeans(n_clusters=kmeans_clusters, random_state=42)
     kmeans_labels = kmeans.fit_predict(embeddings)
 
-    # plot_embeddings_2d(embeddings, labels=kmeans_labels, method='umap', save_path='/Users/apple/Desktop/Clarities/embeddings_kmeans.png')
-
-
     # Group reviews by KMeans cluster
     kmeans_clusters_dict = {i: [] for i in range(kmeans_clusters)}
     for idx, label in enumerate(kmeans_labels):
@@ -155,51 +121,54 @@ async def cluster_reviews(reviews, min_cluster_size=3, kmeans_clusters=5):
         "kmeans_clusters": kmeans_clusters_dict
     }
 
+async def cluster_reviews(reviews, min_cluster_size=3, kmeans_clusters=5):
+    """
+    Asynchronously generates embeddings and then clusters them in a background thread.
+    """
+    copy_reviews = reviews.copy()
+    cleaned_reviews = clean_reviews_nltk(copy_reviews)
+
+    openai.api_key = openai_api_key
+
+    print(f"🔍 Generating embeddings for {len(reviews)} reviews...")
+    response = await anyio.to_thread.run_sync(
+        openai.embeddings.create,
+        model="text-embedding-3-small",
+        input=cleaned_reviews,
+        dimensions=512
+    )
+    embeddings = [item.embedding for item in response.data]
+
+    # Run the synchronous, CPU-bound clustering in a separate thread
+    return await anyio.to_thread.run_sync(
+        perform_clustering_sync,
+        reviews,
+        embeddings,
+        min_cluster_size,
+        kmeans_clusters
+    )
+
 
 if __name__ == "__main__":
-    review_file = "/Users/apple/Desktop/Clarities/product_feedback_2.csv"
-    with open(review_file, 'r', encoding='utf-8') as f:
-        csv_file_content = f.read()
+    # This part needs to be updated to work with the new async structure
+    async def main():
+        review_file = "/Users/apple/Desktop/Clarities/product_feedback_2.csv"
+        with open(review_file, 'r', encoding='utf-8') as f:
+            csv_file_content = f.read()
 
-    csv_reader = csv.DictReader(StringIO(csv_file_content))
+        csv_reader = csv.DictReader(StringIO(csv_file_content))
 
-    # Extract feedback_text from the CSV
-    reviews = []
-    for row in csv_reader:
-        feedback = row.get('feedback_text')
-        if feedback:
-            reviews.append(feedback)
+        # Extract feedback_text from the CSV
+        reviews = []
+        for row in csv_reader:
+            feedback = row.get('feedback_text')
+            if feedback:
+                reviews.append(feedback)
 
-    unique_reviews = set(reviews)
-    reviews = list(unique_reviews)  # Remove duplicates
+        unique_reviews = set(reviews)
+        reviews = list(unique_reviews)  # Remove duplicates
 
-    pixel_product_reviews = [
-        "The camera captures incredible detail, even in low light.",
-        "Portrait mode on the camera is hit or miss, especially with edges.",
-        "Zoom is surprisingly clear even at 5x. Really impressed.",
-        "Video stabilization works great while walking or panning.",
-        "Night Sight is pure magic, easily the best among phones.",
-        "Colors on the photos feel a bit too saturated sometimes.",
-        "The screen is vibrant and bright, even outdoors in sunlight.",
-        "Touch response on the display is smooth and snappy.",
-        "High refresh rate makes scrolling feel super fluid.",
-        "Screen glare in direct light is still a problem.",
-        "The display is sharp but I wish it was slightly bigger.",
-        "Accidentally touch the edges too often — needs palm rejection tuning.",
-        "Voice clarity during calls is top notch, even in noisy places.",
-        "Speakerphone sounds clean and doesn't echo much.",
-        "People say I sound clearer now than on my old phone.",
-        "Sometimes I get robotic-sounding voices in weak signal areas.",
-        "Bluetooth calls sound fine but sometimes drop unexpectedly.",
-        "Mic pickup is excellent — great for voice memos and meetings.",
-        "The camera app launches quickly and is easy to navigate.",
-        "Selfies look natural and not overprocessed like other phones.",
-        "Screen auto-brightness adapts too slowly in low light.",
-        "Display colors are a bit warm by default, but adjustable.",
-        "Voice assistant hears me clearly even from across the room.",
-        "No issues at all with call quality — very consistent performance."
-    ]
+        clusters = await cluster_reviews(reviews, min_cluster_size=2)
+        print(clusters)
 
-    clusters = cluster_reviews(reviews, min_cluster_size=2)
-
-    print(clusters)
+    anyio.run(main)

@@ -2,69 +2,74 @@
 
 import React from 'react';
 import { PageContentLayout } from '@/components/layout/page-content-layout';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from "@/components/ui/button";
-import Link from 'next/link';
-import { useAnalysis } from '@/context/AnalysisContext';
-import { Loader2 } from 'lucide-react';
+import { InsightCard, type InsightItem } from '@/components/insights/insight-card';
+import { Zap, FileText, Lightbulb } from 'lucide-react';
+
+const sampleInsights: InsightItem[] = [
+  {
+    id: 'insight-1',
+    icon: Zap,
+    title: 'Dashboard Performance Issues',
+    description: '32% increase in complaints about dashboard loading times over the past 2 weeks.',
+    mentions: 18,
+    generatedTime: '2 hours ago',
+    confidence: 75,
+    priority: 'Critical',
+  },
+  {
+    id: 'insight-2',
+    icon: FileText,
+    title: 'Export Feature Requests',
+    description: 'Multiple enterprise customers have requested CSV and PDF export options for reports.',
+    mentions: 28,
+    generatedTime: '5 hours ago',
+    confidence: 60,
+    priority: 'High Priority',
+  },
+  {
+    id: 'insight-3',
+    icon: Lightbulb,
+    title: 'Mobile App Positive Feedback',
+    description: 'The recent mobile app update has received overwhelmingly positive feedback, with a 92% satisfaction rate.',
+    mentions: 38,
+    generatedTime: '1 day ago',
+    confidence: 90,
+    priority: 'Positive',
+  },
+  {
+    id: 'insight-4',
+    title: 'Onboarding Confusion - Step 3',
+    description: 'Users frequently drop off or report confusion during the third step of the onboarding process.',
+    mentions: 12,
+    generatedTime: '3 days ago',
+    confidence: 80,
+    priority: 'High Priority',
+  },
+];
 
 export default function InsightsPage() {
-  const { analysisData, isLoading } = useAnalysis();
-
-  const renderContent = () => {
-    if (isLoading) {
-      return (
-        <div className="flex flex-col items-center justify-center h-64 gap-4">
-          <Loader2 className="w-8 h-8 animate-spin text-muted-foreground" />
-          <p className="text-muted-foreground">Analyzing feedback and generating insights...</p>
-        </div>
-      );
-    }
-
-    if (!analysisData || !analysisData.themes || analysisData.themes.length === 0) {
-      return (
-        <div className="text-center py-12 border-2 border-dashed border-muted rounded-lg">
-          <h3 className="text-xl font-semibold mb-2">No Insights Found</h3>
-          <p className="text-muted-foreground mb-6 max-w-md mx-auto">
-            To generate insights, please upload a CSV file with customer feedback. The system will automatically cluster feedback into themes.
-          </p>
-          <Button asChild>
-            <Link href="/onboarding">Analyze Feedback File</Link>
-          </Button>
-        </div>
-      );
-    }
-
-    return (
-      <div className="grid gap-6 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
-        {analysisData.themes.map((theme, index) => (
-          <Card key={index}>
-            <CardHeader>
-              <CardTitle className="text-lg leading-tight">{theme.Label}</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <ul className="space-y-3">
-                {theme.FeedbackTexts.slice(0, 5).map((feedback, fIndex) => (
-                  <li key={fIndex} className="text-sm text-muted-foreground border-l-2 pl-4">
-                    {feedback}
-                  </li>
-                ))}
-                {theme.FeedbackTexts.length > 5 && (
-                    <li className="text-xs font-medium text-muted-foreground pt-2 pl-4">
-                        + {theme.FeedbackTexts.length - 5} more feedback items
-                    </li>
-                )}
-              </ul>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
-    );
+  const handleViewDetails = (insightId: string) => {
+    console.log("View details for insight:", insightId);
   };
 
   return (
     <PageContentLayout>
-      {renderContent()}
+      <div className="grid gap-6 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3">
+        {sampleInsights.map((insight) => (
+          <InsightCard 
+            key={insight.id} 
+            insight={insight} 
+            onViewClick={handleViewDetails} 
+          />
+        ))}
+      </div>
+      {sampleInsights.length === 0 && (
+        <div className="p-8 border-2 border-dashed border-muted rounded-lg text-center mt-6">
+          <p className="text-muted-foreground">
+            No insights generated yet. Check back after new feedback is processed.
+          </p>
+        </div>
+      )}
     </PageContentLayout>
   );
 } 
