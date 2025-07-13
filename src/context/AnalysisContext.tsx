@@ -23,6 +23,12 @@ interface AnalysisData {
   aiAnalysis: AnalysisResult[];
   summary: any; // Consider defining a more specific type
   feedbacks: Feedback[];
+  themes: Theme[];
+}
+
+interface Theme {
+  Label: string;
+  FeedbackTexts: string[];
 }
 
 // Define the context shape

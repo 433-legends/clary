@@ -3,6 +3,8 @@
 import React, { useState, useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import {
   Card,
   CardContent,
@@ -79,6 +81,7 @@ interface IntegrationsStepProps {
 
 export function IntegrationsStep({ onNext, onBack }: IntegrationsStepProps) {
     const [uploadedFile, setUploadedFile] = useState<File | null>(null);
+    const [feedbackColumn, setFeedbackColumn] = useState('feedback_text');
     const [error, setError] = useState<string | null>(null);
     const { setAnalysisData, setIsLoading, isLoading } = useAnalysis();
 
@@ -88,15 +91,21 @@ export function IntegrationsStep({ onNext, onBack }: IntegrationsStepProps) {
     };
 
     const handleNext = async () => {
-      console.log("handleNext function triggered");
       if (!uploadedFile) {
+        toast.error("Please upload a file first.");
+        return;
+      }
+      if (!feedbackColumn.trim()) {
+        toast.error("Please specify the feedback column name.");
         return;
       }
       
+      // Clear previous data and start loading state
       setAnalysisData(null);
       setIsLoading(true);
       setError(null);
       
+      // Show toast and proceed with navigation right away
       toast.info("Analyzing your feedback...", {
         description: "This may take a few minutes. You can continue working and check the dashboard later.",
         duration: 8000, 
@@ -105,6 +114,8 @@ export function IntegrationsStep({ onNext, onBack }: IntegrationsStepProps) {
 
       const formData = new FormData();
       formData.append('file', uploadedFile);
+      formData.append('feedback_column', feedbackColumn);
+
       const apiUrl = `${process.env.NEXT_PUBLIC_API_BASE_URL}/feedback/csv_upload`;
 
       try {
@@ -116,13 +127,18 @@ export function IntegrationsStep({ onNext, onBack }: IntegrationsStepProps) {
         const result = await response.json();
 
         if (!response.ok) {
+          // Use toast for error feedback instead of blocking UI
           toast.error("Analysis Failed", {
-            description: result.error || 'Something went wrong during the analysis.',
+            description: result.detail || 'Something went wrong during the analysis.',
           });
-          setError(result.error || 'Something went wrong');
+          // Also set error in context if needed elsewhere
+          setError(result.detail || 'Something went wrong');
+          // Important: clear loading state on failure
           setIsLoading(false); 
-          return;
+          return; // Stop execution
         }
+
+        const { sentiment_results, theme_results } = result;
 
         const mapSentiment = (score: number): 'positive' | 'negative' | 'neutral' => {
           if (score > 5) return 'positive';
@@ -131,20 +147,21 @@ export function IntegrationsStep({ onNext, onBack }: IntegrationsStepProps) {
         };
 
         const analysisDataObject = {
-          totalRows: result.length,
-          analyzedRows: result.length,
-          feedbackColumn: 'feedback_text',
-          aiAnalysis: result.map((item: any) => ({
+          totalRows: sentiment_results.length,
+          analyzedRows: sentiment_results.length,
+          feedbackColumn: feedbackColumn,
+          aiAnalysis: sentiment_results.map((item: any) => ({
             feedback: item.Input,
-            themes: item.Themes || [],
+            themes: [], // This can be enriched later if needed
             sentiment: mapSentiment(item.Sentiment),
             is_problem: item.Is_Problem || false,
             is_suggestion: item.Is_Suggestion || false,
           })),
-          summary: {},
-          feedbacks: result.map((item: any) => ({
-            original_feedback: item.Input
+          summary: {}, // Add a placeholder for summary
+          feedbacks: sentiment_results.map((item: any) => ({
+            original_feedback: item.Input,
           })),
+          themes: theme_results || [],
         };
 
         setAnalysisData(analysisDataObject);
@@ -159,6 +176,8 @@ export function IntegrationsStep({ onNext, onBack }: IntegrationsStepProps) {
         });
         setError(err.message);
       } finally {
+        // The loading state is now managed globally by the context,
+        // and it should be set to false only when the process is truly complete.
         setIsLoading(false);
       }
     };
@@ -169,7 +188,16 @@ export function IntegrationsStep({ onNext, onBack }: IntegrationsStepProps) {
         <CardTitle>Import feedback</CardTitle>
         <CardDescription>Bring in your feedback for us to analyze and connect to features and issues.</CardDescription>
       </CardHeader>
-      <CardContent className="space-y-4">
+      <CardContent className="space-y-6">
+        <div className="space-y-2">
+            <Label htmlFor="feedback-column">Feedback Column Name</Label>
+            <Input 
+                id="feedback-column"
+                placeholder="e.g., 'review', 'comment', 'feedback_text'"
+                value={feedbackColumn}
+                onChange={(e) => setFeedbackColumn(e.target.value)}
+            />
+        </div>
         <CsvUploader onFileAccepted={handleFileAccepted} />
         <div className="relative my-6">
             <div className="absolute inset-0 flex items-center">
@@ -202,7 +230,7 @@ export function IntegrationsStep({ onNext, onBack }: IntegrationsStepProps) {
           <Button variant="outline" onClick={onBack} disabled={isLoading}>&larr; Back</Button>
         )}
         {!onBack && <div />}
-        <Button onClick={handleNext} disabled={!uploadedFile || isLoading}>
+        <Button onClick={handleNext} disabled={!uploadedFile || isLoading || !feedbackColumn.trim()}>
             {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
             {isLoading ? 'Analyzing...' : 'Next'} &rarr;
         </Button>
