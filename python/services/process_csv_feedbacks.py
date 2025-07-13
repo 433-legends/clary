@@ -7,7 +7,7 @@ from python.ai.agents.sentiment_agent import sentiment_agent
 from python.ai.agents.cluster_labelling_agent import cluster_reviews_agent
 from python.ai.clustering import cluster_reviews
 
-async def process_csv_feedbacks(csv_file_content):
+async def process_csv_feedbacks(csv_file_content, feedback_column='feedback_text'):
     """
     Process a CSV file containing feedback data and store it in the database.
 
@@ -23,7 +23,7 @@ async def process_csv_feedbacks(csv_file_content):
 
     for row in csv_reader:
         try:
-            feedback = row.get('feedback_text')
+            feedback = row.get(feedback_column)
             if not feedback:
                 continue
 
@@ -51,7 +51,7 @@ async def process_csv_feedbacks(csv_file_content):
     return feedback_records
 
 
-async def process_csv_feedbacks_with_categories(csv_file_content):
+async def process_csv_feedbacks_with_categories(csv_file_content, feedback_column='feedback_text'):
     """
     Process a CSV file containing feedback data with categories.
 
@@ -68,7 +68,7 @@ async def process_csv_feedbacks_with_categories(csv_file_content):
     csv_reader = csv.DictReader(StringIO(csv_file_content))
 
     for row in csv_reader:
-        feedback = row.get('feedback_text')
+        feedback = row.get(feedback_column)
         if feedback:
             feedback_set.add(feedback)
 
