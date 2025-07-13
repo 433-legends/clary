@@ -88,15 +88,16 @@ export function IntegrationsStep({ onNext, onBack }: IntegrationsStepProps) {
     };
 
     const handleNext = async () => {
-      console.log("handleNext function triggered");
       if (!uploadedFile) {
         return;
       }
       
+      // Clear previous data and start loading state
       setAnalysisData(null);
       setIsLoading(true);
       setError(null);
       
+      // Show toast and proceed with navigation right away
       toast.info("Analyzing your feedback...", {
         description: "This may take a few minutes. You can continue working and check the dashboard later.",
         duration: 8000, 
@@ -116,12 +117,15 @@ export function IntegrationsStep({ onNext, onBack }: IntegrationsStepProps) {
         const result = await response.json();
 
         if (!response.ok) {
+          // Use toast for error feedback instead of blocking UI
           toast.error("Analysis Failed", {
             description: result.error || 'Something went wrong during the analysis.',
           });
+          // Also set error in context if needed elsewhere
           setError(result.error || 'Something went wrong');
+          // Important: clear loading state on failure
           setIsLoading(false); 
-          return;
+          return; // Stop execution
         }
 
         const mapSentiment = (score: number): 'positive' | 'negative' | 'neutral' => {
@@ -141,10 +145,6 @@ export function IntegrationsStep({ onNext, onBack }: IntegrationsStepProps) {
             is_problem: item.Is_Problem || false,
             is_suggestion: item.Is_Suggestion || false,
           })),
-          summary: {},
-          feedbacks: result.map((item: any) => ({
-            original_feedback: item.Input
-          })),
         };
 
         setAnalysisData(analysisDataObject);
@@ -159,6 +159,8 @@ export function IntegrationsStep({ onNext, onBack }: IntegrationsStepProps) {
         });
         setError(err.message);
       } finally {
+        // The loading state is now managed globally by the context,
+        // and it should be set to false only when the process is truly complete.
         setIsLoading(false);
       }
     };

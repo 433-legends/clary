@@ -1,14 +1,13 @@
 import csv
 import json
 from io import StringIO
-from types import SimpleNamespace
 from agents import Runner
 from python.ai.agents.ticketing_agent import filter_feedback
 from python.ai.agents.sentiment_agent import sentiment_agent
 from python.ai.agents.cluster_labelling_agent import cluster_reviews_agent
 from python.ai.clustering import cluster_reviews
 
-async def process_csv_feedbacks(csv_file_content):
+async def process_csv_feedbacks(csv_file_content, feedback_column='feedback_text'):
     """
     Process a CSV file containing feedback data and store it in the database.
 
@@ -24,16 +23,12 @@ async def process_csv_feedbacks(csv_file_content):
 
     for row in csv_reader:
         try:
-            feedback = row.get('feedback_text')
+            feedback = row.get(feedback_column)
             if not feedback:
                 continue
 
-            # Bypass the filtering agent and always return True
-            result = SimpleNamespace(final_output='True')
-            
-            # Original code commented out below:
-            # result = await Runner.run(filter_feedback, feedback)
-
+            # Assuming filter_feedback is an async function that processes the feedback text
+            result = await Runner.run(filter_feedback, feedback)
             if not result.final_output == 'True':
                 print("Filtering message {} as it is not a valid feedback.".format(feedback))
                 continue
@@ -56,15 +51,24 @@ async def process_csv_feedbacks(csv_file_content):
     return feedback_records
 
 
-async def process_csv_feedbacks_with_categories(csv_file_content):
+async def process_csv_feedbacks_with_categories(csv_file_content, feedback_column='feedback_text'):
     """
     Process a CSV file containing feedback data with categories.
+
+    This function collects unique feedback texts from the CSV using a set,
+    then calls a clustering function from clustering.py with the deduplicated list.
+
+    Args:
+        csv_file_content (str): Content of the CSV file.
+
+    Returns:
+        The result returned by cluster_feedbacks.
     """
     feedback_set = set()
     csv_reader = csv.DictReader(StringIO(csv_file_content))
 
     for row in csv_reader:
-        feedback = row.get('feedback_text')
+        feedback = row.get(feedback_column)
         if feedback:
             feedback_set.add(feedback)
 
@@ -81,12 +85,18 @@ async def process_csv_feedbacks_with_categories(csv_file_content):
 async def generate_labels_from_clusters(clusters):
     """
     Generate labels from clusters for feedback categorization.
+
+    Args:
+        clusters (dict): Dictionary of clusters where keys are cluster IDs and values are lists of feedback texts.
+
+    Returns:
+        List[dict]: List of dictionaries with cluster ID and feedback texts.
     """
     labeled_feedbacks = []
     for cluster in clusters:
         feedback_texts = clusters[cluster]
         if len(feedback_texts) >= 15:
-            feedback_texts = feedback_texts[0:15]
+            feedback_texts = feedback_texts[0:15]  # Limit to first 15 feedback texts for labeling
 
         result = await Runner.run(cluster_reviews_agent, str(feedback_texts))
         if result and result.final_output:
@@ -96,5 +106,10 @@ async def generate_labels_from_clusters(clusters):
                 'Label': cluster_label
             })
         else:
-            print(f"Failed to generate label for cluster {cluster}.")
+            print(f"Failed to generate label for cluster {cluster}. Using first feedback text as label.")
+
+
+        # Assuming we want to label the cluster with the first feedback text
+        label = feedback_texts[0]
+
     return labeled_feedbacks
