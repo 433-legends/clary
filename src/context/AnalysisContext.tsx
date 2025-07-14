@@ -2,35 +2,35 @@
 
 import React, { createContext, useContext, useState, ReactNode, Dispatch, SetStateAction } from 'react';
 
-// Define the shape of the analysis data you expect
-// This should match the structure returned by your /api/analyze-csv endpoint
-interface AnalysisResult {
-  feedback: string;
-  themes: string[];
-  sentiment: 'positive' | 'negative' | 'neutral';
-  is_problem?: boolean;
-  is_suggestion?: boolean;
+// Represents a single item from the detailed analysis endpoint
+export interface SentimentAnalysisItem {
+  Input: string;
+  Sentiment: number;
+  Explanation: string;
+  Category: 'PRAISE' | 'REQUESTS' | 'PROBLEMS' | 'UNCATEGORIZED';
 }
 
-interface Feedback {
-  original_feedback: string;
+// Represents a theme from the category/theme endpoint
+export interface Theme {
+  Label: string;
+  FeedbackTexts: string[];
 }
 
-interface AnalysisData {
-  totalRows: number;
-  analyzedRows: number;
-  feedbackColumn: string;
-  aiAnalysis: AnalysisResult[];
-  summary: any; // Consider defining a more specific type
-  feedbacks: Feedback[];
+// This is the main data structure held in the context
+export interface AnalysisData {
+  sentiments: SentimentAnalysisItem[];
+  themes?: Theme[]; // Themes are optional and loaded separately
+  feedbackFile: File; // Store the file reference for lazy loading themes
 }
 
-// Define the context shape
+// Context shape
 interface AnalysisContextType {
   analysisData: AnalysisData | null;
-  setAnalysisData: Dispatch<SetStateAction<AnalysisData | null>>;
+  setAnalysisData: (data: Partial<AnalysisData> | ((prev: AnalysisData | null) => AnalysisData | null)) => void;
   isLoading: boolean;
   setIsLoading: (loading: boolean) => void;
+  isThemeLoading: boolean;
+  setIsThemeLoading: (loading: boolean) => void;
 }
 
 // Create the context with a default value
@@ -40,8 +40,30 @@ export const AnalysisContext = createContext<AnalysisContextType | undefined>(un
 export const AnalysisProvider = ({ children }: { children: ReactNode }) => {
   const [analysisData, setAnalysisData] = useState<AnalysisData | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isThemeLoading, setIsThemeLoading] = useState<boolean>(false);
 
-  const value = { analysisData, setAnalysisData, isLoading, setIsLoading };
+  const handleSetAnalysisData = (data: Partial<AnalysisData> | ((prev: AnalysisData | null) => AnalysisData | null)) => {
+    if (typeof data === 'function') {
+      setAnalysisData(data);
+    } else {
+      setAnalysisData(prev => ({
+        ...prev,
+        ...data,
+        sentiments: data.sentiments ?? prev?.sentiments,
+        themes: data.themes ?? prev?.themes,
+        feedbackFile: data.feedbackFile ?? prev?.feedbackFile,
+      } as AnalysisData));
+    }
+  };
+
+  const value = {
+    analysisData,
+    setAnalysisData: handleSetAnalysisData,
+    isLoading,
+    setIsLoading,
+    isThemeLoading,
+    setIsThemeLoading,
+  };
 
   return (
     <AnalysisContext.Provider value={value}>

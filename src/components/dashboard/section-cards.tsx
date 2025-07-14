@@ -26,6 +26,7 @@ interface SectionCardsData {
   } | null
   problems?: number
   suggestions?: number
+  positives?: number
   totalFeedback?: number
 }
 
@@ -68,7 +69,7 @@ export function SectionCards({ data }: { data: SectionCardsData }) {
         <CardHeader>
           <CardDescription>Issues</CardDescription>
           <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
-            {typeof data.problems === 'number' ? `${data.problems.toFixed(0)}%` : "N/A"}
+            {data.problems ?? "N/A"}
           </CardTitle>
           <CardAction>
             <Badge variant="outline" className="gap-1">
@@ -91,12 +92,12 @@ export function SectionCards({ data }: { data: SectionCardsData }) {
         <CardHeader>
           <CardDescription>Positives</CardDescription>
           <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
-            {typeof data.suggestions === 'number' ? `${data.suggestions.toFixed(0)}%` : "N/A"}
+            {data.positives ?? "N/A"}
           </CardTitle>
           <CardAction>
             <Badge variant="outline" className="gap-1">
               <IconBulb size={16} />
-              Suggestions
+              Positives
             </Badge>
           </CardAction>
         </CardHeader>

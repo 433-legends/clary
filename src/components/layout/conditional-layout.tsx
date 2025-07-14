@@ -15,7 +15,7 @@ export function ConditionalLayout({ children }: { children: React.ReactNode }) {
   const showSidebar = !noSidebarRoutes.includes(pathname);
 
   if (!showSidebar) {
-    return <>{children}</>;
+    return <>{children}</>; 
   }
 
   return (

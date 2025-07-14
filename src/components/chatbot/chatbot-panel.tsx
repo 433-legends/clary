@@ -29,21 +29,21 @@ export function ChatbotPanel() {
   }
 
   const { analysisData } = analysisContext;
-
+  
   return (
-    <div
-      className={cn(
-        "fixed inset-y-0 right-0 z-50 flex flex-col bg-background border-l transition-transform duration-300 ease-in-out",
-        isOpen ? "translate-x-0" : "translate-x-full",
+    <div 
+        className={cn(
+            "fixed inset-y-0 right-0 z-50 flex flex-col bg-background border-l transition-transform duration-300 ease-in-out",
+            isOpen ? "translate-x-0" : "translate-x-full",
         "w-full max-w-md"
-      )}
+        )}
     >
       <BaseSidebar
         side="right"
-        className="h-full w-full p-0 border-none shadow-none bg-transparent flex flex-col"
+        className="h-full w-full p-0 border-none shadow-none bg-transparent flex flex-col" 
       >
         <SidebarHeader className="p-4 flex flex-row items-center justify-between border-b">
-          <h3 className="text-lg font-semibold">AI Assistant</h3>
+            <h3 className="text-lg font-semibold">AI Assistant</h3>
           <Button variant="ghost" size="icon" onClick={toggle} className="rounded-full">
             <X className="h-5 w-5" />
           </Button>
@@ -58,13 +58,13 @@ export function ChatbotPanel() {
                       {m.role === 'user' ? 'You: ' : 'Clary: '}
                     </span>
                     {m.content}
-                  </div>
+              </div>
                 ))
               ) : (
                 <div className="text-center text-muted-foreground p-8">
                   <p>Ask a question to get started!</p>
                   <p className="text-sm mt-2">e.g., "What are the top things my users are saying?"</p>
-                </div>
+            </div>
               )}
             </div>
           </ScrollArea>
@@ -78,7 +78,7 @@ export function ChatbotPanel() {
             })}
             className="flex items-center space-x-2"
           >
-            <Input
+            <Input 
               value={input}
               onChange={handleInputChange}
               placeholder="Ask a question..."

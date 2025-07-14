@@ -16,7 +16,7 @@ export function PageContentLayout({
       {actions && (
         <div className="flex items-center justify-end">
           {actions}
-        </div>
+      </div>
       )}
       {children}
     </div>

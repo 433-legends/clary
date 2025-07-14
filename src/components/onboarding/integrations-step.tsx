@@ -3,6 +3,8 @@
 import React, { useState, useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import {
   Card,
   CardContent,
@@ -11,8 +13,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { ListChecks, UploadCloud, ChevronRight, Package, Users, Link as LinkIcon, FileCheck2, Loader2, Slack } from 'lucide-react'; // Using Link from lucide-react
-import { useAnalysis } from '@/context/AnalysisContext';
+import { ListChecks, UploadCloud, ChevronRight, Package, Users, Link as LinkIcon, FileCheck2, Loader2, Slack } from 'lucide-react';
+import { useAnalysis, AnalysisData } from '@/context/AnalysisContext';
 import { toast } from "sonner";
 
 // Mock integration data - replace with actual data or API call later
@@ -79,90 +81,88 @@ interface IntegrationsStepProps {
 
 export function IntegrationsStep({ onNext, onBack }: IntegrationsStepProps) {
     const [uploadedFile, setUploadedFile] = useState<File | null>(null);
-    const [error, setError] = useState<string | null>(null);
-    const { setAnalysisData, setIsLoading, isLoading } = useAnalysis();
+    const [feedbackColumn, setFeedbackColumn] = useState('feedback_text');
+    const { setAnalysisData, setIsLoading, isLoading, setIsThemeLoading, isThemeLoading } = useAnalysis();
 
     const handleFileAccepted = (file: File) => {
         setUploadedFile(file);
-        setError(null);
     };
 
     const handleNext = async () => {
       if (!uploadedFile) {
+        toast.error("Please upload a file first.");
         return;
       }
-      
-      // Clear previous data and start loading state
-      setAnalysisData(null);
+      if (!feedbackColumn.trim()) {
+        toast.error("Please specify the feedback column name.");
+        return;
+      }
+
       setIsLoading(true);
-      setError(null);
-      
-      // Show toast and proceed with navigation right away
-      toast.info("Analyzing your feedback...", {
-        description: "This may take a few minutes. You can continue working and check the dashboard later.",
-        duration: 8000, 
-      });
-      onNext();
+      setIsThemeLoading(true);
+      setAnalysisData(() => null);
+
+      // Immediately navigate the user to the next step (dashboard)
+      onNext(); 
 
       const formData = new FormData();
       formData.append('file', uploadedFile);
-      const apiUrl = `${process.env.NEXT_PUBLIC_API_BASE_URL}/feedback/csv_upload`;
+      
+      const sentimentApiUrl = `${process.env.NEXT_PUBLIC_API_BASE_URL}/feedback/csv_upload?feedback_column=${encodeURIComponent(feedbackColumn)}&filter_feedback=false`;
+      const themesApiUrl = `${process.env.NEXT_PUBLIC_API_BASE_URL}/feedback/categories/csv_upload?feedback_column=${encodeURIComponent(feedbackColumn)}`;
 
-      try {
-        const response = await fetch(apiUrl, {
-          method: 'POST',
-          body: formData,
-        });
 
-        const result = await response.json();
+      toast.info("Analyzing Feedback...", {
+        description: "This may take a moment. You can navigate the app while we work.",
+      });
 
+      // --- SENTIMENT ANALYSIS CALL ---
+      fetch(sentimentApiUrl, {
+        method: 'POST',
+        body: formData,
+      })
+      .then(response => {
         if (!response.ok) {
-          // Use toast for error feedback instead of blocking UI
-          toast.error("Analysis Failed", {
-            description: result.error || 'Something went wrong during the analysis.',
-          });
-          // Also set error in context if needed elsewhere
-          setError(result.error || 'Something went wrong');
-          // Important: clear loading state on failure
-          setIsLoading(false); 
-          return; // Stop execution
+          return response.json().then(err => { throw new Error(err.detail || 'Sentiment analysis failed'); });
         }
-
-        const mapSentiment = (score: number): 'positive' | 'negative' | 'neutral' => {
-          if (score > 5) return 'positive';
-          if (score < 5) return 'negative';
-          return 'neutral';
-        };
-
-        const analysisDataObject = {
-          totalRows: result.length,
-          analyzedRows: result.length,
-          feedbackColumn: 'feedback_text',
-          aiAnalysis: result.map((item: any) => ({
-            feedback: item.Input,
-            themes: item.Themes || [],
-            sentiment: mapSentiment(item.Sentiment),
-            is_problem: item.Is_Problem || false,
-            is_suggestion: item.Is_Suggestion || false,
-          })),
-        };
-
-        setAnalysisData(analysisDataObject);
-        
-        toast.success("Analysis Complete!", {
-          description: "Your dashboard is now ready.",
+        return response.json();
+      })
+      .then(result => {
+        const sentimentAnalysisResult = result.flat();
+        setAnalysisData({
+          sentiments: sentimentAnalysisResult,
+          feedbackFile: uploadedFile,
         });
-
-      } catch (err: any) {
-        toast.error("Analysis Failed", {
-          description: err.message || 'An unexpected network error occurred.',
-        });
-        setError(err.message);
-      } finally {
-        // The loading state is now managed globally by the context,
-        // and it should be set to false only when the process is truly complete.
+        toast.success("Sentiment analysis complete!");
+      })
+      .catch(err => {
+        toast.error("Sentiment Analysis Failed", { description: err.message });
+      })
+      .finally(() => {
         setIsLoading(false);
-      }
+      });
+
+      // --- THEME/CATEGORY ANALYSIS CALL ---
+      fetch(themesApiUrl, {
+        method: 'POST',
+        body: formData,
+      })
+      .then(response => {
+        if (!response.ok) {
+          return response.json().then(err => { throw new Error(err.detail || 'Theme analysis failed'); });
+        }
+        return response.json();
+      })
+      .then(result => {
+        setAnalysisData({ themes: result });
+        toast.success("Theme analysis complete!");
+      })
+      .catch(err => {
+        toast.error("Theme Analysis Failed", { description: err.message });
+      })
+      .finally(() => {
+        setIsThemeLoading(false);
+      });
     };
 
   return (
@@ -171,7 +171,16 @@ export function IntegrationsStep({ onNext, onBack }: IntegrationsStepProps) {
         <CardTitle>Import feedback</CardTitle>
         <CardDescription>Bring in your feedback for us to analyze and connect to features and issues.</CardDescription>
       </CardHeader>
-      <CardContent className="space-y-4">
+      <CardContent className="space-y-6">
+        <div className="space-y-2">
+            <Label htmlFor="feedback-column">Feedback Column Name</Label>
+            <Input 
+                id="feedback-column"
+                placeholder="e.g., 'review', 'comment', 'feedback_text'"
+                value={feedbackColumn}
+                onChange={(e) => setFeedbackColumn(e.target.value)}
+            />
+        </div>
         <CsvUploader onFileAccepted={handleFileAccepted} />
         <div className="relative my-6">
             <div className="absolute inset-0 flex items-center">
@@ -204,9 +213,9 @@ export function IntegrationsStep({ onNext, onBack }: IntegrationsStepProps) {
           <Button variant="outline" onClick={onBack} disabled={isLoading}>&larr; Back</Button>
         )}
         {!onBack && <div />}
-        <Button onClick={handleNext} disabled={!uploadedFile || isLoading}>
-            {isLoading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-            {isLoading ? 'Analyzing...' : 'Next'} &rarr;
+        <Button onClick={handleNext} disabled={!uploadedFile || isLoading || isThemeLoading || !feedbackColumn.trim()}>
+            {(isLoading || isThemeLoading) && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+            Next &rarr;
         </Button>
       </CardFooter>
     </Card>

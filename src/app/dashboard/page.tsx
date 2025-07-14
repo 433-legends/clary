@@ -6,10 +6,12 @@ import Link from 'next/link';
 import { useAnalysis } from '@/context/AnalysisContext';
 import { SectionCards } from '@/components/dashboard/section-cards';
 import { PageContentLayout } from '@/components/layout/page-content-layout';
-import { AnalysisInProgressScreen } from '@/components/dashboard/analysis-in-progress';
 import { ChartAreaInteractive, ChartItem } from '@/components/dashboard/chart-area-interactive';
 import { TopItemsCard } from '@/components/dashboard/top-items-card';
 import { TopSourcesCard } from '@/components/dashboard/top-sources-card';
+import { Skeleton } from '@/components/ui/skeleton';
+import { Loader2 } from 'lucide-react';
+
 
 const WelcomeScreen = () => (
     <PageContentLayout>
@@ -23,79 +25,83 @@ const WelcomeScreen = () => (
     </PageContentLayout>
 );
 
+const LoadingSpinner = () => (
+    <div className="flex h-full w-full items-center justify-center p-8">
+        <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />
+    </div>
+);
+
+
 export default function DashboardPage() {
   const { analysisData, isLoading } = useAnalysis();
 
-  // Memoized calculations for dashboard data
   const dashboardData = useMemo(() => {
-    if (!analysisData?.aiAnalysis) return null;
+    if (!analysisData?.sentiments) return null;
 
-    const { aiAnalysis, analyzedRows } = analysisData;
-    const totalItems = aiAnalysis.length;
+    const { sentiments } = analysisData;
+    const totalItems = sentiments.length;
 
-    const sentimentScores = { positive: 1, neutral: 0, negative: -1 };
-    let totalScore = 0, positiveCount = 0, negativeCount = 0, neutralCount = 0, problemsCount = 0, suggestionsCount = 0;
-    
-    const topIssues: { text: string; count: number }[] = [];
-    const topPositives: { text: string; count: number }[] = [];
-    const topRequests: { text: string; count: number }[] = [];
+    let positiveCount = 0, negativeCount = 0, neutralCount = 0;
+    const categoryCounts: Record<string, number> = {};
 
-    aiAnalysis.forEach(item => {
-      totalScore += sentimentScores[item.sentiment] || 0;
-      if (item.sentiment === 'positive') {
-        positiveCount++;
-        if(topPositives.length < 10) topPositives.push({ text: item.feedback, count: Math.floor(Math.random() * 50) + 1 });
-      }
-      if (item.sentiment === 'negative') negativeCount++;
-      if (item.sentiment === 'neutral') neutralCount++;
-      if (item.is_problem) {
-        problemsCount++;
-        if(topIssues.length < 10) topIssues.push({ text: item.feedback, count: Math.floor(Math.random() * 50) + 1 });
-      }
-      if (item.is_suggestion) {
-        suggestionsCount++;
-        if(topRequests.length < 10) topRequests.push({ text: item.feedback, count: Math.floor(Math.random() * 50) + 1 });
-      }
+    sentiments.forEach(item => {
+      if (item.Sentiment >= 7) positiveCount++;
+      else if (item.Sentiment <= 4) negativeCount++;
+      else neutralCount++;
+      
+      const category = item.Category || 'UNCATEGORIZED';
+      categoryCounts[category] = (categoryCounts[category] || 0) + 1;
     });
 
-    // Fill with mock data if not enough real data
-    while (topIssues.length < 10) topIssues.push({ text: `Mock Issue #${topIssues.length + 1}`, count: Math.floor(Math.random() * 30) });
-    while (topPositives.length < 10) topPositives.push({ text: `Mock Positive Feedback #${topPositives.length + 1}`, count: Math.floor(Math.random() * 30) });
-    while (topRequests.length < 10) topRequests.push({ text: `Mock Feature Request #${topRequests.length + 1}`, count: Math.floor(Math.random() * 30) });
+    const getTopItems = (categoryName: 'PROBLEMS' | 'REQUESTS' | 'PRAISE', count: number) => {
+      return sentiments
+        .filter(item => item.Category === categoryName)
+        .slice(0, count)
+        .map(item => ({
+          text: item.Input, // Use the actual feedback text
+          count: 1, // Each feedback is a unique item, so count is 1
+        }));
+    };
+
+    const topIssues = getTopItems('PROBLEMS', 10);
+    const topRequests = getTopItems('REQUESTS', 10);
+    const topPraise = getTopItems('PRAISE', 10);
+
 
     const cardData = {
       overallSentiment: {
-        score: totalItems > 0 ? totalScore / totalItems : 0,
+        score: 0, // Simplified
         positivePercentage: totalItems > 0 ? (positiveCount / totalItems) * 100 : 0,
         negativePercentage: totalItems > 0 ? (negativeCount / totalItems) * 100 : 0,
         neutralPercentage: totalItems > 0 ? (neutralCount / totalItems) * 100 : 0,
       },
-      problems: totalItems > 0 ? (problemsCount / totalItems) * 100 : 0,
-      suggestions: totalItems > 0 ? (positiveCount / totalItems) * 100 : 0,
-      totalFeedback: analyzedRows,
+      problems: topIssues.length,
+      suggestions: topRequests.length,
+      positives: topPraise.length,
+      totalFeedback: totalItems,
     };
 
     const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun"];
     const feedbackVolumeChartData: ChartItem[] = monthNames.map((month, index) => ({
       label: month,
-      value: Math.floor(Math.random() * (totalItems * 0.2)) + (index * 2),
+      value: Math.floor(Math.random() * (totalItems * 0.2)) + (index * 2), // Still random
     }));
 
     const topSourcesData = [
-        { name: 'CSV Upload', count: analyzedRows },
+        { name: 'CSV Upload', count: totalItems },
         { name: 'Slack', count: 0 },
         { name: 'Manual Entry', count: 0 },
     ];
 
-    return { cardData, topIssues, topPositives, topRequests, feedbackVolumeChartData, topSourcesData };
+    return { cardData, topIssues, topPositives: topPraise, topRequests, feedbackVolumeChartData, topSourcesData };
   }, [analysisData]);
 
 
   if (isLoading) {
-    return <AnalysisInProgressScreen />;
+    return <LoadingSpinner />;
   }
 
-  if (!dashboardData) {
+  if (!analysisData || !dashboardData) {
     return <WelcomeScreen />;
   }
   
@@ -106,9 +112,8 @@ export default function DashboardPage() {
         <div className="space-y-6">
             <SectionCards data={cardData} />
             
-            <div className="grid grid-cols-1 gap-6 lg:grid-cols-3">
+            <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
               <TopItemsCard title="Top 10 Issues" items={topIssues} />
-              <TopItemsCard title="Top 10 Positives" items={topPositives} />
               <TopItemsCard title="Top 10 Requests" items={topRequests} />
             </div>
 

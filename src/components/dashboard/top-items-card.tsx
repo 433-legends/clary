@@ -26,8 +26,7 @@ import {
             <ol className="space-y-3 text-sm">
               {items.map((item, index) => (
                 <li key={index} className="flex justify-between items-center">
-                    <span className="truncate text-muted-foreground">{`${index + 1}. ${item.text}`}</span>
-                    <span className="font-medium">{item.count}</span>
+                    <span className="truncate text-muted-foreground">{item.text}</span>
                 </li>
               ))}
             </ol>
