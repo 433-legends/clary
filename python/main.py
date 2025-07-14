@@ -26,16 +26,31 @@ def get_slack_messages(channel_id: str, token: str):
     except Exception as e:
         raise HTTPException(status_code=400, detail=e.response["error"])
 
+@app.post("/feedback/columns")
+async def get_feedback_columns(file: UploadFile = File(...)):
+    try:
+        file_content = await file.read()
+        csv_text = file_content.decode("utf-8")
+        lines = csv_text.splitlines()
+        if not lines:
+            raise HTTPException(status_code=400, detail="CSV file is empty")
+
+        header = lines[0].split(",")
+        return {"columns": header}
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=str(e))
+
 
 @app.post("/feedback/csv_upload")
 async def upload_feedback_csv(
         file: UploadFile = File(...),
-        feedback_column: str = Query(..., description="Name of the column containing feedback text")
+        feedback_column: str = Query(..., description="Name of the column containing feedback text"),
+        filter_feedback: bool = Query(False, description="Whether to filter feedbacks or not")
 ):
     try:
         file_content = await file.read()
         csv_text = file_content.decode("utf-8")
-        return await process_csv_feedbacks(csv_text, feedback_column)
+        return await process_csv_feedbacks(csv_text, feedback_column, filter_feedback)
     except Exception as e:
         raise HTTPException(status_code=400, detail=str(e))
 

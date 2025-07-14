@@ -1,52 +1,70 @@
 import csv
 import json
+from http.client import HTTPException
 from io import StringIO
+
+import pandas as pd
 from agents import Runner
-from python.ai.agents.ticketing_agent import filter_feedback
+from python.ai.agents.ticketing_agent import filter_feedback_agent
 from python.ai.agents.sentiment_agent import sentiment_agent
 from python.ai.agents.cluster_labelling_agent import cluster_reviews_agent
 from python.ai.clustering import cluster_reviews
 
-async def process_csv_feedbacks(csv_file_content, feedback_column='feedback_text'):
+BATCH_SIZE = 100
+
+async def process_csv_feedbacks(csv_file_content, feedback_column='feedback_text', filter_feedback=False):
     """
     Process a CSV file containing feedback data and store it in the database.
 
     Args:
         csv_file_content (str): Content of the CSV file.
+        feedback_column (str): Name of the column containing feedback text.
+        filter_feedback (bool): Whether to filter feedbacks or not.
 
     Returns:
         List[dict]: List of feedback records containing Sentiment, Explaination and Input.
     """
 
     feedback_records = []
-    csv_reader = csv.DictReader(StringIO(csv_file_content))
-
-    for row in csv_reader:
+    feedback_list = []
+    all_feedback_list = pd.read_csv(
+        StringIO(csv_file_content),
+        usecols=[feedback_column]
+    )[feedback_column].dropna().tolist()
+    all_feedback_set = set(all_feedback_list)  # Deduplicate feedbacks
+    for feedback in all_feedback_set:
         try:
-            feedback = row.get(feedback_column)
-            if not feedback:
-                continue
-
             # Assuming filter_feedback is an async function that processes the feedback text
-            result = await Runner.run(filter_feedback, feedback)
-            if not result.final_output == 'True':
-                print("Filtering message {} as it is not a valid feedback.".format(feedback))
-                continue
+            if filter_feedback:
+                result = await Runner.run(filter_feedback_agent, feedback)
+                if not result.final_output == 'True':
+                    print("Filtering message {} as it is not a valid feedback.".format(feedback))
+                    continue
 
-            sentiment_analysis = await Runner.run(sentiment_agent, feedback)
+            feedback_list.append(feedback)
 
-            if sentiment_analysis:
-                sentiment_dict = json.loads(sentiment_analysis.final_output)
+            if len(feedback_list) >= BATCH_SIZE:
+                sentiment_analysis = await Runner.run(sentiment_agent, str(feedback_list))
 
-                feedback_record = {
-                    'Sentiment': sentiment_dict['Sentiment'],
-                    'Explanation': sentiment_dict['Explanation'],
-                    'Input': feedback
-                }
-                feedback_records.append(feedback_record)
+                if sentiment_analysis:
+                    sentiment_list = json.loads(sentiment_analysis.final_output)
+
+                    feedback_records.append(sentiment_list)
+                    print(f"Processed batch of {len(feedback_list)} feedbacks.")
+
+                feedback_list = []
         except Exception as e:
-            print(f"Error processing feedback '{feedback}': {e}")
-            continue
+            raise HTTPException(f"Error processing feedback '{feedback}': {e}")
+
+    if feedback_list:
+        try:
+            sentiment_analysis = await Runner.run(sentiment_agent, str(feedback_list))
+            if sentiment_analysis:
+                sentiment_list = json.loads(sentiment_analysis.final_output)
+                feedback_records.append(sentiment_list)
+                print(f"Processed final batch of {len(feedback_list)} feedbacks.")
+        except Exception as e:
+            raise HTTPException(f"Error processing feedback '{feedback}': {e}")
 
     return feedback_records
 

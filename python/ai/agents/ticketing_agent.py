@@ -12,7 +12,7 @@ model_settings = ModelSettings(temperature=0.0)
 
 set_default_openai_key(os.getenv("OPENAI_API_KEY"))  # Set your OpenAI API key here
 
-filter_feedback = Agent[TContext](
+filter_feedback_agent = Agent[TContext](
     model="gpt-4.1",
     name="Vibora",
     instructions=FILTER_CUSTOMER_FEEDBACK,
