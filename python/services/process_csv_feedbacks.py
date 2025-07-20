@@ -1,16 +1,14 @@
 import csv
 import json
-from http.client import HTTPException
 from io import StringIO
-
+import asyncio
 import pandas as pd
 from agents import Runner
-from python.ai.agents.ticketing_agent import filter_feedback_agent
 from python.ai.agents.sentiment_agent import sentiment_agent
 from python.ai.agents.cluster_labelling_agent import cluster_reviews_agent
 from python.ai.clustering import cluster_reviews
 
-BATCH_SIZE = 100
+BATCH_SIZE = 20
 
 async def process_csv_feedbacks(csv_file_content, feedback_column='feedback_text', filter_feedback=False):
     """
@@ -26,47 +24,55 @@ async def process_csv_feedbacks(csv_file_content, feedback_column='feedback_text
     """
 
     feedback_records = []
-    feedback_list = []
     all_feedback_list = pd.read_csv(
         StringIO(csv_file_content),
         usecols=[feedback_column]
     )[feedback_column].dropna().tolist()
-    all_feedback_set = set(all_feedback_list)  # Deduplicate feedbacks
-    for feedback in all_feedback_set:
-        try:
-            # Assuming filter_feedback is an async function that processes the feedback text
-            if filter_feedback:
-                result = await Runner.run(filter_feedback_agent, feedback)
-                if not result.final_output == 'True':
-                    print("Filtering message {} as it is not a valid feedback.".format(feedback))
-                    continue
+    all_feedback_set = set(all_feedback_list)
+    chunked_feedback_list = await chunk_set(all_feedback_set, BATCH_SIZE)
+    sentiment_tasks = [Runner.run(sentiment_agent, str(chunk)) for chunk in chunked_feedback_list]
+    sentiment_analyses = await asyncio.gather(*sentiment_tasks)
 
-            feedback_list.append(feedback)
+    for sentiment_analysis in sentiment_analyses:
+        if sentiment_analysis:
+            output = sentiment_analysis.final_output
+            if output.startswith('```json') and output.endswith('```'):
+                output = output[7:-3].strip()
 
-            if len(feedback_list) >= BATCH_SIZE:
-                sentiment_analysis = await Runner.run(sentiment_agent, str(feedback_list))
-
-                if sentiment_analysis:
-                    sentiment_list = json.loads(sentiment_analysis.final_output)
-
-                    feedback_records.append(sentiment_list)
-                    print(f"Processed batch of {len(feedback_list)} feedbacks.")
-
-                feedback_list = []
-        except Exception as e:
-            raise HTTPException(f"Error processing feedback '{feedback}': {e}")
-
-    if feedback_list:
-        try:
-            sentiment_analysis = await Runner.run(sentiment_agent, str(feedback_list))
-            if sentiment_analysis:
-                sentiment_list = json.loads(sentiment_analysis.final_output)
-                feedback_records.append(sentiment_list)
-                print(f"Processed final batch of {len(feedback_list)} feedbacks.")
-        except Exception as e:
-            raise HTTPException(f"Error processing feedback '{feedback}': {e}")
+            sentiment_list = json.loads(output)
+            feedback_records.append(sentiment_list)
+            print(f"Processed batch of {len(sentiment_list)} feedbacks.")
+    # for chunk in chunked_feedback_list:
+    #     print(f"Processing chunk of size {len(chunk)}")
+    #     if filter_feedback:
+    #         try:
+    #             result = await Runner.run(filter_feedback_agent, str(chunk))
+    #             if not result.final_output == 'True':
+    #                 print("Filtering out invalid feedbacks.")
+    #                 continue
+    #         except Exception as e:
+    #             raise HTTPException(f"Error filtering feedbacks: {e}")
+    #
+    #     sentiment_analysis = await Runner.run(sentiment_agent, str(chunk))
+    #
+    #     if sentiment_analysis:
+    #         output = sentiment_analysis.final_output
+    #         if output.startswith('```json') and output.endswith('```'):
+    #             output = output[7:-3].strip()
+    #
+    #         sentiment_list = json.loads(output)
+    #
+    #         feedback_records.append(sentiment_list)
+    #         print(f"Processed batch of {len(sentiment_list)} feedbacks.")
 
     return feedback_records
+
+async def chunk_set(input_set, chunk_size):
+    """
+    Chunk a set into smaller lists of a specified size.
+    """
+    input_list = list(input_set)
+    return [input_list[i:i + chunk_size] for i in range(0, len(input_list), chunk_size)]
 
 
 async def process_csv_feedbacks_with_categories(csv_file_content, feedback_column='feedback_text'):
