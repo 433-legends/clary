@@ -48,13 +48,22 @@ export const columns: ColumnDef<FeedbackItemProps>[] = [
           const tags = row.getValue("tags") as string[]
           const category = tags[0] || 'UNCATEGORIZED';
           let variant: "destructive" | "secondary" | "success" = "secondary";
+          let displayText = category.toLowerCase();
+
           if (category.toLowerCase() === 'problems') {
             variant = 'destructive';
+            displayText = 'issues';
           } else if (category.toLowerCase() === 'requests') {
             variant = 'success';
           }
-          return <Badge variant={variant} className="capitalize">{category.toLowerCase()}</Badge>
-      }
+          return <Badge variant={variant} className="capitalize">{displayText}</Badge>
+      },
+      filterFn: (row, id, value) => {
+        const tags = row.getValue(id) as string[];
+        if (!tags || tags.length === 0) return false;
+        const category = tags[0];
+        return category.toLowerCase().includes(value.toLowerCase());
+      },
     },
     {
       accessorKey: "content",
@@ -75,11 +84,13 @@ export const columns: ColumnDef<FeedbackItemProps>[] = [
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]
   data: TData[]
+  hideAllTab?: boolean;
 }
 
 export function FeedbackDataTable<TData, TValue>({
   columns,
   data,
+  hideAllTab = false,
 }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = React.useState<SortingState>([])
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
@@ -88,6 +99,11 @@ export function FeedbackDataTable<TData, TValue>({
   const [columnVisibility, setColumnVisibility] =
     React.useState<VisibilityState>({})
   const [rowSelection, setRowSelection] = React.useState({})
+
+  const hasTagsColumn = React.useMemo(() => columns.some(col => {
+    const accessor = col as any;
+    return accessor.accessorKey === 'tags';
+  }), [columns]);
 
   const table = useReactTable({
     data,
@@ -112,9 +128,16 @@ export function FeedbackDataTable<TData, TValue>({
     },
   })
 
+  React.useEffect(() => {
+    // Set initial filter to "requests" if "All" tab is hidden
+    if (hideAllTab && hasTagsColumn) {
+      table.getColumn("tags")?.setFilterValue("requests");
+    }
+  }, [hideAllTab, table, hasTagsColumn]);
+
   return (
     <div className="w-full">
-      <div className="flex items-center justify-between py-4">
+      <div className="flex items-center justify-between py-4 px-2">
         <Input
           placeholder="Filter feedback..."
           value={(table.getColumn("content")?.getFilterValue() as string) ?? ""}
@@ -123,24 +146,28 @@ export function FeedbackDataTable<TData, TValue>({
           }
           className="max-w-sm"
         />
-        <Tabs 
-          defaultValue="all" 
-          onValueChange={(value) => {
-            const filterValue = value === "all" ? "" : value.toUpperCase();
-            table.getColumn("tags")?.setFilterValue(filterValue);
-          }}
-        >
-            <TabsList>
-                <TabsTrigger value="all">All</TabsTrigger>
-                <TabsTrigger value="requests">Requests</TabsTrigger>
-                <TabsTrigger value="problems">Issues</TabsTrigger>
-                <TabsTrigger value="praise">Praise</TabsTrigger>
-            </TabsList>
-        </Tabs>
+        {hasTagsColumn && (
+            <Tabs 
+              defaultValue={hideAllTab ? "requests" : "all"}
+              onValueChange={(value) => {
+                const filterValue = value === "all" ? "" : value.toLowerCase();
+                if (hasTagsColumn) {
+                  table.getColumn("tags")?.setFilterValue(filterValue);
+                }
+              }}
+            >
+                <TabsList>
+                    {!hideAllTab && <TabsTrigger value="all">All</TabsTrigger>}
+                    <TabsTrigger value="requests">Requests</TabsTrigger>
+                    <TabsTrigger value="problems">Issues</TabsTrigger>
+                    <TabsTrigger value="praise">Praise</TabsTrigger>
+                </TabsList>
+            </Tabs>
+        )}
       </div>
       <div className="rounded-md border h-[600px] overflow-auto">
-        <Table>
-          <TableHeader className="bg-muted/50">
+        <Table className="table-fixed">
+          <TableHeader className="bg-muted">
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {

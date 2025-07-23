@@ -16,6 +16,13 @@ import {
 import { ListChecks, UploadCloud, ChevronRight, Package, Users, Link as LinkIcon, FileCheck2, Loader2, Slack } from 'lucide-react';
 import { useAnalysis, AnalysisData } from '@/context/AnalysisContext';
 import { toast } from "sonner";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 // Mock integration data - replace with actual data or API call later
 const integrations = [
@@ -81,11 +88,45 @@ interface IntegrationsStepProps {
 
 export function IntegrationsStep({ onNext, onBack }: IntegrationsStepProps) {
     const [uploadedFile, setUploadedFile] = useState<File | null>(null);
-    const [feedbackColumn, setFeedbackColumn] = useState('feedback_text');
+    const [columns, setColumns] = useState<string[]>([]);
+    const [feedbackColumn, setFeedbackColumn] = useState('');
     const { setAnalysisData, setIsLoading, isLoading, setIsThemeLoading, isThemeLoading } = useAnalysis();
 
-    const handleFileAccepted = (file: File) => {
+    const handleFileAccepted = async (file: File) => {
         setUploadedFile(file);
+        setColumns([]);
+        setFeedbackColumn('');
+
+        const formData = new FormData();
+        formData.append('file', file);
+
+        try {
+            const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/feedback/columns`, {
+                method: 'POST',
+                body: formData,
+            });
+
+            if (!response.ok) {
+                const err = await response.json();
+                throw new Error(err.detail || 'Failed to get columns');
+            }
+
+            const data = await response.json();
+            setColumns(data.columns || []);
+            if (data.columns && data.columns.length > 0) {
+              // Try to auto-select a common feedback column name
+              const commonNames = ['feedback', 'review', 'comment', 'feedback_text'];
+              const foundName = data.columns.find((c: string) => commonNames.includes(c.toLowerCase()));
+              if (foundName) {
+                setFeedbackColumn(foundName);
+              }
+            }
+
+        } catch (error) {
+            toast.error("Could not read columns from CSV", {
+                description: (error as Error).message,
+            });
+        }
     };
 
     const handleNext = async () => {
@@ -172,16 +213,26 @@ export function IntegrationsStep({ onNext, onBack }: IntegrationsStepProps) {
         <CardDescription>Bring in your feedback for us to analyze and connect to features and issues.</CardDescription>
       </CardHeader>
       <CardContent className="space-y-6">
-        <div className="space-y-2">
-            <Label htmlFor="feedback-column">Feedback Column Name</Label>
-            <Input 
-                id="feedback-column"
-                placeholder="e.g., 'review', 'comment', 'feedback_text'"
-                value={feedbackColumn}
-                onChange={(e) => setFeedbackColumn(e.target.value)}
-            />
-        </div>
         <CsvUploader onFileAccepted={handleFileAccepted} />
+
+        {columns.length > 0 && (
+            <div className="space-y-2">
+                <Label htmlFor="feedback-column">Select Feedback Column</Label>
+                <Select value={feedbackColumn} onValueChange={setFeedbackColumn}>
+                    <SelectTrigger id="feedback-column">
+                        <SelectValue placeholder="Choose the column with feedback..." />
+                    </SelectTrigger>
+                    <SelectContent>
+                        {columns.map((col) => (
+                            <SelectItem key={col} value={col}>
+                                {col}
+                            </SelectItem>
+                        ))}
+                    </SelectContent>
+                </Select>
+            </div>
+        )}
+
         <div className="relative my-6">
             <div className="absolute inset-0 flex items-center">
                 <span className="w-full border-t" />
@@ -209,14 +260,16 @@ export function IntegrationsStep({ onNext, onBack }: IntegrationsStepProps) {
         ))}
       </CardContent>
       <CardFooter className="flex justify-between">
-        {onBack && (
+        {onBack ? (
           <Button variant="outline" onClick={onBack} disabled={isLoading}>&larr; Back</Button>
-        )}
-        {!onBack && <div />}
-        <Button onClick={handleNext} disabled={!uploadedFile || isLoading || isThemeLoading || !feedbackColumn.trim()}>
-            {(isLoading || isThemeLoading) && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-            Next &rarr;
-        </Button>
+        ) : <div />}
+        <div className="flex gap-2">
+            <Button variant="outline" onClick={onNext}>Skip</Button>
+            <Button onClick={handleNext} disabled={!uploadedFile || isLoading || isThemeLoading || !feedbackColumn.trim()}>
+                {(isLoading || isThemeLoading) && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                Next &rarr;
+            </Button>
+        </div>
       </CardFooter>
     </Card>
   );

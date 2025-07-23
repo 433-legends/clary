@@ -13,7 +13,7 @@ interface ThemeCardProps {
 export function ThemeCard({ theme, onViewClick }: ThemeCardProps) {
   return (
     <Card>
-      <div className="flex items-center justify-between p-4">
+      <div className="flex items-center justify-between py-0 px-4">
         <div>
             <CardTitle className="text-lg leading-tight">{theme.Label}</CardTitle>
             <p className="text-sm text-muted-foreground">{theme.FeedbackTexts.length} feedback items</p>

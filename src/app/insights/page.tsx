@@ -9,6 +9,9 @@ import Link from 'next/link';
 import { ThemeCard } from '@/components/insights/theme-card';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { Theme } from '@/context/AnalysisContext';
+import { FeedbackDataTable, columns } from '@/components/feedback/data-table';
+import { FeedbackItemProps } from '@/components/feedback/feedback-item';
+import { ColumnDef } from '@tanstack/react-table';
 
 const LoadingSpinner = () => (
     <div className="flex h-full w-full items-center justify-center p-8">
@@ -28,6 +31,16 @@ const WelcomeScreen = () => (
     </PageContentLayout>
 );
 
+const simplifiedColumns: ColumnDef<FeedbackItemProps>[] = [
+    {
+      accessorKey: "content",
+      header: "Feedback",
+      cell: ({ row }) => (
+        <div className="capitalize">{row.getValue("content")}</div>
+      ),
+    },
+];
+
 export default function InsightsPage() {
     const { analysisData, isThemeLoading } = useAnalysis();
     const [selectedTheme, setSelectedTheme] = React.useState<Theme | null>(null);
@@ -35,6 +48,28 @@ export default function InsightsPage() {
     const themes = useMemo(() => {
         return analysisData?.themes ?? [];
     }, [analysisData?.themes]);
+
+    const selectedThemeFeedback = useMemo(() => {
+        if (!selectedTheme || !analysisData?.sentiments) {
+            return [];
+        }
+
+        const sentimentMap = new Map(analysisData.sentiments.map(s => [s.Input, s]));
+        
+        return selectedTheme.FeedbackTexts.map((feedbackText, index) => {
+            const sentiment = sentimentMap.get(feedbackText);
+            return {
+                id: `${selectedTheme.Label}-${index}`,
+                content: feedbackText,
+                tags: [sentiment?.Category || 'UNCATEGORIZED'],
+                sentiment: (sentiment ? (sentiment.Sentiment > 6 ? 'positive' : sentiment.Sentiment < 5 ? 'negative' : 'neutral') : 'neutral') as 'positive' | 'negative' | 'neutral',
+                source: 'CSV Upload', // Assuming source
+                timestamp: new Date().toISOString(), // Assuming timestamp
+            };
+        });
+
+    }, [selectedTheme, analysisData?.sentiments]);
+
 
     if (isThemeLoading) {
         return <LoadingSpinner />;
@@ -57,18 +92,12 @@ export default function InsightsPage() {
             </div>
 
             <Sheet open={!!selectedTheme} onOpenChange={(isOpen) => !isOpen && setSelectedTheme(null)}>
-                <SheetContent className="w-full sm:max-w-lg">
-                    <SheetHeader>
+                <SheetContent className="w-full sm:max-w-2xl p-0">
+                    <SheetHeader className="p-6">
                         <SheetTitle>{selectedTheme?.Label}</SheetTitle>
                     </SheetHeader>
                     <div className="py-4">
-                        <ul className="space-y-3">
-                        {selectedTheme?.FeedbackTexts.map((feedback, fIndex) => (
-                            <li key={fIndex} className="text-sm text-muted-foreground border-l-2 pl-4">
-                            {feedback}
-                            </li>
-                        ))}
-                        </ul>
+                        <FeedbackDataTable columns={simplifiedColumns} data={selectedThemeFeedback} hideAllTab={true} />
                     </div>
                 </SheetContent>
             </Sheet>

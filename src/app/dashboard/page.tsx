@@ -75,9 +75,9 @@ export default function DashboardPage() {
         negativePercentage: totalItems > 0 ? (negativeCount / totalItems) * 100 : 0,
         neutralPercentage: totalItems > 0 ? (neutralCount / totalItems) * 100 : 0,
       },
-      problems: topIssues.length,
-      suggestions: topRequests.length,
-      positives: topPraise.length,
+      problems: categoryCounts['PROBLEMS'] || 0,
+      suggestions: categoryCounts['REQUESTS'] || 0,
+      positives: categoryCounts['PRAISE'] || 0,
       totalFeedback: totalItems,
     };
 

@@ -90,14 +90,14 @@ export function SectionCards({ data }: { data: SectionCardsData }) {
       </Card>
       <Card className="@container/card">
         <CardHeader>
-          <CardDescription>Positives</CardDescription>
+          <CardDescription>Requests</CardDescription>
           <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
-            {data.positives ?? "N/A"}
+            {data.suggestions ?? "N/A"}
           </CardTitle>
           <CardAction>
             <Badge variant="outline" className="gap-1">
               <IconBulb size={16} />
-              Positives
+              Requests
             </Badge>
           </CardAction>
         </CardHeader>

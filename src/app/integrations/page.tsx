@@ -1,74 +1,69 @@
 "use client";
 
 import React from 'react';
+import { useRouter } from 'next/navigation';
 import { PageContentLayout } from '@/components/layout/page-content-layout';
 import { Button } from '@/components/ui/button';
-import { IntegrationCard, type IntegrationStatus } from '@/components/integrations/integration-card';
-import { PlusCircle, MessageSquareText, Zap, SlackIcon, Briefcase, Building } from 'lucide-react'; // Example icons
-
-// Define a type for our sample integration data
-interface IntegrationData {
-  id: string;
-  name: string;
-  status: IntegrationStatus;
-  icon?: React.ElementType; // For Lucide icons as placeholders
-  logoUrl?: string; // In case you have actual image URLs
-}
-
-// Sample data based on the image
-const integrations: IntegrationData[] = [
-  {
-    id: 'intercom',
-    name: 'Intercom',
-    status: 'Connected',
-    icon: MessageSquareText, // Placeholder icon
-  },
-  {
-    id: 'zendesk',
-    name: 'Zendesk',
-    status: 'Connected',
-    icon: Zap, // Placeholder icon (Zendesk logo is a bit like a Z/zap)
-  },
-  {
-    id: 'slack',
-    name: 'Slack',
-    status: 'Connected',
-    icon: SlackIcon, // Lucide has a SlackIcon
-  },
-  {
-    id: 'hubspot',
-    name: 'Hubspot',
-    status: 'Integration issue',
-    icon: Briefcase, // Placeholder icon
-  },
-  {
-    id: 'salesforce',
-    name: 'Salesforce',
-    status: 'Paused',
-    icon: Building, // Placeholder icon
-  },
-];
+import { Badge } from '@/components/ui/badge';
+import { IntegrationCard } from '@/components/integrations/integration-card';
+import { useAnalysis } from '@/context/AnalysisContext';
+import { UploadCloud, Slack, Mail, ZoomIn, MessageCircle, Twitter } from 'lucide-react'; // Example icons
 
 export default function IntegrationsPage() {
-  const pageActions = (
-    <Button>
-      <PlusCircle className="mr-2 h-4 w-4" /> Create Integration
-    </Button>
-  );
+    const router = useRouter();
+    const { analysisData } = useAnalysis();
+    const isCsvConnected = !!analysisData?.feedbackFile;
 
-  return (
-    <PageContentLayout title="Integrations" actions={pageActions}>
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {integrations.map((integration) => (
-          <IntegrationCard
-            key={integration.id}
-            name={integration.name}
-            status={integration.status}
-            placeholderIcon={integration.icon ? <integration.icon className="h-5 w-5" /> : undefined}
-            logoUrl={integration.logoUrl}
-          />
-        ))}
-      </div>
-    </PageContentLayout>
-  );
+    const handleViewCsv = () => {
+        if (isCsvConnected) {
+            router.push('/feedback');
+        }
+    };
+
+    const availableIntegrations = [
+        { name: 'Slack', icon: <Slack size={20} /> },
+        { name: 'Gmail', icon: <Mail size={20} /> },
+        { name: 'Zoom', icon: <ZoomIn size={20} /> },
+        { name: 'Reddit', icon: <MessageCircle size={20} /> },
+        { name: 'Twitter', icon: <Twitter size={20} /> },
+    ];
+
+    return (
+        <PageContentLayout>
+            <div className="max-w-2xl mx-auto space-y-8">
+                
+                {/* Connected Section */}
+                <div>
+                    <h2 className="text-xl font-semibold mb-4">Connected</h2>
+                    <div className="space-y-4">
+                        <IntegrationCard
+                            name="CSV upload"
+                            icon={<UploadCloud size={20} />}
+                            action={
+                                <Button variant="outline" size="sm" onClick={handleViewCsv} disabled={!isCsvConnected}>
+                                    View
+                                </Button>
+                            }
+                        />
+                    </div>
+                </div>
+
+                {/* Available Section */}
+                <div>
+                    <h2 className="text-xl font-semibold mb-4">Available</h2>
+                    <div className="space-y-4">
+                        {availableIntegrations.map((integration) => (
+                            <IntegrationCard
+                                key={integration.name}
+                                name={integration.name}
+                                icon={integration.icon}
+                                action={<Badge variant="secondary">Coming soon</Badge>}
+                            />
+                        ))}
+                    </div>
+                </div>
+
+            </div>
+        </PageContentLayout>
+    );
 } 
