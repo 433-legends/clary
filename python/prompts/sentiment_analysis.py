@@ -20,6 +20,7 @@ Always provide a brief explanation (2–3 sentences max) justifying the score ba
 
 ⚠️ HARD RULE: 
 Output will be a JSON array with objects containing the following keys:
+Dont start the output with  ```json```, just keep it as below,
 Always return the output in this exact format:
 [
 {
@@ -37,4 +38,6 @@ Always return the output in this exact format:
 ...
 ]
 
+
+ALWAYS GIVE AN OUTPUT FOR ALL INPUTS. NOT A SINGLE INPUT SHOULD BE IGNORED.
 """
