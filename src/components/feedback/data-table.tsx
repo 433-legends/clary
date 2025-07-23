@@ -41,23 +41,36 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 
 
 export const columns: ColumnDef<FeedbackItemProps>[] = [
-  {
-    accessorKey: "content",
-    header: "Feedback",
-    cell: ({ row }) => (
-      <div className="capitalize">{row.getValue("content")}</div>
-    ),
-  },
-  {
-    accessorKey: "tags",
-    header: "Category",
-    cell: ({ row }) => {
-        const tags = row.getValue("tags") as string[]
-        const category = tags[0] || 'UNCATEGORIZED';
-        return <Badge variant="secondary" className="capitalize">{category.toLowerCase()}</Badge>
-    }
-  },
-]
+    {
+      accessorKey: "tags",
+      header: "Category",
+      cell: ({ row }) => {
+          const tags = row.getValue("tags") as string[]
+          const category = tags[0] || 'UNCATEGORIZED';
+          let variant: "destructive" | "secondary" | "success" = "secondary";
+          if (category.toLowerCase() === 'problems') {
+            variant = 'destructive';
+          } else if (category.toLowerCase() === 'requests') {
+            variant = 'success';
+          }
+          return <Badge variant={variant} className="capitalize">{category.toLowerCase()}</Badge>
+      }
+    },
+    {
+      accessorKey: "content",
+      header: "Feedback",
+      cell: ({ row }) => (
+        <div className="capitalize">{row.getValue("content")}</div>
+      ),
+    },
+    {
+        accessorKey: "source",
+        header: "Source",
+        cell: ({ row }) => (
+          <div>{row.getValue("source") || "Email"}</div>
+        ),
+      },
+  ]
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]
@@ -125,9 +138,9 @@ export function FeedbackDataTable<TData, TValue>({
             </TabsList>
         </Tabs>
       </div>
-      <div className="rounded-md border h-[500px] overflow-auto">
+      <div className="rounded-md border h-[600px] overflow-auto">
         <Table>
-          <TableHeader>
+          <TableHeader className="bg-muted/50">
             {table.getHeaderGroups().map((headerGroup) => (
               <TableRow key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
@@ -176,31 +189,7 @@ export function FeedbackDataTable<TData, TValue>({
         </Table>
       </div>
       <div className="flex items-center justify-end space-x-2 py-4">
-        <div className="flex-1 text-sm text-muted-foreground">
-          {table.getFilteredSelectedRowModel().rows.length} of{" "}
-          {table.getFilteredRowModel().rows.length} row(s) selected.
-        </div>
         <div className="flex items-center space-x-6 lg:space-x-8">
-            <div className="flex items-center space-x-2">
-                <p className="text-sm font-medium">Rows per page</p>
-                <Select
-                    value={`${table.getState().pagination.pageSize}`}
-                    onValueChange={(value) => {
-                        table.setPageSize(Number(value))
-                    }}
-                >
-                    <SelectTrigger className="h-8 w-[70px]">
-                        <SelectValue placeholder={table.getState().pagination.pageSize} />
-                    </SelectTrigger>
-                    <SelectContent side="top">
-                        {[10, 20, 30, 40, 50].map((pageSize) => (
-                            <SelectItem key={pageSize} value={`${pageSize}`}>
-                                {pageSize}
-                            </SelectItem>
-                        ))}
-                    </SelectContent>
-                </Select>
-            </div>
             <div className="flex w-[100px] items-center justify-center text-sm font-medium">
                 Page {table.getState().pagination.pageIndex + 1} of{" "}
                 {table.getPageCount()}

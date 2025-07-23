@@ -7,6 +7,8 @@ import { Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { ThemeCard } from '@/components/insights/theme-card';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
+import { Theme } from '@/context/AnalysisContext';
 
 const LoadingSpinner = () => (
     <div className="flex h-full w-full items-center justify-center p-8">
@@ -28,6 +30,7 @@ const WelcomeScreen = () => (
 
 export default function InsightsPage() {
     const { analysisData, isThemeLoading } = useAnalysis();
+    const [selectedTheme, setSelectedTheme] = React.useState<Theme | null>(null);
 
     const themes = useMemo(() => {
         return analysisData?.themes ?? [];
@@ -43,15 +46,32 @@ export default function InsightsPage() {
     
     return (
         <PageContentLayout>
-            <h1 className="text-2xl font-semibold mb-4">Feedback Themes & Insights</h1>
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div className="flex flex-col gap-4">
                 {themes.map((theme, index) => (
                     <ThemeCard 
                         key={index} 
-                        theme={theme} 
+                        theme={theme}
+                        onViewClick={() => setSelectedTheme(theme)}
                     />
                 ))}
             </div>
+
+            <Sheet open={!!selectedTheme} onOpenChange={(isOpen) => !isOpen && setSelectedTheme(null)}>
+                <SheetContent className="w-full sm:max-w-lg">
+                    <SheetHeader>
+                        <SheetTitle>{selectedTheme?.Label}</SheetTitle>
+                    </SheetHeader>
+                    <div className="py-4">
+                        <ul className="space-y-3">
+                        {selectedTheme?.FeedbackTexts.map((feedback, fIndex) => (
+                            <li key={fIndex} className="text-sm text-muted-foreground border-l-2 pl-4">
+                            {feedback}
+                            </li>
+                        ))}
+                        </ul>
+                    </div>
+                </SheetContent>
+            </Sheet>
         </PageContentLayout>
     );
 } 

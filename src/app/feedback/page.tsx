@@ -55,7 +55,7 @@ export default function FeedbackPage() {
     }));
 
     return (
-        <PageContentLayout>
+        <PageContentLayout className="p-0">
             <FeedbackDataTable columns={columns} data={feedbackItems} />
         </PageContentLayout>
     );
