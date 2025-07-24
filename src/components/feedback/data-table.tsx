@@ -69,7 +69,7 @@ export const columns: ColumnDef<FeedbackItemProps>[] = [
       accessorKey: "content",
       header: "Feedback",
       cell: ({ row }) => (
-        <div className="capitalize">{row.getValue("content")}</div>
+        <div className="capitalize whitespace-normal break-words">{row.getValue("content")}</div>
       ),
     },
     {
@@ -85,19 +85,21 @@ interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]
   data: TData[]
   hideAllTab?: boolean;
+  initialVisibility?: VisibilityState;
 }
 
 export function FeedbackDataTable<TData, TValue>({
   columns,
   data,
   hideAllTab = false,
+  initialVisibility = {},
 }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = React.useState<SortingState>([])
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []
   )
   const [columnVisibility, setColumnVisibility] =
-    React.useState<VisibilityState>({})
+    React.useState<VisibilityState>(initialVisibility)
   const [rowSelection, setRowSelection] = React.useState({})
 
   const hasTagsColumn = React.useMemo(() => columns.some(col => {

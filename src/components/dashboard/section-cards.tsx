@@ -44,7 +44,7 @@ export function SectionCards({ data }: { data: SectionCardsData }) {
       <Card className="@container/card">
         <CardHeader>
           <CardDescription>Overall Sentiment</CardDescription>
-          <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
+          <CardTitle className="font-mono tracking-wide text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
             {sentimentScore > 0 ? "+" : ""}
             {sentimentScore.toFixed(2)}
           </CardTitle>
@@ -68,7 +68,7 @@ export function SectionCards({ data }: { data: SectionCardsData }) {
       <Card className="@container/card">
         <CardHeader>
           <CardDescription>Issues</CardDescription>
-          <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
+          <CardTitle className="font-mono tracking-wide text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
             {data.problems ?? "N/A"}
           </CardTitle>
           <CardAction>
@@ -91,7 +91,7 @@ export function SectionCards({ data }: { data: SectionCardsData }) {
       <Card className="@container/card">
         <CardHeader>
           <CardDescription>Requests</CardDescription>
-          <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
+          <CardTitle className="font-mono tracking-wide text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
             {data.suggestions ?? "N/A"}
           </CardTitle>
           <CardAction>
@@ -112,7 +112,7 @@ export function SectionCards({ data }: { data: SectionCardsData }) {
       <Card className="@container/card">
         <CardHeader>
           <CardDescription>Total Feedback</CardDescription>
-          <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
+          <CardTitle className="font-mono tracking-wide text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
             {data.totalFeedback ?? "N/A"}
           </CardTitle>
           <CardAction>

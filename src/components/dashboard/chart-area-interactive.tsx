@@ -41,9 +41,9 @@ export function ChartAreaInteractive({
       <CardHeader>
         <CardTitle className="text-base font-semibold">{title}</CardTitle>
       </CardHeader>
-      <CardContent className="h-[300px] pb-4 pr-0">
+      <CardContent className="h-[300px] pb-4">
         <ResponsiveContainer width="100%" height="100%">
-          <AreaChart data={data}>
+          <AreaChart data={data} margin={{ top: 5, right: 20, left: -10, bottom: 0 }}>
             <defs>
               <linearGradient id="colorFill" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="5%" stopColor={lineColor} stopOpacity={0.8}/>
@@ -53,13 +53,13 @@ export function ChartAreaInteractive({
             <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="hsl(var(--border) / 0.5)"/>
             <XAxis 
               dataKey="label" 
-              stroke="hsl(var(--muted-foreground) / 0.8)" 
+              stroke="hsl(var(--foreground))" 
               fontSize={12} 
               tickLine={false} 
               axisLine={false} 
             />
             <YAxis 
-              stroke="hsl(var(--muted-foreground) / 0.8)" 
+              stroke="hsl(var(--foreground))" 
               fontSize={12} 
               tickLine={false} 
               axisLine={false} 
@@ -74,6 +74,7 @@ export function ChartAreaInteractive({
                 fontSize: "0.875rem",
               }}
               labelStyle={{ color: "hsl(var(--foreground))" }}
+              itemStyle={{ color: "hsl(var(--foreground))" }}
               cursor={{ fill: "hsl(var(--accent) / 0.3)" }}
             />
             <Area

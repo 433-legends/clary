@@ -31,16 +31,6 @@ const WelcomeScreen = () => (
     </PageContentLayout>
 );
 
-const simplifiedColumns: ColumnDef<FeedbackItemProps>[] = [
-    {
-      accessorKey: "content",
-      header: "Feedback",
-      cell: ({ row }) => (
-        <div className="capitalize">{row.getValue("content")}</div>
-      ),
-    },
-];
-
 export default function InsightsPage() {
     const { analysisData, isThemeLoading } = useAnalysis();
     const [selectedTheme, setSelectedTheme] = React.useState<Theme | null>(null);
@@ -96,8 +86,16 @@ export default function InsightsPage() {
                     <SheetHeader className="p-6">
                         <SheetTitle>{selectedTheme?.Label}</SheetTitle>
                     </SheetHeader>
-                    <div className="py-4">
-                        <FeedbackDataTable columns={simplifiedColumns} data={selectedThemeFeedback} hideAllTab={true} />
+                    <div className="px-1 py-4">
+                        <FeedbackDataTable 
+                            columns={columns} 
+                            data={selectedThemeFeedback} 
+                            hideAllTab={true}
+                            initialVisibility={{
+                                tags: false, // Hide category column
+                                source: false, // Hide source column
+                            }}
+                        />
                     </div>
                 </SheetContent>
             </Sheet>

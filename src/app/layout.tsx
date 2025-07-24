@@ -7,6 +7,8 @@ import { Toaster } from "@/components/ui/sonner";
 import { ConditionalLayout } from "@/components/layout/conditional-layout";
 import { ChatbotProvider } from "@/components/chatbot/chatbot-provider";
 import { AnalysisProvider } from "@/context/AnalysisContext";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -27,7 +29,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
