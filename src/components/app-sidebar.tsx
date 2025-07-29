@@ -46,7 +46,7 @@ const data = {
   },
   teams: [
     {
-      name: "Clarities App", // Simplified TeamSwitcher for now
+      name: "Clary", // Simplified TeamSwitcher for now
       logo: Logo, // Use the new Logo component
       plan: "Insights",
     },

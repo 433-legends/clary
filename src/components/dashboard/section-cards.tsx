@@ -5,6 +5,7 @@ import {
   IconBulb,
   IconTrendingUp,
   IconTrendingDown,
+  IconStar,
 } from "@tabler/icons-react"
 
 import { Badge } from "@/components/ui/badge"
@@ -111,24 +112,24 @@ export function SectionCards({ data }: { data: SectionCardsData }) {
       </Card>
       <Card className="@container/card">
         <CardHeader>
-          <CardDescription>Total Feedback</CardDescription>
-          <CardTitle className="font-mono tracking-wide text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
-            {data.totalFeedback ?? "N/A"}
+          <CardDescription>CSAT Score</CardDescription>
+          <CardTitle className="font-mono text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
+            {data.overallSentiment?.positivePercentage.toFixed(1) ?? "N/A"}%
           </CardTitle>
           <CardAction>
             <Badge variant="outline" className="gap-1">
-              <IconHistory size={16} />
-              Total
+              <IconStar size={16} />
+              CSAT
             </Badge>
           </CardAction>
         </CardHeader>
         <CardFooter className="flex-col items-start gap-1.5 text-sm">
           <div className="line-clamp-1 flex gap-2 font-medium">
-            Volume of feedback
-            <IconTrendingUp className="size-4" />
+            Customer satisfaction
+            <IconTrendingDown className="size-4" />
           </div>
           <div className="text-muted-foreground">
-            Total items analyzed from source
+            Percentage of satisfied users
           </div>
         </CardFooter>
       </Card>

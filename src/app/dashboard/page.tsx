@@ -70,7 +70,7 @@ export default function DashboardPage() {
 
     const cardData = {
       overallSentiment: {
-        score: 0, // Simplified
+        score: -0.4, // Simplified
         positivePercentage: totalItems > 0 ? (positiveCount / totalItems) * 100 : 0,
         negativePercentage: totalItems > 0 ? (negativeCount / totalItems) * 100 : 0,
         neutralPercentage: totalItems > 0 ? (neutralCount / totalItems) * 100 : 0,
