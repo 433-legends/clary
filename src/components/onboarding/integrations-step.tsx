@@ -232,32 +232,6 @@ export function IntegrationsStep({ onNext, onBack }: IntegrationsStepProps) {
                 </Select>
             </div>
         )}
-
-        <div className="relative my-6">
-            <div className="absolute inset-0 flex items-center">
-                <span className="w-full border-t" />
-            </div>
-            <div className="relative flex justify-center text-xs uppercase">
-                <span className="bg-card px-2 text-muted-foreground">
-                Or connect Slack
-                </span>
-            </div>
-        </div>
-        {integrations.filter(i => i.name === 'Slack').map((integration) => (
-          <div 
-            key={integration.name} 
-            className="flex items-center justify-between p-4 border rounded-lg hover:bg-muted/50 transition-colors"
-          >
-            <div className="flex items-center gap-4">
-              {integration.icon}
-              <div>
-                <h3 className="font-semibold">{integration.name}</h3>
-                <p className="text-sm text-muted-foreground">{integration.description}</p>
-              </div>
-            </div>
-            <Button variant="outline" size="sm">Connect</Button>
-          </div>
-        ))}
       </CardContent>
       <CardFooter className="flex justify-between">
         {onBack ? (
