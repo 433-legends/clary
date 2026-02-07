@@ -53,7 +53,6 @@ import { Area, AreaChart, CartesianGrid, XAxis } from "recharts"
 import { toast } from "sonner"
 import { z } from "zod"
 
-import Image from "next/image"
 import { useIsMobile } from "@/hooks/use-mobile"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -521,12 +520,9 @@ export function DataTable({
                   <TableRow>
                     <TableCell
                       colSpan={columns.length}
-                      className="h-48 text-center"
+                      className="h-24 text-center"
                     >
-                      <div className="flex flex-col items-center justify-center gap-2 py-4">
-                        <Image src="/images/empty-state.svg" alt="" width={120} height={110} />
-                        <p className="text-sm text-muted-foreground">No results found.</p>
-                      </div>
+                      No results.
                     </TableCell>
                   </TableRow>
                 )}

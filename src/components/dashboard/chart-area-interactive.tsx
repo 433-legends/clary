@@ -10,7 +10,6 @@ import {
   ResponsiveContainer,
 } from "recharts"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { EmptyState } from "@/components/empty-state"
 
 export interface ChartItem {
   label: string; // e.g., date or category
@@ -32,11 +31,7 @@ export function ChartAreaInteractive({
     return (
       <Card className="min-h-[300px] flex items-center justify-center">
         <CardContent>
-          <EmptyState
-            title="No chart data"
-            description="No data available for the chart."
-            compact
-          />
+          <p className="text-muted-foreground">No data available for the chart.</p>
         </CardContent>
       </Card>
     )

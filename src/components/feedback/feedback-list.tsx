@@ -1,6 +1,5 @@
 import React from 'react';
 import { FeedbackItem, FeedbackItemProps } from "./feedback-item"; // Relative import for local component
-import { EmptyState } from '@/components/empty-state';
 
 interface FeedbackListProps {
   feedbackItems: FeedbackItemProps[];
@@ -10,11 +9,9 @@ interface FeedbackListProps {
 export function FeedbackList({ feedbackItems, title = "Recent Feedback" }: FeedbackListProps) {
   if (!feedbackItems || feedbackItems.length === 0) {
     return (
-      <EmptyState
-        title="No feedback items"
-        description="No feedback items to display yet."
-        compact
-      />
+      <div className="text-center py-10">
+        <p className="text-muted-foreground">No feedback items to display.</p>
+      </div>
     );
   }
 

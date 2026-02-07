@@ -4,7 +4,6 @@ import {
     CardHeader,
     CardTitle,
   } from "@/components/ui/card"
-import { EmptyState } from "@/components/empty-state"
   
   interface TopItem {
     text: string;
@@ -32,11 +31,7 @@ import { EmptyState } from "@/components/empty-state"
               ))}
             </ol>
           ) : (
-            <EmptyState
-              title="No data yet"
-              description="No data available."
-              compact
-            />
+            <p className="text-sm text-muted-foreground">No data available.</p>
           )}
         </CardContent>
       </Card>

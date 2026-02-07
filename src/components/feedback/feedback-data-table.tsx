@@ -14,7 +14,6 @@ import {
 } from "@tanstack/react-table"
 import { z } from "zod"
 import { cn } from "@/lib/utils"
-import Image from "next/image"
 
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -150,12 +149,9 @@ export function FeedbackDataTable({ data }: { data: Feedback[] }) {
               <TableRow>
                 <TableCell
                   colSpan={columns.length}
-                  className="h-48 text-center"
+                  className="h-24 text-center"
                 >
-                  <div className="flex flex-col items-center justify-center gap-2 py-4">
-                    <Image src="/images/empty-state.svg" alt="" width={120} height={110} />
-                    <p className="text-sm text-muted-foreground">No results found.</p>
-                  </div>
+                  No results.
                 </TableCell>
               </TableRow>
             )}
