@@ -11,6 +11,7 @@ import { AnalysisInProgressScreen } from '../../../components/dashboard/analysis
 const WelcomeScreen = () => (
     <PageContentLayout title="Dashboard">
         <div className="flex flex-col items-center justify-center rounded-lg border-2 border-dashed border-muted bg-muted/20 py-20 text-center">
+            <img src="/empty-state.svg" alt="" className="mb-6 w-48 h-auto" aria-hidden="true" />
             <h2 className="text-2xl font-semibold mb-4">Welcome to Your Dashboard</h2>
             <p className="mb-6 text-muted-foreground">It looks like you haven't analyzed any feedback yet.</p>
             <Link href="/onboarding">

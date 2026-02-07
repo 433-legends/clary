@@ -22,6 +22,7 @@ const LoadingSpinner = () => (
 const WelcomeScreen = () => (
     <PageContentLayout>
         <div className="flex flex-col items-center justify-center rounded-lg border-2 border-dashed border-muted bg-muted/20 py-20 text-center">
+            <img src="/empty-state.svg" alt="" className="mb-6 w-48 h-auto" aria-hidden="true" />
             <h2 className="text-2xl font-semibold mb-4">Discover Themes in Your Feedback</h2>
             <p className="mb-6 text-muted-foreground">Upload a CSV to start clustering your feedback into actionable themes.</p>
             <Link href="/onboarding">
