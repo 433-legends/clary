@@ -9,6 +9,7 @@ import Link from 'next/link';
 import { FeedbackItemProps } from '@/components/feedback/feedback-item';
 import { FeedbackDataTable, columns } from '@/components/feedback/data-table';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { EmptyState } from '@/components/empty-state';
 
 const LoadingSkeleton = () => (
     <PageContentLayout>
@@ -24,13 +25,12 @@ const LoadingSkeleton = () => (
 
 const WelcomeScreen = () => (
     <PageContentLayout>
-        <div className="flex flex-col items-center justify-center rounded-lg border-2 border-dashed border-muted bg-muted/20 py-20 text-center">
-            <h2 className="text-2xl font-semibold mb-4">No Feedback to Display</h2>
-            <p className="mb-6 text-muted-foreground">Upload a CSV file to see your feedback list here.</p>
-            <Link href="/onboarding">
-                <Button>Get Started</Button>
-            </Link>
-        </div>
+        <EmptyState
+            title="No Feedback to Display"
+            description="Upload a CSV file to see your feedback list here."
+            actionLabel="Get Started"
+            actionHref="/onboarding"
+        />
     </PageContentLayout>
 );
 

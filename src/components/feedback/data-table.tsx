@@ -38,6 +38,7 @@ import { Badge } from "@/components/ui/badge"
 import { FeedbackItemProps } from "./feedback-item"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import Image from "next/image"
 
 
 export const columns: ColumnDef<FeedbackItemProps>[] = [
@@ -208,9 +209,12 @@ export function FeedbackDataTable<TData, TValue>({
               <TableRow>
                 <TableCell
                   colSpan={columns.length}
-                  className="h-24 text-center"
+                  className="h-48 text-center"
                 >
-                  No results.
+                  <div className="flex flex-col items-center justify-center gap-2 py-4">
+                    <Image src="/images/empty-state.svg" alt="" width={120} height={110} />
+                    <p className="text-sm text-muted-foreground">No results found.</p>
+                  </div>
                 </TableCell>
               </TableRow>
             )}

@@ -11,17 +11,17 @@ import { TopItemsCard } from '@/components/dashboard/top-items-card';
 import { TopSourcesCard } from '@/components/dashboard/top-sources-card';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Loader2 } from 'lucide-react';
+import { EmptyState } from '@/components/empty-state';
 
 
 const WelcomeScreen = () => (
     <PageContentLayout>
-        <div className="flex flex-col items-center justify-center rounded-lg border-2 border-dashed border-muted bg-muted/20 py-20 text-center">
-            <h2 className="text-2xl font-semibold mb-4">Welcome to Your Dashboard</h2>
-            <p className="mb-6 text-muted-foreground">It looks like you haven't analyzed any feedback yet.</p>
-            <Link href="/onboarding">
-                <Button>Upload a CSV to Get Started</Button>
-            </Link>
-        </div>
+        <EmptyState
+            title="Welcome to Your Dashboard"
+            description="It looks like you haven't analyzed any feedback yet. Upload a CSV file to get started."
+            actionLabel="Upload a CSV to Get Started"
+            actionHref="/onboarding"
+        />
     </PageContentLayout>
 );
 
