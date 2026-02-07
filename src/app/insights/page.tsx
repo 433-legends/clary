@@ -6,7 +6,6 @@ import { PageContentLayout } from '@/components/layout/page-content-layout';
 import { Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { EmptyState } from '@/components/empty-state';
 import { ThemeCard } from '@/components/insights/theme-card';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { Theme } from '@/context/AnalysisContext';
@@ -22,12 +21,13 @@ const LoadingSpinner = () => (
 
 const WelcomeScreen = () => (
     <PageContentLayout>
-        <EmptyState
-            title="Discover Themes in Your Feedback"
-            description="Upload a CSV to start clustering your feedback into actionable themes."
-            actionLabel="Get Started"
-            actionHref="/onboarding"
-        />
+        <div className="flex flex-col items-center justify-center rounded-lg border-2 border-dashed border-muted bg-muted/20 py-20 text-center">
+            <h2 className="text-2xl font-semibold mb-4">Discover Themes in Your Feedback</h2>
+            <p className="mb-6 text-muted-foreground">Upload a CSV to start clustering your feedback into actionable themes.</p>
+            <Link href="/onboarding">
+                <Button>Get Started</Button>
+            </Link>
+        </div>
     </PageContentLayout>
 );
 
