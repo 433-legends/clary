@@ -73,7 +73,7 @@ export function ChatbotPanel() {
           <form
             onSubmit={(e) => handleSubmit(e, {
               body: {
-                data: analysisContext.analysisData?.feedbacks
+                data: analysisContext.analysisData?.sentiments
               }
             })}
             className="flex items-center space-x-2"
